@@ -19,7 +19,7 @@ if __name__ == "__main__":
   from pyneuroml.neuron import export_to_neuroml2
 
   export_to_neuroml2(None, 
-                     "../NeuroML2.ManyCells%i.net.nml" % num_cells_to_export, 
+                     "../NeuroML2/PartialBulb_%iMTCells.net.nml" % num_cells_to_export, 
                      includeBiophysicalProperties=False,
                      separateCellFiles=True)
 
