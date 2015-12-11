@@ -1,0 +1,31 @@
+
+        <biophysicalProperties id="biophys">
+
+            <intracellularProperties>
+                <resistivity value="150 ohm_cm"/>
+            </intracellularProperties>
+
+            <membraneProperties>
+
+                <spikeThresh value="0 mV"/>
+                <initMembPotential value="-65.0 mV"/>
+                <specificCapacitance value="0.7 uF_per_cm2"/>
+
+                <channelDensity segmentGroup="dendrite_group" ionChannel="pas"       condDensity="0.0001 S_per_cm2" erev="-65.0 mV" id="passive_dendritic" ion="non_specific"/>
+                <channelDensity segmentGroup="dendrite_group" ionChannel="nax__sh10" condDensity="0.04 S_per_cm2"    erev="50.0 mV" id="nax_dendritic" ion="na" />
+                <channelDensity segmentGroup="dendrite_group" ionChannel="kdrmt"     condDensity="0.001 S_per_cm2"  erev="-90.0 mV" id="kdrmt_dendritic" ion="k" />
+                <channelDensity segmentGroup="dendrite_group" ionChannel="kamt"      condDensity="0.004 S_per_cm2"  erev="-90.0 mV" id="kamt_dendritic" ion="k" />
+
+                <channelDensity segmentGroup="axon_group" ionChannel="pas"      condDensity="0.001 S_per_cm2" erev="-65.0 mV" id="passive_axonal" ion="non_specific"/>
+                <channelDensity segmentGroup="axon_group" ionChannel="nax__sh0" condDensity="0.8 S_per_cm2"    erev="50.0 mV" id="nax_axonal" ion="na" />
+                <channelDensity segmentGroup="axon_group" ionChannel="kdrmt"    condDensity="0.001 S_per_cm2" erev="-90.0 mV" id="kdrmt_axonal" ion="k" />
+                <channelDensity segmentGroup="axon_group" ionChannel="kamt"     condDensity="0.08 S_per_cm2"  erev="-90.0 mV" id="kamt_axonal" ion="k" />
+
+                <channelDensity segmentGroup="soma_group" ionChannel="pas"      condDensity="0.0001 S_per_cm2" erev="-65.0 mV" id="passive_somatic" ion="non_specific"/>
+                <channelDensity segmentGroup="soma_group" ionChannel="nax__sh0" condDensity="0.04 S_per_cm2"    erev="50.0 mV" id="nax_somatic" ion="na" />
+                <channelDensity segmentGroup="soma_group" ionChannel="kdrmt"    condDensity="0.001 S_per_cm2"  erev="-90.0 mV" id="kdrmt_somatic" ion="k" />
+                <channelDensity segmentGroup="soma_group" ionChannel="kamt"     condDensity="0.004 S_per_cm2"  erev="-90.0 mV" id="kamt_somatic" ion="k" />
+
+            </membraneProperties>
+
+        </biophysicalProperties>
