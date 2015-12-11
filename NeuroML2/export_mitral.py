@@ -33,21 +33,6 @@ if __name__ == "__main__":
                        includeBiophysicalProperties=False,
                        separateCellFiles=True)
 
-    # Bug fix: Move Mitral Cell files from root project folder to NeuroML2
-    cellFiles = glob.glob('../Mitral*.nml')
-    for file in cellFiles:
-        name = ntpath.basename(file)
-        newLoc = '../NeuroML2/' + name
-        if os.path.isfile(newLoc):
-            os.remove(newLoc)
-        shutil.move(file, newLoc)
-
-    # Fix the network file to refer to correct cell files
-    with open (nml_net_file, "r") as netFile:
-        netTextFixed=netFile.read().replace('"../Mitral', '"Mitral')
-    with open(nml_net_file, "w") as netFile:
-        netFile.write(netTextFixed)
-
     for i in range(num_cells_to_export):
          
         nml_cell_file = "../NeuroML2/Mitral_0_%i.cell.nml" % i        
