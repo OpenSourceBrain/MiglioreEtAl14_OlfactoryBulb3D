@@ -1,33 +1,50 @@
-from neuron import h
+import pydevd
+pydevd.settrace('10.211.55.3', port=4200, stdoutToServer=True, stderrToServer=True)
 
+import os
 import sys
+import glob
+import shutil
+import ntpath
+
+#Nav to neuron folder where compiled MOD files are present
+os.chdir("../NEURON")
+from neuron import h
+os.chdir("../NeuroML2")
 
 h.chdir('../NEURON')
 h.load_file('mitral.hoc')
-
 sys.path.append('../NEURON')
 
 from mkmitral import mkmitral
-
 from pyneuroml.neuron import export_to_neuroml2
 from pyneuroml import pynml
-    
+from neuroml import SegmentGroup
+
 if __name__ == "__main__":
 
-    num_cells_to_export = 30
+    num_cells_to_export = 2
 
     cells = []
     for mgid in range(num_cells_to_export):
       print mgid
       cells.append(mkmitral(mgid))
 
-
     nml_net_file = "../NeuroML2/PartialBulb_%iMTCells.net.nml" % num_cells_to_export
     export_to_neuroml2(None, 
-                       nml_net_file, 
+                       nml_net_file,
                        includeBiophysicalProperties=False,
                        separateCellFiles=True)
-                       
+
+    # Bug fix: Move Mitral Cell files from root project folder to NeuroML2
+    cellFiles = glob.glob('../Mitral*.nml')
+    for file in cellFiles:
+        name = ntpath.basename(file)
+        newLoc = '../NeuroML2/' + name
+        if os.path.isfile(newLoc):
+            os.remove(newLoc)
+        shutil.move(file, newLoc)
+
     for i in range(num_cells_to_export):
          
         nml_cell_file = "../NeuroML2/Mitral_0_%i.cell.nml" % i        
@@ -55,15 +72,43 @@ if __name__ == "__main__":
                 for memb in sg.members:
                     if memb.segments == bad_root:
                         memb.segments = root_id
-                        
-        
-                    
 
+        # Delete all ModelViewParmSubset_N groups
+        for g in xrange(len(cell.morphology.segment_groups)-1,-1,-1):  # Start from the end
+            group = cell.morphology.segment_groups[g]
+            if group.id.startswith('ModelViewParmSubset'):
+                cell.morphology.segment_groups.remove(group)
+
+        # Add the standard soma, dendrite, axon groups
+        somaGroup = SegmentGroup('GO:0043025', 'soma_group')
+        dendriteGroup = SegmentGroup('GO:0030425', 'dendrite_group')
+        axonGroup = SegmentGroup('GO:0030424', 'axon_group')
+
+        # Find the group with all segments
+        for group in cell.morphology.segment_groups:
+            if group.id == 'all':
+                allGroup = group
+
+        # Classify each include into a standard group
+        for include in allGroup.includes:
+
+            if include.segment_groups.startswith(('secden', 'priden', 'tuftden')):
+                dendriteGroup.includes.append(include)
+
+            elif include.segment_groups == 'soma':
+                somaGroup.includes.append(include)
+
+            elif include.segment_groups.startswith(('hillock', 'initialseg')):
+                axonGroup.includes.append(include)
+
+        # Attach the standard groups to the cell
+        cell.morphology.segment_groups.append(somaGroup)
+        cell.morphology.segment_groups.append(dendriteGroup)
+        cell.morphology.segment_groups.append(axonGroup)
+
+        #Save the new NML
         pynml.write_neuroml2_file(nml_doc, nml_cell_file)
 
 
     pynml.nml2_to_svg(nml_net_file)
 
-  
-
-  
