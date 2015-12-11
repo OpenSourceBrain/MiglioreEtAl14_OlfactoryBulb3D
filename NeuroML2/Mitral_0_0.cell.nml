@@ -3830,15 +3830,7 @@
         
         <biophysicalProperties id="biophys">
 
-            <intracellularProperties>
-                <resistivity value="150 ohm_cm"/>
-            </intracellularProperties>
-
             <membraneProperties>
-
-                <spikeThresh value="0 mV"/>
-                <initMembPotential value="-65.0 mV"/>
-                <specificCapacitance value="0.7 uF_per_cm2"/>
 
                 <channelDensity segmentGroup="dendrite_group" ionChannel="pas"       condDensity="0.0001 S_per_cm2" erev="-65.0 mV" id="passive_dendritic" ion="non_specific"/>
                 <channelDensity segmentGroup="dendrite_group" ionChannel="nax__sh10" condDensity="0.04 S_per_cm2"    erev="50.0 mV" id="nax_dendritic" ion="na" />
@@ -3855,7 +3847,15 @@
                 <channelDensity segmentGroup="soma_group" ionChannel="kdrmt"    condDensity="0.001 S_per_cm2"  erev="-90.0 mV" id="kdrmt_somatic" ion="k" />
                 <channelDensity segmentGroup="soma_group" ionChannel="kamt"     condDensity="0.004 S_per_cm2"  erev="-90.0 mV" id="kamt_somatic" ion="k" />
 
+                <spikeThresh value="0 mV"/>
+                <initMembPotential value="-65.0 mV"/>
+                <specificCapacitance value="0.7 uF_per_cm2"/>
+
             </membraneProperties>
+            
+            <intracellularProperties>
+                <resistivity value="150 ohm_cm"/>
+            </intracellularProperties>
 
         </biophysicalProperties>
     </cell>
