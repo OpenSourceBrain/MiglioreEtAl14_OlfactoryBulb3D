@@ -8,7 +8,7 @@ from mkmitral import *
 import time
 
 
-amps = [0.1, 1.0, 2, 5] # Current stimulation values in pA
+amps = [0.1, 1.0, 2, 5] # Current stimulation values in nA
 delay = 40 # ms
 duration = 100 # ms
 tstop = 2*delay+duration
