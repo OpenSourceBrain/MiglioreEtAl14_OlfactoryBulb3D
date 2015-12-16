@@ -1,0 +1,34 @@
+<Lems>
+    
+    <!-- 
+
+        This LEMS file has been automatically generated using PyNeuroML v0.1.7 (libNeuroML v0.2.11)
+
+     -->
+    
+    <!-- Specify which component to run -->
+    <Target component="TestStimCells"/>
+
+    <!-- Include core NeuroML2 ComponentType definitions -->
+    <Include file="Cells.xml"/>
+    <Include file="Networks.xml"/>
+    <Include file="Simulation.xml"/>
+    
+    <Include file="PartialBulb_1MTCells_TestStimCells.net.nml"/>
+    <Include file="Mitral_0_0.cell.nml"/>
+    <Include file="pas.channel.nml"/>
+    <Include file="nax__sh0.channel.nml"/>
+    <Include file="nax__sh10.channel.nml"/>
+    <Include file="kamt.channel.nml"/>
+    <Include file="kdrmt.channel.nml"/>
+   
+    <Simulation id="TestStimCells" length="180ms" step="0.01ms" target="network">
+        
+        <Display id="Mitral_0_0" title="Plots of Mitral_0_0" timeScale="1ms" xmin="-18.0" xmax="198.0" ymin="-90" ymax="50">
+            <Line id="Pop_Mitral_0_0_0_Mitral_0_0_0_v" quantity="Pop_Mitral_0_0/0/Mitral_0_0/0/v" scale="1" color="#38abe3" timeScale="1ms"/>
+            <Line id="Pop_Mitral_0_0_0_Mitral_0_0_43_v" quantity="Pop_Mitral_0_0/0/Mitral_0_0/43/v" scale="1" color="#37f285" timeScale="1ms"/>
+        </Display>
+        
+    </Simulation>
+
+</Lems>
