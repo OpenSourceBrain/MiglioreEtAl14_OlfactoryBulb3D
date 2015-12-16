@@ -1,0 +1,48 @@
+<Lems>
+    
+    
+    <!-- Specify which component to run -->
+    <Target component="sim1"/>
+    
+    <!-- Include core NeuroML2 ComponentType definitions -->
+    <Include file="Cells.xml"/>
+    <Include file="Networks.xml"/>
+    <Include file="Simulation.xml"/>
+    
+    
+    <Include file="pas.channel.nml"/>
+    <Include file="nax__sh0.channel.nml"/>
+    <Include file="nax__sh10.channel.nml"/>
+    <Include file="kamt.channel.nml"/>
+    <Include file="kdrmt.channel.nml"/>
+    <Include file="Mitral_0_0.cell.nml"/>
+    
+    <pulseGenerator id="stim" delay="40ms" duration="100ms" amplitude="1.0 nA"/>
+    
+    
+    <network id="TestNetwork">
+        
+        <population id="PopL23" size="1" type="populationList" component="Mitral_0_0">
+            
+            <instance id="0">
+                <location x="0.0" z="0.0" y="0.0" />
+            </instance>
+            
+        </population>
+        <inputList id="stim_input" component="stim" population="PopL23">
+            <input destination="soma" id="0" target="../PopL23/0/Mitral_0_0"/>
+        </inputList>
+    </network>
+    
+    
+    <Component type="Simulation" id="sim1" length="180.0ms" step="0.05ms" target="TestNetwork">
+        
+        <Display id="v" title="Soma VOLTAGE" xmin="0" xmax="180.0" ymin="-80.0" ymax="50.0" timeScale="1ms">
+            <Line id="VOLTAGE" timeScale="1ms" quantity="PopL23/0/Mitral_0_0/v" scale="1 mV" color="#000000"/>
+        </Display>
+        
+        
+    </Component>
+    
+    
+</Lems>
