@@ -6,7 +6,7 @@ import os
 from neuron import *
 from mkmitral import *
 import time
-
+import csv
 
 amps = [0.1, 1.0, 2, 5] # Current stimulation values in nA
 delay = 40 # ms
@@ -19,6 +19,7 @@ cells = []
 stims = []
 graphs = []
 closeup = h.Graph(0)
+data = []
 
 def main():
     
@@ -38,6 +39,8 @@ def main():
         stim.amp = amps[c]
         stim.dur = duration
         stims.append(stim)
+    
+        data.append([])
 
     # For one of the current values, create a closeup of the AP
     focusampindex = 1
@@ -65,17 +68,26 @@ def integrate():
         graphs[c].begin()
     
     while h.t< tstop:
-        h.fadvance()
         
         for c in xrange(0,len(amps)):
             graphs[c].plot(h.t)
             graphs[c].fastflush()
-
+        
+            data[c].append([h.t, cells[c].soma.v, cells[c].initialseg.v, cells[c].priden.v])
+        
         closeup.plot(h.t)
         closeup.fastflush()
 
+        h.fadvance()
+
     for c in xrange(0,len(amps)):
         graphs[c].flush()
+
+
+        with open('mitralTest_%snA.dat'%amps[c], 'w') as outfile:
+            writer = csv.writer(outfile, delimiter='\t')
+            for row in data[c]:
+                writer.writerow(row)
 
 main()
 
