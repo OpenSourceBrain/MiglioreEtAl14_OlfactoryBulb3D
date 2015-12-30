@@ -85,6 +85,13 @@ def get_below(p):
     
   return nnpts
 
-initmoves()
 initgranules()
+initmoves()
 
+
+def granule_position_orientation(gid):
+    from misc import versor, ellipseLineIntersec as eli
+    pos = list(ggid2pos[gid])
+    u = versor(pos, params.bulbCenter)
+    proj = eli(u, pos, params.bulbCenter, params.somaAxis[1])
+    return pos, u, proj

@@ -229,6 +229,33 @@ def convert_direction(phi, theta, phibase, thetabase, inv=False):
         
         
         
+def ellipseLineIntersec(u, p, center, axis): 
+    p = copy(p)
+    A = 0.
+    B = 0.
+    C = -1
+    v = []
+
+    for i in range(3):
+        _ax = axis[i] / 2
+        A += u[i] ** 2 / _ax ** 2
+        B += 2 * u[i] * (p[i] - center[i]) / _ax ** 2
+        C += (p[i] - center[i]) ** 2 / _ax ** 2
+          
+    delta = B ** 2 - 4 * A * C
+    t0 = (-B + sqrt(delta)) / (2 * A)
+    t1 = (-B - sqrt(delta)) / (2 * A)
+    t = t1
+    if abs(t0) < abs(t1): t = t0
+    for i in range(3): p[i] += t * u[i]
+    return p
+
+def ellipseIntersec(p, center, axis):
+    e = Ellipse(center, axis)
+    h, lamb, phi = e.toElliptical(p)
+    u = [ sin(lamb) * cos(phi), cos(lamb) * cos(phi), sin(phi) ]
+    p = ellipseLineIntersec(u, p, center, axis)
+    return p, lamb, phi      
 
 
     
