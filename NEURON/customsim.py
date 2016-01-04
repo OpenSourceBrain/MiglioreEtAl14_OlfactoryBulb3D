@@ -1,9 +1,6 @@
 # Launch this with "python customsim.py 2 10"
 # to get a network with 2 Mitral cells and 10 Granule cells/Mitral (20 total)
 
-import pydevd
-pydevd.settrace('10.211.55.3', port=4200, stdoutToServer=True, stderrToServer=True)
-
 def setup(mitralArg, granArg, run = False):
     import sys
     import custom_params
