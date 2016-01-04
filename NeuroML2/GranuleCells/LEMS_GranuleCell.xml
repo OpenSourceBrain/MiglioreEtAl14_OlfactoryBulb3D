@@ -1,0 +1,100 @@
+<Lems>
+    
+    <!-- Specify which component to run -->
+    <Target component="GranuleSim"/>
+    
+    <!-- Include core NeuroML2 ComponentType definitions -->
+    <Include file="Cells.xml"/>
+    <Include file="Networks.xml"/>
+    <Include file="Simulation.xml"/>
+    
+    <Include file="Exported/Granule_0_86086.cell.nml"/>
+    <Include file="../Channels/pas.channel.nml"/>
+    <Include file="../Channels/nax__sh15.channel.nml"/>
+    <Include file="../Channels/kamt.channel.nml"/>
+    <Include file="../Channels/kdrmt.channel.nml"/>
+    
+    <pulseGenerator id="input_1" delay="40ms" duration="100ms" amplitude="0.05 nA"/>
+    <pulseGenerator id="input_2" delay="40ms" duration="100ms" amplitude="0.075 nA"/>
+    <pulseGenerator id="input_3" delay="40ms" duration="100ms" amplitude="0.1 nA"/>
+    
+    <network id="network" type="networkWithTemperature" temperature="35 degC">
+
+        <population id="GranulePop1" type="populationList" component="Granule_0_3" size="1">
+            <instance id="0">
+                <location y="0." x="0." z="0."/>
+            </instance>
+        </population>
+        <population id="GranulePop2" type="populationList" component="Granule_0_3" size="1">
+            <instance id="0">
+                <location y="0." x="0." z="0."/>
+            </instance>
+        </population>
+        <population id="GranulePop3" type="populationList" component="Granule_0_3" size="1">
+            <instance id="0">
+                <location y="0." x="0." z="0."/>
+            </instance>
+        </population>
+        
+        
+        <inputList id="input_1" component="input_1" population="GranulePop1">
+            <input destination="synapses" id="0" target="../GranulePop1[0]"/>
+        </inputList>
+        <inputList id="input_2" component="input_2" population="GranulePop2">
+            <input destination="synapses" id="0" target="../GranulePop2[0]"/>
+        </inputList>
+        <inputList id="input_3" component="input_3" population="GranulePop3">
+            <input destination="synapses" id="0" target="../GranulePop3[0]"/>
+        </inputList>
+    </network>
+    
+    
+    <Simulation id="GranuleSim" length="180ms" step="0.01ms" target="network">
+        
+        <!-- 0.1 nA -->
+        
+        <Display id="Granule_1D" title="Granule Cell (1 nA)" timeScale="1ms" xmin="-18.0" xmax="198.0" ymin="-90" ymax="50">
+            <Line id="soma_v1nA"       quantity="GranulePop1/0/Granule_0_3/0/v"  scale="1" color="#f3e4c5" timeScale="1ms"/>
+            <Line id="initialseg_v1nA" quantity="GranulePop1/0/Granule_0_3/1/v"  scale="1" color="#283ab0" timeScale="1ms"/>
+            <Line id="priden_v1nA"     quantity="GranulePop1/0/Granule_0_3/2/v" scale="1" color="#c6d577" timeScale="1ms"/>
+        </Display>
+        
+        <OutputFile id="Granule_1F" fileName="Granule_1nA.dat">
+            <OutputColumn id="soma_v1nA"       quantity="GranulePop1/0/Granule_0_3/0/v"/>
+            <OutputColumn id="initialseg_v1nA" quantity="GranulePop1/0/Granule_0_3/1/v"/>
+            <OutputColumn id="priden_v1nA"     quantity="GranulePop1/0/Granule_0_3/2/v"/>
+        </OutputFile>
+        
+        
+        <!-- 0.2 nA -->
+        
+        <Display id="Granule_2D" title="Granule Cell (2 nA)" timeScale="1ms" xmin="-18.0" xmax="198.0" ymin="-90" ymax="50">
+            <Line id="soma_v2nA"       quantity="GranulePop2/0/Granule_0_3/0/v"  scale="1" color="#f3e4c5" timeScale="1ms"/>
+            <Line id="initialseg_v2nA" quantity="GranulePop2/0/Granule_0_3/1/v"  scale="1" color="#283ab0" timeScale="1ms"/>
+            <Line id="priden_v2nA"     quantity="GranulePop2/0/Granule_0_3/2/v" scale="1" color="#c6d577" timeScale="1ms"/>
+        </Display>
+        
+        <OutputFile id="Granule_2F" fileName="Granule_2nA.dat">
+            <OutputColumn id="soma_v2nA"       quantity="GranulePop2/0/Granule_0_3/0/v"/>
+            <OutputColumn id="initialseg_v2nA" quantity="GranulePop2/0/Granule_0_3/1/v"/>
+            <OutputColumn id="priden_v2nA"     quantity="GranulePop2/0/Granule_0_3/2/v"/>
+        </OutputFile>
+        
+        
+        <!-- 0.5 nA -->
+        
+        <Display id="Granule_3D" title="Granule Cell (5 nA)" timeScale="1ms" xmin="-18.0" xmax="198.0" ymin="-90" ymax="50">
+            <Line id="soma_v5nA"       quantity="GranulePop3/0/Granule_0_3/0/v"  scale="1" color="#f3e4c5" timeScale="1ms"/>
+            <Line id="initialseg_v5nA" quantity="GranulePop3/0/Granule_0_3/1/v"  scale="1" color="#283ab0" timeScale="1ms"/>
+            <Line id="priden_v5nA"     quantity="GranulePop3/0/Granule_0_3/2/v" scale="1" color="#c6d577" timeScale="1ms"/>
+        </Display>
+        
+        <OutputFile id="Granule_3F" fileName="Granule_5nA.dat">
+            <OutputColumn id="soma_v5nA"       quantity="GranulePop3/0/Granule_0_3/0/v"/>
+            <OutputColumn id="initialseg_v5nA" quantity="GranulePop3/0/Granule_0_3/1/v"/>
+            <OutputColumn id="priden_v5nA"     quantity="GranulePop3/0/Granule_0_3/2/v"/>
+        </OutputFile>
+        
+    </Simulation>
+    
+</Lems>

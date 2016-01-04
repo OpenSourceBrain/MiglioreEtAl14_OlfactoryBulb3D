@@ -1,0 +1,321 @@
+// Cell: Granule_0_3
+/*
+{
+  "id" : "Granule_0_3",
+  "sections" : [ {
+    "name" : "soma",
+    "id" : "soma",
+    "points3d" : [ "0.00000, 0.00000, 0.00000, 8.00000", "0.00000, 8.00000, 0.00000, 8.00000" ]
+  }, {
+    "name" : "priden",
+    "id" : "priden",
+    "points3d" : [ "0.00000, 0.00000, 0.00000, 0.500000", "0.00000, 283.113, 0.00000, 0.500000" ],
+    "parent" : "soma",
+    "fractionAlong" : 1.0,
+    "numberInternalDivisions" : 19
+  }, {
+    "name" : "priden2_0",
+    "id" : "priden2_0",
+    "points3d" : [ "0.00000, 0.00000, 0.00000, 0.400000", "0.00000, 250.000, 0.00000, 0.400000" ],
+    "parent" : "soma",
+    "fractionAlong" : 1.0,
+    "numberInternalDivisions" : 26
+  } ],
+  "groups" : [ {
+    "name" : "OneSecGrp_SectionRef_20",
+    "groups" : [ ],
+    "sections" : [ "priden" ]
+  }, {
+    "name" : "OneSecGrp_SectionRef_21",
+    "groups" : [ ],
+    "sections" : [ "priden2_0" ]
+  }, {
+    "name" : "OneSecGrp_SectionRef_19",
+    "groups" : [ ],
+    "sections" : [ "soma" ]
+  }, {
+    "name" : "all",
+    "groups" : [ ],
+    "sections" : [ "soma", "priden", "priden2_0" ]
+  }, {
+    "name" : "soma_group",
+    "groups" : [ ],
+    "sections" : [ "soma" ]
+  }, {
+    "name" : "dendrite_group",
+    "groups" : [ ],
+    "sections" : [ "priden", "priden2_0" ]
+  }, {
+    "name" : "axon_group"
+  } ],
+  "specificCapacitance" : [ {
+    "group" : "all",
+    "value" : "4.0"
+  } ],
+  "initMembPotential" : [ {
+    "group" : "all",
+    "value" : "-65.0"
+  } ],
+  "resistivity" : [ {
+    "group" : "all",
+    "value" : "80.0"
+  } ],
+  "channelDensity" : [ {
+    "id" : "passive_dendritic",
+    "ionChannel" : "pas_nml2",
+    "ion" : "non_specific",
+    "group" : "dendrite_group",
+    "condDens" : "1.3333333E-4",
+    "erev" : "-65.0"
+  }, {
+    "id" : "nax_dendritic",
+    "ionChannel" : "nax__sh15",
+    "ion" : "na",
+    "group" : "dendrite_group",
+    "condDens" : "0.02",
+    "erev" : "60.0"
+  }, {
+    "id" : "kamt_dendritic",
+    "ionChannel" : "kamt",
+    "ion" : "k",
+    "group" : "dendrite_group",
+    "condDens" : "0.007999999",
+    "erev" : "-90.0"
+  }, {
+    "id" : "passive_somatic",
+    "ionChannel" : "pas_nml2",
+    "ion" : "non_specific",
+    "group" : "soma_group",
+    "condDens" : "1.3333333E-4",
+    "erev" : "-65.0"
+  }, {
+    "id" : "nax_somatic",
+    "ionChannel" : "nax__sh15",
+    "ion" : "na",
+    "group" : "soma_group",
+    "condDens" : "0.04",
+    "erev" : "60.0"
+  }, {
+    "id" : "kdrmt_somatic",
+    "ionChannel" : "kdrmt",
+    "ion" : "k",
+    "group" : "soma_group",
+    "condDens" : "0.006",
+    "erev" : "-90.0"
+  }, {
+    "id" : "kamt_somatic",
+    "ionChannel" : "kamt",
+    "ion" : "k",
+    "group" : "soma_group",
+    "condDens" : "0.0039999997",
+    "erev" : "-90.0"
+  } ],
+  "species" : [ ]
+}
+*/
+
+load_file("subiter.hoc")
+
+begintemplate Granule_0_3
+
+public init, topol, basic_shape, subsets, geom, memb
+public x, y, z, position
+
+
+//  Some methods for referencing the cells
+
+public toString, netInfo, set_initial_v, set_initial_ion_properties, synlist
+
+
+// Section: soma, id: soma, parent: $s.parent
+create soma
+public soma
+// Section: priden, id: priden, parent: soma
+create priden
+public priden
+// Section: priden2_0, id: priden2_0, parent: soma
+create priden2_0
+public priden2_0
+
+// Group: {name=OneSecGrp_SectionRef_20, groups=[], sections=[priden]}
+objref OneSecGrp_SectionRef_20
+// Group: {name=OneSecGrp_SectionRef_21, groups=[], sections=[priden2_0]}
+objref OneSecGrp_SectionRef_21
+// Group: {name=OneSecGrp_SectionRef_19, groups=[], sections=[soma]}
+objref OneSecGrp_SectionRef_19
+// Group: {name=all, groups=[], sections=[soma, priden, priden2_0]}
+objref all
+// Group: {name=soma_group, groups=[], sections=[soma]}
+objref soma_group
+// Group: {name=dendrite_group, groups=[], sections=[priden, priden2_0]}
+objref dendrite_group
+// Group: {name=axon_group}
+objref axon_group
+
+objref synlist
+
+proc init() {
+    topol()
+    geom_nseg()
+    subsets()
+    subsets_inhomogeneous()
+    biophys()
+    biophys_inhomogeneous()
+    synlist = new List()
+    x = y = z = 0
+    
+}
+
+proc set_initial_v() {
+    // Taken from the initMembPotential value
+    forsec all v = -65.0  // units: mV
+}
+
+
+proc set_initial_ion_properties() {
+    // From species
+}
+
+
+proc topol() {
+    basic_shape()
+    connect priden(0), soma(1.0)
+    connect priden2_0(0), soma(1.0)
+
+}
+
+
+proc basic_shape() {
+
+    // Section: soma, id: soma, parent: $s.parent (entry count 0/100)
+    soma { pt3dclear() }
+    soma { pt3dadd( 0.00000, 0.00000, 0.00000, 8.00000 ) }
+    soma { pt3dadd( 0.00000, 8.00000, 0.00000, 8.00000 ) }
+    // Section: priden, id: priden, parent: soma (entry count 2/100)
+    priden { pt3dclear() }
+    priden { pt3dadd( 0.00000, 0.00000, 0.00000, 0.500000 ) }
+    priden { pt3dadd( 0.00000, 283.113, 0.00000, 0.500000 ) }
+    // Section: priden2_0, id: priden2_0, parent: soma (entry count 4/100)
+    priden2_0 { pt3dclear() }
+    priden2_0 { pt3dadd( 0.00000, 0.00000, 0.00000, 0.400000 ) }
+    priden2_0 { pt3dadd( 0.00000, 250.000, 0.00000, 0.400000 ) }
+
+}
+
+
+proc subsets() { local i
+
+    // Group: {name=OneSecGrp_SectionRef_20, groups=[], sections=[priden]}
+    OneSecGrp_SectionRef_20 = new SectionList()
+    priden OneSecGrp_SectionRef_20.append()
+
+    // Group: {name=OneSecGrp_SectionRef_21, groups=[], sections=[priden2_0]}
+    OneSecGrp_SectionRef_21 = new SectionList()
+    priden2_0 OneSecGrp_SectionRef_21.append()
+
+    // Group: {name=OneSecGrp_SectionRef_19, groups=[], sections=[soma]}
+    OneSecGrp_SectionRef_19 = new SectionList()
+    soma OneSecGrp_SectionRef_19.append()
+
+    // Group: {name=all, groups=[], sections=[soma, priden, priden2_0]}
+    all = new SectionList()
+    soma all.append()
+    priden all.append()
+    priden2_0 all.append()
+
+    // Group: {name=soma_group, groups=[], sections=[soma]}
+    soma_group = new SectionList()
+    soma soma_group.append()
+
+    // Group: {name=dendrite_group, groups=[], sections=[priden, priden2_0]}
+    dendrite_group = new SectionList()
+    priden dendrite_group.append()
+    priden2_0 dendrite_group.append()
+
+    // Group: {name=axon_group}
+    axon_group = new SectionList()
+
+}
+
+
+proc subsets_inhomogeneous() {
+}
+
+proc biophys() {
+
+    // Specific capacitance
+    forsec all cm = 4.0  // units: uF/cm2
+
+    // Specific axial resistance/resistivity
+    forsec all Ra = 80.0  // units: ohm cm
+
+    // Channel densities
+    forsec dendrite_group {
+        insert pas_nml2
+        gmax_pas_nml2 = 1.3333333E-4  // units: S cm-2
+        e_pas_nml2 = -65.0  // units: mV
+    }
+    forsec dendrite_group {
+        insert nax__sh15
+        gmax_nax__sh15 = 0.02  // units: S cm-2
+        ena = 60.0  // units: mV
+    }
+    forsec dendrite_group {
+        insert kamt
+        gmax_kamt = 0.007999999  // units: S cm-2
+        ek = -90.0  // units: mV
+    }
+    forsec soma_group {
+        insert pas_nml2
+        gmax_pas_nml2 = 1.3333333E-4  // units: S cm-2
+        e_pas_nml2 = -65.0  // units: mV
+    }
+    forsec soma_group {
+        insert nax__sh15
+        gmax_nax__sh15 = 0.04  // units: S cm-2
+        ena = 60.0  // units: mV
+    }
+    forsec soma_group {
+        insert kdrmt
+        gmax_kdrmt = 0.006  // units: S cm-2
+        ek = -90.0  // units: mV
+    }
+    forsec soma_group {
+        insert kamt
+        gmax_kamt = 0.0039999997  // units: S cm-2
+        ek = -90.0  // units: mV
+    }
+
+    // Concentration models for species
+
+}
+
+func H() { // Heaviside function
+    if ($1>=0) return 1
+    if ($1==0) return 0.5
+    return 0
+}
+
+proc biophys_inhomogeneous() {
+}
+
+proc geom_nseg() {
+    // All sections not mentioned here have nseg = 1
+    priden nseg = 19
+    priden2_0 nseg = 26
+}
+
+
+proc position() { local i
+    forsec all {
+        for i = 0, n3d()-1 {
+            pt3dchange(i, $1+x3d(i), $2+y3d(i), $3+z3d(i), diam3d(i))
+        }
+    }
+    x = $1  y = $2  z = $3
+}
+
+
+endtemplate Granule_0_3
+
+
