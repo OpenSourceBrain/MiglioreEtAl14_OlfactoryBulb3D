@@ -3,7 +3,6 @@ import sys
 from neuron import h
 from pyneuroml import pynml
 
-pydevd.settrace('10.211.55.3', port=4200, stdoutToServer=True, stderrToServer=True)
 
 h.chdir('../NEURON')
 sys.path.append('../NEURON')
@@ -12,8 +11,8 @@ def __main__():
     import customsim
     import modeldata
 
-    MCs = 1
-    GCsPerMC = 1
+    MCs = 2
+    GCsPerMC = 10
 
     networkTemplate = FileTemplate("../NeuroML2/Networks/NetworkTemplate.xml")
     includeTemplate = FileTemplate("../NeuroML2/Networks/IncludeTemplate.xml")
