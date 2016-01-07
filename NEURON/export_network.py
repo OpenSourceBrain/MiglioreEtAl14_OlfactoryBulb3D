@@ -41,9 +41,9 @@ def __main__():
         populations += populationTemplate.text\
             .replace("[CellType]", "Mitral")\
             .replace("[GID]", `mcgid`)\
-            .replace("[X]", `model.mitrals[mcgid].x`)\
-            .replace("[Y]", `model.mitrals[mcgid].y`)\
-            .replace("[Z]", `model.mitrals[mcgid].z`)
+            .replace("[X]", `0`)\
+            .replace("[Y]", `0`)\
+            .replace("[Z]", `0`)
 
         # Retain mitral cell NML
         mcNML = pynml\
@@ -67,13 +67,6 @@ def __main__():
             .replace("[X]", `granules.gid2pos[gcgid][0]`)\
             .replace("[Y]", `granules.gid2pos[gcgid][1]`)\
             .replace("[Z]", `granules.gid2pos[gcgid][2]`)
-
-        # Retain granule cell NML
-        gcNML = pynml\
-                .read_neuroml2_file("../NeuroML2/GranuleCells/Exported/Granule_0_%i.cell.nml" % gcgid)\
-                .cells[0]
-
-        gcNMLs.update({gcgid:gcNML})
 
     # Add a projection for each synapse
     for sgid in model.mgrss.keys():
