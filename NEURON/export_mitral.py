@@ -24,7 +24,7 @@ def __main__():
       print mgid
       cells.append(mkmitral(mgid))
 
-    nml_net_file = "../NeuroML2/MitralCells/Exported/PartialBulb_%iMTCells.net.nml" % num_cells_to_export
+    nml_net_file = "../NeuroML2/PartialBulb_%iMTCells.net.nml" % num_cells_to_export
     export_to_neuroml2(None, 
                        nml_net_file,
                        includeBiophysicalProperties=False,
@@ -32,7 +32,7 @@ def __main__():
 
     for i in range(num_cells_to_export):
          
-        nml_cell_file = "../NeuroML2/MitralCells/Exported/Mitral_0_%i.cell.nml" % i
+        nml_cell_file = "../NeuroML2/Mitral_0_%i.cell.nml" % i        
 
         nml_doc = pynml.read_neuroml2_file(nml_cell_file)
 
@@ -75,10 +75,10 @@ def __main__():
 
 def replaceChannelPlaceholders(nml_cell_file):
 
-    with open ("../NeuroML2/MitralCells/MitralCellBiophysicalProperties.xml", "r") as bioPhysFile:
+    with open ("../NeuroML2/MitralCellBiophysicalProperties.xml", "r") as bioPhysFile:
         bioPhysProps=bioPhysFile.read()
 
-    with open ("../NeuroML2/MitralCells/MitralCellChannelIncludes.xml", "r") as channelIncludesFile:
+    with open ("../NeuroML2/MitralCellChannelIncludes.xml", "r") as channelIncludesFile:
         channelIncludes=channelIncludesFile.read()
 
     with open (nml_cell_file, "r") as cellFile:
