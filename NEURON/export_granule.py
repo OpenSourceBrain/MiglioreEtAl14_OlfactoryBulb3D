@@ -1,5 +1,7 @@
 import os
 import sys
+
+sys.path.append("/usr/local/lib/python2.7/site-packages")
 import neuroml
 
 #Nav to neuron folder where compiled MOD files are present
@@ -36,10 +38,29 @@ def __main__():
     cells = {}
     for mcid in xrange(0, numMitralsToUse):
         for gcid in set(mitral2granule[mcid][0:numGranulesPerMitralToExport]):
+
+    exportToNML(cells)
+
+def exportNetworkGCs(netFile):
+
+    with open(netFile, "r") as file:
+        nml = file.read()
+
+    import re
+    rx = re.compile(r"Granule_0_(\d*?).cell")
+    gcids = [int(match) for match in rx.findall(nml)]
+
+    cells = {}
+    for gcid in gcids:
+        if not os.path.isfile("../NeuroML2/GranuleCells/Exported/Granule_0_%i.cell.nml"):
             cells.update({ gcid: { 'cell': mkgranule(gcid), 'index': len(cells)} })
 
-    nml_net_file = "../NeuroML2/GranuleCells/Exported/GCnet%iG.net.nml" % numGranulesTotal
-    export_to_neuroml2(None, 
+    exportToNML(cells)
+
+def exportToNML(cells):
+
+    nml_net_file = "../NeuroML2/GranuleCells/Exported/GCnet%iG.net.nml" % len(cells)
+    export_to_neuroml2(None,
                        nml_net_file,
                        includeBiophysicalProperties=False,
                        separateCellFiles=True)
@@ -170,4 +191,10 @@ def buildStandardSegmentGroups(cell):
         cell.morphology.segment_groups.append(axonGroup)
 
 if __name__ == "__main__":
-    __main__()
+
+    if len(sys.argv) == 2:
+        exportNetworkGCs(sys.argv[1])
+
+    # Otherwise export the num defined in main()
+    else:
+        __main__()

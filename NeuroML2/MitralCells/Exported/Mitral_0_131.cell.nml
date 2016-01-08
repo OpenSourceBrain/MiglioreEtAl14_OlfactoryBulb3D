@@ -1,0 +1,2387 @@
+<neuroml xmlns="http://www.neuroml.org/schema/neuroml2"  xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.neuroml.org/schema/neuroml2 https://raw.github.com/NeuroML/NeuroML2/development/Schemas/NeuroML2/NeuroML_v2beta4.xsd" id="NeuroML2_file_exported_from_NEURON">
+    
+    <include href="../Channels/pas.channel.nml"/>
+    <include href="../Channels/nax__sh0.channel.nml"/>
+    <include href="../Channels/nax__sh10.channel.nml"/>
+    <include href="../Channels/kamt.channel.nml"/>
+    <include href="../Channels/kdrmt.channel.nml"/>
+
+    <cell id="Mitral_0_131">
+        <notes>Cell: Mitral_0_131 exported from NEURON ModelView</notes>
+        <morphology id="morphology">
+            <segment id="0" name="Seg0_soma">
+                <proximal y="1.014540e+03" x="1.962720e+02" z="6.991900e+02" diameter="3.493740e+00"/>
+                <distal y="1.014520e+03" x="1.971160e+02" z="6.980980e+02" diameter="5.900190e+00"/>
+            </segment>
+            <segment id="82214" name="Seg1_soma">
+                <parent fractionAlong="1" segment="0"/>
+                <distal y="1.014490e+03" x="1.979600e+02" z="6.970060e+02" diameter="9.076480e+00"/>
+            </segment>
+            <segment id="82215" name="Seg2_soma">
+                <parent fractionAlong="1" segment="82214"/>
+                <distal y="1.014470e+03" x="1.988040e+02" z="6.959140e+02" diameter="1.120080e+01"/>
+            </segment>
+            <segment id="82216" name="Seg3_soma">
+                <parent fractionAlong="1" segment="82215"/>
+                <distal y="1.014450e+03" x="1.996480e+02" z="6.948220e+02" diameter="1.346370e+01"/>
+            </segment>
+            <segment id="82217" name="Seg4_soma">
+                <parent fractionAlong="1" segment="82216"/>
+                <distal y="1.014420e+03" x="2.004920e+02" z="6.937290e+02" diameter="1.426910e+01"/>
+            </segment>
+            <segment id="82218" name="Seg5_soma">
+                <parent fractionAlong="1" segment="82217"/>
+                <distal y="1.014400e+03" x="2.013360e+02" z="6.926370e+02" diameter="1.506520e+01"/>
+            </segment>
+            <segment id="82219" name="Seg6_soma">
+                <parent fractionAlong="1" segment="82218"/>
+                <distal y="1.014380e+03" x="2.021800e+02" z="6.915450e+02" diameter="1.539680e+01"/>
+            </segment>
+            <segment id="82220" name="Seg7_soma">
+                <parent fractionAlong="1" segment="82219"/>
+                <distal y="1.014350e+03" x="2.030240e+02" z="6.904530e+02" diameter="1.537430e+01"/>
+            </segment>
+            <segment id="82221" name="Seg8_soma">
+                <parent fractionAlong="1" segment="82220"/>
+                <distal y="1.014330e+03" x="2.038680e+02" z="6.893610e+02" diameter="1.535190e+01"/>
+            </segment>
+            <segment id="82222" name="Seg9_soma">
+                <parent fractionAlong="1" segment="82221"/>
+                <distal y="1.014310e+03" x="2.047120e+02" z="6.882690e+02" diameter="1.532920e+01"/>
+            </segment>
+            <segment id="82223" name="Seg10_soma">
+                <parent fractionAlong="1" segment="82222"/>
+                <distal y="1.014280e+03" x="2.055560e+02" z="6.871770e+02" diameter="1.529020e+01"/>
+            </segment>
+            <segment id="82224" name="Seg11_soma">
+                <parent fractionAlong="1" segment="82223"/>
+                <distal y="1.014260e+03" x="2.064000e+02" z="6.860840e+02" diameter="1.524230e+01"/>
+            </segment>
+            <segment id="82225" name="Seg12_soma">
+                <parent fractionAlong="1" segment="82224"/>
+                <distal y="1.014240e+03" x="2.072440e+02" z="6.849920e+02" diameter="1.506480e+01"/>
+            </segment>
+            <segment id="82226" name="Seg13_soma">
+                <parent fractionAlong="1" segment="82225"/>
+                <distal y="1.014210e+03" x="2.080880e+02" z="6.839000e+02" diameter="1.472590e+01"/>
+            </segment>
+            <segment id="82227" name="Seg14_soma">
+                <parent fractionAlong="1" segment="82226"/>
+                <distal y="1.014190e+03" x="2.089310e+02" z="6.828080e+02" diameter="1.430060e+01"/>
+            </segment>
+            <segment id="82228" name="Seg15_soma">
+                <parent fractionAlong="1" segment="82227"/>
+                <distal y="1.014170e+03" x="2.097750e+02" z="6.817160e+02" diameter="1.320350e+01"/>
+            </segment>
+            <segment id="82229" name="Seg16_soma">
+                <parent fractionAlong="1" segment="82228"/>
+                <distal y="1.014140e+03" x="2.106190e+02" z="6.806240e+02" diameter="1.191140e+01"/>
+            </segment>
+            <segment id="82230" name="Seg17_soma">
+                <parent fractionAlong="1" segment="82229"/>
+                <distal y="1.014120e+03" x="2.114630e+02" z="6.795320e+02" diameter="9.907960e+00"/>
+            </segment>
+            <segment id="82231" name="Seg18_soma">
+                <parent fractionAlong="1" segment="82230"/>
+                <distal y="1.014090e+03" x="2.123070e+02" z="6.784400e+02" diameter="6.996240e+00"/>
+            </segment>
+            <segment id="82232" name="Seg19_soma">
+                <parent fractionAlong="1" segment="82231"/>
+                <distal y="1.014070e+03" x="2.131510e+02" z="6.773470e+02" diameter="4.047320e+00"/>
+            </segment>
+            <segment id="82621" name="Seg0_hillock">
+                <parent fractionAlong="1" segment="82212"/>
+                <proximal y="0.000000e+00" x="0.000000e+00" z="0.000000e+00" diameter="1.691670e+01"/>
+                <distal y="-5.000000e+00" x="0.000000e+00" z="0.000000e+00" diameter="4.583330e+00"/>
+            </segment>
+            <segment id="82272" name="Seg0_secden_3">
+                <parent fractionAlong="1" segment="82221"/>
+                <proximal y="1.014310e+03" x="2.047120e+02" z="6.882690e+02" diameter="2.992610e+00"/>
+                <distal y="9.948540e+02" x="2.075510e+02" z="6.919480e+02" diameter="2.873260e+00"/>
+            </segment>
+            <segment id="82273" name="Seg1_secden_3">
+                <parent fractionAlong="1" segment="82272"/>
+                <distal y="9.759440e+02" x="2.130620e+02" z="6.954220e+02" diameter="2.898020e+00"/>
+            </segment>
+            <segment id="82274" name="Seg2_secden_3">
+                <parent fractionAlong="1" segment="82273"/>
+                <distal y="9.579430e+02" x="2.170460e+02" z="7.031730e+02" diameter="2.716810e+00"/>
+            </segment>
+            <segment id="82275" name="Seg3_secden_3">
+                <parent fractionAlong="1" segment="82274"/>
+                <distal y="9.411500e+02" x="2.271500e+02" z="7.071590e+02" diameter="1.939830e+00"/>
+            </segment>
+            <segment id="82276" name="Seg4_secden_3">
+                <parent fractionAlong="1" segment="82275"/>
+                <distal y="9.215410e+02" x="2.297950e+02" z="7.100790e+02" diameter="2.957350e+00"/>
+            </segment>
+            <segment id="82277" name="Seg5_secden_3">
+                <parent fractionAlong="1" segment="82276"/>
+                <distal y="9.022090e+02" x="2.347080e+02" z="7.115390e+02" diameter="2.633370e+00"/>
+            </segment>
+            <segment id="82278" name="Seg6_secden_3">
+                <parent fractionAlong="1" segment="82277"/>
+                <distal y="8.825160e+02" x="2.377190e+02" z="7.132980e+02" diameter="2.778840e+00"/>
+            </segment>
+            <segment id="82279" name="Seg7_secden_3">
+                <parent fractionAlong="1" segment="82278"/>
+                <distal y="8.627340e+02" x="2.364810e+02" z="7.159710e+02" diameter="2.919970e+00"/>
+            </segment>
+            <segment id="82280" name="Seg8_secden_3">
+                <parent fractionAlong="1" segment="82279"/>
+                <distal y="8.440960e+02" x="2.402330e+02" z="7.221810e+02" diameter="2.528150e+00"/>
+            </segment>
+            <segment id="82281" name="Seg9_secden_3">
+                <parent fractionAlong="1" segment="82280"/>
+                <distal y="8.244710e+02" x="2.440120e+02" z="7.229250e+02" diameter="2.539730e+00"/>
+            </segment>
+            <segment id="82282" name="Seg10_secden_3">
+                <parent fractionAlong="1" segment="82281"/>
+                <distal y="8.045320e+02" x="2.453570e+02" z="7.237270e+02" diameter="2.879180e+00"/>
+            </segment>
+            <segment id="82283" name="Seg11_secden_3">
+                <parent fractionAlong="1" segment="82282"/>
+                <distal y="7.848740e+02" x="2.418840e+02" z="7.249520e+02" diameter="2.795940e+00"/>
+            </segment>
+            <segment id="82284" name="Seg12_secden_3">
+                <parent fractionAlong="1" segment="82283"/>
+                <distal y="7.652030e+02" x="2.452900e+02" z="7.237450e+02" diameter="2.489880e+00"/>
+            </segment>
+            <segment id="82285" name="Seg13_secden_3">
+                <parent fractionAlong="1" segment="82284"/>
+                <distal y="7.460360e+02" x="2.499270e+02" z="7.270780e+02" diameter="2.706980e+00"/>
+            </segment>
+            <segment id="82286" name="Seg14_secden_3">
+                <parent fractionAlong="1" segment="82285"/>
+                <distal y="7.275920e+02" x="2.553850e+02" z="7.215960e+02" diameter="2.582890e+00"/>
+            </segment>
+            <segment id="82287" name="Seg15_secden_3">
+                <parent fractionAlong="1" segment="82286"/>
+                <distal y="7.093400e+02" x="2.631070e+02" z="7.189060e+02" diameter="2.261120e+00"/>
+            </segment>
+            <segment id="82288" name="Seg16_secden_3">
+                <parent fractionAlong="1" segment="82287"/>
+                <distal y="6.930670e+02" x="2.703200e+02" z="7.097880e+02" diameter="2.509790e+00"/>
+            </segment>
+            <segment id="82289" name="Seg17_secden_3">
+                <parent fractionAlong="1" segment="82288"/>
+                <distal y="6.742670e+02" x="2.761460e+02" z="7.062340e+02" diameter="2.721100e+00"/>
+            </segment>
+            <segment id="82290" name="Seg18_secden_3">
+                <parent fractionAlong="1" segment="82289"/>
+                <distal y="6.556240e+02" x="2.790390e+02" z="6.995940e+02" diameter="2.520170e+00"/>
+            </segment>
+            <segment id="82291" name="Seg19_secden_3">
+                <parent fractionAlong="1" segment="82290"/>
+                <distal y="6.369080e+02" x="2.800330e+02" z="6.926140e+02" diameter="2.267820e+00"/>
+            </segment>
+            <segment id="82292" name="Seg20_secden_3">
+                <parent fractionAlong="1" segment="82291"/>
+                <distal y="6.187830e+02" x="2.801960e+02" z="6.841620e+02" diameter="2.401950e+00"/>
+            </segment>
+            <segment id="82293" name="Seg21_secden_3">
+                <parent fractionAlong="1" segment="82292"/>
+                <distal y="6.024290e+02" x="2.833330e+02" z="6.730850e+02" diameter="2.366560e+00"/>
+            </segment>
+            <segment id="82294" name="Seg22_secden_3">
+                <parent fractionAlong="1" segment="82293"/>
+                <distal y="5.864490e+02" x="2.891760e+02" z="6.625720e+02" diameter="2.495800e+00"/>
+            </segment>
+            <segment id="82295" name="Seg23_secden_3">
+                <parent fractionAlong="1" segment="82294"/>
+                <distal y="5.696980e+02" x="2.880730e+02" z="6.517010e+02" diameter="1.967930e+00"/>
+            </segment>
+            <segment id="82296" name="Seg24_secden_3">
+                <parent fractionAlong="1" segment="82295"/>
+                <distal y="5.524420e+02" x="2.922430e+02" z="6.424890e+02" diameter="2.129510e+00"/>
+            </segment>
+            <segment id="82297" name="Seg25_secden_3">
+                <parent fractionAlong="1" segment="82296"/>
+                <distal y="5.325650e+02" x="2.944260e+02" z="6.428280e+02" diameter="1.745360e+00"/>
+            </segment>
+            <segment id="82298" name="Seg26_secden_3">
+                <parent fractionAlong="1" segment="82297"/>
+                <distal y="5.165430e+02" x="2.978210e+02" z="6.313490e+02" diameter="2.847610e+00"/>
+            </segment>
+            <segment id="82299" name="Seg27_secden_3">
+                <parent fractionAlong="1" segment="82298"/>
+                <distal y="4.996470e+02" x="2.939180e+02" z="6.213840e+02" diameter="2.291190e+00"/>
+            </segment>
+            <segment id="82300" name="Seg28_secden_3">
+                <parent fractionAlong="1" segment="82299"/>
+                <distal y="4.856000e+02" x="2.947760e+02" z="6.071730e+02" diameter="2.264230e+00"/>
+            </segment>
+            <segment id="82301" name="Seg29_secden_3">
+                <parent fractionAlong="1" segment="82300"/>
+                <distal y="4.716540e+02" x="2.943860e+02" z="5.928430e+02" diameter="2.376270e+00"/>
+            </segment>
+            <segment id="82302" name="Seg30_secden_3">
+                <parent fractionAlong="1" segment="82301"/>
+                <distal y="4.612460e+02" x="2.956500e+02" z="5.758110e+02" diameter="2.054080e+00"/>
+            </segment>
+            <segment id="82303" name="Seg31_secden_3">
+                <parent fractionAlong="1" segment="82302"/>
+                <distal y="4.415800e+02" x="2.959100e+02" z="5.721810e+02" diameter="2.464950e+00"/>
+            </segment>
+            <segment id="82304" name="Seg32_secden_3">
+                <parent fractionAlong="1" segment="82303"/>
+                <distal y="4.261150e+02" x="2.941340e+02" z="5.596250e+02" diameter="2.288030e+00"/>
+            </segment>
+            <segment id="82305" name="Seg33_secden_3">
+                <parent fractionAlong="1" segment="82304"/>
+                <distal y="4.130590e+02" x="2.986550e+02" z="5.451630e+02" diameter="1.759410e+00"/>
+            </segment>
+            <segment id="82306" name="Seg34_secden_3">
+                <parent fractionAlong="1" segment="82305"/>
+                <distal y="4.000290e+02" x="2.968520e+02" z="5.300980e+02" diameter="1.442910e+00"/>
+            </segment>
+            <segment id="82307" name="Seg35_secden_3">
+                <parent fractionAlong="1" segment="82306"/>
+                <distal y="3.864760e+02" x="2.904430e+02" z="5.168610e+02" diameter="1.920810e+00"/>
+            </segment>
+            <segment id="82308" name="Seg36_secden_3">
+                <parent fractionAlong="1" segment="82307"/>
+                <distal y="3.736620e+02" x="2.893010e+02" z="5.015470e+02" diameter="1.970820e+00"/>
+            </segment>
+            <segment id="82309" name="Seg37_secden_3">
+                <parent fractionAlong="1" segment="82308"/>
+                <distal y="3.623720e+02" x="2.902040e+02" z="4.850630e+02" diameter="1.970960e+00"/>
+            </segment>
+            <segment id="82310" name="Seg38_secden_3">
+                <parent fractionAlong="1" segment="82309"/>
+                <distal y="3.467410e+02" x="2.904530e+02" z="4.725890e+02" diameter="1.989110e+00"/>
+            </segment>
+            <segment id="82311" name="Seg39_secden_3">
+                <parent fractionAlong="1" segment="82310"/>
+                <distal y="3.329680e+02" x="2.918380e+02" z="4.581530e+02" diameter="1.846300e+00"/>
+            </segment>
+            <segment id="82312" name="Seg40_secden_3">
+                <parent fractionAlong="1" segment="82311"/>
+                <distal y="3.195960e+02" x="2.956340e+02" z="4.437740e+02" diameter="1.621600e+00"/>
+            </segment>
+            <segment id="82313" name="Seg41_secden_3">
+                <parent fractionAlong="1" segment="82312"/>
+                <distal y="3.125580e+02" x="2.949710e+02" z="4.250650e+02" diameter="1.672370e+00"/>
+            </segment>
+            <segment id="82314" name="Seg42_secden_3">
+                <parent fractionAlong="1" segment="82313"/>
+                <distal y="2.992890e+02" x="2.978030e+02" z="4.103710e+02" diameter="2.128870e+00"/>
+            </segment>
+            <segment id="82315" name="Seg43_secden_3">
+                <parent fractionAlong="1" segment="82314"/>
+                <distal y="2.968370e+02" x="2.981860e+02" z="3.905250e+02" diameter="1.604980e+00"/>
+            </segment>
+            <segment id="82316" name="Seg44_secden_3">
+                <parent fractionAlong="1" segment="82315"/>
+                <distal y="2.788100e+02" x="2.972040e+02" z="3.819180e+02" diameter="1.567760e+00"/>
+            </segment>
+            <segment id="82317" name="Seg45_secden_3">
+                <parent fractionAlong="1" segment="82316"/>
+                <distal y="2.697830e+02" x="2.975800e+02" z="3.640750e+02" diameter="1.505410e+00"/>
+            </segment>
+            <segment id="82318" name="Seg46_secden_3">
+                <parent fractionAlong="1" segment="82317"/>
+                <distal y="2.602770e+02" x="2.980850e+02" z="3.464860e+02" diameter="1.690640e+00"/>
+            </segment>
+            <segment id="82319" name="Seg47_secden_3">
+                <parent fractionAlong="1" segment="82318"/>
+                <distal y="2.505810e+02" x="3.026910e+02" z="3.296110e+02" diameter="1.178150e+00"/>
+            </segment>
+            <segment id="82320" name="Seg48_secden_3">
+                <parent fractionAlong="1" segment="82319"/>
+                <distal y="2.481480e+02" x="3.025710e+02" z="3.097600e+02" diameter="1.928340e+00"/>
+            </segment>
+            <segment id="82321" name="Seg49_secden_3">
+                <parent fractionAlong="1" segment="82320"/>
+                <distal y="2.504420e+02" x="3.031360e+02" z="2.899000e+02" diameter="1.554350e+00"/>
+            </segment>
+            <segment id="82322" name="Seg50_secden_3">
+                <parent fractionAlong="1" segment="82321"/>
+                <distal y="2.446540e+02" x="3.094140e+02" z="2.718140e+02" diameter="1.753740e+00"/>
+            </segment>
+            <segment id="82323" name="Seg51_secden_3">
+                <parent fractionAlong="1" segment="82322"/>
+                <distal y="2.391510e+02" x="3.109360e+02" z="2.526460e+02" diameter="1.405440e+00"/>
+            </segment>
+            <segment id="82324" name="Seg52_secden_3">
+                <parent fractionAlong="1" segment="82323"/>
+                <distal y="2.364500e+02" x="3.103850e+02" z="2.328370e+02" diameter="1.570990e+00"/>
+            </segment>
+            <segment id="82325" name="Seg53_secden_3">
+                <parent fractionAlong="1" segment="82324"/>
+                <distal y="2.286310e+02" x="3.097040e+02" z="2.144420e+02" diameter="1.816830e+00"/>
+            </segment>
+            <segment id="82326" name="Seg54_secden_3">
+                <parent fractionAlong="1" segment="82325"/>
+                <distal y="2.235720e+02" x="3.091000e+02" z="1.951010e+02" diameter="1.834770e+00"/>
+            </segment>
+            <segment id="82327" name="Seg55_secden_3">
+                <parent fractionAlong="1" segment="82326"/>
+                <distal y="2.264080e+02" x="3.103140e+02" z="1.753410e+02" diameter="1.208350e+00"/>
+            </segment>
+            <segment id="82328" name="Seg56_secden_3">
+                <parent fractionAlong="1" segment="82327"/>
+                <distal y="2.193530e+02" x="3.089510e+02" z="1.566760e+02" diameter="1.552430e+00"/>
+            </segment>
+            <segment id="82329" name="Seg57_secden_3">
+                <parent fractionAlong="1" segment="82328"/>
+                <distal y="2.223500e+02" x="3.097560e+02" z="1.369190e+02" diameter="1.020590e+00"/>
+            </segment>
+            <segment id="82330" name="Seg58_secden_3">
+                <parent fractionAlong="1" segment="82329"/>
+                <distal y="2.177870e+02" x="3.081770e+02" z="1.175100e+02" diameter="1.413850e+00"/>
+            </segment>
+            <segment id="82331" name="Seg59_secden_3">
+                <parent fractionAlong="1" segment="82330"/>
+                <distal y="2.199290e+02" x="3.090040e+02" z="9.764240e+01" diameter="1.448470e+00"/>
+            </segment>
+            <segment id="82332" name="Seg60_secden_3">
+                <parent fractionAlong="1" segment="82331"/>
+                <distal y="2.197230e+02" x="3.088590e+02" z="7.764400e+01" diameter="1.026520e+00"/>
+            </segment>
+            <segment id="82333" name="Seg61_secden_3">
+                <parent fractionAlong="1" segment="82332"/>
+                <distal y="2.165680e+02" x="3.062430e+02" z="5.806850e+01" diameter="1.177290e+00"/>
+            </segment>
+            <segment id="82334" name="Seg62_secden_3">
+                <parent fractionAlong="1" segment="82333"/>
+                <distal y="2.137030e+02" x="3.041170e+02" z="3.838930e+01" diameter="1.327290e+00"/>
+            </segment>
+            <segment id="82335" name="Seg63_secden_3">
+                <parent fractionAlong="1" segment="82334"/>
+                <distal y="2.124630e+02" x="3.023350e+02" z="1.850750e+01" diameter="1.378950e+00"/>
+            </segment>
+            <segment id="82336" name="Seg64_secden_3">
+                <parent fractionAlong="1" segment="82335"/>
+                <distal y="2.107740e+02" x="2.986460e+02" z="-1.076660e+00" diameter="1.337220e+00"/>
+            </segment>
+            <segment id="82337" name="Seg65_secden_3">
+                <parent fractionAlong="1" segment="82336"/>
+                <distal y="2.108080e+02" x="2.955670e+02" z="-2.083820e+01" diameter="1.534120e+00"/>
+            </segment>
+            <segment id="82338" name="Seg66_secden_3">
+                <parent fractionAlong="1" segment="82337"/>
+                <distal y="2.111640e+02" x="2.928330e+02" z="-4.064730e+01" diameter="1.340100e+00"/>
+            </segment>
+            <segment id="82339" name="Seg67_secden_3">
+                <parent fractionAlong="1" segment="82338"/>
+                <distal y="2.106910e+02" x="3.004320e+02" z="-5.914140e+01" diameter="1.302190e+00"/>
+            </segment>
+            <segment id="82340" name="Seg68_secden_3">
+                <parent fractionAlong="1" segment="82339"/>
+                <distal y="2.141370e+02" x="2.914470e+02" z="-7.667390e+01" diameter="1.579050e+00"/>
+            </segment>
+            <segment id="82341" name="Seg69_secden_3">
+                <parent fractionAlong="1" segment="82340"/>
+                <distal y="2.201760e+02" x="2.859060e+02" z="-9.491770e+01" diameter="1.675800e+00"/>
+            </segment>
+            <segment id="82342" name="Seg70_secden_3">
+                <parent fractionAlong="1" segment="82341"/>
+                <distal y="2.229480e+02" x="2.822620e+02" z="-1.143860e+02" diameter="1.513280e+00"/>
+            </segment>
+            <segment id="82343" name="Seg71_secden_3">
+                <parent fractionAlong="1" segment="82342"/>
+                <distal y="2.261260e+02" x="2.806010e+02" z="-1.340620e+02" diameter="1.040000e+00"/>
+            </segment>
+            <segment id="82344" name="Seg72_secden_3">
+                <parent fractionAlong="1" segment="82343"/>
+                <distal y="2.265330e+02" x="2.803020e+02" z="-1.540560e+02" diameter="1.288470e+00"/>
+            </segment>
+            <segment id="82345" name="Seg73_secden_3">
+                <parent fractionAlong="1" segment="82344"/>
+                <distal y="2.278730e+02" x="2.795440e+02" z="-1.739970e+02" diameter="1.382620e+00"/>
+            </segment>
+            <segment id="82346" name="Seg74_secden_3">
+                <parent fractionAlong="1" segment="82345"/>
+                <distal y="2.324720e+02" x="2.738150e+02" z="-1.925990e+02" diameter="1.008200e+00"/>
+            </segment>
+            <segment id="82260" name="Seg0_secden_2">
+                <parent fractionAlong="1" segment="82221"/>
+                <proximal y="1.014310e+03" x="2.047120e+02" z="6.882690e+02" diameter="2.841610e+00"/>
+                <distal y="1.011340e+03" x="1.865350e+02" z="6.960670e+02" diameter="2.925070e+00"/>
+            </segment>
+            <segment id="82261" name="Seg1_secden_2">
+                <parent fractionAlong="1" segment="82260"/>
+                <distal y="1.008040e+03" x="1.746300e+02" z="7.117950e+02" diameter="2.983830e+00"/>
+            </segment>
+            <segment id="82262" name="Seg2_secden_2">
+                <parent fractionAlong="1" segment="82261"/>
+                <distal y="1.002550e+03" x="1.585370e+02" z="7.223250e+02" diameter="2.675980e+00"/>
+            </segment>
+            <segment id="82263" name="Seg3_secden_2">
+                <parent fractionAlong="1" segment="82262"/>
+                <distal y="9.966010e+02" x="1.434450e+02" z="7.340230e+02" diameter="2.229090e+00"/>
+            </segment>
+            <segment id="82264" name="Seg4_secden_2">
+                <parent fractionAlong="1" segment="82263"/>
+                <distal y="9.841840e+02" x="1.311640e+02" z="7.437680e+02" diameter="2.910870e+00"/>
+            </segment>
+            <segment id="82265" name="Seg5_secden_2">
+                <parent fractionAlong="1" segment="82264"/>
+                <distal y="9.810100e+02" x="1.152100e+02" z="7.554050e+02" diameter="2.709150e+00"/>
+            </segment>
+            <segment id="82266" name="Seg6_secden_2">
+                <parent fractionAlong="1" segment="82265"/>
+                <distal y="9.768700e+02" x="9.781440e+01" z="7.643630e+02" diameter="2.809620e+00"/>
+            </segment>
+            <segment id="82267" name="Seg7_secden_2">
+                <parent fractionAlong="1" segment="82266"/>
+                <distal y="9.785490e+02" x="8.048980e+01" z="7.742130e+02" diameter="2.748300e+00"/>
+            </segment>
+            <segment id="82268" name="Seg8_secden_2">
+                <parent fractionAlong="1" segment="82267"/>
+                <distal y="9.698120e+02" x="6.465210e+01" z="7.827470e+02" diameter="2.935710e+00"/>
+            </segment>
+            <segment id="82269" name="Seg9_secden_2">
+                <parent fractionAlong="1" segment="82268"/>
+                <distal y="9.682960e+02" x="4.619230e+01" z="7.902930e+02" diameter="2.783170e+00"/>
+            </segment>
+            <segment id="82270" name="Seg10_secden_2">
+                <parent fractionAlong="1" segment="82269"/>
+                <distal y="9.632060e+02" x="2.762870e+01" z="7.957230e+02" diameter="2.818080e+00"/>
+            </segment>
+            <segment id="82271" name="Seg11_secden_2">
+                <parent fractionAlong="1" segment="82270"/>
+                <distal y="9.567250e+02" x="9.148130e+00" z="7.997820e+02" diameter="2.171360e+00"/>
+            </segment>
+            <segment id="82259" name="Seg0_secden_1">
+                <parent fractionAlong="1" segment="82221"/>
+                <proximal y="1.014310e+03" x="2.047120e+02" z="6.882690e+02" diameter="2.931630e+00"/>
+                <distal y="1.026620e+03" x="1.991490e+02" z="7.030150e+02" diameter="2.919210e+00"/>
+            </segment>
+            <segment id="82255" name="Seg0_secden_0">
+                <parent fractionAlong="1" segment="82221"/>
+                <proximal y="1.014310e+03" x="2.047120e+02" z="6.882690e+02" diameter="2.545130e+00"/>
+                <distal y="1.010830e+03" x="2.224130e+02" z="6.969020e+02" diameter="2.948420e+00"/>
+            </segment>
+            <segment id="82256" name="Seg1_secden_0">
+                <parent fractionAlong="1" segment="82255"/>
+                <distal y="1.012690e+03" x="2.404050e+02" z="7.054350e+02" diameter="2.500040e+00"/>
+            </segment>
+            <segment id="82257" name="Seg2_secden_0">
+                <parent fractionAlong="1" segment="82256"/>
+                <distal y="1.014470e+03" x="2.593330e+02" z="7.116470e+02" diameter="2.789050e+00"/>
+            </segment>
+            <segment id="82258" name="Seg3_secden_0">
+                <parent fractionAlong="1" segment="82257"/>
+                <distal y="1.022110e+03" x="2.764450e+02" z="7.186260e+02" diameter="2.799710e+00"/>
+            </segment>
+            <segment id="82233" name="Seg0_priden">
+                <parent fractionAlong="1" segment="82232"/>
+                <proximal y="1.014310e+03" x="2.047120e+02" z="6.882690e+02" diameter="5.000000e+00"/>
+                <distal y="1.010680e+03" x="2.089640e+02" z="7.073650e+02" diameter="5.000000e+00"/>
+            </segment>
+            <segment id="82234" name="Seg1_priden">
+                <parent fractionAlong="1" segment="82233"/>
+                <distal y="1.005390e+03" x="2.152000e+02" z="7.255080e+02" diameter="5.000000e+00"/>
+            </segment>
+            <segment id="82235" name="Seg2_priden">
+                <parent fractionAlong="1" segment="82234"/>
+                <distal y="1.001880e+03" x="2.212040e+02" z="7.441520e+02" diameter="5.000000e+00"/>
+            </segment>
+            <segment id="82236" name="Seg3_priden">
+                <parent fractionAlong="1" segment="82235"/>
+                <distal y="9.970000e+02" x="2.290460e+02" z="7.617790e+02" diameter="5.000000e+00"/>
+            </segment>
+            <segment id="82237" name="Seg4_priden">
+                <parent fractionAlong="1" segment="82236"/>
+                <distal y="9.935040e+02" x="2.346760e+02" z="7.805410e+02" diameter="5.000000e+00"/>
+            </segment>
+            <segment id="82238" name="Seg5_priden">
+                <parent fractionAlong="1" segment="82237"/>
+                <distal y="9.871680e+02" x="2.402770e+02" z="7.985550e+02" diameter="5.000000e+00"/>
+            </segment>
+            <segment id="82239" name="Seg6_priden">
+                <parent fractionAlong="1" segment="82238"/>
+                <distal y="9.798230e+02" x="2.518450e+02" z="8.130030e+02" diameter="5.000000e+00"/>
+            </segment>
+            <segment id="82240" name="Seg7_priden">
+                <parent fractionAlong="1" segment="82239"/>
+                <distal y="9.768250e+02" x="2.567210e+02" z="8.320590e+02" diameter="5.000000e+00"/>
+            </segment>
+            <segment id="82241" name="Seg8_priden">
+                <parent fractionAlong="1" segment="82240"/>
+                <distal y="9.745390e+02" x="2.606000e+02" z="8.514400e+02" diameter="5.000000e+00"/>
+            </segment>
+            <segment id="82242" name="Seg9_priden">
+                <parent fractionAlong="1" segment="82241"/>
+                <distal y="9.691250e+02" x="2.652180e+02" z="8.700240e+02" diameter="5.000000e+00"/>
+            </segment>
+            <segment id="82243" name="Seg10_priden">
+                <parent fractionAlong="1" segment="82242"/>
+                <distal y="9.672170e+02" x="2.729400e+02" z="8.882640e+02" diameter="5.000000e+00"/>
+            </segment>
+            <segment id="82244" name="Seg11_priden">
+                <parent fractionAlong="1" segment="82243"/>
+                <distal y="9.663530e+02" x="2.754130e+02" z="9.079890e+02" diameter="5.000000e+00"/>
+            </segment>
+            <segment id="82245" name="Seg12_priden">
+                <parent fractionAlong="1" segment="82244"/>
+                <distal y="9.637380e+02" x="2.794310e+02" z="9.273000e+02" diameter="5.000000e+00"/>
+            </segment>
+            <segment id="82246" name="Seg13_priden">
+                <parent fractionAlong="1" segment="82245"/>
+                <distal y="9.621340e+02" x="2.818850e+02" z="9.469810e+02" diameter="5.000000e+00"/>
+            </segment>
+            <segment id="82247" name="Seg14_priden">
+                <parent fractionAlong="1" segment="82246"/>
+                <distal y="9.589880e+02" x="2.884550e+02" z="9.654980e+02" diameter="5.000000e+00"/>
+            </segment>
+            <segment id="82248" name="Seg15_priden">
+                <parent fractionAlong="1" segment="82247"/>
+                <distal y="9.578480e+02" x="2.909030e+02" z="9.852110e+02" diameter="5.000000e+00"/>
+            </segment>
+            <segment id="82249" name="Seg16_priden">
+                <parent fractionAlong="1" segment="82248"/>
+                <distal y="9.541580e+02" x="2.966030e+02" z="1.003920e+03" diameter="5.000000e+00"/>
+            </segment>
+            <segment id="82250" name="Seg17_priden">
+                <parent fractionAlong="1" segment="82249"/>
+                <distal y="9.501400e+02" x="3.024010e+02" z="1.022520e+03" diameter="5.000000e+00"/>
+            </segment>
+            <segment id="82251" name="Seg18_priden">
+                <parent fractionAlong="1" segment="82250"/>
+                <distal y="9.471040e+02" x="3.078490e+02" z="1.041420e+03" diameter="5.000000e+00"/>
+            </segment>
+            <segment id="82252" name="Seg19_priden">
+                <parent fractionAlong="1" segment="82251"/>
+                <distal y="9.416470e+02" x="3.176980e+02" z="1.057830e+03" diameter="5.000000e+00"/>
+            </segment>
+            <segment id="82253" name="Seg20_priden">
+                <parent fractionAlong="1" segment="82252"/>
+                <distal y="9.392040e+02" x="3.214740e+02" z="1.077210e+03" diameter="5.000000e+00"/>
+            </segment>
+            <segment id="82254" name="Seg21_priden">
+                <parent fractionAlong="1" segment="82253"/>
+                <distal y="9.356870e+02" x="3.259330e+02" z="1.096280e+03" diameter="5.000000e+00"/>
+            </segment>
+            <segment id="82622" name="Seg0_initialseg">
+                <parent fractionAlong="1" segment="82621"/>
+                <proximal y="0.000000e+00" x="0.000000e+00" z="0.000000e+00" diameter="1.500000e+00"/>
+                <distal y="-3.000000e+01" x="0.000000e+00" z="0.000000e+00" diameter="1.500000e+00"/>
+            </segment>
+            <segment id="82566" name="Seg0_secden_11">
+                <parent fractionAlong="1" segment="82271"/>
+                <proximal y="9.567250e+02" x="9.148130e+00" z="7.997820e+02" diameter="2.171360e+00"/>
+                <distal y="9.558060e+02" x="-1.079060e+01" z="8.010470e+02" diameter="2.639540e+00"/>
+            </segment>
+            <segment id="82567" name="Seg1_secden_11">
+                <parent fractionAlong="1" segment="82566"/>
+                <distal y="9.476990e+02" x="-2.907250e+01" z="8.012780e+02" diameter="2.835660e+00"/>
+            </segment>
+            <segment id="82568" name="Seg2_secden_11">
+                <parent fractionAlong="1" segment="82567"/>
+                <distal y="9.475230e+02" x="-4.886900e+01" z="7.984380e+02" diameter="2.327100e+00"/>
+            </segment>
+            <segment id="82569" name="Seg3_secden_11">
+                <parent fractionAlong="1" segment="82568"/>
+                <distal y="9.423580e+02" x="-6.784100e+01" z="8.020970e+02" diameter="2.765170e+00"/>
+            </segment>
+            <segment id="82570" name="Seg4_secden_11">
+                <parent fractionAlong="1" segment="82569"/>
+                <distal y="9.375810e+02" x="-8.719320e+01" z="8.004620e+02" diameter="2.275670e+00"/>
+            </segment>
+            <segment id="82571" name="Seg5_secden_11">
+                <parent fractionAlong="1" segment="82570"/>
+                <distal y="9.376560e+02" x="-1.068370e+02" z="7.967060e+02" diameter="2.412760e+00"/>
+            </segment>
+            <segment id="82572" name="Seg6_secden_11">
+                <parent fractionAlong="1" segment="82571"/>
+                <distal y="9.389850e+02" x="-1.265300e+02" z="7.934760e+02" diameter="2.187460e+00"/>
+            </segment>
+            <segment id="82573" name="Seg7_secden_11">
+                <parent fractionAlong="1" segment="82572"/>
+                <distal y="9.387260e+02" x="-1.464330e+02" z="7.915260e+02" diameter="1.690410e+00"/>
+            </segment>
+            <segment id="82574" name="Seg8_secden_11">
+                <parent fractionAlong="1" segment="82573"/>
+                <distal y="9.420530e+02" x="-1.657710e+02" z="7.876560e+02" diameter="2.949660e+00"/>
+            </segment>
+            <segment id="82575" name="Seg9_secden_11">
+                <parent fractionAlong="1" segment="82574"/>
+                <distal y="9.412670e+02" x="-1.847220e+02" z="7.813130e+02" diameter="2.468910e+00"/>
+            </segment>
+            <segment id="82576" name="Seg10_secden_11">
+                <parent fractionAlong="1" segment="82575"/>
+                <distal y="9.404960e+02" x="-2.046970e+02" z="7.806630e+02" diameter="2.457750e+00"/>
+            </segment>
+            <segment id="82577" name="Seg11_secden_11">
+                <parent fractionAlong="1" segment="82576"/>
+                <distal y="9.428000e+02" x="-2.228170e+02" z="7.725170e+02" diameter="2.027660e+00"/>
+            </segment>
+            <segment id="82578" name="Seg12_secden_11">
+                <parent fractionAlong="1" segment="82577"/>
+                <distal y="9.485010e+02" x="-2.410520e+02" z="7.666030e+02" diameter="2.436060e+00"/>
+            </segment>
+            <segment id="82579" name="Seg13_secden_11">
+                <parent fractionAlong="1" segment="82578"/>
+                <distal y="9.505830e+02" x="-2.597970e+02" z="7.599480e+02" diameter="2.446650e+00"/>
+            </segment>
+            <segment id="82580" name="Seg14_secden_11">
+                <parent fractionAlong="1" segment="82579"/>
+                <distal y="9.531100e+02" x="-2.776640e+02" z="7.513230e+02" diameter="2.069290e+00"/>
+            </segment>
+            <segment id="82581" name="Seg15_secden_11">
+                <parent fractionAlong="1" segment="82580"/>
+                <distal y="9.605550e+02" x="-2.941880e+02" z="7.428660e+02" diameter="2.123810e+00"/>
+            </segment>
+            <segment id="82582" name="Seg16_secden_11">
+                <parent fractionAlong="1" segment="82581"/>
+                <distal y="9.629700e+02" x="-3.122490e+02" z="7.346220e+02" diameter="2.135740e+00"/>
+            </segment>
+            <segment id="82539" name="Seg0_secden_10">
+                <parent fractionAlong="1" segment="82271"/>
+                <proximal y="9.567250e+02" x="9.148130e+00" z="7.997820e+02" diameter="2.171360e+00"/>
+                <distal y="9.526990e+02" x="-1.013350e+01" z="8.032480e+02" diameter="2.946190e+00"/>
+            </segment>
+            <segment id="82540" name="Seg1_secden_10">
+                <parent fractionAlong="1" segment="82539"/>
+                <distal y="9.439350e+02" x="-2.792800e+01" z="8.058040e+02" diameter="2.944390e+00"/>
+            </segment>
+            <segment id="82541" name="Seg2_secden_10">
+                <parent fractionAlong="1" segment="82540"/>
+                <distal y="9.361880e+02" x="-4.630850e+01" z="8.072720e+02" diameter="2.651500e+00"/>
+            </segment>
+            <segment id="82542" name="Seg3_secden_10">
+                <parent fractionAlong="1" segment="82541"/>
+                <distal y="9.346490e+02" x="-6.505740e+01" z="8.004810e+02" diameter="2.642650e+00"/>
+            </segment>
+            <segment id="82543" name="Seg4_secden_10">
+                <parent fractionAlong="1" segment="82542"/>
+                <distal y="9.295200e+02" x="-8.348840e+01" z="7.946510e+02" diameter="2.821340e+00"/>
+            </segment>
+            <segment id="82544" name="Seg5_secden_10">
+                <parent fractionAlong="1" segment="82543"/>
+                <distal y="9.221390e+02" x="-1.018470e+02" z="7.917390e+02" diameter="2.495120e+00"/>
+            </segment>
+            <segment id="82545" name="Seg6_secden_10">
+                <parent fractionAlong="1" segment="82544"/>
+                <distal y="9.198090e+02" x="-1.213850e+02" z="7.881550e+02" diameter="2.639470e+00"/>
+            </segment>
+            <segment id="82546" name="Seg7_secden_10">
+                <parent fractionAlong="1" segment="82545"/>
+                <distal y="9.137580e+02" x="-1.398400e+02" z="7.833800e+02" diameter="2.573120e+00"/>
+            </segment>
+            <segment id="82547" name="Seg8_secden_10">
+                <parent fractionAlong="1" segment="82546"/>
+                <distal y="9.073190e+02" x="-1.585260e+02" z="7.803230e+02" diameter="2.841600e+00"/>
+            </segment>
+            <segment id="82548" name="Seg9_secden_10">
+                <parent fractionAlong="1" segment="82547"/>
+                <distal y="9.023510e+02" x="-1.774110e+02" z="7.760000e+02" diameter="2.253370e+00"/>
+            </segment>
+            <segment id="82549" name="Seg10_secden_10">
+                <parent fractionAlong="1" segment="82548"/>
+                <distal y="8.975950e+02" x="-1.964260e+02" z="7.720210e+02" diameter="2.388800e+00"/>
+            </segment>
+            <segment id="82550" name="Seg11_secden_10">
+                <parent fractionAlong="1" segment="82549"/>
+                <distal y="8.958560e+02" x="-2.162400e+02" z="7.699360e+02" diameter="2.208320e+00"/>
+            </segment>
+            <segment id="82551" name="Seg12_secden_10">
+                <parent fractionAlong="1" segment="82550"/>
+                <distal y="8.946750e+02" x="-2.337620e+02" z="7.603660e+02" diameter="2.297420e+00"/>
+            </segment>
+            <segment id="82552" name="Seg13_secden_10">
+                <parent fractionAlong="1" segment="82551"/>
+                <distal y="8.865460e+02" x="-2.519460e+02" z="7.585530e+02" diameter="2.144920e+00"/>
+            </segment>
+            <segment id="82553" name="Seg14_secden_10">
+                <parent fractionAlong="1" segment="82552"/>
+                <distal y="8.855590e+02" x="-2.683590e+02" z="7.471680e+02" diameter="2.658460e+00"/>
+            </segment>
+            <segment id="82554" name="Seg15_secden_10">
+                <parent fractionAlong="1" segment="82553"/>
+                <distal y="8.854620e+02" x="-2.865140e+02" z="7.387780e+02" diameter="1.824530e+00"/>
+            </segment>
+            <segment id="82555" name="Seg16_secden_10">
+                <parent fractionAlong="1" segment="82554"/>
+                <distal y="8.810180e+02" x="-3.029820e+02" z="7.283350e+02" diameter="1.593780e+00"/>
+            </segment>
+            <segment id="82556" name="Seg17_secden_10">
+                <parent fractionAlong="1" segment="82555"/>
+                <distal y="8.804890e+02" x="-3.207100e+02" z="7.190930e+02" diameter="2.044530e+00"/>
+            </segment>
+            <segment id="82557" name="Seg18_secden_10">
+                <parent fractionAlong="1" segment="82556"/>
+                <distal y="8.760230e+02" x="-3.373230e+02" z="7.088900e+02" diameter="2.295760e+00"/>
+            </segment>
+            <segment id="82558" name="Seg19_secden_10">
+                <parent fractionAlong="1" segment="82557"/>
+                <distal y="8.722710e+02" x="-3.541040e+02" z="6.986780e+02" diameter="2.001200e+00"/>
+            </segment>
+            <segment id="82559" name="Seg20_secden_10">
+                <parent fractionAlong="1" segment="82558"/>
+                <distal y="8.749990e+02" x="-3.699160e+02" z="6.867380e+02" diameter="1.854940e+00"/>
+            </segment>
+            <segment id="82560" name="Seg21_secden_10">
+                <parent fractionAlong="1" segment="82559"/>
+                <distal y="8.783570e+02" x="-3.853810e+02" z="6.745080e+02" diameter="2.130450e+00"/>
+            </segment>
+            <segment id="82561" name="Seg22_secden_10">
+                <parent fractionAlong="1" segment="82560"/>
+                <distal y="8.783010e+02" x="-4.016190e+02" z="6.628330e+02" diameter="1.726660e+00"/>
+            </segment>
+            <segment id="82562" name="Seg23_secden_10">
+                <parent fractionAlong="1" segment="82561"/>
+                <distal y="8.740730e+02" x="-4.186160e+02" z="6.531770e+02" diameter="2.439180e+00"/>
+            </segment>
+            <segment id="82563" name="Seg24_secden_10">
+                <parent fractionAlong="1" segment="82562"/>
+                <distal y="8.711990e+02" x="-4.297460e+02" z="6.368110e+02" diameter="2.349490e+00"/>
+            </segment>
+            <segment id="82564" name="Seg25_secden_10">
+                <parent fractionAlong="1" segment="82563"/>
+                <distal y="8.708060e+02" x="-4.482550e+02" z="6.292430e+02" diameter="2.127590e+00"/>
+            </segment>
+            <segment id="82565" name="Seg26_secden_10">
+                <parent fractionAlong="1" segment="82564"/>
+                <distal y="8.671130e+02" x="-4.667940e+02" z="6.227120e+02" diameter="1.285660e+00"/>
+            </segment>
+            <segment id="82351" name="Seg0_secden_5">
+                <parent fractionAlong="1" segment="82259"/>
+                <proximal y="1.026620e+03" x="1.991490e+02" z="7.030150e+02" diameter="2.919210e+00"/>
+                <distal y="1.042550e+03" x="2.015050e+02" z="7.148730e+02" diameter="2.503390e+00"/>
+            </segment>
+            <segment id="82352" name="Seg1_secden_5">
+                <parent fractionAlong="1" segment="82351"/>
+                <distal y="1.058040e+03" x="2.078310e+02" z="7.258280e+02" diameter="2.623610e+00"/>
+            </segment>
+            <segment id="82353" name="Seg2_secden_5">
+                <parent fractionAlong="1" segment="82352"/>
+                <distal y="1.071370e+03" x="2.059640e+02" z="7.406200e+02" diameter="2.970430e+00"/>
+            </segment>
+            <segment id="82354" name="Seg3_secden_5">
+                <parent fractionAlong="1" segment="82353"/>
+                <distal y="1.086900e+03" x="2.060650e+02" z="7.532270e+02" diameter="2.868800e+00"/>
+            </segment>
+            <segment id="82355" name="Seg4_secden_5">
+                <parent fractionAlong="1" segment="82354"/>
+                <distal y="1.102000e+03" x="2.095810e+02" z="7.658610e+02" diameter="2.990860e+00"/>
+            </segment>
+            <segment id="82356" name="Seg5_secden_5">
+                <parent fractionAlong="1" segment="82355"/>
+                <distal y="1.119600e+03" x="2.074420e+02" z="7.751190e+02" diameter="2.963730e+00"/>
+            </segment>
+            <segment id="82357" name="Seg6_secden_5">
+                <parent fractionAlong="1" segment="82356"/>
+                <distal y="1.132840e+03" x="2.080870e+02" z="7.900890e+02" diameter="2.651110e+00"/>
+            </segment>
+            <segment id="82358" name="Seg7_secden_5">
+                <parent fractionAlong="1" segment="82357"/>
+                <distal y="1.149850e+03" x="2.107660e+02" z="8.002680e+02" diameter="2.454560e+00"/>
+            </segment>
+            <segment id="82359" name="Seg8_secden_5">
+                <parent fractionAlong="1" segment="82358"/>
+                <distal y="1.167650e+03" x="2.120240e+02" z="8.092940e+02" diameter="2.350600e+00"/>
+            </segment>
+            <segment id="82360" name="Seg9_secden_5">
+                <parent fractionAlong="1" segment="82359"/>
+                <distal y="1.186000e+03" x="2.082390e+02" z="8.162990e+02" diameter="2.753710e+00"/>
+            </segment>
+            <segment id="82361" name="Seg10_secden_5">
+                <parent fractionAlong="1" segment="82360"/>
+                <distal y="1.205010e+03" x="2.087330e+02" z="8.224980e+02" diameter="2.871540e+00"/>
+            </segment>
+            <segment id="82362" name="Seg11_secden_5">
+                <parent fractionAlong="1" segment="82361"/>
+                <distal y="1.219120e+03" x="1.980370e+02" z="8.318040e+02" diameter="2.653880e+00"/>
+            </segment>
+            <segment id="82363" name="Seg12_secden_5">
+                <parent fractionAlong="1" segment="82362"/>
+                <distal y="1.237690e+03" x="1.987800e+02" z="8.391860e+02" diameter="2.210050e+00"/>
+            </segment>
+            <segment id="82364" name="Seg13_secden_5">
+                <parent fractionAlong="1" segment="82363"/>
+                <distal y="1.256020e+03" x="1.933240e+02" z="8.450290e+02" diameter="2.243520e+00"/>
+            </segment>
+            <segment id="82365" name="Seg14_secden_5">
+                <parent fractionAlong="1" segment="82364"/>
+                <distal y="1.274890e+03" x="1.889520e+02" z="8.500340e+02" diameter="2.481920e+00"/>
+            </segment>
+            <segment id="82366" name="Seg15_secden_5">
+                <parent fractionAlong="1" segment="82365"/>
+                <distal y="1.294140e+03" x="1.845100e+02" z="8.469420e+02" diameter="2.068420e+00"/>
+            </segment>
+            <segment id="82367" name="Seg16_secden_5">
+                <parent fractionAlong="1" segment="82366"/>
+                <distal y="1.314020e+03" x="1.856590e+02" z="8.487460e+02" diameter="2.480000e+00"/>
+            </segment>
+            <segment id="82368" name="Seg17_secden_5">
+                <parent fractionAlong="1" segment="82367"/>
+                <distal y="1.333810e+03" x="1.829410e+02" z="8.476530e+02" diameter="1.663160e+00"/>
+            </segment>
+            <segment id="82369" name="Seg18_secden_5">
+                <parent fractionAlong="1" segment="82368"/>
+                <distal y="1.353160e+03" x="1.870150e+02" z="8.506300e+02" diameter="2.910640e+00"/>
+            </segment>
+            <segment id="82370" name="Seg19_secden_5">
+                <parent fractionAlong="1" segment="82369"/>
+                <distal y="1.372730e+03" x="1.832510e+02" z="8.489360e+02" diameter="2.354690e+00"/>
+            </segment>
+            <segment id="82371" name="Seg20_secden_5">
+                <parent fractionAlong="1" segment="82370"/>
+                <distal y="1.389880e+03" x="1.887120e+02" z="8.402230e+02" diameter="2.458700e+00"/>
+            </segment>
+            <segment id="82372" name="Seg21_secden_5">
+                <parent fractionAlong="1" segment="82371"/>
+                <distal y="1.409520e+03" x="1.916600e+02" z="8.378330e+02" diameter="2.202710e+00"/>
+            </segment>
+            <segment id="82373" name="Seg22_secden_5">
+                <parent fractionAlong="1" segment="82372"/>
+                <distal y="1.429470e+03" x="1.923510e+02" z="8.390350e+02" diameter="2.231500e+00"/>
+            </segment>
+            <segment id="82374" name="Seg23_secden_5">
+                <parent fractionAlong="1" segment="82373"/>
+                <distal y="1.449150e+03" x="1.932530e+02" z="8.355430e+02" diameter="2.594090e+00"/>
+            </segment>
+            <segment id="82375" name="Seg24_secden_5">
+                <parent fractionAlong="1" segment="82374"/>
+                <distal y="1.468100e+03" x="1.872280e+02" z="8.376690e+02" diameter="2.326940e+00"/>
+            </segment>
+            <segment id="82376" name="Seg25_secden_5">
+                <parent fractionAlong="1" segment="82375"/>
+                <distal y="1.486160e+03" x="1.943800e+02" z="8.329100e+02" diameter="2.113190e+00"/>
+            </segment>
+            <segment id="82377" name="Seg26_secden_5">
+                <parent fractionAlong="1" segment="82376"/>
+                <distal y="1.503950e+03" x="1.875340e+02" z="8.389670e+02" diameter="2.267120e+00"/>
+            </segment>
+            <segment id="82378" name="Seg27_secden_5">
+                <parent fractionAlong="1" segment="82377"/>
+                <distal y="1.523240e+03" x="1.840170e+02" z="8.350360e+02" diameter="1.994190e+00"/>
+            </segment>
+            <segment id="82379" name="Seg28_secden_5">
+                <parent fractionAlong="1" segment="82378"/>
+                <distal y="1.543220e+03" x="1.839480e+02" z="8.360000e+02" diameter="2.521040e+00"/>
+            </segment>
+            <segment id="82380" name="Seg29_secden_5">
+                <parent fractionAlong="1" segment="82379"/>
+                <distal y="1.562230e+03" x="1.785300e+02" z="8.329800e+02" diameter="2.036820e+00"/>
+            </segment>
+            <segment id="82381" name="Seg30_secden_5">
+                <parent fractionAlong="1" segment="82380"/>
+                <distal y="1.582060e+03" x="1.759380e+02" z="8.325040e+02" diameter="2.045660e+00"/>
+            </segment>
+            <segment id="82382" name="Seg31_secden_5">
+                <parent fractionAlong="1" segment="82381"/>
+                <distal y="1.597060e+03" x="1.883510e+02" z="8.279440e+02" diameter="2.112260e+00"/>
+            </segment>
+            <segment id="82383" name="Seg32_secden_5">
+                <parent fractionAlong="1" segment="82382"/>
+                <distal y="1.616210e+03" x="1.859090e+02" z="8.227080e+02" diameter="1.710190e+00"/>
+            </segment>
+            <segment id="82384" name="Seg33_secden_5">
+                <parent fractionAlong="1" segment="82383"/>
+                <distal y="1.634470e+03" x="1.821230e+02" z="8.154950e+02" diameter="2.061470e+00"/>
+            </segment>
+            <segment id="82385" name="Seg34_secden_5">
+                <parent fractionAlong="1" segment="82384"/>
+                <distal y="1.653840e+03" x="1.853300e+02" z="8.116710e+02" diameter="1.944320e+00"/>
+            </segment>
+            <segment id="82386" name="Seg35_secden_5">
+                <parent fractionAlong="1" segment="82385"/>
+                <distal y="1.669580e+03" x="1.970520e+02" z="8.078180e+02" diameter="1.863260e+00"/>
+            </segment>
+            <segment id="82387" name="Seg36_secden_5">
+                <parent fractionAlong="1" segment="82386"/>
+                <distal y="1.686320e+03" x="1.938310e+02" z="7.973580e+02" diameter="1.840620e+00"/>
+            </segment>
+            <segment id="82388" name="Seg37_secden_5">
+                <parent fractionAlong="1" segment="82387"/>
+                <distal y="1.705630e+03" x="1.956960e+02" z="7.925130e+02" diameter="1.489430e+00"/>
+            </segment>
+            <segment id="82389" name="Seg38_secden_5">
+                <parent fractionAlong="1" segment="82388"/>
+                <distal y="1.722660e+03" x="1.927880e+02" z="7.824230e+02" diameter="1.853750e+00"/>
+            </segment>
+            <segment id="82390" name="Seg39_secden_5">
+                <parent fractionAlong="1" segment="82389"/>
+                <distal y="1.740100e+03" x="1.888400e+02" z="7.734630e+02" diameter="1.642510e+00"/>
+            </segment>
+            <segment id="82347" name="Seg0_secden_4">
+                <parent fractionAlong="1" segment="82259"/>
+                <proximal y="1.026620e+03" x="1.991490e+02" z="7.030150e+02" diameter="2.919210e+00"/>
+                <distal y="1.038950e+03" x="1.967940e+02" z="7.185850e+02" diameter="2.825730e+00"/>
+            </segment>
+            <segment id="82348" name="Seg1_secden_4">
+                <parent fractionAlong="1" segment="82347"/>
+                <distal y="1.051370e+03" x="1.869410e+02" z="7.307760e+02" diameter="2.734420e+00"/>
+            </segment>
+            <segment id="82349" name="Seg2_secden_4">
+                <parent fractionAlong="1" segment="82348"/>
+                <distal y="1.065190e+03" x="1.750980e+02" z="7.390670e+02" diameter="2.864110e+00"/>
+            </segment>
+            <segment id="82350" name="Seg3_secden_4">
+                <parent fractionAlong="1" segment="82349"/>
+                <distal y="1.082770e+03" x="1.681610e+02" z="7.456020e+02" diameter="2.867080e+00"/>
+            </segment>
+            <segment id="82409" name="Seg0_secden_7">
+                <parent fractionAlong="1" segment="82258"/>
+                <proximal y="1.022110e+03" x="2.764450e+02" z="7.186260e+02" diameter="2.799710e+00"/>
+                <distal y="1.016730e+03" x="2.946880e+02" z="7.248030e+02" diameter="2.472290e+00"/>
+            </segment>
+            <segment id="82410" name="Seg1_secden_7">
+                <parent fractionAlong="1" segment="82409"/>
+                <distal y="1.013270e+03" x="3.143860e+02" z="7.249330e+02" diameter="2.738290e+00"/>
+            </segment>
+            <segment id="82411" name="Seg2_secden_7">
+                <parent fractionAlong="1" segment="82410"/>
+                <distal y="1.012190e+03" x="3.343130e+02" z="7.262580e+02" diameter="2.519660e+00"/>
+            </segment>
+            <segment id="82412" name="Seg3_secden_7">
+                <parent fractionAlong="1" segment="82411"/>
+                <distal y="1.016830e+03" x="3.527670e+02" z="7.324120e+02" diameter="2.359140e+00"/>
+            </segment>
+            <segment id="82413" name="Seg4_secden_7">
+                <parent fractionAlong="1" segment="82412"/>
+                <distal y="1.014820e+03" x="3.723070e+02" z="7.361720e+02" diameter="2.786040e+00"/>
+            </segment>
+            <segment id="82414" name="Seg5_secden_7">
+                <parent fractionAlong="1" segment="82413"/>
+                <distal y="1.014020e+03" x="3.912480e+02" z="7.425460e+02" diameter="2.837320e+00"/>
+            </segment>
+            <segment id="82415" name="Seg6_secden_7">
+                <parent fractionAlong="1" segment="82414"/>
+                <distal y="1.012150e+03" x="4.111580e+02" z="7.428530e+02" diameter="2.946310e+00"/>
+            </segment>
+            <segment id="82416" name="Seg7_secden_7">
+                <parent fractionAlong="1" segment="82415"/>
+                <distal y="1.018110e+03" x="4.299500e+02" z="7.394880e+02" diameter="2.638130e+00"/>
+            </segment>
+            <segment id="82417" name="Seg8_secden_7">
+                <parent fractionAlong="1" segment="82416"/>
+                <distal y="1.016360e+03" x="4.497640e+02" z="7.374020e+02" diameter="2.891290e+00"/>
+            </segment>
+            <segment id="82418" name="Seg9_secden_7">
+                <parent fractionAlong="1" segment="82417"/>
+                <distal y="1.010560e+03" x="4.658910e+02" z="7.270950e+02" diameter="2.319810e+00"/>
+            </segment>
+            <segment id="82419" name="Seg10_secden_7">
+                <parent fractionAlong="1" segment="82418"/>
+                <distal y="1.003450e+03" x="4.845130e+02" z="7.254500e+02" diameter="2.459850e+00"/>
+            </segment>
+            <segment id="82420" name="Seg11_secden_7">
+                <parent fractionAlong="1" segment="82419"/>
+                <distal y="1.004930e+03" x="5.043170e+02" z="7.230830e+02" diameter="2.875420e+00"/>
+            </segment>
+            <segment id="82421" name="Seg12_secden_7">
+                <parent fractionAlong="1" segment="82420"/>
+                <distal y="9.968310e+02" x="5.217760e+02" z="7.176400e+02" diameter="2.649150e+00"/>
+            </segment>
+            <segment id="82422" name="Seg13_secden_7">
+                <parent fractionAlong="1" segment="82421"/>
+                <distal y="1.011310e+03" x="5.341480e+02" z="7.115350e+02" diameter="2.582590e+00"/>
+            </segment>
+            <segment id="82423" name="Seg14_secden_7">
+                <parent fractionAlong="1" segment="82422"/>
+                <distal y="1.011210e+03" x="5.527660e+02" z="7.042310e+02" diameter="2.008980e+00"/>
+            </segment>
+            <segment id="82424" name="Seg15_secden_7">
+                <parent fractionAlong="1" segment="82423"/>
+                <distal y="1.013150e+03" x="5.715990e+02" z="6.977810e+02" diameter="2.785200e+00"/>
+            </segment>
+            <segment id="82425" name="Seg16_secden_7">
+                <parent fractionAlong="1" segment="82424"/>
+                <distal y="1.006460e+03" x="5.876160e+02" z="6.878420e+02" diameter="2.961730e+00"/>
+            </segment>
+            <segment id="82426" name="Seg17_secden_7">
+                <parent fractionAlong="1" segment="82425"/>
+                <distal y="1.006210e+03" x="6.018880e+02" z="6.738340e+02" diameter="2.770890e+00"/>
+            </segment>
+            <segment id="82427" name="Seg18_secden_7">
+                <parent fractionAlong="1" segment="82426"/>
+                <distal y="1.005790e+03" x="6.182240e+02" z="6.623020e+02" diameter="2.835340e+00"/>
+            </segment>
+            <segment id="82428" name="Seg19_secden_7">
+                <parent fractionAlong="1" segment="82427"/>
+                <distal y="1.003380e+03" x="6.334430e+02" z="6.495520e+02" diameter="2.008070e+00"/>
+            </segment>
+            <segment id="82429" name="Seg20_secden_7">
+                <parent fractionAlong="1" segment="82428"/>
+                <distal y="1.002940e+03" x="6.478730e+02" z="6.357110e+02" diameter="2.365080e+00"/>
+            </segment>
+            <segment id="82430" name="Seg21_secden_7">
+                <parent fractionAlong="1" segment="82429"/>
+                <distal y="1.002670e+03" x="6.615990e+02" z="6.211670e+02" diameter="2.244920e+00"/>
+            </segment>
+            <segment id="82431" name="Seg22_secden_7">
+                <parent fractionAlong="1" segment="82430"/>
+                <distal y="1.001810e+03" x="6.735640e+02" z="6.051640e+02" diameter="2.362200e+00"/>
+            </segment>
+            <segment id="82432" name="Seg23_secden_7">
+                <parent fractionAlong="1" segment="82431"/>
+                <distal y="9.967240e+02" x="6.886150e+02" z="5.930140e+02" diameter="2.212760e+00"/>
+            </segment>
+            <segment id="82433" name="Seg24_secden_7">
+                <parent fractionAlong="1" segment="82432"/>
+                <distal y="9.926810e+02" x="7.002940e+02" z="5.772900e+02" diameter="2.366650e+00"/>
+            </segment>
+            <segment id="82434" name="Seg25_secden_7">
+                <parent fractionAlong="1" segment="82433"/>
+                <distal y="9.928120e+02" x="7.148360e+02" z="5.635600e+02" diameter="2.539630e+00"/>
+            </segment>
+            <segment id="82435" name="Seg26_secden_7">
+                <parent fractionAlong="1" segment="82434"/>
+                <distal y="9.926300e+02" x="7.158140e+02" z="5.435850e+02" diameter="1.751580e+00"/>
+            </segment>
+            <segment id="82436" name="Seg27_secden_7">
+                <parent fractionAlong="1" segment="82435"/>
+                <distal y="9.939860e+02" x="7.251350e+02" z="5.259420e+02" diameter="2.300910e+00"/>
+            </segment>
+            <segment id="82437" name="Seg28_secden_7">
+                <parent fractionAlong="1" segment="82436"/>
+                <distal y="9.900470e+02" x="7.318800e+02" z="5.075300e+02" diameter="2.552780e+00"/>
+            </segment>
+            <segment id="82438" name="Seg29_secden_7">
+                <parent fractionAlong="1" segment="82437"/>
+                <distal y="9.854450e+02" x="7.431600e+02" z="4.916690e+02" diameter="1.987200e+00"/>
+            </segment>
+            <segment id="82439" name="Seg30_secden_7">
+                <parent fractionAlong="1" segment="82438"/>
+                <distal y="9.841870e+02" x="7.584500e+02" z="4.788370e+02" diameter="2.405020e+00"/>
+            </segment>
+            <segment id="82440" name="Seg31_secden_7">
+                <parent fractionAlong="1" segment="82439"/>
+                <distal y="9.906670e+02" x="7.655350e+02" z="4.612930e+02" diameter="2.425390e+00"/>
+            </segment>
+            <segment id="82441" name="Seg32_secden_7">
+                <parent fractionAlong="1" segment="82440"/>
+                <distal y="9.906460e+02" x="7.660490e+02" z="4.413000e+02" diameter="1.419890e+00"/>
+            </segment>
+            <segment id="82442" name="Seg33_secden_7">
+                <parent fractionAlong="1" segment="82441"/>
+                <distal y="9.894530e+02" x="7.758590e+02" z="4.239120e+02" diameter="1.976190e+00"/>
+            </segment>
+            <segment id="82443" name="Seg34_secden_7">
+                <parent fractionAlong="1" segment="82442"/>
+                <distal y="9.913090e+02" x="7.872920e+02" z="4.076070e+02" diameter="1.766140e+00"/>
+            </segment>
+            <segment id="82444" name="Seg35_secden_7">
+                <parent fractionAlong="1" segment="82443"/>
+                <distal y="9.961610e+02" x="8.000920e+02" z="3.930250e+02" diameter="1.843960e+00"/>
+            </segment>
+            <segment id="82445" name="Seg36_secden_7">
+                <parent fractionAlong="1" segment="82444"/>
+                <distal y="9.958030e+02" x="8.076520e+02" z="3.745130e+02" diameter="2.075240e+00"/>
+            </segment>
+            <segment id="82446" name="Seg37_secden_7">
+                <parent fractionAlong="1" segment="82445"/>
+                <distal y="9.974970e+02" x="8.163680e+02" z="3.565920e+02" diameter="1.711410e+00"/>
+            </segment>
+            <segment id="82447" name="Seg38_secden_7">
+                <parent fractionAlong="1" segment="82446"/>
+                <distal y="9.985030e+02" x="8.318610e+02" z="3.439830e+02" diameter="1.954230e+00"/>
+            </segment>
+            <segment id="82448" name="Seg39_secden_7">
+                <parent fractionAlong="1" segment="82447"/>
+                <distal y="1.003600e+03" x="8.397110e+02" z="3.263100e+02" diameter="1.944700e+00"/>
+            </segment>
+            <segment id="82449" name="Seg40_secden_7">
+                <parent fractionAlong="1" segment="82448"/>
+                <distal y="1.004880e+03" x="8.481930e+02" z="3.082430e+02" diameter="2.002150e+00"/>
+            </segment>
+            <segment id="82450" name="Seg41_secden_7">
+                <parent fractionAlong="1" segment="82449"/>
+                <distal y="1.006920e+03" x="8.554090e+02" z="2.897020e+02" diameter="1.954940e+00"/>
+            </segment>
+            <segment id="82451" name="Seg42_secden_7">
+                <parent fractionAlong="1" segment="82450"/>
+                <distal y="1.008670e+03" x="8.596960e+02" z="2.702450e+02" diameter="1.686610e+00"/>
+            </segment>
+            <segment id="82452" name="Seg43_secden_7">
+                <parent fractionAlong="1" segment="82451"/>
+                <distal y="1.010600e+03" x="8.667050e+02" z="2.516130e+02" diameter="1.271610e+00"/>
+            </segment>
+            <segment id="82453" name="Seg44_secden_7">
+                <parent fractionAlong="1" segment="82452"/>
+                <distal y="1.013890e+03" x="8.728620e+02" z="2.328720e+02" diameter="1.487080e+00"/>
+            </segment>
+            <segment id="82454" name="Seg45_secden_7">
+                <parent fractionAlong="1" segment="82453"/>
+                <distal y="1.015710e+03" x="8.786700e+02" z="2.138200e+02" diameter="2.004000e+00"/>
+            </segment>
+            <segment id="82455" name="Seg46_secden_7">
+                <parent fractionAlong="1" segment="82454"/>
+                <distal y="1.016040e+03" x="8.808710e+02" z="1.939450e+02" diameter="1.803380e+00"/>
+            </segment>
+            <segment id="82456" name="Seg47_secden_7">
+                <parent fractionAlong="1" segment="82455"/>
+                <distal y="1.020470e+03" x="8.875020e+02" z="1.756040e+02" diameter="1.730170e+00"/>
+            </segment>
+            <segment id="82457" name="Seg48_secden_7">
+                <parent fractionAlong="1" segment="82456"/>
+                <distal y="1.024150e+03" x="8.931020e+02" z="1.567590e+02" diameter="1.580900e+00"/>
+            </segment>
+            <segment id="82458" name="Seg49_secden_7">
+                <parent fractionAlong="1" segment="82457"/>
+                <distal y="1.027010e+03" x="8.956200e+02" z="1.371270e+02" diameter="1.631210e+00"/>
+            </segment>
+            <segment id="82391" name="Seg0_secden_6">
+                <parent fractionAlong="1" segment="82258"/>
+                <proximal y="1.022110e+03" x="2.764450e+02" z="7.186260e+02" diameter="2.799710e+00"/>
+                <distal y="1.038450e+03" x="2.877590e+02" z="7.209050e+02" diameter="2.550580e+00"/>
+            </segment>
+            <segment id="82392" name="Seg1_secden_6">
+                <parent fractionAlong="1" segment="82391"/>
+                <distal y="1.045250e+03" x="3.044180e+02" z="7.296350e+02" diameter="2.947280e+00"/>
+            </segment>
+            <segment id="82393" name="Seg2_secden_6">
+                <parent fractionAlong="1" segment="82392"/>
+                <distal y="1.051470e+03" x="3.143880e+02" z="7.458200e+02" diameter="2.966390e+00"/>
+            </segment>
+            <segment id="82394" name="Seg3_secden_6">
+                <parent fractionAlong="1" segment="82393"/>
+                <distal y="1.063560e+03" x="3.285910e+02" z="7.530370e+02" diameter="2.856750e+00"/>
+            </segment>
+            <segment id="82395" name="Seg4_secden_6">
+                <parent fractionAlong="1" segment="82394"/>
+                <distal y="1.073490e+03" x="3.407930e+02" z="7.653870e+02" diameter="2.484760e+00"/>
+            </segment>
+            <segment id="82396" name="Seg5_secden_6">
+                <parent fractionAlong="1" segment="82395"/>
+                <distal y="1.086350e+03" x="3.549980e+02" z="7.711000e+02" diameter="2.688070e+00"/>
+            </segment>
+            <segment id="82397" name="Seg6_secden_6">
+                <parent fractionAlong="1" segment="82396"/>
+                <distal y="1.103330e+03" x="3.648760e+02" z="7.748830e+02" diameter="2.813290e+00"/>
+            </segment>
+            <segment id="82398" name="Seg7_secden_6">
+                <parent fractionAlong="1" segment="82397"/>
+                <distal y="1.113440e+03" x="3.807310e+02" z="7.816960e+02" diameter="2.629470e+00"/>
+            </segment>
+            <segment id="82399" name="Seg8_secden_6">
+                <parent fractionAlong="1" segment="82398"/>
+                <distal y="1.129410e+03" x="3.927300e+02" z="7.826870e+02" diameter="2.400110e+00"/>
+            </segment>
+            <segment id="82400" name="Seg9_secden_6">
+                <parent fractionAlong="1" segment="82399"/>
+                <distal y="1.145800e+03" x="4.029900e+02" z="7.877820e+02" diameter="2.738680e+00"/>
+            </segment>
+            <segment id="82401" name="Seg10_secden_6">
+                <parent fractionAlong="1" segment="82400"/>
+                <distal y="1.161330e+03" x="4.155800e+02" z="7.870540e+02" diameter="1.766790e+00"/>
+            </segment>
+            <segment id="82402" name="Seg11_secden_6">
+                <parent fractionAlong="1" segment="82401"/>
+                <distal y="1.176920e+03" x="4.281000e+02" z="7.869670e+02" diameter="2.326900e+00"/>
+            </segment>
+            <segment id="82403" name="Seg12_secden_6">
+                <parent fractionAlong="1" segment="82402"/>
+                <distal y="1.189580e+03" x="4.424090e+02" z="7.810580e+02" diameter="1.993150e+00"/>
+            </segment>
+            <segment id="82404" name="Seg13_secden_6">
+                <parent fractionAlong="1" segment="82403"/>
+                <distal y="1.205470e+03" x="4.545090e+02" z="7.798970e+02" diameter="2.793030e+00"/>
+            </segment>
+            <segment id="82405" name="Seg14_secden_6">
+                <parent fractionAlong="1" segment="82404"/>
+                <distal y="1.222390e+03" x="4.584250e+02" z="7.699880e+02" diameter="2.350780e+00"/>
+            </segment>
+            <segment id="82406" name="Seg15_secden_6">
+                <parent fractionAlong="1" segment="82405"/>
+                <distal y="1.233800e+03" x="4.748400e+02" z="7.693330e+02" diameter="2.326900e+00"/>
+            </segment>
+            <segment id="82407" name="Seg16_secden_6">
+                <parent fractionAlong="1" segment="82406"/>
+                <distal y="1.250140e+03" x="4.851450e+02" z="7.641410e+02" diameter="2.801530e+00"/>
+            </segment>
+            <segment id="82408" name="Seg17_secden_6">
+                <parent fractionAlong="1" segment="82407"/>
+                <distal y="1.266900e+03" x="4.941520e+02" z="7.580010e+02" diameter="2.164620e+00"/>
+            </segment>
+            <segment id="82618" name="Seg0_tuftden_3">
+                <parent fractionAlong="1" segment="82254"/>
+                <proximal y="9.356870e+02" x="3.259330e+02" z="1.096280e+03" diameter="8.000000e-01"/>
+                <distal y="9.184140e+02" x="3.296210e+02" z="1.105670e+03" diameter="8.000000e-01"/>
+            </segment>
+            <segment id="82619" name="Seg1_tuftden_3">
+                <parent fractionAlong="1" segment="82618"/>
+                <distal y="9.030330e+02" x="3.368240e+02" z="1.116230e+03" diameter="8.000000e-01"/>
+            </segment>
+            <segment id="82620" name="Seg2_tuftden_3">
+                <parent fractionAlong="1" segment="82619"/>
+                <distal y="8.980320e+02" x="3.420420e+02" z="1.134880e+03" diameter="8.000000e-01"/>
+            </segment>
+            <segment id="82616" name="Seg0_tuftden_2">
+                <parent fractionAlong="1" segment="82254"/>
+                <proximal y="9.356870e+02" x="3.259330e+02" z="1.096280e+03" diameter="8.000000e-01"/>
+                <distal y="9.401300e+02" x="3.159050e+02" z="1.113010e+03" diameter="8.000000e-01"/>
+            </segment>
+            <segment id="82617" name="Seg1_tuftden_2">
+                <parent fractionAlong="1" segment="82616"/>
+                <distal y="9.446020e+02" x="3.065480e+02" z="1.130110e+03" diameter="8.000000e-01"/>
+            </segment>
+            <segment id="82613" name="Seg0_tuftden_1">
+                <parent fractionAlong="1" segment="82254"/>
+                <proximal y="9.356870e+02" x="3.259330e+02" z="1.096280e+03" diameter="8.000000e-01"/>
+                <distal y="9.431570e+02" x="3.408510e+02" z="1.107310e+03" diameter="8.000000e-01"/>
+            </segment>
+            <segment id="82614" name="Seg1_tuftden_1">
+                <parent fractionAlong="1" segment="82613"/>
+                <distal y="9.485690e+02" x="3.528930e+02" z="1.122340e+03" diameter="8.000000e-01"/>
+            </segment>
+            <segment id="82615" name="Seg2_tuftden_1">
+                <parent fractionAlong="1" segment="82614"/>
+                <distal y="9.533020e+02" x="3.641110e+02" z="1.138200e+03" diameter="8.000000e-01"/>
+            </segment>
+            <segment id="82611" name="Seg0_tuftden_0">
+                <parent fractionAlong="1" segment="82254"/>
+                <proximal y="9.356870e+02" x="3.259330e+02" z="1.096280e+03" diameter="8.000000e-01"/>
+                <distal y="9.269730e+02" x="3.405140e+02" z="1.106840e+03" diameter="8.000000e-01"/>
+            </segment>
+            <segment id="82612" name="Seg1_tuftden_0">
+                <parent fractionAlong="1" segment="82611"/>
+                <distal y="9.193290e+02" x="3.543110e+02" z="1.119140e+03" diameter="8.000000e-01"/>
+            </segment>
+            <segment id="82604" name="Seg0_secden_13">
+                <parent fractionAlong="1" segment="82582"/>
+                <proximal y="9.629700e+02" x="-3.122490e+02" z="7.346220e+02" diameter="2.135740e+00"/>
+                <distal y="9.766220e+02" x="-3.262510e+02" z="7.304340e+02" diameter="2.480380e+00"/>
+            </segment>
+            <segment id="82605" name="Seg1_secden_13">
+                <parent fractionAlong="1" segment="82604"/>
+                <distal y="9.891190e+02" x="-3.375160e+02" z="7.196200e+02" diameter="2.347340e+00"/>
+            </segment>
+            <segment id="82606" name="Seg2_secden_13">
+                <parent fractionAlong="1" segment="82605"/>
+                <distal y="9.992040e+02" x="-3.532980e+02" z="7.126030e+02" diameter="1.651390e+00"/>
+            </segment>
+            <segment id="82607" name="Seg3_secden_13">
+                <parent fractionAlong="1" segment="82606"/>
+                <distal y="1.007110e+03" x="-3.700240e+02" z="7.050060e+02" diameter="1.839500e+00"/>
+            </segment>
+            <segment id="82608" name="Seg4_secden_13">
+                <parent fractionAlong="1" segment="82607"/>
+                <distal y="1.015680e+03" x="-3.868540e+02" z="6.984290e+02" diameter="2.235830e+00"/>
+            </segment>
+            <segment id="82609" name="Seg5_secden_13">
+                <parent fractionAlong="1" segment="82608"/>
+                <distal y="1.028550e+03" x="-3.992070e+02" z="6.893840e+02" diameter="2.057350e+00"/>
+            </segment>
+            <segment id="82610" name="Seg6_secden_13">
+                <parent fractionAlong="1" segment="82609"/>
+                <distal y="1.037370e+03" x="-4.148840e+02" z="6.806430e+02" diameter="1.627320e+00"/>
+            </segment>
+            <segment id="82583" name="Seg0_secden_12">
+                <parent fractionAlong="1" segment="82582"/>
+                <proximal y="9.629700e+02" x="-3.122490e+02" z="7.346220e+02" diameter="2.135740e+00"/>
+                <distal y="9.673280e+02" x="-3.300910e+02" z="7.267050e+02" diameter="2.273680e+00"/>
+            </segment>
+            <segment id="82584" name="Seg1_secden_12">
+                <parent fractionAlong="1" segment="82583"/>
+                <distal y="9.619280e+02" x="-3.401780e+02" z="7.103010e+02" diameter="1.978460e+00"/>
+            </segment>
+            <segment id="82585" name="Seg2_secden_12">
+                <parent fractionAlong="1" segment="82584"/>
+                <distal y="9.584040e+02" x="-3.582140e+02" z="7.024080e+02" diameter="2.062130e+00"/>
+            </segment>
+            <segment id="82586" name="Seg3_secden_12">
+                <parent fractionAlong="1" segment="82585"/>
+                <distal y="9.567020e+02" x="-3.763780e+02" z="6.942130e+02" diameter="1.647010e+00"/>
+            </segment>
+            <segment id="82587" name="Seg4_secden_12">
+                <parent fractionAlong="1" segment="82586"/>
+                <distal y="9.566630e+02" x="-3.935350e+02" z="6.839350e+02" diameter="2.363180e+00"/>
+            </segment>
+            <segment id="82588" name="Seg5_secden_12">
+                <parent fractionAlong="1" segment="82587"/>
+                <distal y="9.578060e+02" x="-4.093340e+02" z="6.717240e+02" diameter="1.926970e+00"/>
+            </segment>
+            <segment id="82589" name="Seg6_secden_12">
+                <parent fractionAlong="1" segment="82588"/>
+                <distal y="9.515650e+02" x="-4.221630e+02" z="6.577080e+02" diameter="2.034730e+00"/>
+            </segment>
+            <segment id="82590" name="Seg7_secden_12">
+                <parent fractionAlong="1" segment="82589"/>
+                <distal y="9.518460e+02" x="-4.395890e+02" z="6.478960e+02" diameter="2.098750e+00"/>
+            </segment>
+            <segment id="82591" name="Seg8_secden_12">
+                <parent fractionAlong="1" segment="82590"/>
+                <distal y="9.532500e+02" x="-4.559550e+02" z="6.364880e+02" diameter="2.268310e+00"/>
+            </segment>
+            <segment id="82592" name="Seg9_secden_12">
+                <parent fractionAlong="1" segment="82591"/>
+                <distal y="9.542930e+02" x="-4.736930e+02" z="6.273070e+02" diameter="1.806830e+00"/>
+            </segment>
+            <segment id="82593" name="Seg10_secden_12">
+                <parent fractionAlong="1" segment="82592"/>
+                <distal y="9.538070e+02" x="-4.883480e+02" z="6.137050e+02" diameter="1.921450e+00"/>
+            </segment>
+            <segment id="82594" name="Seg11_secden_12">
+                <parent fractionAlong="1" segment="82593"/>
+                <distal y="9.547100e+02" x="-4.984860e+02" z="5.964890e+02" diameter="1.970350e+00"/>
+            </segment>
+            <segment id="82595" name="Seg12_secden_12">
+                <parent fractionAlong="1" segment="82594"/>
+                <distal y="9.553760e+02" x="-5.138200e+02" z="5.836670e+02" diameter="1.780590e+00"/>
+            </segment>
+            <segment id="82596" name="Seg13_secden_12">
+                <parent fractionAlong="1" segment="82595"/>
+                <distal y="9.544550e+02" x="-5.265910e+02" z="5.683030e+02" diameter="1.710640e+00"/>
+            </segment>
+            <segment id="82597" name="Seg14_secden_12">
+                <parent fractionAlong="1" segment="82596"/>
+                <distal y="9.560120e+02" x="-5.398710e+02" z="5.534290e+02" diameter="1.897520e+00"/>
+            </segment>
+            <segment id="82598" name="Seg15_secden_12">
+                <parent fractionAlong="1" segment="82597"/>
+                <distal y="9.568400e+02" x="-5.544400e+02" z="5.397520e+02" diameter="1.603860e+00"/>
+            </segment>
+            <segment id="82599" name="Seg16_secden_12">
+                <parent fractionAlong="1" segment="82598"/>
+                <distal y="9.557030e+02" x="-5.700100e+02" z="5.272510e+02" diameter="1.971620e+00"/>
+            </segment>
+            <segment id="82600" name="Seg17_secden_12">
+                <parent fractionAlong="1" segment="82599"/>
+                <distal y="9.508610e+02" x="-5.852410e+02" z="5.152260e+02" diameter="1.632610e+00"/>
+            </segment>
+            <segment id="82601" name="Seg18_secden_12">
+                <parent fractionAlong="1" segment="82600"/>
+                <distal y="9.564870e+02" x="-5.967230e+02" z="4.998470e+02" diameter="1.660030e+00"/>
+            </segment>
+            <segment id="82602" name="Seg19_secden_12">
+                <parent fractionAlong="1" segment="82601"/>
+                <distal y="9.574490e+02" x="-5.998280e+02" z="4.801130e+02" diameter="1.598360e+00"/>
+            </segment>
+            <segment id="82603" name="Seg20_secden_12">
+                <parent fractionAlong="1" segment="82602"/>
+                <distal y="9.618730e+02" x="-6.127070e+02" z="4.654650e+02" diameter="1.643500e+00"/>
+            </segment>
+            <segment id="82479" name="Seg0_secden_9">
+                <parent fractionAlong="1" segment="82350"/>
+                <proximal y="1.082770e+03" x="1.681610e+02" z="7.456020e+02" diameter="2.867080e+00"/>
+                <distal y="1.099910e+03" x="1.678660e+02" z="7.559150e+02" diameter="2.425240e+00"/>
+            </segment>
+            <segment id="82480" name="Seg1_secden_9">
+                <parent fractionAlong="1" segment="82479"/>
+                <distal y="1.117200e+03" x="1.639290e+02" z="7.651610e+02" diameter="2.696510e+00"/>
+            </segment>
+            <segment id="82481" name="Seg2_secden_9">
+                <parent fractionAlong="1" segment="82480"/>
+                <distal y="1.135860e+03" x="1.639900e+02" z="7.723590e+02" diameter="2.890610e+00"/>
+            </segment>
+            <segment id="82482" name="Seg3_secden_9">
+                <parent fractionAlong="1" segment="82481"/>
+                <distal y="1.152860e+03" x="1.591770e+02" z="7.817310e+02" diameter="2.578940e+00"/>
+            </segment>
+            <segment id="82483" name="Seg4_secden_9">
+                <parent fractionAlong="1" segment="82482"/>
+                <distal y="1.171490e+03" x="1.578770e+02" z="7.888820e+02" diameter="2.963590e+00"/>
+            </segment>
+            <segment id="82484" name="Seg5_secden_9">
+                <parent fractionAlong="1" segment="82483"/>
+                <distal y="1.191020e+03" x="1.567650e+02" z="7.930340e+02" diameter="2.676710e+00"/>
+            </segment>
+            <segment id="82485" name="Seg6_secden_9">
+                <parent fractionAlong="1" segment="82484"/>
+                <distal y="1.208950e+03" x="1.511620e+02" z="7.999090e+02" diameter="2.525420e+00"/>
+            </segment>
+            <segment id="82486" name="Seg7_secden_9">
+                <parent fractionAlong="1" segment="82485"/>
+                <distal y="1.226890e+03" x="1.513600e+02" z="8.087540e+02" diameter="2.164100e+00"/>
+            </segment>
+            <segment id="82487" name="Seg8_secden_9">
+                <parent fractionAlong="1" segment="82486"/>
+                <distal y="1.244500e+03" x="1.573400e+02" z="8.161160e+02" diameter="2.904820e+00"/>
+            </segment>
+            <segment id="82488" name="Seg9_secden_9">
+                <parent fractionAlong="1" segment="82487"/>
+                <distal y="1.258950e+03" x="1.444910e+02" z="8.212040e+02" diameter="2.431980e+00"/>
+            </segment>
+            <segment id="82489" name="Seg10_secden_9">
+                <parent fractionAlong="1" segment="82488"/>
+                <distal y="1.278580e+03" x="1.406580e+02" z="8.210140e+02" diameter="2.727980e+00"/>
+            </segment>
+            <segment id="82490" name="Seg11_secden_9">
+                <parent fractionAlong="1" segment="82489"/>
+                <distal y="1.298340e+03" x="1.377560e+02" z="8.219770e+02" diameter="2.933480e+00"/>
+            </segment>
+            <segment id="82491" name="Seg12_secden_9">
+                <parent fractionAlong="1" segment="82490"/>
+                <distal y="1.318210e+03" x="1.354650e+02" z="8.216240e+02" diameter="1.795930e+00"/>
+            </segment>
+            <segment id="82492" name="Seg13_secden_9">
+                <parent fractionAlong="1" segment="82491"/>
+                <distal y="1.337180e+03" x="1.396670e+02" z="8.263860e+02" diameter="2.551990e+00"/>
+            </segment>
+            <segment id="82493" name="Seg14_secden_9">
+                <parent fractionAlong="1" segment="82492"/>
+                <distal y="1.357110e+03" x="1.380660e+02" z="8.262500e+02" diameter="2.121200e+00"/>
+            </segment>
+            <segment id="82494" name="Seg15_secden_9">
+                <parent fractionAlong="1" segment="82493"/>
+                <distal y="1.376790e+03" x="1.347620e+02" z="8.249110e+02" diameter="2.731210e+00"/>
+            </segment>
+            <segment id="82495" name="Seg16_secden_9">
+                <parent fractionAlong="1" segment="82494"/>
+                <distal y="1.396320e+03" x="1.310170e+02" z="8.227540e+02" diameter="2.175830e+00"/>
+            </segment>
+            <segment id="82496" name="Seg17_secden_9">
+                <parent fractionAlong="1" segment="82495"/>
+                <distal y="1.413480e+03" x="1.209740e+02" z="8.206470e+02" diameter="2.659110e+00"/>
+            </segment>
+            <segment id="82497" name="Seg18_secden_9">
+                <parent fractionAlong="1" segment="82496"/>
+                <distal y="1.431740e+03" x="1.134050e+02" z="8.175800e+02" diameter="2.564610e+00"/>
+            </segment>
+            <segment id="82498" name="Seg19_secden_9">
+                <parent fractionAlong="1" segment="82497"/>
+                <distal y="1.450180e+03" x="1.064880e+02" z="8.141120e+02" diameter="2.725870e+00"/>
+            </segment>
+            <segment id="82499" name="Seg20_secden_9">
+                <parent fractionAlong="1" segment="82498"/>
+                <distal y="1.470170e+03" x="1.061090e+02" z="8.146280e+02" diameter="2.340140e+00"/>
+            </segment>
+            <segment id="82500" name="Seg21_secden_9">
+                <parent fractionAlong="1" segment="82499"/>
+                <distal y="1.489020e+03" x="1.032940e+02" z="8.085610e+02" diameter="1.867960e+00"/>
+            </segment>
+            <segment id="82501" name="Seg22_secden_9">
+                <parent fractionAlong="1" segment="82500"/>
+                <distal y="1.507610e+03" x="9.908630e+01" z="8.146310e+02" diameter="2.402920e+00"/>
+            </segment>
+            <segment id="82502" name="Seg23_secden_9">
+                <parent fractionAlong="1" segment="82501"/>
+                <distal y="1.524680e+03" x="9.056730e+01" z="8.086380e+02" diameter="2.382670e+00"/>
+            </segment>
+            <segment id="82503" name="Seg24_secden_9">
+                <parent fractionAlong="1" segment="82502"/>
+                <distal y="1.543970e+03" x="8.596480e+01" z="8.060660e+02" diameter="2.297210e+00"/>
+            </segment>
+            <segment id="82504" name="Seg25_secden_9">
+                <parent fractionAlong="1" segment="82503"/>
+                <distal y="1.563350e+03" x="8.100550e+01" z="8.056690e+02" diameter="2.826160e+00"/>
+            </segment>
+            <segment id="82505" name="Seg26_secden_9">
+                <parent fractionAlong="1" segment="82504"/>
+                <distal y="1.577510e+03" x="6.869710e+01" z="8.125930e+02" diameter="1.796900e+00"/>
+            </segment>
+            <segment id="82506" name="Seg27_secden_9">
+                <parent fractionAlong="1" segment="82505"/>
+                <distal y="1.596650e+03" x="6.526890e+01" z="8.079300e+02" diameter="1.744610e+00"/>
+            </segment>
+            <segment id="82507" name="Seg28_secden_9">
+                <parent fractionAlong="1" segment="82506"/>
+                <distal y="1.607770e+03" x="4.885470e+01" z="8.052810e+02" diameter="1.846790e+00"/>
+            </segment>
+            <segment id="82508" name="Seg29_secden_9">
+                <parent fractionAlong="1" segment="82507"/>
+                <distal y="1.626540e+03" x="4.934570e+01" z="7.984030e+02" diameter="2.146490e+00"/>
+            </segment>
+            <segment id="82509" name="Seg30_secden_9">
+                <parent fractionAlong="1" segment="82508"/>
+                <distal y="1.645100e+03" x="4.713260e+01" z="7.912890e+02" diameter="1.969920e+00"/>
+            </segment>
+            <segment id="82510" name="Seg31_secden_9">
+                <parent fractionAlong="1" segment="82509"/>
+                <distal y="1.663030e+03" x="4.232610e+01" z="7.838420e+02" diameter="2.064910e+00"/>
+            </segment>
+            <segment id="82511" name="Seg32_secden_9">
+                <parent fractionAlong="1" segment="82510"/>
+                <distal y="1.680230e+03" x="3.407220e+01" z="7.778460e+02" diameter="2.181870e+00"/>
+            </segment>
+            <segment id="82512" name="Seg33_secden_9">
+                <parent fractionAlong="1" segment="82511"/>
+                <distal y="1.698410e+03" x="3.109640e+01" z="7.700570e+02" diameter="1.983230e+00"/>
+            </segment>
+            <segment id="82513" name="Seg34_secden_9">
+                <parent fractionAlong="1" segment="82512"/>
+                <distal y="1.716860e+03" x="2.929970e+01" z="7.625540e+02" diameter="2.224470e+00"/>
+            </segment>
+            <segment id="82514" name="Seg35_secden_9">
+                <parent fractionAlong="1" segment="82513"/>
+                <distal y="1.735100e+03" x="2.560990e+01" z="7.552120e+02" diameter="1.926870e+00"/>
+            </segment>
+            <segment id="82515" name="Seg36_secden_9">
+                <parent fractionAlong="1" segment="82514"/>
+                <distal y="1.751090e+03" x="1.723320e+01" z="7.465980e+02" diameter="2.070130e+00"/>
+            </segment>
+            <segment id="82516" name="Seg37_secden_9">
+                <parent fractionAlong="1" segment="82515"/>
+                <distal y="1.770560e+03" x="1.837220e+01" z="7.422030e+02" diameter="1.989680e+00"/>
+            </segment>
+            <segment id="82517" name="Seg38_secden_9">
+                <parent fractionAlong="1" segment="82516"/>
+                <distal y="1.788400e+03" x="1.356390e+01" z="7.345260e+02" diameter="1.760160e+00"/>
+            </segment>
+            <segment id="82518" name="Seg39_secden_9">
+                <parent fractionAlong="1" segment="82517"/>
+                <distal y="1.805990e+03" x="1.599420e+01" z="7.253280e+02" diameter="1.897160e+00"/>
+            </segment>
+            <segment id="82519" name="Seg40_secden_9">
+                <parent fractionAlong="1" segment="82518"/>
+                <distal y="1.822020e+03" x="5.741380e+00" z="7.191700e+02" diameter="1.896800e+00"/>
+            </segment>
+            <segment id="82520" name="Seg41_secden_9">
+                <parent fractionAlong="1" segment="82519"/>
+                <distal y="1.839760e+03" x="2.636440e+00" z="7.104870e+02" diameter="1.706810e+00"/>
+            </segment>
+            <segment id="82521" name="Seg42_secden_9">
+                <parent fractionAlong="1" segment="82520"/>
+                <distal y="1.856870e+03" x="-1.873440e+00" z="7.011630e+02" diameter="1.681390e+00"/>
+            </segment>
+            <segment id="82522" name="Seg43_secden_9">
+                <parent fractionAlong="1" segment="82521"/>
+                <distal y="1.871750e+03" x="-1.281840e+01" z="6.934960e+02" diameter="1.944170e+00"/>
+            </segment>
+            <segment id="82523" name="Seg44_secden_9">
+                <parent fractionAlong="1" segment="82522"/>
+                <distal y="1.889620e+03" x="-1.377340e+01" z="6.845520e+02" diameter="1.670100e+00"/>
+            </segment>
+            <segment id="82524" name="Seg45_secden_9">
+                <parent fractionAlong="1" segment="82523"/>
+                <distal y="1.908490e+03" x="-1.906000e+01" z="6.805710e+02" diameter="1.801720e+00"/>
+            </segment>
+            <segment id="82525" name="Seg46_secden_9">
+                <parent fractionAlong="1" segment="82524"/>
+                <distal y="1.925270e+03" x="-2.398140e+01" z="6.708570e+02" diameter="1.677520e+00"/>
+            </segment>
+            <segment id="82526" name="Seg47_secden_9">
+                <parent fractionAlong="1" segment="82525"/>
+                <distal y="1.943290e+03" x="-2.302470e+01" z="6.622340e+02" diameter="1.788180e+00"/>
+            </segment>
+            <segment id="82527" name="Seg48_secden_9">
+                <parent fractionAlong="1" segment="82526"/>
+                <distal y="1.962460e+03" x="-2.792230e+01" z="6.651210e+02" diameter="1.702920e+00"/>
+            </segment>
+            <segment id="82528" name="Seg49_secden_9">
+                <parent fractionAlong="1" segment="82527"/>
+                <distal y="1.978990e+03" x="-3.214260e+01" z="6.546780e+02" diameter="1.263880e+00"/>
+            </segment>
+            <segment id="82529" name="Seg50_secden_9">
+                <parent fractionAlong="1" segment="82528"/>
+                <distal y="1.995380e+03" x="-2.173970e+01" z="6.498860e+02" diameter="1.577130e+00"/>
+            </segment>
+            <segment id="82530" name="Seg51_secden_9">
+                <parent fractionAlong="1" segment="82529"/>
+                <distal y="2.008400e+03" x="-2.462860e+01" z="6.349760e+02" diameter="1.324940e+00"/>
+            </segment>
+            <segment id="82531" name="Seg52_secden_9">
+                <parent fractionAlong="1" segment="82530"/>
+                <distal y="2.022610e+03" x="-2.831660e+01" z="6.213920e+02" diameter="1.396760e+00"/>
+            </segment>
+            <segment id="82532" name="Seg53_secden_9">
+                <parent fractionAlong="1" segment="82531"/>
+                <distal y="2.039970e+03" x="-3.200690e+01" z="6.121820e+02" diameter="1.405860e+00"/>
+            </segment>
+            <segment id="82533" name="Seg54_secden_9">
+                <parent fractionAlong="1" segment="82532"/>
+                <distal y="2.058010e+03" x="-3.320030e+01" z="6.036270e+02" diameter="1.706390e+00"/>
+            </segment>
+            <segment id="82534" name="Seg55_secden_9">
+                <parent fractionAlong="1" segment="82533"/>
+                <distal y="2.070290e+03" x="-3.668640e+01" z="5.882330e+02" diameter="1.353730e+00"/>
+            </segment>
+            <segment id="82535" name="Seg56_secden_9">
+                <parent fractionAlong="1" segment="82534"/>
+                <distal y="2.085220e+03" x="-4.974950e+01" z="5.857070e+02" diameter="1.464310e+00"/>
+            </segment>
+            <segment id="82536" name="Seg57_secden_9">
+                <parent fractionAlong="1" segment="82535"/>
+                <distal y="2.098920e+03" x="-5.356890e+01" z="5.716360e+02" diameter="1.393260e+00"/>
+            </segment>
+            <segment id="82537" name="Seg58_secden_9">
+                <parent fractionAlong="1" segment="82536"/>
+                <distal y="2.113930e+03" x="-5.910000e+01" z="5.596370e+02" diameter="1.042090e+00"/>
+            </segment>
+            <segment id="82538" name="Seg59_secden_9">
+                <parent fractionAlong="1" segment="82537"/>
+                <distal y="2.126650e+03" x="-6.214070e+01" z="5.445020e+02" diameter="1.494910e+00"/>
+            </segment>
+            <segment id="82459" name="Seg0_secden_8">
+                <parent fractionAlong="1" segment="82350"/>
+                <proximal y="1.082770e+03" x="1.681610e+02" z="7.456020e+02" diameter="2.867080e+00"/>
+                <distal y="1.097020e+03" x="1.580040e+02" z="7.552880e+02" diameter="2.940040e+00"/>
+            </segment>
+            <segment id="82460" name="Seg1_secden_8">
+                <parent fractionAlong="1" segment="82459"/>
+                <distal y="1.110940e+03" x="1.455080e+02" z="7.623720e+02" diameter="2.787750e+00"/>
+            </segment>
+            <segment id="82461" name="Seg2_secden_8">
+                <parent fractionAlong="1" segment="82460"/>
+                <distal y="1.121000e+03" x="1.350780e+02" z="7.761550e+02" diameter="2.670190e+00"/>
+            </segment>
+            <segment id="82462" name="Seg3_secden_8">
+                <parent fractionAlong="1" segment="82461"/>
+                <distal y="1.128100e+03" x="1.261500e+02" z="7.925820e+02" diameter="2.616450e+00"/>
+            </segment>
+            <segment id="82463" name="Seg4_secden_8">
+                <parent fractionAlong="1" segment="82462"/>
+                <distal y="1.142360e+03" x="1.165120e+02" z="8.027730e+02" diameter="2.945790e+00"/>
+            </segment>
+            <segment id="82464" name="Seg5_secden_8">
+                <parent fractionAlong="1" segment="82463"/>
+                <distal y="1.161880e+03" x="1.123910e+02" z="8.013380e+02" diameter="2.265280e+00"/>
+            </segment>
+            <segment id="82465" name="Seg6_secden_8">
+                <parent fractionAlong="1" segment="82464"/>
+                <distal y="1.172230e+03" x="1.035300e+02" z="8.159790e+02" diameter="2.426400e+00"/>
+            </segment>
+            <segment id="82466" name="Seg7_secden_8">
+                <parent fractionAlong="1" segment="82465"/>
+                <distal y="1.184690e+03" x="8.792290e+01" z="8.170530e+02" diameter="2.990280e+00"/>
+            </segment>
+            <segment id="82467" name="Seg8_secden_8">
+                <parent fractionAlong="1" segment="82466"/>
+                <distal y="1.202170e+03" x="8.139350e+01" z="8.242430e+02" diameter="2.768440e+00"/>
+            </segment>
+            <segment id="82468" name="Seg9_secden_8">
+                <parent fractionAlong="1" segment="82467"/>
+                <distal y="1.216390e+03" x="6.791550e+01" z="8.282630e+02" diameter="2.337440e+00"/>
+            </segment>
+            <segment id="82469" name="Seg10_secden_8">
+                <parent fractionAlong="1" segment="82468"/>
+                <distal y="1.227710e+03" x="5.176650e+01" z="8.315850e+02" diameter="2.552770e+00"/>
+            </segment>
+            <segment id="82470" name="Seg11_secden_8">
+                <parent fractionAlong="1" segment="82469"/>
+                <distal y="1.244890e+03" x="4.317580e+01" z="8.371720e+02" diameter="2.974710e+00"/>
+            </segment>
+            <segment id="82471" name="Seg12_secden_8">
+                <parent fractionAlong="1" segment="82470"/>
+                <distal y="1.260910e+03" x="3.149270e+01" z="8.397540e+02" diameter="2.224440e+00"/>
+            </segment>
+            <segment id="82472" name="Seg13_secden_8">
+                <parent fractionAlong="1" segment="82471"/>
+                <distal y="1.275390e+03" x="1.781260e+01" z="8.415300e+02" diameter="2.697270e+00"/>
+            </segment>
+            <segment id="82473" name="Seg14_secden_8">
+                <parent fractionAlong="1" segment="82472"/>
+                <distal y="1.287880e+03" x="2.526380e+00" z="8.447770e+02" diameter="2.547760e+00"/>
+            </segment>
+            <segment id="82474" name="Seg15_secden_8">
+                <parent fractionAlong="1" segment="82473"/>
+                <distal y="1.299240e+03" x="-1.344420e+01" z="8.487490e+02" diameter="2.266800e+00"/>
+            </segment>
+            <segment id="82475" name="Seg16_secden_8">
+                <parent fractionAlong="1" segment="82474"/>
+                <distal y="1.313020e+03" x="-2.620610e+01" z="8.418660e+02" diameter="2.759410e+00"/>
+            </segment>
+            <segment id="82476" name="Seg17_secden_8">
+                <parent fractionAlong="1" segment="82475"/>
+                <distal y="1.330030e+03" x="-3.249510e+01" z="8.334320e+02" diameter="2.469960e+00"/>
+            </segment>
+            <segment id="82477" name="Seg18_secden_8">
+                <parent fractionAlong="1" segment="82476"/>
+                <distal y="1.347650e+03" x="-4.193510e+01" z="8.338290e+02" diameter="2.056080e+00"/>
+            </segment>
+            <segment id="82478" name="Seg19_secden_8">
+                <parent fractionAlong="1" segment="82477"/>
+                <distal y="1.362820e+03" x="-5.444400e+01" z="8.301670e+02" diameter="2.249080e+00"/>
+            </segment>
+            <segmentGroup neuroLexId="sao864921383" id="soma">
+                <notes>This group contains an unbranched set of segments, and all of the segmentGroups marked with
+             neuroLexId = sao864921383 form a non-overlapping set of all of the segments.
+             These segmentGroups correspond to the 'cables' of NeuroML v1.8.1, and map to/from NEURON sections.</notes>
+                <member segment="0"/>
+                <member segment="82214"/>
+                <member segment="82215"/>
+                <member segment="82216"/>
+                <member segment="82217"/>
+                <member segment="82218"/>
+                <member segment="82219"/>
+                <member segment="82220"/>
+                <member segment="82221"/>
+                <member segment="82222"/>
+                <member segment="82223"/>
+                <member segment="82224"/>
+                <member segment="82225"/>
+                <member segment="82226"/>
+                <member segment="82227"/>
+                <member segment="82228"/>
+                <member segment="82229"/>
+                <member segment="82230"/>
+                <member segment="82231"/>
+                <member segment="82232"/>
+            </segmentGroup>
+            <segmentGroup neuroLexId="sao864921383" id="hillock">
+                <notes>This group contains an unbranched set of segments, and all of the segmentGroups marked with
+             neuroLexId = sao864921383 form a non-overlapping set of all of the segments.
+             These segmentGroups correspond to the 'cables' of NeuroML v1.8.1, and map to/from NEURON sections.</notes>
+                <property tag="numberInternalDivisions" value="3"/>
+                <annotation/>
+                <member segment="82621"/>
+            </segmentGroup>
+            <segmentGroup neuroLexId="sao864921383" id="secden_3">
+                <notes>This group contains an unbranched set of segments, and all of the segmentGroups marked with
+             neuroLexId = sao864921383 form a non-overlapping set of all of the segments.
+             These segmentGroups correspond to the 'cables' of NeuroML v1.8.1, and map to/from NEURON sections.</notes>
+                <property tag="numberInternalDivisions" value="75"/>
+                <annotation/>
+                <member segment="82272"/>
+                <member segment="82273"/>
+                <member segment="82274"/>
+                <member segment="82275"/>
+                <member segment="82276"/>
+                <member segment="82277"/>
+                <member segment="82278"/>
+                <member segment="82279"/>
+                <member segment="82280"/>
+                <member segment="82281"/>
+                <member segment="82282"/>
+                <member segment="82283"/>
+                <member segment="82284"/>
+                <member segment="82285"/>
+                <member segment="82286"/>
+                <member segment="82287"/>
+                <member segment="82288"/>
+                <member segment="82289"/>
+                <member segment="82290"/>
+                <member segment="82291"/>
+                <member segment="82292"/>
+                <member segment="82293"/>
+                <member segment="82294"/>
+                <member segment="82295"/>
+                <member segment="82296"/>
+                <member segment="82297"/>
+                <member segment="82298"/>
+                <member segment="82299"/>
+                <member segment="82300"/>
+                <member segment="82301"/>
+                <member segment="82302"/>
+                <member segment="82303"/>
+                <member segment="82304"/>
+                <member segment="82305"/>
+                <member segment="82306"/>
+                <member segment="82307"/>
+                <member segment="82308"/>
+                <member segment="82309"/>
+                <member segment="82310"/>
+                <member segment="82311"/>
+                <member segment="82312"/>
+                <member segment="82313"/>
+                <member segment="82314"/>
+                <member segment="82315"/>
+                <member segment="82316"/>
+                <member segment="82317"/>
+                <member segment="82318"/>
+                <member segment="82319"/>
+                <member segment="82320"/>
+                <member segment="82321"/>
+                <member segment="82322"/>
+                <member segment="82323"/>
+                <member segment="82324"/>
+                <member segment="82325"/>
+                <member segment="82326"/>
+                <member segment="82327"/>
+                <member segment="82328"/>
+                <member segment="82329"/>
+                <member segment="82330"/>
+                <member segment="82331"/>
+                <member segment="82332"/>
+                <member segment="82333"/>
+                <member segment="82334"/>
+                <member segment="82335"/>
+                <member segment="82336"/>
+                <member segment="82337"/>
+                <member segment="82338"/>
+                <member segment="82339"/>
+                <member segment="82340"/>
+                <member segment="82341"/>
+                <member segment="82342"/>
+                <member segment="82343"/>
+                <member segment="82344"/>
+                <member segment="82345"/>
+                <member segment="82346"/>
+            </segmentGroup>
+            <segmentGroup neuroLexId="sao864921383" id="secden_2">
+                <notes>This group contains an unbranched set of segments, and all of the segmentGroups marked with
+             neuroLexId = sao864921383 form a non-overlapping set of all of the segments.
+             These segmentGroups correspond to the 'cables' of NeuroML v1.8.1, and map to/from NEURON sections.</notes>
+                <property tag="numberInternalDivisions" value="12"/>
+                <annotation/>
+                <member segment="82260"/>
+                <member segment="82261"/>
+                <member segment="82262"/>
+                <member segment="82263"/>
+                <member segment="82264"/>
+                <member segment="82265"/>
+                <member segment="82266"/>
+                <member segment="82267"/>
+                <member segment="82268"/>
+                <member segment="82269"/>
+                <member segment="82270"/>
+                <member segment="82271"/>
+            </segmentGroup>
+            <segmentGroup neuroLexId="sao864921383" id="secden_1">
+                <notes>This group contains an unbranched set of segments, and all of the segmentGroups marked with
+             neuroLexId = sao864921383 form a non-overlapping set of all of the segments.
+             These segmentGroups correspond to the 'cables' of NeuroML v1.8.1, and map to/from NEURON sections.</notes>
+                <member segment="82259"/>
+            </segmentGroup>
+            <segmentGroup neuroLexId="sao864921383" id="secden_0">
+                <notes>This group contains an unbranched set of segments, and all of the segmentGroups marked with
+             neuroLexId = sao864921383 form a non-overlapping set of all of the segments.
+             These segmentGroups correspond to the 'cables' of NeuroML v1.8.1, and map to/from NEURON sections.</notes>
+                <property tag="numberInternalDivisions" value="4"/>
+                <annotation/>
+                <member segment="82255"/>
+                <member segment="82256"/>
+                <member segment="82257"/>
+                <member segment="82258"/>
+            </segmentGroup>
+            <segmentGroup neuroLexId="sao864921383" id="priden">
+                <notes>This group contains an unbranched set of segments, and all of the segmentGroups marked with
+             neuroLexId = sao864921383 form a non-overlapping set of all of the segments.
+             These segmentGroups correspond to the 'cables' of NeuroML v1.8.1, and map to/from NEURON sections.</notes>
+                <property tag="numberInternalDivisions" value="22"/>
+                <annotation/>
+                <member segment="82233"/>
+                <member segment="82234"/>
+                <member segment="82235"/>
+                <member segment="82236"/>
+                <member segment="82237"/>
+                <member segment="82238"/>
+                <member segment="82239"/>
+                <member segment="82240"/>
+                <member segment="82241"/>
+                <member segment="82242"/>
+                <member segment="82243"/>
+                <member segment="82244"/>
+                <member segment="82245"/>
+                <member segment="82246"/>
+                <member segment="82247"/>
+                <member segment="82248"/>
+                <member segment="82249"/>
+                <member segment="82250"/>
+                <member segment="82251"/>
+                <member segment="82252"/>
+                <member segment="82253"/>
+                <member segment="82254"/>
+            </segmentGroup>
+            <segmentGroup neuroLexId="sao864921383" id="initialseg">
+                <notes>This group contains an unbranched set of segments, and all of the segmentGroups marked with
+             neuroLexId = sao864921383 form a non-overlapping set of all of the segments.
+             These segmentGroups correspond to the 'cables' of NeuroML v1.8.1, and map to/from NEURON sections.</notes>
+                <property tag="numberInternalDivisions" value="3"/>
+                <annotation/>
+                <member segment="82622"/>
+            </segmentGroup>
+            <segmentGroup neuroLexId="sao864921383" id="secden_11">
+                <notes>This group contains an unbranched set of segments, and all of the segmentGroups marked with
+             neuroLexId = sao864921383 form a non-overlapping set of all of the segments.
+             These segmentGroups correspond to the 'cables' of NeuroML v1.8.1, and map to/from NEURON sections.</notes>
+                <property tag="numberInternalDivisions" value="17"/>
+                <annotation/>
+                <member segment="82566"/>
+                <member segment="82567"/>
+                <member segment="82568"/>
+                <member segment="82569"/>
+                <member segment="82570"/>
+                <member segment="82571"/>
+                <member segment="82572"/>
+                <member segment="82573"/>
+                <member segment="82574"/>
+                <member segment="82575"/>
+                <member segment="82576"/>
+                <member segment="82577"/>
+                <member segment="82578"/>
+                <member segment="82579"/>
+                <member segment="82580"/>
+                <member segment="82581"/>
+                <member segment="82582"/>
+            </segmentGroup>
+            <segmentGroup neuroLexId="sao864921383" id="secden_10">
+                <notes>This group contains an unbranched set of segments, and all of the segmentGroups marked with
+             neuroLexId = sao864921383 form a non-overlapping set of all of the segments.
+             These segmentGroups correspond to the 'cables' of NeuroML v1.8.1, and map to/from NEURON sections.</notes>
+                <property tag="numberInternalDivisions" value="27"/>
+                <annotation/>
+                <member segment="82539"/>
+                <member segment="82540"/>
+                <member segment="82541"/>
+                <member segment="82542"/>
+                <member segment="82543"/>
+                <member segment="82544"/>
+                <member segment="82545"/>
+                <member segment="82546"/>
+                <member segment="82547"/>
+                <member segment="82548"/>
+                <member segment="82549"/>
+                <member segment="82550"/>
+                <member segment="82551"/>
+                <member segment="82552"/>
+                <member segment="82553"/>
+                <member segment="82554"/>
+                <member segment="82555"/>
+                <member segment="82556"/>
+                <member segment="82557"/>
+                <member segment="82558"/>
+                <member segment="82559"/>
+                <member segment="82560"/>
+                <member segment="82561"/>
+                <member segment="82562"/>
+                <member segment="82563"/>
+                <member segment="82564"/>
+                <member segment="82565"/>
+            </segmentGroup>
+            <segmentGroup neuroLexId="sao864921383" id="secden_5">
+                <notes>This group contains an unbranched set of segments, and all of the segmentGroups marked with
+             neuroLexId = sao864921383 form a non-overlapping set of all of the segments.
+             These segmentGroups correspond to the 'cables' of NeuroML v1.8.1, and map to/from NEURON sections.</notes>
+                <property tag="numberInternalDivisions" value="40"/>
+                <annotation/>
+                <member segment="82351"/>
+                <member segment="82352"/>
+                <member segment="82353"/>
+                <member segment="82354"/>
+                <member segment="82355"/>
+                <member segment="82356"/>
+                <member segment="82357"/>
+                <member segment="82358"/>
+                <member segment="82359"/>
+                <member segment="82360"/>
+                <member segment="82361"/>
+                <member segment="82362"/>
+                <member segment="82363"/>
+                <member segment="82364"/>
+                <member segment="82365"/>
+                <member segment="82366"/>
+                <member segment="82367"/>
+                <member segment="82368"/>
+                <member segment="82369"/>
+                <member segment="82370"/>
+                <member segment="82371"/>
+                <member segment="82372"/>
+                <member segment="82373"/>
+                <member segment="82374"/>
+                <member segment="82375"/>
+                <member segment="82376"/>
+                <member segment="82377"/>
+                <member segment="82378"/>
+                <member segment="82379"/>
+                <member segment="82380"/>
+                <member segment="82381"/>
+                <member segment="82382"/>
+                <member segment="82383"/>
+                <member segment="82384"/>
+                <member segment="82385"/>
+                <member segment="82386"/>
+                <member segment="82387"/>
+                <member segment="82388"/>
+                <member segment="82389"/>
+                <member segment="82390"/>
+            </segmentGroup>
+            <segmentGroup neuroLexId="sao864921383" id="secden_4">
+                <notes>This group contains an unbranched set of segments, and all of the segmentGroups marked with
+             neuroLexId = sao864921383 form a non-overlapping set of all of the segments.
+             These segmentGroups correspond to the 'cables' of NeuroML v1.8.1, and map to/from NEURON sections.</notes>
+                <property tag="numberInternalDivisions" value="4"/>
+                <annotation/>
+                <member segment="82347"/>
+                <member segment="82348"/>
+                <member segment="82349"/>
+                <member segment="82350"/>
+            </segmentGroup>
+            <segmentGroup neuroLexId="sao864921383" id="secden_7">
+                <notes>This group contains an unbranched set of segments, and all of the segmentGroups marked with
+             neuroLexId = sao864921383 form a non-overlapping set of all of the segments.
+             These segmentGroups correspond to the 'cables' of NeuroML v1.8.1, and map to/from NEURON sections.</notes>
+                <property tag="numberInternalDivisions" value="50"/>
+                <annotation/>
+                <member segment="82409"/>
+                <member segment="82410"/>
+                <member segment="82411"/>
+                <member segment="82412"/>
+                <member segment="82413"/>
+                <member segment="82414"/>
+                <member segment="82415"/>
+                <member segment="82416"/>
+                <member segment="82417"/>
+                <member segment="82418"/>
+                <member segment="82419"/>
+                <member segment="82420"/>
+                <member segment="82421"/>
+                <member segment="82422"/>
+                <member segment="82423"/>
+                <member segment="82424"/>
+                <member segment="82425"/>
+                <member segment="82426"/>
+                <member segment="82427"/>
+                <member segment="82428"/>
+                <member segment="82429"/>
+                <member segment="82430"/>
+                <member segment="82431"/>
+                <member segment="82432"/>
+                <member segment="82433"/>
+                <member segment="82434"/>
+                <member segment="82435"/>
+                <member segment="82436"/>
+                <member segment="82437"/>
+                <member segment="82438"/>
+                <member segment="82439"/>
+                <member segment="82440"/>
+                <member segment="82441"/>
+                <member segment="82442"/>
+                <member segment="82443"/>
+                <member segment="82444"/>
+                <member segment="82445"/>
+                <member segment="82446"/>
+                <member segment="82447"/>
+                <member segment="82448"/>
+                <member segment="82449"/>
+                <member segment="82450"/>
+                <member segment="82451"/>
+                <member segment="82452"/>
+                <member segment="82453"/>
+                <member segment="82454"/>
+                <member segment="82455"/>
+                <member segment="82456"/>
+                <member segment="82457"/>
+                <member segment="82458"/>
+            </segmentGroup>
+            <segmentGroup neuroLexId="sao864921383" id="secden_6">
+                <notes>This group contains an unbranched set of segments, and all of the segmentGroups marked with
+             neuroLexId = sao864921383 form a non-overlapping set of all of the segments.
+             These segmentGroups correspond to the 'cables' of NeuroML v1.8.1, and map to/from NEURON sections.</notes>
+                <property tag="numberInternalDivisions" value="18"/>
+                <annotation/>
+                <member segment="82391"/>
+                <member segment="82392"/>
+                <member segment="82393"/>
+                <member segment="82394"/>
+                <member segment="82395"/>
+                <member segment="82396"/>
+                <member segment="82397"/>
+                <member segment="82398"/>
+                <member segment="82399"/>
+                <member segment="82400"/>
+                <member segment="82401"/>
+                <member segment="82402"/>
+                <member segment="82403"/>
+                <member segment="82404"/>
+                <member segment="82405"/>
+                <member segment="82406"/>
+                <member segment="82407"/>
+                <member segment="82408"/>
+            </segmentGroup>
+            <segmentGroup neuroLexId="sao864921383" id="tuftden_3">
+                <notes>This group contains an unbranched set of segments, and all of the segmentGroups marked with
+             neuroLexId = sao864921383 form a non-overlapping set of all of the segments.
+             These segmentGroups correspond to the 'cables' of NeuroML v1.8.1, and map to/from NEURON sections.</notes>
+                <property tag="numberInternalDivisions" value="3"/>
+                <annotation/>
+                <member segment="82618"/>
+                <member segment="82619"/>
+                <member segment="82620"/>
+            </segmentGroup>
+            <segmentGroup neuroLexId="sao864921383" id="tuftden_2">
+                <notes>This group contains an unbranched set of segments, and all of the segmentGroups marked with
+             neuroLexId = sao864921383 form a non-overlapping set of all of the segments.
+             These segmentGroups correspond to the 'cables' of NeuroML v1.8.1, and map to/from NEURON sections.</notes>
+                <property tag="numberInternalDivisions" value="2"/>
+                <annotation/>
+                <member segment="82616"/>
+                <member segment="82617"/>
+            </segmentGroup>
+            <segmentGroup neuroLexId="sao864921383" id="tuftden_1">
+                <notes>This group contains an unbranched set of segments, and all of the segmentGroups marked with
+             neuroLexId = sao864921383 form a non-overlapping set of all of the segments.
+             These segmentGroups correspond to the 'cables' of NeuroML v1.8.1, and map to/from NEURON sections.</notes>
+                <property tag="numberInternalDivisions" value="3"/>
+                <annotation/>
+                <member segment="82613"/>
+                <member segment="82614"/>
+                <member segment="82615"/>
+            </segmentGroup>
+            <segmentGroup neuroLexId="sao864921383" id="tuftden_0">
+                <notes>This group contains an unbranched set of segments, and all of the segmentGroups marked with
+             neuroLexId = sao864921383 form a non-overlapping set of all of the segments.
+             These segmentGroups correspond to the 'cables' of NeuroML v1.8.1, and map to/from NEURON sections.</notes>
+                <property tag="numberInternalDivisions" value="2"/>
+                <annotation/>
+                <member segment="82611"/>
+                <member segment="82612"/>
+            </segmentGroup>
+            <segmentGroup neuroLexId="sao864921383" id="secden_13">
+                <notes>This group contains an unbranched set of segments, and all of the segmentGroups marked with
+             neuroLexId = sao864921383 form a non-overlapping set of all of the segments.
+             These segmentGroups correspond to the 'cables' of NeuroML v1.8.1, and map to/from NEURON sections.</notes>
+                <property tag="numberInternalDivisions" value="7"/>
+                <annotation/>
+                <member segment="82604"/>
+                <member segment="82605"/>
+                <member segment="82606"/>
+                <member segment="82607"/>
+                <member segment="82608"/>
+                <member segment="82609"/>
+                <member segment="82610"/>
+            </segmentGroup>
+            <segmentGroup neuroLexId="sao864921383" id="secden_12">
+                <notes>This group contains an unbranched set of segments, and all of the segmentGroups marked with
+             neuroLexId = sao864921383 form a non-overlapping set of all of the segments.
+             These segmentGroups correspond to the 'cables' of NeuroML v1.8.1, and map to/from NEURON sections.</notes>
+                <property tag="numberInternalDivisions" value="21"/>
+                <annotation/>
+                <member segment="82583"/>
+                <member segment="82584"/>
+                <member segment="82585"/>
+                <member segment="82586"/>
+                <member segment="82587"/>
+                <member segment="82588"/>
+                <member segment="82589"/>
+                <member segment="82590"/>
+                <member segment="82591"/>
+                <member segment="82592"/>
+                <member segment="82593"/>
+                <member segment="82594"/>
+                <member segment="82595"/>
+                <member segment="82596"/>
+                <member segment="82597"/>
+                <member segment="82598"/>
+                <member segment="82599"/>
+                <member segment="82600"/>
+                <member segment="82601"/>
+                <member segment="82602"/>
+                <member segment="82603"/>
+            </segmentGroup>
+            <segmentGroup neuroLexId="sao864921383" id="secden_9">
+                <notes>This group contains an unbranched set of segments, and all of the segmentGroups marked with
+             neuroLexId = sao864921383 form a non-overlapping set of all of the segments.
+             These segmentGroups correspond to the 'cables' of NeuroML v1.8.1, and map to/from NEURON sections.</notes>
+                <property tag="numberInternalDivisions" value="60"/>
+                <annotation/>
+                <member segment="82479"/>
+                <member segment="82480"/>
+                <member segment="82481"/>
+                <member segment="82482"/>
+                <member segment="82483"/>
+                <member segment="82484"/>
+                <member segment="82485"/>
+                <member segment="82486"/>
+                <member segment="82487"/>
+                <member segment="82488"/>
+                <member segment="82489"/>
+                <member segment="82490"/>
+                <member segment="82491"/>
+                <member segment="82492"/>
+                <member segment="82493"/>
+                <member segment="82494"/>
+                <member segment="82495"/>
+                <member segment="82496"/>
+                <member segment="82497"/>
+                <member segment="82498"/>
+                <member segment="82499"/>
+                <member segment="82500"/>
+                <member segment="82501"/>
+                <member segment="82502"/>
+                <member segment="82503"/>
+                <member segment="82504"/>
+                <member segment="82505"/>
+                <member segment="82506"/>
+                <member segment="82507"/>
+                <member segment="82508"/>
+                <member segment="82509"/>
+                <member segment="82510"/>
+                <member segment="82511"/>
+                <member segment="82512"/>
+                <member segment="82513"/>
+                <member segment="82514"/>
+                <member segment="82515"/>
+                <member segment="82516"/>
+                <member segment="82517"/>
+                <member segment="82518"/>
+                <member segment="82519"/>
+                <member segment="82520"/>
+                <member segment="82521"/>
+                <member segment="82522"/>
+                <member segment="82523"/>
+                <member segment="82524"/>
+                <member segment="82525"/>
+                <member segment="82526"/>
+                <member segment="82527"/>
+                <member segment="82528"/>
+                <member segment="82529"/>
+                <member segment="82530"/>
+                <member segment="82531"/>
+                <member segment="82532"/>
+                <member segment="82533"/>
+                <member segment="82534"/>
+                <member segment="82535"/>
+                <member segment="82536"/>
+                <member segment="82537"/>
+                <member segment="82538"/>
+            </segmentGroup>
+            <segmentGroup neuroLexId="sao864921383" id="secden_8">
+                <notes>This group contains an unbranched set of segments, and all of the segmentGroups marked with
+             neuroLexId = sao864921383 form a non-overlapping set of all of the segments.
+             These segmentGroups correspond to the 'cables' of NeuroML v1.8.1, and map to/from NEURON sections.</notes>
+                <property tag="numberInternalDivisions" value="20"/>
+                <annotation/>
+                <member segment="82459"/>
+                <member segment="82460"/>
+                <member segment="82461"/>
+                <member segment="82462"/>
+                <member segment="82463"/>
+                <member segment="82464"/>
+                <member segment="82465"/>
+                <member segment="82466"/>
+                <member segment="82467"/>
+                <member segment="82468"/>
+                <member segment="82469"/>
+                <member segment="82470"/>
+                <member segment="82471"/>
+                <member segment="82472"/>
+                <member segment="82473"/>
+                <member segment="82474"/>
+                <member segment="82475"/>
+                <member segment="82476"/>
+                <member segment="82477"/>
+                <member segment="82478"/>
+            </segmentGroup>
+            <segmentGroup id="OneSecGrp_SectionRef_10684">
+                <include segmentGroup="hillock"/>
+            </segmentGroup>
+            <segmentGroup id="OneSecGrp_SectionRef_10685">
+                <include segmentGroup="secden_3"/>
+            </segmentGroup>
+            <segmentGroup id="OneSecGrp_SectionRef_10686">
+                <include segmentGroup="secden_2"/>
+            </segmentGroup>
+            <segmentGroup id="OneSecGrp_SectionRef_10688">
+                <include segmentGroup="secden_0"/>
+            </segmentGroup>
+            <segmentGroup id="OneSecGrp_SectionRef_10689">
+                <include segmentGroup="priden"/>
+            </segmentGroup>
+            <segmentGroup id="OneSecGrp_SectionRef_10690">
+                <include segmentGroup="initialseg"/>
+            </segmentGroup>
+            <segmentGroup id="OneSecGrp_SectionRef_10691">
+                <include segmentGroup="secden_11"/>
+            </segmentGroup>
+            <segmentGroup id="OneSecGrp_SectionRef_10692">
+                <include segmentGroup="secden_10"/>
+            </segmentGroup>
+            <segmentGroup id="OneSecGrp_SectionRef_10693">
+                <include segmentGroup="secden_5"/>
+            </segmentGroup>
+            <segmentGroup id="OneSecGrp_SectionRef_10694">
+                <include segmentGroup="secden_4"/>
+            </segmentGroup>
+            <segmentGroup id="OneSecGrp_SectionRef_10695">
+                <include segmentGroup="secden_7"/>
+            </segmentGroup>
+            <segmentGroup id="OneSecGrp_SectionRef_10696">
+                <include segmentGroup="secden_6"/>
+            </segmentGroup>
+            <segmentGroup id="OneSecGrp_SectionRef_10697">
+                <include segmentGroup="tuftden_3"/>
+            </segmentGroup>
+            <segmentGroup id="OneSecGrp_SectionRef_10698">
+                <include segmentGroup="tuftden_2"/>
+            </segmentGroup>
+            <segmentGroup id="OneSecGrp_SectionRef_10699">
+                <include segmentGroup="tuftden_1"/>
+            </segmentGroup>
+            <segmentGroup id="OneSecGrp_SectionRef_10700">
+                <include segmentGroup="tuftden_0"/>
+            </segmentGroup>
+            <segmentGroup id="OneSecGrp_SectionRef_10701">
+                <include segmentGroup="secden_13"/>
+            </segmentGroup>
+            <segmentGroup id="OneSecGrp_SectionRef_10702">
+                <include segmentGroup="secden_12"/>
+            </segmentGroup>
+            <segmentGroup id="OneSecGrp_SectionRef_10703">
+                <include segmentGroup="secden_9"/>
+            </segmentGroup>
+            <segmentGroup id="OneSecGrp_SectionRef_10704">
+                <include segmentGroup="secden_8"/>
+            </segmentGroup>
+            <segmentGroup id="OneSecGrp_SectionRef_10683">
+                <include segmentGroup="soma"/>
+            </segmentGroup>
+            <segmentGroup id="OneSecGrp_SectionRef_10687">
+                <include segmentGroup="secden_1"/>
+            </segmentGroup>
+            <segmentGroup id="all">
+                <include segmentGroup="soma"/>
+                <include segmentGroup="hillock"/>
+                <include segmentGroup="secden_3"/>
+                <include segmentGroup="secden_2"/>
+                <include segmentGroup="secden_1"/>
+                <include segmentGroup="secden_0"/>
+                <include segmentGroup="priden"/>
+                <include segmentGroup="initialseg"/>
+                <include segmentGroup="secden_11"/>
+                <include segmentGroup="secden_10"/>
+                <include segmentGroup="secden_5"/>
+                <include segmentGroup="secden_4"/>
+                <include segmentGroup="secden_7"/>
+                <include segmentGroup="secden_6"/>
+                <include segmentGroup="tuftden_3"/>
+                <include segmentGroup="tuftden_2"/>
+                <include segmentGroup="tuftden_1"/>
+                <include segmentGroup="tuftden_0"/>
+                <include segmentGroup="secden_13"/>
+                <include segmentGroup="secden_12"/>
+                <include segmentGroup="secden_9"/>
+                <include segmentGroup="secden_8"/>
+            </segmentGroup>
+            <segmentGroup neuroLexId="GO:0043025" id="soma_group">
+                <include segmentGroup="soma"/>
+            </segmentGroup>
+            <segmentGroup neuroLexId="GO:0030425" id="dendrite_group">
+                <include segmentGroup="secden_3"/>
+                <include segmentGroup="secden_2"/>
+                <include segmentGroup="secden_1"/>
+                <include segmentGroup="secden_0"/>
+                <include segmentGroup="priden"/>
+                <include segmentGroup="secden_11"/>
+                <include segmentGroup="secden_10"/>
+                <include segmentGroup="secden_5"/>
+                <include segmentGroup="secden_4"/>
+                <include segmentGroup="secden_7"/>
+                <include segmentGroup="secden_6"/>
+                <include segmentGroup="tuftden_3"/>
+                <include segmentGroup="tuftden_2"/>
+                <include segmentGroup="tuftden_1"/>
+                <include segmentGroup="tuftden_0"/>
+                <include segmentGroup="secden_13"/>
+                <include segmentGroup="secden_12"/>
+                <include segmentGroup="secden_9"/>
+                <include segmentGroup="secden_8"/>
+            </segmentGroup>
+            <segmentGroup neuroLexId="GO:0030424" id="axon_group">
+                <include segmentGroup="hillock"/>
+                <include segmentGroup="initialseg"/>
+            </segmentGroup>
+        </morphology>
+        
+        <biophysicalProperties id="biophys">
+
+            <membraneProperties>
+
+                <channelDensity segmentGroup="dendrite_group" ionChannel="pas"       condDensity="0.0001 S_per_cm2" erev="-65.0 mV" id="passive_dendritic" ion="non_specific"/>
+                <channelDensity segmentGroup="dendrite_group" ionChannel="nax__sh10" condDensity="0.04 S_per_cm2"    erev="50.0 mV" id="nax_dendritic" ion="na" />
+                <channelDensity segmentGroup="dendrite_group" ionChannel="kdrmt"     condDensity="0.001 S_per_cm2"  erev="-90.0 mV" id="kdrmt_dendritic" ion="k" />
+                <channelDensity segmentGroup="dendrite_group" ionChannel="kamt"      condDensity="0.004 S_per_cm2"  erev="-90.0 mV" id="kamt_dendritic" ion="k" />
+
+                <channelDensity segmentGroup="axon_group" ionChannel="pas"      condDensity="0.001 S_per_cm2" erev="-65.0 mV" id="passive_axonal" ion="non_specific"/>
+                <channelDensity segmentGroup="axon_group" ionChannel="nax__sh0" condDensity="0.8 S_per_cm2"    erev="50.0 mV" id="nax_axonal" ion="na" />
+                <channelDensity segmentGroup="axon_group" ionChannel="kdrmt"    condDensity="0.001 S_per_cm2" erev="-90.0 mV" id="kdrmt_axonal" ion="k" />
+                <channelDensity segmentGroup="axon_group" ionChannel="kamt"     condDensity="0.08 S_per_cm2"  erev="-90.0 mV" id="kamt_axonal" ion="k" />
+
+                <channelDensity segmentGroup="soma_group" ionChannel="pas"      condDensity="0.0001 S_per_cm2" erev="-65.0 mV" id="passive_somatic" ion="non_specific"/>
+                <channelDensity segmentGroup="soma_group" ionChannel="nax__sh0" condDensity="0.04 S_per_cm2"    erev="50.0 mV" id="nax_somatic" ion="na" />
+                <channelDensity segmentGroup="soma_group" ionChannel="kdrmt"    condDensity="0.001 S_per_cm2"  erev="-90.0 mV" id="kdrmt_somatic" ion="k" />
+                <channelDensity segmentGroup="soma_group" ionChannel="kamt"     condDensity="0.004 S_per_cm2"  erev="-90.0 mV" id="kamt_somatic" ion="k" />
+
+
+                <spikeThresh value="0 mV"/>
+
+                <specificCapacitance value="0.7 uF_per_cm2"/>
+
+                <initMembPotential value="-65.0 mV"/>
+
+            </membraneProperties>
+            
+            <intracellularProperties>
+                <resistivity value="150 ohm_cm"/>
+            </intracellularProperties>
+
+        </biophysicalProperties>
+    </cell>
+</neuroml>
