@@ -23,9 +23,6 @@ from neuroml import SegmentGroup
 
 def __main__():
 
-    import pydevd
-    #pydevd.settrace('10.211.55.3', port=4200, stdoutToServer=True, stderrToServer=True)
-
     numMitralsToUse = 2
     numGranulesPerMitralToExport = 25
     numGranulesTotal = numMitralsToUse * numGranulesPerMitralToExport
@@ -38,6 +35,7 @@ def __main__():
     cells = {}
     for mcid in xrange(0, numMitralsToUse):
         for gcid in set(mitral2granule[mcid][0:numGranulesPerMitralToExport]):
+            cells.update({ gcid: { 'cell': mkgranule(gcid), 'index': len(cells)} })
 
     exportToNML(cells)
 
@@ -52,8 +50,8 @@ def exportNetworkGCs(netFile):
 
     cells = {}
     for gcid in gcids:
-        if not os.path.isfile("../NeuroML2/GranuleCells/Exported/Granule_0_%i.cell.nml"):
-            cells.update({ gcid: { 'cell': mkgranule(gcid), 'index': len(cells)} })
+        #if not os.path.isfile("../NeuroML2/GranuleCells/Exported/Granule_0_%i.cell.nml"):
+        cells.update({ gcid: { 'cell': mkgranule(gcid), 'index': len(cells)} })
 
     exportToNML(cells)
 
@@ -89,6 +87,10 @@ def exportToNML(cells):
         cell = nml_doc.cells[0]
 
         print("Loaded cell with %i segments"%len(cell.morphology.segments))
+
+        # Change cell ID to preserve GCID
+        cell.id = "Granule_0_%i" % gcid
+
         bad_root = -1
         root_id = 0
         for seg in cell.morphology.segments:
@@ -108,6 +110,19 @@ def exportToNML(cells):
                     if memb.segments == bad_root:
                         memb.segments = root_id
 
+        # Add orientation info
+        # Seg0_priden2_0 is 250 from params and should be in the versor direction
+        # Seg0_priden is soma to proj length and also in the versor direction
+        versor = granules.granule_position_orientation(gcid)[1]
+
+        soma = [seg for seg in cell.morphology.segments if seg.name == "Seg0_soma"][0]
+        priden2 = [seg for seg in cell.morphology.segments if seg.name == "Seg0_priden2_0"][0]
+        priden = [seg for seg in cell.morphology.segments if seg.name == "Seg0_priden"][0]
+
+        soma.distal = setAlongVersor(soma.distal, versor, soma.length)
+        priden.distal = setAlongVersor(priden.distal, versor, priden.length)
+        priden2.distal = setAlongVersor(priden2.distal, versor, priden2.length)
+
         # Replace ModelViewParmSubset_N groups with all, axon, soma, dendrite groups
         buildStandardSegmentGroups(cell)
 
@@ -121,7 +136,14 @@ def exportToNML(cells):
         # Replace placeholders with contents from GranuleCell...xml files
         replaceChannelPlaceholders(nml_cell_file)
 
-    pynml.nml2_to_svg(nml_net_file)
+
+def setAlongVersor(segmentPoint, versor, distance):
+
+    segmentPoint.x = versor[0]*distance
+    segmentPoint.y = versor[1]*distance
+    segmentPoint.z = versor[2]*distance
+
+    return segmentPoint
 
 def replaceChannelPlaceholders(nml_cell_file):
 

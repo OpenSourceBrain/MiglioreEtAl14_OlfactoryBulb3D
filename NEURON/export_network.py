@@ -3,16 +3,16 @@ import sys
 from neuron import h
 from pyneuroml import pynml
 
-
 h.chdir('../NEURON')
 sys.path.append('../NEURON')
+
 
 def __main__():
     import customsim
     import modeldata
 
-    MCs = 2
-    GCsPerMC = 10
+    MCs = 5
+    GCsPerMC = 50
 
     networkTemplate = FileTemplate("../NeuroML2/Networks/NetworkTemplate.xml")
     includeTemplate = FileTemplate("../NeuroML2/Networks/IncludeTemplate.xml")
@@ -31,6 +31,10 @@ def __main__():
     mcNMLs = {}
     gcNMLs = {}
 
+
+    import pydevd
+    #pydevd.settrace('10.211.55.3', port=4200, stdoutToServer=True, stderrToServer=True)
+
     # Make MC includes and populations
     for mcgid in model.mitral_gids:
 
@@ -41,9 +45,9 @@ def __main__():
         populations += populationTemplate.text\
             .replace("[CellType]", "Mitral")\
             .replace("[GID]", `mcgid`)\
-            .replace("[X]", `0`)\
-            .replace("[Y]", `0`)\
-            .replace("[Z]", `0`)
+            .replace("[X]", `model.mitrals[mcgid].x`)\
+            .replace("[Y]", `model.mitrals[mcgid].y`)\
+            .replace("[Z]", `model.mitrals[mcgid].z`)
 
         # Retain mitral cell NML
         mcNML = pynml\

@@ -17,7 +17,7 @@ from pyneuroml import pynml
 from neuroml import SegmentGroup
 
 def __main__():
-    num_cells_to_export = 30
+    num_cells_to_export = 635
 
     cells = []
     for mgid in range(num_cells_to_export):
@@ -31,14 +31,32 @@ def __main__():
                        separateCellFiles=True)
 
     for i in range(num_cells_to_export):
-         
+
+        print("Processing cell %i out of i%"%(i, num_cells_to_export))
+
         nml_cell_file = "../NeuroML2/MitralCells/Exported/Mitral_0_%i.cell.nml" % i
 
         nml_doc = pynml.read_neuroml2_file(nml_cell_file)
 
         cell = nml_doc.cells[0]
 
-        print("Loaded cell with %i segments"%len(cell.morphology.segments))
+        somaSeg = [seg for seg in cell.morphology.segments if seg.name == "Seg0_soma"][0]
+        initialSeg = [seg for seg in cell.morphology.segments if seg.name == "Seg0_initialseg"][0]
+        hillockSeg = [seg for seg in cell.morphology.segments if seg.name == "Seg0_hillock"][0]
+
+        #Fix initial and hillock segs by moving them to the soma
+        hillockSeg.proximal = pointMovedByOffset(hillockSeg.proximal, somaSeg.distal)
+        hillockSeg.distal = pointMovedByOffset(hillockSeg.distal, somaSeg.distal)
+        initialSeg.proximal = pointMovedByOffset(initialSeg.proximal, somaSeg.distal)
+        initialSeg.distal = pointMovedByOffset(initialSeg.distal, somaSeg.distal)
+
+        #Move everything back to the origin
+        originOffset = type("", (), dict(x = -somaSeg.proximal.x, y = -somaSeg.proximal.y, z = -somaSeg.proximal.z ))()
+
+        for seg in cell.morphology.segments:
+            seg.proximal = pointMovedByOffset(seg.proximal, originOffset)
+            seg.distal =   pointMovedByOffset(seg.distal, originOffset)
+
         bad_root = -1
         root_id = 0
         for seg in cell.morphology.segments:
@@ -46,7 +64,6 @@ def __main__():
                 if seg.id != 0:
                     bad_root = seg.id
                     seg.id = root_id
-                    print("Changing root id from %i to %i"%(bad_root,root_id))
                     
         if bad_root > 0:
             for seg in cell.morphology.segments:
@@ -71,7 +88,20 @@ def __main__():
         # Replace placeholders with contents from MitralCell...xml files
         replaceChannelPlaceholders(nml_cell_file)
 
-    pynml.nml2_to_svg(nml_net_file)
+    print("DONE")
+
+
+def pointMovedByOffset(point, offset):
+
+    if point is None:
+        return None
+
+    point.x = point.x + offset.x
+    point.y = point.y + offset.y
+    point.z = point.z + offset.z
+
+    return point
+
 
 def replaceChannelPlaceholders(nml_cell_file):
 
