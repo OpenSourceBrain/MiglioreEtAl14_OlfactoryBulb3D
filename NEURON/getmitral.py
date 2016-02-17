@@ -30,12 +30,13 @@ def getmitral(mgid):
       sec.points.append(list(unpack('>ffff', fi.read(16))))
     return parent_index, section_index, sec
 
-
+  # Always read the full-network file
+  NmitralDumpFile = 635
 
   fi = open('mitral.dump', 'rb')
-  offset = [ None ] * Nmitral
-  s = 2*Nmitral
-  for i in range(Nmitral):
+  offset = [ None ] * NmitralDumpFile
+  s = 2*NmitralDumpFile
+  for i in range(NmitralDumpFile):
     l = unpack('>H', fi.read(2))[0]
     offset[i] = s
     s += l

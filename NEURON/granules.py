@@ -19,7 +19,20 @@ def initgranules():
     gid2pos.clear()
     pos2gid.clear()
     #gsyn_cnt.clear()
-    
+
+    # Cache slow lookup table building
+    import cPickle as pickle
+    with open('gid2pos.p', 'rb') as fp1:
+        gid2pos.update(pickle.load(fp1))
+        ngranule = len(gid2pos)
+
+    with open('pos2gid.p', 'rb') as fp2:
+        pos2gid.update(pickle.load(fp2))
+
+    return #Remove if saving to cache
+
+    # The following code is very slow, and the result of which does not change with number of mitral/granule cells.
+    # Its result was saved to the above two files and retrieved at run time.
     eup = misc.Ellipse(params.bulbCenter, params.somaAxis[0])
     edw = misc.Ellipse(params.bulbCenter, params.granAxisInf)
 
@@ -42,6 +55,13 @@ def initgranules():
             #gsyn_cnt.update({ gid:n })
 
     ngranule = len(gid2pos)
+
+    # Save to cache
+    with open('gid2pos.p', 'wb') as fp:
+        pickle.dump(gid2pos, fp)
+
+    with open('pos2gid.p', 'wb') as fp:
+        pickle.dump(pos2gid, fp)
 
 initgranules()
 

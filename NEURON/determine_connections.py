@@ -65,6 +65,16 @@ def mk_gconnection_info_part2(model):
 def mk_gconnection_info(model):
   mk_gconnection_info_part1(model)
   mk_gconnection_info_part2(model)
+
+  # # Save full network Mitral-Granule connections
+  # mitral2granule = {}
+  # for mgid in model.mitral_gids:
+  #     mitral2granule.update({mgid: [gc[3] for gc in model.mconnections[mgid]]})
+  #
+  # import cPickle as pickle
+  # with open('mitral2granule.p', 'wb') as fp:
+  #     pickle.dump(mitral2granule, fp)
+
   util.elapsed('mk_gconnection_info (#granules = %d)'%int(pc.allreduce(len(model.granule_gids),1)))
 
 

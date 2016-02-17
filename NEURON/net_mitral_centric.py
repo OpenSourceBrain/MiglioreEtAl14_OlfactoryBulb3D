@@ -86,9 +86,16 @@ def read_mconnection_info(model, connection_file):
   from struct import unpack
   fi = open(connection_file, 'rb')
   rec = fi.read(22)
+
+  import custom_params
+
   while rec:
     md_gid, mgid, isec, xm, ggid, xg = unpack('>LLHfLf', rec)
-    if mgid in model.mitral_gids:
+
+    if mgid in model.mitral_gids and \
+        (not model.mconnections.has_key(mgid) or \
+        len(model.mconnections[mgid]) < custom_params.customGranulesPerMitralCount):
+
       slot = mgrs.gid2mg(md_gid)[3]
       cinfo = (mgid, isec, xm, ggid, 0, xg, slot, (0.,0.,0.))
       if not model.mconnections.has_key(mgid):
@@ -100,9 +107,15 @@ def read_mconnection_info(model, connection_file):
   
 
 def build_net_round_robin(model, connection_file):
+
+  import custom_params
+  model.mitral_gids = set(range(0,min(635, custom_params.customMitralCount)))
+  model.granule_gids = set(range(max(model.mitral_gids)+1, min(122166, custom_params.customMitralCount*custom_params.customGranulesPerMitralCount)))
+  model.gids = model.mitral_gids.union(model.granule_gids)
+
   enter = h.startsw()
   dc.mk_mitrals(model)
-  return
+  #return # removing as per M. Migliore's email
   read_mconnection_info(model, connection_file)
   dc.mk_gconnection_info(model)
   model.gids = model.mitral_gids.copy()
