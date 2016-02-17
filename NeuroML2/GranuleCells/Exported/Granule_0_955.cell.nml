@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<neuroml xmlns="http://www.neuroml.org/schema/neuroml2"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.neuroml.org/schema/neuroml2 https://raw.github.com/NeuroML/NeuroML2/development/Schemas/NeuroML2/NeuroML_v2beta4.xsd"
+    id = "NeuroML2_file_exported_from_NEURON">
+
+  <cell id="Granule_0_955">
+    <notes>Cell: Granule_0_955 exported from NEURON ModelView</notes>
+    <morphology id="morphology">
+<!-- Section: Granule[955].soma (segmentGroup: soma) which has 2 3D points, so 1 segment(s)-->
+      <segment id="2866" name = "Seg0_soma">
+        <proximal x="0" y="0" z="0" diameter="8"/>
+        <distal x="0" y="8" z="0" diameter="8"/>
+      </segment>
+<!-- Section: Granule[955].priden (segmentGroup: priden) which has 2 3D points, so 1 segment(s)-->
+      <segment id="2867" name = "Seg0_priden">
+        <parent segment="2866"/>
+        <proximal x="0" y="0" z="0" diameter="0.5"/>
+        <distal x="0" y="179.75" z="0" diameter="0.5"/>
+      </segment>
+<!-- Section: Granule[955].priden2[0] (segmentGroup: priden2_0) which has 2 3D points, so 1 segment(s)-->
+      <segment id="2868" name = "Seg0_priden2_0">  <!-- Connected at 0.8 on parent section: Granule[955].priden  -->
+        <parent segment="2866"/>
+        <proximal x="0" y="0" z="0" diameter="0.4"/>
+        <distal x="0" y="250" z="0" diameter="0.4"/>
+      </segment>
+
+<!-- Section: Granule[955].soma (segmentGroup: soma) which has 2 3D points, so 1 segment(s)-->
+
+      <segmentGroup id = "soma"  neuroLexId="sao864921383">
+         <notes>This group contains an unbranched set of segments, and all of the segmentGroups marked with
+             neuroLexId = sao864921383 form a non-overlapping set of all of the segments.
+             These segmentGroups correspond to the 'cables' of NeuroML v1.8.1, and map to/from NEURON sections.</notes>
+        <member segment = "2866"/>
+      </segmentGroup>
+
+
+<!-- Section: Granule[955].priden (segmentGroup: priden) which has 2 3D points, so 1 segment(s)-->
+
+      <segmentGroup id = "priden"  neuroLexId="sao864921383">
+         <notes>This group contains an unbranched set of segments, and all of the segmentGroups marked with
+             neuroLexId = sao864921383 form a non-overlapping set of all of the segments.
+             These segmentGroups correspond to the 'cables' of NeuroML v1.8.1, and map to/from NEURON sections.</notes>
+        <!-- This is currently inside (old convention) & outside (new convention) the <annotation> element, as some APIs have trouble reading what's inside <annotation> (<xs:any..> in Schema) -->
+        <property tag="numberInternalDivisions" value="12"/> <!-- Discretization of model at time of export from NEURON. Can be overridden by importing application -->
+        <annotation>
+          <property tag="numberInternalDivisions" value="12"/> <!-- Discretization of model at time of export from NEURON. Can be overridden by importing application -->
+        </annotation>
+        <member segment = "2867"/>
+      </segmentGroup>
+
+
+<!-- Section: Granule[955].priden2[0] (segmentGroup: priden2_0) which has 2 3D points, so 1 segment(s)-->
+
+      <segmentGroup id = "priden2_0"  neuroLexId="sao864921383">
+         <notes>This group contains an unbranched set of segments, and all of the segmentGroups marked with
+             neuroLexId = sao864921383 form a non-overlapping set of all of the segments.
+             These segmentGroups correspond to the 'cables' of NeuroML v1.8.1, and map to/from NEURON sections.</notes>
+        <!-- This is currently inside (old convention) & outside (new convention) the <annotation> element, as some APIs have trouble reading what's inside <annotation> (<xs:any..> in Schema) -->
+        <property tag="numberInternalDivisions" value="26"/> <!-- Discretization of model at time of export from NEURON. Can be overridden by importing application -->
+        <annotation>
+          <property tag="numberInternalDivisions" value="26"/> <!-- Discretization of model at time of export from NEURON. Can be overridden by importing application -->
+        </annotation>
+        <member segment = "2868"/>
+      </segmentGroup>
+
+      <segmentGroup id="ModelViewParmSubset_2886"> 
+        <include segmentGroup = "soma"/>
+        <include segmentGroup = "priden"/>
+        <include segmentGroup = "priden2_0"/>
+      </segmentGroup>
+
+      <segmentGroup id="ModelViewParmSubset_2887"> 
+        <include segmentGroup = "soma"/>
+      </segmentGroup>
+
+      <segmentGroup id="ModelViewParmSubset_2888"> 
+        <include segmentGroup = "priden"/>
+        <include segmentGroup = "priden2_0"/>
+      </segmentGroup>
+
+      <segmentGroup id="OneSecGrp_SectionRef_5760"> <!-- Creating a group containing a single section: priden... -->
+        <include segmentGroup = "priden"/>
+      </segmentGroup>
+
+      <segmentGroup id="OneSecGrp_SectionRef_5761"> <!-- Creating a group containing a single section: priden2_0... -->
+        <include segmentGroup = "priden2_0"/>
+      </segmentGroup>
+
+      <segmentGroup id="OneSecGrp_SectionRef_5759"> <!-- Creating a group containing a single section: soma... -->
+        <include segmentGroup = "soma"/>
+      </segmentGroup>
+
+    </morphology>
+  </cell> 
+</neuroml>
