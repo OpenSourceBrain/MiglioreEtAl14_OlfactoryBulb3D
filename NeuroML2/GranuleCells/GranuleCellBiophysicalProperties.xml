@@ -12,10 +12,15 @@
                 <channelDensity segmentGroup="soma_group" ionChannel="kdrmt"    condDensity="0.006 S_per_cm2"  erev="-90.0 mV" id="kdrmt_somatic" ion="k" />
                 <channelDensity segmentGroup="soma_group" ionChannel="kamt"     condDensity="0.004 S_per_cm2"  erev="-90.0 mV" id="kamt_somatic" ion="k" />
 
+                <channelDensity segmentGroup="spine_group" ionChannel="pas"       condDensity="0.00003333333333 S_per_cm2" erev="-65.0 mV" id="passive_spine" ion="non_specific"/>
+                <channelDensity segmentGroup="spine_group" ionChannel="kamt"     condDensity="0.008 S_per_cm2"  erev="-90.0 mV" id="kamt_spine" ion="k" />
+                <channelDensity segmentGroup="spine_group" ionChannel="nax__sh15" condDensity="0.02 S_per_cm2"    erev="60.0 mV" id="nax_spine" ion="na" />
 
                 <spikeThresh value="0 mV"/>
 
-                <specificCapacitance value="4.0 uF_per_cm2"/>
+                <specificCapacitance value="4.0 uF_per_cm2" segmentGroup="soma_group"/>
+                <specificCapacitance value="4.0 uF_per_cm2" segmentGroup="dendrite_group"/>
+                <specificCapacitance value="1.0 uF_per_cm2" segmentGroup="spine_group" />
 
                 <initMembPotential value="-65.0 mV"/>
 

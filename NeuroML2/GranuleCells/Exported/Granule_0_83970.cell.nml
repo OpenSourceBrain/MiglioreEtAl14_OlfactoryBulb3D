@@ -1,26 +1,26 @@
 <neuroml xmlns="http://www.neuroml.org/schema/neuroml2"  xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.neuroml.org/schema/neuroml2 https://raw.github.com/NeuroML/NeuroML2/development/Schemas/NeuroML2/NeuroML_v2beta4.xsd" id="NeuroML2_file_exported_from_NEURON">
     
-    <include href="../../Channels/pas.channel.nml"/>
-    <include href="../../Channels/nax__sh15.channel.nml"/>
-    <include href="../../Channels/kamt.channel.nml"/>
-    <include href="../../Channels/kdrmt.channel.nml"/>
+    <include href="../Channels/pas.channel.nml"/>
+    <include href="../Channels/nax__sh15.channel.nml"/>
+    <include href="../Channels/kamt.channel.nml"/>
+    <include href="../Channels/kdrmt.channel.nml"/>
 
-    <cell id="Granule_0_0">
-        <notes>Cell: Granule_0_0 exported from NEURON ModelView</notes>
+    <cell id="Granule_0_83970">
+        <notes>Cell: Granule_0_3236 exported from NEURON ModelView</notes>
         <morphology id="morphology">
             <segment id="0" name="Seg0_soma">
                 <proximal y="0.000000e+00" x="0.000000e+00" z="0.000000e+00" diameter="8.000000e+00"/>
-                <distal y="8.000000e+00" x="0.000000e+00" z="0.000000e+00" diameter="8.000000e+00"/>
+                <distal y="2.146625e+00" x="7.155418e+00" z="2.862167e+00" diameter="8.000000e+00"/>
             </segment>
-            <segment id="2" name="Seg0_priden">
+            <segment id="9710" name="Seg0_priden">
                 <parent fractionAlong="1" segment="0"/>
                 <proximal y="0.000000e+00" x="0.000000e+00" z="0.000000e+00" diameter="5.000000e-01"/>
-                <distal y="2.058630e+02" x="0.000000e+00" z="0.000000e+00" diameter="5.000000e-01"/>
+                <distal y="5.523884e+01" x="1.841295e+02" z="7.365179e+01" diameter="5.000000e-01"/>
             </segment>
-            <segment id="3" name="Seg0_priden2_0">
+            <segment id="9711" name="Seg0_priden2_0">
                 <parent fractionAlong="1" segment="0"/>
                 <proximal y="0.000000e+00" x="0.000000e+00" z="0.000000e+00" diameter="4.000000e-01"/>
-                <distal y="2.500000e+02" x="0.000000e+00" z="0.000000e+00" diameter="4.000000e-01"/>
+                <distal y="6.708204e+01" x="2.236068e+02" z="8.944272e+01" diameter="4.000000e-01"/>
             </segment>
             <segmentGroup neuroLexId="sao864921383" id="soma">
                 <notes>This group contains an unbranched set of segments, and all of the segmentGroups marked with
@@ -34,7 +34,7 @@
              These segmentGroups correspond to the 'cables' of NeuroML v1.8.1, and map to/from NEURON sections.</notes>
                 <property tag="numberInternalDivisions" value="14"/>
                 <annotation/>
-                <member segment="2"/>
+                <member segment="9710"/>
             </segmentGroup>
             <segmentGroup neuroLexId="sao864921383" id="priden2_0">
                 <notes>This group contains an unbranched set of segments, and all of the segmentGroups marked with
@@ -42,15 +42,21 @@
              These segmentGroups correspond to the 'cables' of NeuroML v1.8.1, and map to/from NEURON sections.</notes>
                 <property tag="numberInternalDivisions" value="26"/>
                 <annotation/>
-                <member segment="3"/>
+                <member segment="9711"/>
+            </segmentGroup>
+            <segmentGroup id="OneSecGrp_SectionRef_19418">
+                <include segmentGroup="priden"/>
+            </segmentGroup>
+            <segmentGroup id="OneSecGrp_SectionRef_19419">
+                <include segmentGroup="priden2_0"/>
+            </segmentGroup>
+            <segmentGroup id="OneSecGrp_SectionRef_19417">
+                <include segmentGroup="soma"/>
             </segmentGroup>
             <segmentGroup id="all">
                 <include segmentGroup="soma"/>
                 <include segmentGroup="priden"/>
                 <include segmentGroup="priden2_0"/>
-            </segmentGroup>
-            <segmentGroup id="OneSecGrp_SectionRef_1">
-                <include segmentGroup="soma"/>
             </segmentGroup>
             <segmentGroup neuroLexId="GO:0043025" id="soma_group">
                 <include segmentGroup="soma"/>
