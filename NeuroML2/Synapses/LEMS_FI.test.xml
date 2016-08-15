@@ -1,0 +1,87 @@
+<Lems>
+    
+    <!-- Specify which component to run -->
+    <Target component="Sim"/>
+    
+    <!-- Include core NeuroML2 ComponentType definitions -->
+    <Include file="Cells.xml"/>
+    <Include file="Networks.xml"/>
+    <Include file="Simulation.xml"/>
+    
+    <Include file="../GranuleCells/Exported/Granule_0_110821.cell.nml"/>
+    <Include file="../MitralCells/Exported/Mitral_0_0.cell.nml" />
+    
+    <Include file="FI.synapse.nml" />
+    
+    <Include file="../Channels/pas.channel.nml"/>
+    <Include file="../Channels/nax__sh0.channel.nml"/>
+    <Include file="../Channels/nax__sh10.channel.nml"/>
+    <Include file="../Channels/nax__sh15.channel.nml"/>
+    <Include file="../Channels/kamt.channel.nml"/>
+    <Include file="../Channels/kdrmt.channel.nml"/>
+    
+    
+    <pulseGenerator id="input_GCA" delay="50ms" duration="1ms" amplitude="10 nA"/>
+    <pulseGenerator id="input_GCB" delay="70ms" duration="1ms" amplitude="10 nA"/>
+    <pulseGenerator id="input_GCC" delay="90ms" duration="1ms" amplitude="10 nA"/>
+    <pulseGenerator id="input_GCD" delay="110ms" duration="1ms" amplitude="10 nA"/>
+    
+    <network id="network_Migliore2014" type="networkWithTemperature" temperature="35 degC">
+        
+        <population id="Pop_Granule_0_110821A" component="Granule_0_110821" type="populationList" size="1">
+            <instance id="0">
+                <location x="375" y="1050" z="450"/>
+            </instance>
+        </population>
+        
+        <population id="Pop_Mitral_0_0" component="Mitral_0_0" type="populationList" size="1">
+            <instance id="0">
+                <location x="375" y="1050" z="450"/>
+            </instance>
+        </population>
+        
+        <!-- From spine head to 0.83 along MC.secden[8] with 42 subdivisions -->
+        <!-- Spine head segment is 4 -->
+        <!-- 42*0.83 = is 34.8613. 257 is id of Seg34_secden_8. 0.8613 is the fractionAlong remainder. -->
+        
+        <projection id="GC2MC" presynapticPopulation="Pop_Granule_0_110821A" postsynapticPopulation="Pop_Mitral_0_0" synapse="FIsyn">
+            <connection id="0" preCellId="../Pop_Granule_0_110821A/0/Granule_0_110821" postCellId="../Pop_Mitral_0_0/0/Mitral_0_0" preSegmentId="4" preFractionAlong="0.5" postSegmentId="257" postFractionAlong="0.8613"/>
+        </projection>
+        
+        <inputList id="input_GCA" component="input_GCA" population="Pop_Granule_0_110821A">
+            <input destination="synapses" id="0" target="../Pop_Granule_0_110821A[0]"/>
+        </inputList>
+        
+        <inputList id="input_GCB" component="input_GCB" population="Pop_Granule_0_110821A">
+            <input destination="synapses" id="0" target="../Pop_Granule_0_110821A[0]"/>
+        </inputList>
+        
+        <inputList id="input_GCC" component="input_GCC" population="Pop_Granule_0_110821A">
+            <input destination="synapses" id="0" target="../Pop_Granule_0_110821A[0]"/>
+        </inputList>
+        
+        <inputList id="input_GCD" component="input_GCD" population="Pop_Granule_0_110821A">
+            <input destination="synapses" id="0" target="../Pop_Granule_0_110821A[0]"/>
+        </inputList>
+        
+    </network>
+    
+    
+    <Simulation id="Sim" length="160ms" step="0.015625 ms" target="network_Migliore2014">
+        
+        <Display id="GranuleA" title="Granule Cell" timeScale="1ms" xmin="-18.0" xmax="330.0" ymin="-90" ymax="50">
+            <Line id="soma"       quantity="Pop_Granule_0_110821A/0/Granule_0_110821/0/v"  scale="1" color="#f3e4c5" timeScale="1ms"/>
+            <Line id="spine head"     quantity="Pop_Granule_0_110821A/0/Granule_0_110821/4/v" scale="1" color="#000000" timeScale="1ms"/>
+        </Display>
+        
+        <Display id="Mitral" title="MC" timeScale="1ms" xmin="-18.0" xmax="330.0" ymin="-90" ymax="50">
+            <Line id="secden"     quantity="Pop_Mitral_0_0/0/Mitral_0_0/257/v" scale="1" color="#000000" timeScale="1ms"/>
+        </Display>
+        
+        <OutputFile id="FIA" fileName="GCA.dat">
+            <OutputColumn id="headA"       quantity="Pop_Mitral_0_0/0/Mitral_0_0/257/v"/>
+        </OutputFile>
+        
+    </Simulation>
+    
+</Lems>

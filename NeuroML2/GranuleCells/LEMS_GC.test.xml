@@ -1,0 +1,94 @@
+<Lems>
+    
+    <!-- Specify which component to run -->
+    <Target component="Sim"/>
+    
+    <!-- Include core NeuroML2 ComponentType definitions -->
+    <Include file="Cells.xml"/>
+    <Include file="Networks.xml"/>
+    <Include file="Simulation.xml"/>
+    
+    <Include file="../GranuleCells/Exported/Granule_0_110821.cell.nml"/>
+    
+    <Include file="../Channels/pas.channel.nml"/>
+    <Include file="../Channels/nax__sh0.channel.nml"/>
+    <Include file="../Channels/nax__sh10.channel.nml"/>
+    <Include file="../Channels/nax__sh15.channel.nml"/>
+    <Include file="../Channels/kamt.channel.nml"/>
+    <Include file="../Channels/kdrmt.channel.nml"/>
+
+
+    <pulseGenerator id="input_GCA" delay="50ms" duration="200ms" amplitude="0.10 nA"/>
+    <pulseGenerator id="input_GCB" delay="50ms" duration="200ms" amplitude="0.05 nA"/>
+    <pulseGenerator id="input_GCC" delay="50ms" duration="200ms" amplitude="0.03 nA"/>
+    
+    <network id="network_Migliore2014" type="networkWithTemperature" temperature="35 degC">
+
+        <population id="Pop_Granule_0_110821A" component="Granule_0_110821" type="populationList" size="1">
+            <instance id="0">
+                <location x="375" y="1050" z="450"/>
+            </instance>
+        </population>
+        
+        <population id="Pop_Granule_0_110821B" component="Granule_0_110821" type="populationList" size="1">
+            <instance id="0">
+                <location x="375" y="1050" z="450"/>
+            </instance>
+        </population>
+        
+        <population id="Pop_Granule_0_110821C" component="Granule_0_110821" type="populationList" size="1">
+            <instance id="0">
+                <location x="375" y="1050" z="450"/>
+            </instance>
+        </population>
+        
+        <inputList id="input_GCA" component="input_GCA" population="Pop_Granule_0_110821A">
+            <input destination="synapses" id="0" target="../Pop_Granule_0_110821A[0]"/>
+        </inputList>
+        
+        <inputList id="input_GCB" component="input_GCB" population="Pop_Granule_0_110821B">
+            <input destination="synapses" id="0" target="../Pop_Granule_0_110821B[0]"/>
+        </inputList>
+        
+        <inputList id="input_GCC" component="input_GCC" population="Pop_Granule_0_110821C">
+            <input destination="synapses" id="0" target="../Pop_Granule_0_110821C[0]"/>
+        </inputList>
+
+    </network>
+    
+    
+    <Simulation id="Sim" length="300ms" step="0.015625ms" target="network_Migliore2014">
+        
+        <Display id="GranuleA" title="Granule Cell (0.1nA)" timeScale="1ms" xmin="-18.0" xmax="330.0" ymin="-90" ymax="50">
+            <Line id="soma"       quantity="Pop_Granule_0_110821A/0/Granule_0_110821/0/v"  scale="1" color="#f3e4c5" timeScale="1ms"/>
+            <Line id="spine head"     quantity="Pop_Granule_0_110821A/0/Granule_0_110821/4/v" scale="1" color="#000000" timeScale="1ms"/>
+        </Display>
+        
+        <Display id="GranuleB" title="Granule Cell (0.05nA)" timeScale="1ms" xmin="-18.0" xmax="330.0" ymin="-90" ymax="50">
+            <Line id="soma"       quantity="Pop_Granule_0_110821B/0/Granule_0_110821/0/v"  scale="1" color="#f3e4c5" timeScale="1ms"/>
+            <Line id="spine head"     quantity="Pop_Granule_0_110821B/0/Granule_0_110821/4/v" scale="1" color="#000000" timeScale="1ms"/>
+        </Display>
+        
+        <Display id="GranuleC" title="Granule Cell (0.03nA)" timeScale="1ms" xmin="-18.0" xmax="330.0" ymin="-90" ymax="50">
+            <Line id="soma"       quantity="Pop_Granule_0_110821C/0/Granule_0_110821/0/v"  scale="1" color="#f3e4c5" timeScale="1ms"/>
+            <Line id="spine head"     quantity="Pop_Granule_0_110821C/0/Granule_0_110821/4/v" scale="1" color="#000000" timeScale="1ms"/>
+        </Display>
+        
+        <OutputFile id="GranuleFA" fileName="GCA.dat">
+            <OutputColumn id="somaA"       quantity="Pop_Granule_0_110821A/0/Granule_0_110821/0/v"/>
+            <OutputColumn id="headA"       quantity="Pop_Granule_0_110821A/0/Granule_0_110821/4/v"/>
+        </OutputFile>
+
+        <OutputFile id="GranuleFB" fileName="GCB.dat">
+            <OutputColumn id="somaB"       quantity="Pop_Granule_0_110821B/0/Granule_0_110821/0/v"/>
+            <OutputColumn id="headB"       quantity="Pop_Granule_0_110821B/0/Granule_0_110821/4/v"/>
+        </OutputFile>
+        
+        <OutputFile id="GranuleFC" fileName="GCC.dat">
+            <OutputColumn id="somaC"       quantity="Pop_Granule_0_110821C/0/Granule_0_110821/0/v"/>
+            <OutputColumn id="headC"       quantity="Pop_Granule_0_110821C/0/Granule_0_110821/4/v"/>
+        </OutputFile>
+
+    </Simulation>
+    
+</Lems>
