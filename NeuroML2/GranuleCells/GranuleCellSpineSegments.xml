@@ -1,0 +1,23 @@
+
+            <segment id="3" name="Seg0_neck">
+                <parent fractionAlong="1" segment="2"/>
+                <proximal y="0.000000e+00" x="0.000000e+00" z="0.000000e+00" diameter="0.2"/>
+                <distal y="2" x="0" z="0" diameter="0.2"/>
+            </segment>
+
+            <segment id="4" name="Seg0_head">
+                <parent fractionAlong="1" segment="3"/>
+                <proximal y="2" x="0" z="0" diameter="1"/>
+                <distal y="3" x="0" z="0" diameter="1"/>
+            </segment>
+
+            <segmentGroup neuroLexId="sao864921383" id="neck_group">
+                <member segment="3"/>
+            </segmentGroup>
+            <segmentGroup neuroLexId="sao864921383" id="head_group">
+                <member segment="4"/>
+            </segmentGroup>
+            <segmentGroup id="spine_group">
+                <include segmentGroup="neck_group"/>
+                <include segmentGroup="head_group"/>
+            </segmentGroup>
