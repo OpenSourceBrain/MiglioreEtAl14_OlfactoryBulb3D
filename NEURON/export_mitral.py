@@ -32,7 +32,7 @@ def __main__():
 
     for i in range(num_cells_to_export):
 
-        print("Processing cell %i out of i%"%(i, num_cells_to_export))
+        print("Processing cell %i out of %i"%(i, num_cells_to_export))
 
         nml_cell_file = "../NeuroML2/MitralCells/Exported/Mitral_0_%i.cell.nml" % i
 
@@ -52,6 +52,7 @@ def __main__():
 
         #Move everything back to the origin
         originOffset = type("", (), dict(x = -somaSeg.proximal.x, y = -somaSeg.proximal.y, z = -somaSeg.proximal.z ))()
+        #originOffset = type("", (), dict(x = 0, y = 0, z = 0 ))()
 
         for seg in cell.morphology.segments:
             seg.proximal = pointMovedByOffset(seg.proximal, originOffset)
