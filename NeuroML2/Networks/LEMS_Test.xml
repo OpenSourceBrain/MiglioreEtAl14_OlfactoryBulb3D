@@ -1,0 +1,32 @@
+<Lems>
+    
+    <!-- Specify which component to run -->
+    <Target component="TestSim"/>
+    
+    <!-- Include core NeuroML2 ComponentType definitions -->
+    <Include file="Cells.xml"/>
+    <Include file="Networks.xml"/>
+    <Include file="Simulation.xml"/>
+    
+    <Include file="Bulb_5MC_10GC_inputs.net.nml"/>
+  
+    
+    <Simulation id="TestSim" length="180ms" step="0.01ms" target="network_Migliore2014">
+        
+        <!-- 1 nA -->
+        
+        <Display id="Granule" title="Granules" timeScale="1ms" xmin="-18.0" xmax="198.0" ymin="-90" ymax="50">
+            <Line id="Granule_0_122244" quantity="Pop_Granule_0_122244/0/Granule_0_122244/0/v"  scale="1" color="#f3e4c5" timeScale="1ms"/>
+            <Line id="Granule_0_110821" quantity="Pop_Granule_0_110821/0/Granule_0_110821/0/v"  scale="1" color="#f3e111" timeScale="1ms"/>
+            <Line id="Granule_0_106198" quantity="Pop_Granule_0_106198/0/Granule_0_106198/0/v"  scale="1" color="#1114c5" timeScale="1ms"/>
+            <Line id="Granule_0_94639" quantity="Pop_Granule_0_94639/0/Granule_0_94639/0/v"  scale="1" color="#f3fff5" timeScale="1ms"/>
+        </Display>
+        
+        <Display id="Mitrals" title="Mitrals" timeScale="1ms" xmin="-18.0" xmax="198.0" ymin="-90" ymax="50">
+            <Line id="Mitral_0_2" quantity="Pop_Mitral_0_2/0/Mitral_0_2/0/v"  scale="1" color="#f3e4c5" timeScale="1ms"/>
+        </Display>
+        
+        
+    </Simulation>
+    
+</Lems>
