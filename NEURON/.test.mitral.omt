@@ -1,8 +1,8 @@
 # Script for running automated tests on OSB using Travis-CI, see https://github.com/OpenSourceBrain/osb-model-validation 
 
-target: "LEMS_MitralCell.xml"
-engine: jNeuroML_NEURON
-mep: ../../NEURON/.test.MitralCell.spikes.mep
+target: mitralTest.py 
+engine: PyNEURON
+mep: .test.MitralCell.spikes.mep
 experiments:
   spikes4:
     observables:
@@ -14,7 +14,7 @@ experiments:
         spike detection: 
           method: threshold
           threshold: 0
-        tolerance: 0.0133040131942
+        tolerance: 0.0 
   spikes5:
     observables:
       spike times:
@@ -25,7 +25,7 @@ experiments:
         spike detection: 
           method: threshold
           threshold: 0
-        tolerance: 0.0129913024332
+        tolerance: 0.0
   spikes6:
     observables:
       spike times:
@@ -36,7 +36,7 @@ experiments:
         spike detection: 
           method: threshold
           threshold: 0
-        tolerance: 0.0149139159997
+        tolerance: 0.0
   spikes7:
     observables:
       spike times:
@@ -47,7 +47,7 @@ experiments:
         spike detection: 
           method: threshold
           threshold: 0
-        tolerance: 0.0123011196232
+        tolerance: 0.0
   spikes8:
     observables:
       spike times:
@@ -58,7 +58,7 @@ experiments:
         spike detection: 
           method: threshold
           threshold: 0
-        tolerance: 0.0120908286645
+        tolerance: 0.0
   spikes9:
     observables:
       spike times:
@@ -69,7 +69,7 @@ experiments:
         spike detection: 
           method: threshold
           threshold: 0
-        tolerance: 0.0135284170285
+        tolerance: 0.00
   spikes10:
     observables:
       spike times:
@@ -80,7 +80,7 @@ experiments:
         spike detection: 
           method: threshold
           threshold: 0
-        tolerance: 0.0114627640405
+        tolerance: 0.0
   spikes11:
     observables:
       spike times:
@@ -91,7 +91,7 @@ experiments:
         spike detection: 
           method: threshold
           threshold: 0
-        tolerance: 0.0104617604622
+        tolerance: 0.00
   spikes12:
     observables:
       spike times:
@@ -102,4 +102,4 @@ experiments:
         spike detection: 
           method: threshold
           threshold: 0
-        tolerance: 0.01273381295
+        tolerance: 0.0

@@ -5,18 +5,14 @@
 import sys
 from neuron import h
 
-h.load_file("stdlib.hoc")
-h.load_file("stdgui.hoc")
-
 from mkmitral import *
 import csv
 
-amps = [0.1, 1.0, 2, 5] # Current stimulation values in nA
+amps = [1, 2, 5] # Current stimulation values in nA
 delay = 40 # ms
 duration = 100 # ms
 tstop = 2*delay+duration
 h.dt = 0.01 # ms
-h.steps_per_ms = 1/h.dt
 vinit = -65 # mV
 
 cells = []
@@ -27,9 +23,16 @@ data = []
 
 def main(gui=True):
     
+    if gui:
+
+        h.load_file("stdlib.hoc")
+        h.load_file("stdgui.hoc")
+        h.steps_per_ms = 1/h.dt
+
+    
     # For each current value, create a cell
     for c in xrange(0,len(amps)):
-        
+        print("Trying amplitude:  %snA"%amps[c])
         cells.append(mkmitral(0))
         
         if gui:
@@ -96,15 +99,16 @@ def integrate():
             graphs[c].flush()
 
 
-        with open('mitralTest_%snA.dat'%amps[c], 'w') as outfile:
+    for c in xrange(0,len(amps)):
+        with open('Mitral_%snA.dat'%amps[c], 'w') as outfile:
             writer = csv.writer(outfile, delimiter='\t')
             for row in data[c]:
-                writer.writerow(row)
+                writer.writerow([r/1000. for r in row])
             print("Written data to: %s"%outfile)
 
 gui = not '-nogui' in sys.argv 
 
 main(gui)
 
-if not gui or raw_input("Press ENTER to quit(), or SPACE + ENTER to continue") != " ":
+if not gui:
     quit()
