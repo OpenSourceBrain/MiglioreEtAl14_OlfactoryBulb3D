@@ -20,20 +20,20 @@
     <Include file="../Channels/kdrmt.channel.nml"/>
     
     
-    <pulseGenerator id="input_GCA" delay="200ms" duration="10ms" amplitude="0.2 nA"/>
-    <pulseGenerator id="input_GCB" delay="250ms" duration="10ms" amplitude="0.2 nA"/>
-    <pulseGenerator id="input_GCC" delay="300ms" duration="10ms" amplitude="0.2 nA"/>
-    <pulseGenerator id="input_GCD" delay="320ms" duration="10ms" amplitude="0.2 nA"/>
+    <pulseGenerator id="input_GCA" delay="200ms" duration="1ms" amplitude="0.2 nA"/>
+    <pulseGenerator id="input_GCB" delay="250ms" duration="1ms" amplitude="0.2 nA"/>
+    <pulseGenerator id="input_GCC" delay="300ms" duration="1ms" amplitude="0.2 nA"/>
+    <pulseGenerator id="input_GCD" delay="320ms" duration="1ms" amplitude="0.2 nA"/>
     
-    <fastInhibitorySynapse id="FIsyn0" tauRise="0.5 ms" tauDecay="1 ms" gbase="0.005 uS" erev="-80.0 mV"
+    <fastInhibitorySynapse id="FIsyn0" tauRise="1 ms" tauDecay="10 ms" gbase="1 uS" erev="-80.0 mV"
         LTPlimit="33.33 ms" LTDlimit="250 ms" sigHalf="50" sigSlope="10"/>
     
     <cell id="Granule_0">
         
         <morphology id="morphology">
             <segment id="0" name="Seg0_soma">
-                <proximal y="0.000000e+00" x="0.000000e+00" z="0.000000e+00" diameter="8.000000e+00"/>
-                <distal y="-6.980048e+00" x="0.000000e+00" z="3.908827e+00" diameter="8.000000e+00"/>
+                <proximal y="0.000000e+00" x="0.000000e+00" z="0.000000e+00" diameter="8"/>
+                <distal y="8" x="0" z="0" diameter="8"/>
             </segment>
             
              
@@ -57,7 +57,7 @@
 
             <membraneProperties>
 
-                <channelDensity segmentGroup="soma_group" ionChannel="pas"      condDensity="0.0013333333333 S_per_cm2" erev="-55.0 mV" id="passive_somatic" ion="non_specific"/>
+                <channelDensity segmentGroup="soma_group" ionChannel="pas"      condDensity="0.0001 S_per_cm2" erev="-70.0 mV" id="passive_somatic" ion="non_specific"/>
                <!-- <channelDensity segmentGroup="soma_group" ionChannel="nax__sh15" condDensity="0.04 S_per_cm2"    erev="60.0 mV" id="nax_somatic" ion="na" />
                 <channelDensity segmentGroup="soma_group" ionChannel="kdrmt"    condDensity="0.006 S_per_cm2"  erev="-90.0 mV" id="kdrmt_somatic" ion="k" />
                 <channelDensity segmentGroup="soma_group" ionChannel="kamt"     condDensity="0.004 S_per_cm2"  erev="-90.0 mV" id="kamt_somatic" ion="k" />
@@ -65,9 +65,9 @@
 
                 <spikeThresh value="0 mV"/>
 
-                <specificCapacitance value="4.0 uF_per_cm2"/>
+                <specificCapacitance value="1.0 uF_per_cm2"/>
 
-                <initMembPotential value="-59.12 mV"/>
+                <initMembPotential value="-65 mV"/>
 
             </membraneProperties>
             
@@ -100,7 +100,7 @@
         <!-- 42*0.83 = is 34.8613. 257 is id of Seg34_secden_8. 0.8613 is the fractionAlong remainder. 
         -->
         <projection id="GC2MC" presynapticPopulation="Pop_Granule_0" postsynapticPopulation="Pop_Granule_0" synapse="FIsyn0">
-            <connectionWD id="0" preCellId="../Pop_Granule_0/0/Granule_0" postCellId="../Pop_Granule_0/1/Granule_0" preSegmentId="0" preFractionAlong="0.5" postSegmentId="0" postFractionAlong="0.5" delay="0ms" weight="10"/>
+            <connectionWD id="0" preCellId="../Pop_Granule_0/0/Granule_0" postCellId="../Pop_Granule_0/1/Granule_0" preSegmentId="0" preFractionAlong="0.5" postSegmentId="0" postFractionAlong="0.5" delay="0ms" weight="1"/>
         </projection>
        
         <inputList id="input_GCA" component="input_GCA" population="Pop_Granule_0">
@@ -131,10 +131,12 @@
     </network>
     
     
-    <Simulation id="Sim" length="1000ms" step="0.01 ms" target="network_Migliore2014">
+    <Simulation id="Sim" length="500ms" step="0.01 ms" target="network_Migliore2014">
         
         <Display id="GranuleA" title="Granule Cell A" timeScale="1ms" xmin="-100.0" xmax="1100.0" ymin="-90" ymax="50">
             <Line id="somaA"       quantity="Pop_Granule_0/0/Granule_0/v"  scale="1mV" color="#f3e4c5" timeScale="1ms"/>
+        </Display>
+        <Display id="GranuleB" title="Granule Cell A" timeScale="1ms" xmin="-100.0" xmax="1100.0" ymin="-85" ymax="-65">
             <Line id="somaB"       quantity="Pop_Granule_0/1/Granule_0/v"  scale="1mV" color="#aaa4c5" timeScale="1ms"/>
         </Display>
           <!--  <Line id="spine head"     quantity="Pop_Granule_0/0/Granule_0/435/v" scale="1" color="#000000" timeScale="1ms"/>
@@ -146,10 +148,10 @@
         <!--
         <Display id="Mitral" title="MC" timeScale="1ms" xmin="-18.0" xmax="330.0" ymin="-90" ymax="50">
             <Line id="secden"     quantity="Pop_Mitral_0_0/0/Mitral_0_0/257/v" scale="1" color="#000000" timeScale="1ms"/>
-        
-        <OutputFile id="FIA" fileName="GCA.dat">
-            <OutputColumn id="headA"       quantity="Pop_Mitral_0_0/0/Mitral_0_0/257/v"/>
-        </OutputFile>-->
+        -->
+        <OutputFile id="lv1" fileName="lv1.dat">
+            <OutputColumn id="0"       quantity="Pop_Granule_0/1/Granule_0/v"/>
+        </OutputFile>
         
     </Simulation>
     

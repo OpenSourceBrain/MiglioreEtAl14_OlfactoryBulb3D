@@ -64,8 +64,8 @@
             
             <OnCondition test="isSpiking .eq. 1">
                 <StateAssignment variable="plasticity" value="1 - 1/(1 + exp((pstep - sigHalf)/sigSlope))" />
-                <StateAssignment variable="A" value="A + weight * plasticity*waveformFactor" />
-                <StateAssignment variable="B" value="B + weight * plasticity*waveformFactor" />
+                <StateAssignment variable="A" value="A + plasticity*waveformFactor" />
+                <StateAssignment variable="B" value="B + plasticity*waveformFactor" />
                 
                 <!--Record most recent spike time-->
                 <StateAssignment variable="lastSpike" value="t" />

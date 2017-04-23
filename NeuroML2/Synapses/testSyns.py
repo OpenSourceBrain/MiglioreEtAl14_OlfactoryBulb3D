@@ -16,9 +16,9 @@ def create_comp(name='soma'):
     h('create %s'%name)
     h('access %s'%name)
 
-    h('nseg = 7')
-    h('L = 9.26604')
-    h('diam = 29.7838')
+    h('nseg = 1')
+    h('L = 8')
+    h('diam = 8')
 
     '''
     comp.insert('na')
@@ -46,7 +46,7 @@ def create_comp(name='soma'):
     comp.eca = 140.0'''
 
     h('insert pas')
-    h('g_pas = 0.000142857142857')
+    h('g_pas = 0.0001')
     h('e_pas = -70')
 
     
@@ -92,7 +92,7 @@ def run(tstop=10, dt=0.001):
         h.fadvance()
         
         
-def add_AMPAsyns(gmax=0.5, tau1=0.5, tau2=1):
+def add_AMPAsyns(gmax=1, tau1=1, tau2=10):
 
     print "Adding syn..."
     print h.secname()
@@ -144,7 +144,7 @@ inputs = []
 for d in [200,250,300,320,600,650,700]:
     stim = h.IClamp(0.5, sec=comp0)
     stim.delay = d
-    stim.dur = 10
+    stim.dur = 1
     stim.amp = 0.2
     inputs.append(stim)
 
@@ -172,7 +172,7 @@ ds1 = create_dumps(comp1, varlist+synlist)
 ds2 = create_dumps(comp2, varlist)
 ds3 = create_dumps(comp3, varlist)
 
-run(1000, 0.01)
+run(500, 0.01)
 
 if not nogui:
     from pylab import show
