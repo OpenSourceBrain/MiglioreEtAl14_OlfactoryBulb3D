@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
-<neuroml xmlns="http://www.neuroml.org/schema/neuroml2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.neuroml.org/schema/neuroml2 https://raw.github.com/NeuroML/NeuroML2/development/Schemas/NeuroML2/NeuroML_v2beta4.xsd" id="TEST_syn">
+<neuroml xmlns="http://www.neuroml.org/schema/neuroml2" 
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+         xsi:schemaLocation="http://www.neuroml.org/schema/neuroml2 https://raw.github.com/NeuroML/NeuroML2/development/Schemas/NeuroML2/NeuroML_v2beta5.xsd" 
+         id="TEST_syn">
 
     <notes>FastInhibitory synapse with spike-timing dependent plasticity. Implemented from Migliore et. al. 2014</notes>
 
@@ -11,7 +14,7 @@
         <Parameter name="LTPlimit" dimension="time" description="The upper time limit for LTP. E.g. 30 ms."/>
         <Parameter name="LTDlimit" dimension="time" description="The upper time limit for LTD. The LTP window will be between LTPlimit and LTDlimit. E.g. 200 ms."/>
         <Parameter name="sigHalf" dimension="none" description="The halfway point for the plasticity function. E.g. 50."/>
-        <Parameter name="sigSlope" dimension="none" description="The steepnes of the plasticity function. E.g. 10."/>
+        <Parameter name="sigSlope" dimension="none" description="The steepness of the plasticity function. E.g. 10."/>
         
         <Constant name="ms" dimension="time" value="1 ms" />
   
@@ -19,6 +22,15 @@
         <Exposure name="g" dimension="conductance"/>
 
         <Dynamics>
+            
+            <DerivedVariable name="g" dimension="conductance" exposure="g" value="(B-A)*gbase" />
+            <DerivedVariable name="i" dimension="current" exposure="i" value="g*(erev-v)" />
+            
+            <ConditionalDerivedVariable name="tauRiseCapped" dimension="time">
+                <Case condition="tauRise/tauDecay .gt. 0.9999" value="tauDecay*0.9999"/>
+                <Case condition="tauRise/tauDecay .leq. 0.9999" value="tauRise"/>
+            </ConditionalDerivedVariable>
+            
             <StateVariable name="A" dimension="none"/>
             <StateVariable name="B" dimension="none"/>
             <StateVariable name="pstep" dimension="none"/>
@@ -71,15 +83,6 @@
                 <StateAssignment variable="lastSpike" value="t" />
                 <StateAssignment variable="isSpiking" value="0" />
             </OnCondition>
-            
-            
-            <DerivedVariable name="g" dimension="conductance" exposure="g" value="(B-A)*gbase" />
-            <DerivedVariable name="i" dimension="current" exposure="i" value="g*(erev-v)" />
-            
-            <ConditionalDerivedVariable name="tauRiseCapped" dimension="time">
-                <Case condition="tauRise/tauDecay .gt. 0.9999" value="tauDecay*0.9999"/>
-                <Case condition="tauRise/tauDecay .leq. 0.9999" value="tauRise"/>
-            </ConditionalDerivedVariable>
             
             <TimeDerivative variable="A" value="-A/tauRiseCapped" />
             <TimeDerivative variable="B" value="-B/tauDecay" />
