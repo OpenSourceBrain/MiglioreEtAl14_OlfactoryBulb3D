@@ -1,11 +1,16 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
-<neuroml xmlns="http://www.neuroml.org/schema/neuroml2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.neuroml.org/schema/neuroml2 https://raw.github.com/NeuroML/NeuroML2/development/Schemas/NeuroML2/NeuroML_v2beta4.xsd" id="TEST_syn">
+<neuroml xmlns="http://www.neuroml.org/schema/neuroml2" 
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+         xsi:schemaLocation="http://www.neuroml.org/schema/neuroml2 https://raw.github.com/NeuroML/NeuroML2/development/Schemas/NeuroML2/NeuroML_v2beta5.xsd" 
+         id="TEST_syn">
 
     <notes>Ampa/Nmda synapse with spike-timing plasticity. Implemented from Migliore et. al. 2014</notes>
 
     <ComponentType name="AmpaNmdaSynapse"
-        extends="baseSynapse">
-
+        extends="baseVoltageDepSynapse">
+        
+        <Property name="weight" dimension="none" defaultValue="1"/> 
+    
         <Parameter name="LTPlimit" dimension="time" description="The upper time limit for LTP. E.g. 30 ms."/>
         <Parameter name="LTDlimit" dimension="time" description="The upper time limit for LTD. The LTP window will be between LTPlimit and LTDlimit. E.g. 200 ms."/>
         <Parameter name="sigHalf" dimension="none" description="The halfway point for the plasticity function. E.g. 50."/>
@@ -23,8 +28,9 @@
         <Parameter name="E" dimension="voltage"/>
         <Parameter name="mg" dimension="concentration"/>
         
-        <Constant name="mV" dimension="voltage" value="1 mV" />
-        <Constant name="mM" dimension="concentration" value="1 mM" />
+        <Constant name="mg_v_scale" dimension="per_voltage" value="0.062 per_mV" />
+        <Constant name="mg_scale" dimension="concentration" value="3.57 mM" />
+        
         <Constant name="ms" dimension="time" value="1 ms" />
         
         <Dynamics>
@@ -57,8 +63,8 @@
                 <StateAssignment variable="gAmpa" value="0" />
                 <StateAssignment variable="r0" value="0" />
                 <StateAssignment variable="t0" value="0" />
-                <StateAssignment variable="lastSpike" value="-1e9" />
-                <StateAssignment variable="lastAfterSpike" value="-1e9" />
+                <StateAssignment variable="lastSpike" value="-1e9 * ms" />
+                <StateAssignment variable="lastAfterSpike" value="-1e9 * ms" />
                 <StateAssignment variable="pstep" value="0" />
                 <StateAssignment variable="isSpiking" value="0" />
                 <StateAssignment variable="Rinf" value="Alpha / (Alpha + Beta)" />
@@ -102,8 +108,8 @@
             
             <OnCondition test="isSpiking .eq. 1">
                 <StateAssignment variable="plasticity" value="1 - 1/(1 + exp((pstep - sigHalf)/sigSlope))" />
-                <StateAssignment variable="gAmpa" value="gAmpa + plasticity*gMax*gAmpafactor" />
-                <StateAssignment variable="r0" value="r0*exp(-Beta*timeSinceAnySpike)" />
+                <StateAssignment variable="gAmpa" value="gAmpa + weight*plasticity*gMax*gAmpafactor" />
+                <StateAssignment variable="r0" value="weight*r0*exp(-Beta*timeSinceAnySpike)" />
                 <StateAssignment variable="synon" value="synon + plasticity" />
                 <StateAssignment variable="Ron" value="Ron + r0" />
                 <StateAssignment variable="Roff" value="Roff - r0" />
@@ -129,7 +135,7 @@
             </OnCondition>
             
             <!-- BREAKPOINT -->
-            <DerivedVariable name="mgblock" dimension="none" value="1 / (1 + exp(0.062 * -(v/mV)) * ((mg/mM) / 3.57))" />
+            <DerivedVariable name="mgblock" dimension="none" value="1 / (1 + exp(-1 * mg_v_scale * v) * (mg / mg_scale))" />
             <DerivedVariable name="gNmda" dimension="conductance" value="mgblock*(Ron + Roff)*gMax*Nmdafactor" />
             <DerivedVariable name="iNmda" dimension="current" value="gNmda*(v - E)" />
             <DerivedVariable name="iAmpa" dimension="current" value="gAmpa*(v - E)" />
