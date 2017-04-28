@@ -134,14 +134,14 @@ def add_NMDAsyns(gmax=0.5, tau1=2, tau2=20):
 
 comp0 = create_comp('soma0')
 comp1 = create_comp('soma1')
-comp2 = create_comp('soma2')
-comp3 = create_comp('soma3')
+#comp2 = create_comp('soma2')
+#comp3 = create_comp('soma3')
 
 h.celsius = 35
 
 inputs = []
 
-for d in [200,250,300,320,600,650,700]:
+for d in [200,250,300,320,600,610,700]:
     stim = h.IClamp(0.5, sec=comp0)
     stim.delay = d
     stim.dur = 1
@@ -149,12 +149,12 @@ for d in [200,250,300,320,600,650,700]:
     inputs.append(stim)
 
 
-for sec in [comp1,comp2,comp3]:
+for sec in [comp1]:#,comp2,comp3]:
     
     stim = h.IClamp(0.5, sec=sec)
     stim.delay = 500
     stim.dur = 500
-    stim.amp = 0.06
+    stim.amp = 0.02
     inputs.append(stim)
 
 
@@ -169,24 +169,24 @@ varlist = ['v']
 synlist = []
 ds0 = create_dumps(comp0, varlist)
 ds1 = create_dumps(comp1, varlist+synlist)
-ds2 = create_dumps(comp2, varlist)
-ds3 = create_dumps(comp3, varlist)
+#ds2 = create_dumps(comp2, varlist)
+#ds3 = create_dumps(comp3, varlist)
 
-run(500, 0.01)
+run(1000, 0.01)
 
 if not nogui:
     from pylab import show
     plot_timeseries(ds0, varlist)
     plot_timeseries(ds1, varlist)
     plot_timeseries(ds1, synlist)
-    plot_timeseries(ds2, varlist)
-    plot_timeseries(ds3, varlist)
+    #plot_timeseries(ds2, varlist)
+    #plot_timeseries(ds3, varlist)
     show()
     
 dump_to_file(ds0, varlist, fname='v0.dat')
 dump_to_file(ds1, varlist, fname='v1.dat')
-dump_to_file(ds2, varlist, fname='v2.dat')
-dump_to_file(ds3, varlist, fname='v3.dat')
+#dump_to_file(ds2, varlist, fname='v2.dat')
+#dump_to_file(ds3, varlist, fname='v3.dat')
 
 
 if nogui:

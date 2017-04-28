@@ -24,6 +24,11 @@
     <pulseGenerator id="input_GCB" delay="250ms" duration="1ms" amplitude="0.2 nA"/>
     <pulseGenerator id="input_GCC" delay="300ms" duration="1ms" amplitude="0.2 nA"/>
     <pulseGenerator id="input_GCD" delay="320ms" duration="1ms" amplitude="0.2 nA"/>
+    <pulseGenerator id="input_GCE" delay="600ms" duration="1ms" amplitude="0.2 nA"/>
+    <pulseGenerator id="input_GCF" delay="610ms" duration="1ms" amplitude="0.2 nA"/>
+    <pulseGenerator id="input_GCG" delay="700ms" duration="1ms" amplitude="0.2 nA"/>
+    
+    <pulseGenerator id="input_GCA2" delay="500ms" duration="500ms" amplitude="0.02 nA"/>
     
     <fastInhibitorySynapse id="FIsyn0" tauRise="1 ms" tauDecay="10 ms" gbase="1 uS" erev="-80.0 mV"
         LTPlimit="33.33 ms" LTDlimit="250 ms" sigHalf="50" sigSlope="10"/>
@@ -103,6 +108,10 @@
             <connectionWD id="0" preCellId="../Pop_Granule_0/0/Granule_0" postCellId="../Pop_Granule_0/1/Granule_0" preSegmentId="0" preFractionAlong="0.5" postSegmentId="0" postFractionAlong="0.5" delay="0ms" weight="1"/>
         </projection>
        
+        <inputList id="input_GCA" component="input_GCA2" population="Pop_Granule_0">
+            <input destination="synapses" id="0" target="../Pop_Granule_0/1/Granule_0"/>
+        </inputList>
+       
         <inputList id="input_GCA" component="input_GCA" population="Pop_Granule_0">
             <input destination="synapses" id="0" target="../Pop_Granule_0/0/Granule_0"/>
         </inputList>
@@ -113,6 +122,15 @@
             <input destination="synapses" id="0" target="../Pop_Granule_0/0/Granule_0"/>
         </inputList> 
         <inputList id="input_GCD" component="input_GCD" population="Pop_Granule_0">
+            <input destination="synapses" id="0" target="../Pop_Granule_0/0/Granule_0"/>
+        </inputList> 
+        <inputList id="input_GCE" component="input_GCE" population="Pop_Granule_0">
+            <input destination="synapses" id="0" target="../Pop_Granule_0/0/Granule_0"/>
+        </inputList> 
+        <inputList id="input_GCF" component="input_GCF" population="Pop_Granule_0">
+            <input destination="synapses" id="0" target="../Pop_Granule_0/0/Granule_0"/>
+        </inputList> 
+        <inputList id="input_GCG" component="input_GCG" population="Pop_Granule_0">
             <input destination="synapses" id="0" target="../Pop_Granule_0/0/Granule_0"/>
         </inputList> 
         <!--
@@ -131,13 +149,19 @@
     </network>
     
     
-    <Simulation id="Sim" length="500ms" step="0.01 ms" target="network_Migliore2014">
+    <Simulation id="Sim" length="1000ms" step="0.01 ms" target="network_Migliore2014">
         
-        <Display id="GranuleA" title="Granule Cell A" timeScale="1ms" xmin="-100.0" xmax="1100.0" ymin="-90" ymax="50">
+        <Display id="GranuleA" title="Granule Cell pre" timeScale="1ms" xmin="-100.0" xmax="1100.0" ymin="-90" ymax="50">
             <Line id="somaA"       quantity="Pop_Granule_0/0/Granule_0/v"  scale="1mV" color="#f3e4c5" timeScale="1ms"/>
         </Display>
-        <Display id="GranuleB" title="Granule Cell A" timeScale="1ms" xmin="-100.0" xmax="1100.0" ymin="-85" ymax="-65">
+        <Display id="GranuleB" title="Granule Cell post" timeScale="1ms" xmin="-100.0" xmax="1100.0" ymin="-85" ymax="-65">
             <Line id="somaB"       quantity="Pop_Granule_0/1/Granule_0/v"  scale="1mV" color="#aaa4c5" timeScale="1ms"/>
+        </Display>
+        <Display id="GranuleSyn" title="Synapse g" timeScale="1ms" xmin="-100.0" xmax="1100.0" ymin="-.01" ymax=".1">
+            <Line id="syn g"       quantity="Pop_Granule_0/1/Granule_0/synapses:FIsyn0:0/g"  scale="1uS" color="#aaa4c5" timeScale="1ms"/>
+        </Display>
+        <Display id="GranuleSyn2" title="Synapse pstep" timeScale="1ms" xmin="-100.0" xmax="1100.0" ymin="-.1" ymax="2.1">
+            <Line id="syn pstep"       quantity="Pop_Granule_0/1/Granule_0/synapses:FIsyn0:0/pstep"  scale="1" color="#aaffff" timeScale="1ms"/>
         </Display>
           <!--  <Line id="spine head"     quantity="Pop_Granule_0/0/Granule_0/435/v" scale="1" color="#000000" timeScale="1ms"/>
         </Display>
