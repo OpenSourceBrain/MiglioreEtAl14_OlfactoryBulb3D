@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<neuroml xmlns="http://www.neuroml.org/schema/neuroml2"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://www.neuroml.org/schema/neuroml2 https://raw.github.com/NeuroML/NeuroML2/development/Schemas/NeuroML2/NeuroML_v2beta5.xsd"
+         id = "Glomerulus">
+
+    <cell id="Glomerulus">
+        <notes>Dummy Glomerulus for visualisation purposes</notes>
+        <morphology id="morphology">
+        
+            <segment id="0" name = "soma_seg">
+                <proximal x="0" y="0" z="0" diameter="50"/>
+                <distal x="0" y="0" z="0" diameter="50"/>
+            </segment>
+
+            <segmentGroup id = "soma"  neuroLexId="sao864921383">
+                <notes>This group contains an unbranched set of segments, and all of the segmentGroups marked with
+                    neuroLexId = sao864921383 form a non-overlapping set of all of the segments.
+                    These segmentGroups correspond to the 'cables' of NeuroML v1.8.1, and map to/from NEURON sections.</notes>
+                <member segment = "0"/>
+            </segmentGroup>
+            
+            <segmentGroup id="soma_group"> <!-- Creating a group containing a single section: soma... -->
+                <include segmentGroup = "soma"/>
+            </segmentGroup>
+
+        </morphology>
+        
+        <biophysicalProperties id="biophys">
+
+            <membraneProperties>
+
+                <channelDensity segmentGroup="soma_group" ionChannel="pas"      condDensity="0.0001 S_per_cm2" erev="-65.0 mV" id="passive_somatic" ion="non_specific"/>
+
+                <spikeThresh value="0 mV"/>
+
+                <specificCapacitance value="0.7 uF_per_cm2"/>
+
+                <initMembPotential value="-65.0 mV"/>
+
+            </membraneProperties>
+            
+            <intracellularProperties>
+                <resistivity value="150 ohm_cm"/>
+            </intracellularProperties>
+
+        </biophysicalProperties>
+    </cell> 
+</neuroml>
+
