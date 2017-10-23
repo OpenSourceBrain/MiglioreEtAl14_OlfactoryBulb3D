@@ -1,26 +1,24 @@
-<neuroml xmlns="http://www.neuroml.org/schema/neuroml2"  xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.neuroml.org/schema/neuroml2 https://raw.github.com/NeuroML/NeuroML2/development/Schemas/NeuroML2/NeuroML_v2beta4.xsd" id="NeuroML2_file_exported_from_NEURON">
-    
-    <include href="../../Channels/pas.channel.nml"/>
-    <include href="../../Channels/nax__sh15.channel.nml"/>
-    <include href="../../Channels/kamt.channel.nml"/>
-    <include href="../../Channels/kdrmt.channel.nml"/>
-
-    <cell id="Granule_0_354">
-        <notes>Cell: Granule_0_354 exported from NEURON ModelView</notes>
+<neuroml xmlns="http://www.neuroml.org/schema/neuroml2"  xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.neuroml.org/schema/neuroml2 https://raw.github.com/NeuroML/NeuroML2/development/Schemas/NeuroML2/NeuroML_v2beta5.xsd" id="NeuroML2_file_exported_from_NEURON">
+    <include href="../../Channels/pas.channel.nml"></include>
+    <include href="../../Channels/nax__sh15.channel.nml"></include>
+    <include href="../../Channels/kamt.channel.nml"></include>
+    <include href="../../Channels/kdrmt.channel.nml"></include>
+    <cell id="Granule_0_56438">
+        <notes>Cell: Granule_0_354 exported from NEURON ModelView (id changed to Granule_0_56438)</notes>
         <morphology id="morphology">
             <segment id="0" name="Seg0_soma">
-                <proximal y="0.000000e+00" x="0.000000e+00" z="0.000000e+00" diameter="8.000000e+00"/>
-                <distal y="8.000000e+00" x="0.000000e+00" z="0.000000e+00" diameter="8.000000e+00"/>
+                <proximal x="0.000000e+00" y="0.000000e+00" z="0.000000e+00" diameter="8.0"/>
+                <distal x="0.000000e+00" y="8.000000e+00" z="0.000000e+00" diameter="8.0"/>
             </segment>
             <segment id="1064" name="Seg0_priden">
-                <parent fractionAlong="1" segment="0"/>
-                <proximal y="0.000000e+00" x="0.000000e+00" z="0.000000e+00" diameter="5.000000e-01"/>
-                <distal y="1.313570e+02" x="0.000000e+00" z="0.000000e+00" diameter="5.000000e-01"/>
+                <parent segment="0"/>
+                <proximal x="0.000000e+00" y="0.000000e+00" z="0.000000e+00" diameter="0.5"/>
+                <distal x="0.000000e+00" y="1.313570e+02" z="0.000000e+00" diameter="0.5"/>
             </segment>
             <segment id="1065" name="Seg0_priden2_0">
-                <parent fractionAlong="1" segment="0"/>
-                <proximal y="0.000000e+00" x="0.000000e+00" z="0.000000e+00" diameter="4.000000e-01"/>
-                <distal y="2.500000e+02" x="0.000000e+00" z="0.000000e+00" diameter="4.000000e-01"/>
+                <parent segment="0"/>
+                <proximal x="0.000000e+00" y="0.000000e+00" z="0.000000e+00" diameter="0.4"/>
+                <distal x="0.000000e+00" y="2.500000e+02" z="0.000000e+00" diameter="0.4"/>
             </segment>
             <segmentGroup neuroLexId="sao864921383" id="soma">
                 <notes>This group contains an unbranched set of segments, and all of the segmentGroups marked with
@@ -67,33 +65,22 @@
             </segmentGroup>
             <segmentGroup neuroLexId="GO:0030424" id="axon_group"/>
         </morphology>
-        
         <biophysicalProperties id="biophys">
-
             <membraneProperties>
-
-                <channelDensity segmentGroup="dendrite_group" ionChannel="pas"       condDensity="0.00013333333333 S_per_cm2" erev="-65.0 mV" id="passive_dendritic" ion="non_specific"/>
-                <channelDensity segmentGroup="dendrite_group" ionChannel="nax__sh15" condDensity="0.02 S_per_cm2"    erev="60.0 mV" id="nax_dendritic" ion="na" />
-                <channelDensity segmentGroup="dendrite_group" ionChannel="kamt"      condDensity="0.008 S_per_cm2"  erev="-90.0 mV" id="kamt_dendritic" ion="k" />
-
-                <channelDensity segmentGroup="soma_group" ionChannel="pas"      condDensity="0.00013333333333 S_per_cm2" erev="-65.0 mV" id="passive_somatic" ion="non_specific"/>
-                <channelDensity segmentGroup="soma_group" ionChannel="nax__sh15" condDensity="0.04 S_per_cm2"    erev="60.0 mV" id="nax_somatic" ion="na" />
-                <channelDensity segmentGroup="soma_group" ionChannel="kdrmt"    condDensity="0.006 S_per_cm2"  erev="-90.0 mV" id="kdrmt_somatic" ion="k" />
-                <channelDensity segmentGroup="soma_group" ionChannel="kamt"     condDensity="0.004 S_per_cm2"  erev="-90.0 mV" id="kamt_somatic" ion="k" />
-
-
+                <channelDensity id="passive_dendritic" ionChannel="pas" condDensity="0.00013333333333 S_per_cm2" erev="-65.0 mV" segmentGroup="dendrite_group" ion="non_specific"/>
+                <channelDensity id="nax_dendritic" ionChannel="nax__sh15" condDensity="0.02 S_per_cm2" erev="60.0 mV" segmentGroup="dendrite_group" ion="na"/>
+                <channelDensity id="kamt_dendritic" ionChannel="kamt" condDensity="0.008 S_per_cm2" erev="-90.0 mV" segmentGroup="dendrite_group" ion="k"/>
+                <channelDensity id="passive_somatic" ionChannel="pas" condDensity="0.00013333333333 S_per_cm2" erev="-65.0 mV" segmentGroup="soma_group" ion="non_specific"/>
+                <channelDensity id="nax_somatic" ionChannel="nax__sh15" condDensity="0.04 S_per_cm2" erev="60.0 mV" segmentGroup="soma_group" ion="na"/>
+                <channelDensity id="kdrmt_somatic" ionChannel="kdrmt" condDensity="0.006 S_per_cm2" erev="-90.0 mV" segmentGroup="soma_group" ion="k"/>
+                <channelDensity id="kamt_somatic" ionChannel="kamt" condDensity="0.004 S_per_cm2" erev="-90.0 mV" segmentGroup="soma_group" ion="k"/>
                 <spikeThresh value="0 mV"/>
-
                 <specificCapacitance value="4.0 uF_per_cm2"/>
-
                 <initMembPotential value="-65.0 mV"/>
-
             </membraneProperties>
-            
             <intracellularProperties>
                 <resistivity value="80 ohm_cm"/>
             </intracellularProperties>
-
         </biophysicalProperties>
     </cell>
 </neuroml>
