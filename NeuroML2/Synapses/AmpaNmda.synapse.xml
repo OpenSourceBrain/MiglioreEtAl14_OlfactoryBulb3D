@@ -57,6 +57,7 @@
             <StateVariable name="afterSpikeData" dimension="none" />
             
             <StateVariable name="timeSinceAnySpike" dimension="time" />
+            <StateVariable name="weight_" dimension="none"/>
             
             <OnStart>
                 <StateAssignment variable="synon" value="0" />
@@ -74,6 +75,8 @@
             <!--NET RECEIVE-->
             <OnEvent port="in">
                 <StateAssignment variable="isSpiking" value="1" />
+                <!-- This is equivalent to just using weight in LEMS, but is required for mapping to NEURON... -->
+                <StateAssignment variable="weight_" value="weight" />
             </OnEvent>
             
             <!-- Keep track of how long it's been since previous spike(s)-->
@@ -108,8 +111,10 @@
             
             <OnCondition test="isSpiking .eq. 1">
                 <StateAssignment variable="plasticity" value="1 - 1/(1 + exp((pstep - sigHalf)/sigSlope))" />
-                <StateAssignment variable="gAmpa" value="gAmpa + weight*plasticity*gMax*gAmpafactor" />
-                <StateAssignment variable="r0" value="weight*r0*exp(-Beta*timeSinceAnySpike)" />
+                
+                <!-- This is equivalent to just using weight in LEMS, but is required for mapping to NEURON... -->
+                <StateAssignment variable="gAmpa" value="gAmpa + weight_*plasticity*gMax*gAmpafactor" />
+                <StateAssignment variable="r0" value="weight_*r0*exp(-Beta*timeSinceAnySpike)" />
                 <StateAssignment variable="synon" value="synon + plasticity" />
                 <StateAssignment variable="Ron" value="Ron + r0" />
                 <StateAssignment variable="Roff" value="Roff - r0" />
