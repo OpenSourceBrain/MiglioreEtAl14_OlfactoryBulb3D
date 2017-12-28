@@ -3,23 +3,23 @@ from matplotlib import pyplot as plt
 import numpy as np
 sys.path.insert(0,'..')
 from tests.ModelTest import ModelTest
-from tests.channels.NEURONChannelTest import NEURONChannelTest
+from tests.cells.NEURONCellTest import NEURONCellTest
 
-class NeuroMLChannelTest(ModelTest):
+class NeuroMLCellTest(ModelTest):
     def getResults(self):
 
-        # Gather info from channel nml file to generate the test bed
+        # Gather info from cell nml file to generate the test bed
         with open(self.path) as f:
-            channelNML = f.read()
-            suffix = re.compile('<ionChannel.*id="(.*?)"').search(channelNML).group(1)
+            cellNML = f.read()
+            cellID = re.compile('<cell.*id="(.*?)"').search(cellNML).group(1)
 
         # Create a test bed for channel
-        with open("channels/LEMS_TestBed_Template.xml") as f:
+        with open("cells/LEMS_TestBed_Template.xml") as f:
             testBed = f.read()
 
         testBed = testBed \
-            .replace("[ChannelFile]", self.modelFileName()) \
-            .replace("[ChannelSuffix]", suffix)
+            .replace("[CellFile]", self.modelFileName()) \
+            .replace("[CellID]", cellID)
 
         testBedFile = self.modelFileName() + "_TestBed.xml"
 
@@ -35,13 +35,11 @@ class NeuroMLChannelTest(ModelTest):
         self.restoreStartDir()
 
         # Once converted to NEURON, create sub model
-        subModel = NEURONChannelTest()
-        subModel.path = self.modelDir() + "/" + suffix + ".mod"
+        subModel = NEURONCellTest()
+        subModel.path = self.modelDir() + "/" + cellID + ".hoc"
         subModel.label = self.label
         subModel.prepare = self.prepare
         subModel.resultsFile = self.resultsFile
 
         # Now the converted mod file is ready for the protocol
-        resultsFile = subModel.getResults()
-
-        return resultsFile
+        subModel.getResults()

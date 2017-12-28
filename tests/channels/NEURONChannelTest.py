@@ -1,10 +1,14 @@
-import os, sys, re, json
-from matplotlib import pyplot as plt
+import os
+import re
+import sys
+
 import numpy as np
+
 sys.path.insert(0,'..')
 from tests.NEURONTest import NEURONTest
 
 class NEURONChannelTest(NEURONTest):
+
     def getResults(self):
 
         os.chdir(self.modelDir())
@@ -13,7 +17,7 @@ class NEURONChannelTest(NEURONTest):
         self.printAndRun("nrnivmodl")
 
         # Start neuron and load mod files
-        from neuron import h, gui
+        from neuron import h
 
         # Parse the mod file
         with open(self.modelFileName()) as f:
@@ -30,7 +34,7 @@ class NEURONChannelTest(NEURONTest):
         soma.insert(mechanism)
 
         # Perform any model specific preparations
-        self.prepare(getattr(soma(0.5), mechanism))
+        self.prepare(h, soma, getattr(soma(0.5), mechanism))
 
         # Create a voltage clamp
         vc = h.SEClamp(soma(0.5))
@@ -44,14 +48,9 @@ class NEURONChannelTest(NEURONTest):
         h.dt = 1.0 / h.steps_per_ms
 
         # Setup recorders
-        tVector = h.Vector()
-        tVector.record(h._ref_t)
-
-        vVector = h.Vector()
-        vVector.record(soma(0.5)._ref_v)
-
-        iVector = h.Vector()
-        iVector.record(getattr(soma(0.5), "_ref_" + currentVariable))
+        self.setupRecorders(t=h._ref_t,
+                            v=soma(0.5)._ref_v,
+                            i=getattr(soma(0.5), "_ref_" + currentVariable) )
 
         # Create test levels
         vcLevels = np.linspace(-80, 20, num=11)
@@ -65,9 +64,7 @@ class NEURONChannelTest(NEURONTest):
             h.run()
 
             # Gather output variables - subsample to once per ms
-            t = self.subSampleVector(tVector, h.steps_per_ms)
-            v = self.subSampleVector(vVector, h.steps_per_ms)
-            i = self.subSampleVector(iVector, h.steps_per_ms)
+            t, v, i = self.subSampleTVI(h.steps_per_ms)
 
             result["vclamp"].append({
                 "label": str(level) + " mV",
@@ -76,20 +73,25 @@ class NEURONChannelTest(NEURONTest):
                 "current": i,
             })
 
-        # Plot the current traces
-        for trace in result["vclamp"]:
-            plt.plot(trace["time"], trace["current"], label=trace["label"])
-
-        plt.legend()
-        plt.show()
+        # # DEBUG
+        # # Plot the current traces
+        # for trace in result["vclamp"]:
+        #     plt.plot(trace["time"], trace["current"], label=trace["label"])
+        #
+        # plt.legend()
+        # plt.show()
 
         # Save the traces to json file for later comparison
-        self.resultsFilePath = self.startPath + "/results/channels/" + self.label + "/" + self.resultsFile
-
-        with open(self.resultsFilePath, "w") as file:
-            json.dump(result, file)
+        self.saveResults(result)
 
         # Return cwd to starting dir
         self.restoreStartDir()
 
-        return self.resultsFilePath
+
+
+    def compareTo(self, target):
+        return self.compareTraces(
+            target,
+            resultKey = "vclamp",
+            variable = "current"
+        )

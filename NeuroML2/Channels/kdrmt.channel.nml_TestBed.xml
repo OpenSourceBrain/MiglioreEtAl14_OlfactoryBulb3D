@@ -1,0 +1,14 @@
+<!-- This is the minimum LEMS file to get jnml to generate .mod files -->
+
+<Lems>
+	<Include file="Cells.xml"/>
+	<Include file="Networks.xml"/>
+	<Include file="Simulation.xml"/>
+
+	<Include file="kdrmt.channel.nml" />
+
+	<Target component="sim"/>
+
+	<Simulation id="sim" length="3000ms" step="0.025ms" target="kdrmt">
+	</Simulation>
+</Lems>

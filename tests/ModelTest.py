@@ -5,13 +5,17 @@ import time
 from abc import ABCMeta, abstractmethod
 from subprocess import Popen, PIPE
 from threading import Thread
-
+import json
 import psutil
 
 class ModelTest(object):
 
     @abstractmethod
-    def prepare(model):
+    def prepare(self, h, soma, mechanism):
+        pass
+
+    @abstractmethod
+    def getResults(self):
         pass
 
     def __init__(self):
@@ -28,6 +32,18 @@ class ModelTest(object):
 
     def modelFileName(self):
         return os.path.basename(self.path)
+
+    def resultsDir(self):
+        return os.path.dirname(self.resultsFile)
+
+    def comparisonPath(self):
+        return self.resultsDir() + "/comparison.png"
+
+    def loadResults(self):
+        with open(self.resultsFile) as r:
+            result = json.load(r)
+
+        return result
 
     def getResultsOwnThread(self):
         self.printAndRun('python -c "from ' + self.__class__.__module__ + ' import ' + self.__class__.__name__ + ' as test; test().getResults();"')
