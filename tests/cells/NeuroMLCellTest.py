@@ -39,6 +39,7 @@ class NeuroMLCellTest(ModelTest):
         subModel.path = self.modelDir() + "/" + cellID + ".hoc"
         subModel.label = self.label
         subModel.prepare = self.prepare
+        subModel.currentRange = self.currentRange
         subModel.resultsFile = self.resultsFile
 
         # Now the converted mod file is ready for the protocol

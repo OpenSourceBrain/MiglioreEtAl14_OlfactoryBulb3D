@@ -1,105 +1,73 @@
 # Script for running automated tests on OSB using Travis-CI, see https://github.com/OpenSourceBrain/osb-model-validation 
+# Still in development, subject to change without notice!!
 
-target: "LEMS_MitralCell.xml"
+target: "LEMS_GC.test.xml"
 engine: jNeuroML_NEURON
-mep: ../../NEURON/.test.MitralCell.spikes.mep
+mep: .test.GC.spikes.mep
 experiments:
   spikes4:
     observables:
       spike times:
         file: 
-          path: Mitral_1nA.dat
+          path: GCA.dat
           columns: [0,1]
           scaling: [1000, 1000]
         spike detection: 
           method: threshold
           threshold: 0
-        tolerance: 0.0133040131942
+        tolerance: 0
   spikes5:
     observables:
       spike times:
         file: 
-          path: Mitral_1nA.dat
+          path: GCA.dat
           columns: [0,2]
           scaling: [1000, 1000]
         spike detection: 
           method: threshold
           threshold: 0
-        tolerance: 0.0129913024332
+        tolerance: 0
   spikes6:
     observables:
       spike times:
         file: 
-          path: Mitral_1nA.dat
-          columns: [0,3]
+          path: GCB.dat
+          columns: [0,1]
           scaling: [1000, 1000]
         spike detection: 
           method: threshold
           threshold: 0
-        tolerance: 0.0149139159997
+        tolerance: 0
   spikes7:
     observables:
       spike times:
         file: 
-          path: Mitral_2nA.dat
-          columns: [0,1]
+          path: GCB.dat
+          columns: [0,2]
           scaling: [1000, 1000]
         spike detection: 
           method: threshold
           threshold: 0
-        tolerance: 0.0123011196232
+        tolerance: 0
   spikes8:
     observables:
       spike times:
         file: 
-          path: Mitral_2nA.dat
-          columns: [0,2]
-          scaling: [1000, 1000]
-        spike detection: 
-          method: threshold
-          threshold: 0
-        tolerance: 0.0120908286645
-  spikes9:
-    observables:
-      spike times:
-        file: 
-          path: Mitral_2nA.dat
-          columns: [0,3]
-          scaling: [1000, 1000]
-        spike detection: 
-          method: threshold
-          threshold: 0
-        tolerance: 0.0135284170285
-  spikes10:
-    observables:
-      spike times:
-        file: 
-          path: Mitral_5nA.dat
+          path: GCC.dat
           columns: [0,1]
           scaling: [1000, 1000]
         spike detection: 
           method: threshold
           threshold: 0
-        tolerance: 0.0114627640405
-  spikes11:
+        tolerance: 0
+  spikes9:
     observables:
       spike times:
         file: 
-          path: Mitral_5nA.dat
+          path: GCC.dat
           columns: [0,2]
           scaling: [1000, 1000]
         spike detection: 
           method: threshold
           threshold: 0
-        tolerance: 0.0104617604622
-  spikes12:
-    observables:
-      spike times:
-        file: 
-          path: Mitral_5nA.dat
-          columns: [0,3]
-          scaling: [1000, 1000]
-        spike detection: 
-          method: threshold
-          threshold: 0
-        tolerance: 0.01273381295
+        tolerance: 0

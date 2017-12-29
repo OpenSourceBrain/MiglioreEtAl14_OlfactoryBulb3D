@@ -1,0 +1,16 @@
+python -c "from cells.granule import NEURON as test; test().getResults();"Running:   "nrnivmodl" ... OK
+loading membrane mechanisms from x86_64/.libs/libnrnmech.so
+determine_connections  0.0
+net_mitral_centric after import mgrs elapsedtime 0.02
+NEURON -- Release 7.4 (1370:16a7055d4a86) 2015-11-09
+Duke, Yale, and the BlueBrain Project -- Copyright 1984-2015
+See http://www.neuron.yale.edu/neuron/credits
+
+Additional mechanisms from files
+ ThreshDetect.mod ampanmda.mod distrt.mod fi.mod kamt.mod kdrmt.mod naxn.mod
+Exception in thread Thread-2 (most likely raised during interpreter shutdown):
+Traceback (most recent call last):
+  File "/home/justas/anaconda2/envs/p2/lib/python2.7/threading.py", line 801, in __bootstrap_inner
+  File "/home/justas/anaconda2/envs/p2/lib/python2.7/site-packages/neuron/gui.py", line 37, in run
+  File "/home/justas/anaconda2/envs/p2/lib/python2.7/site-packages/neuron/gui.py", line 15, in process_events
+<type 'exceptions.AttributeError'>: 'NoneType' object has no attribute 'doNotify'

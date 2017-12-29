@@ -14,25 +14,24 @@ class NEURONCellTest(NEURONTest):
         self.printAndRun("nrnivmodl")
 
         # Start neuron and load mod files
-        from neuron import h, gui
-        self.h = h
+        self.loadNEURONandModFiles()
 
         # Perform any model specific preparations
-        cell = self.prepare(h)
+        cell = self.prepare(self.h)
         soma = cell.soma
 
         # Create a current clamp
-        ic = h.IClamp(soma(0.5))
+        ic = self.h.IClamp(soma(0.5))
         ic.delay = 50
         ic.dur = 100
         ic.amp = -65
 
-        h.tstop = ic.delay + ic.dur + 50 # With extra 50ms at the end
-        h.steps_per_ms = 16
-        h.dt = 1.0 / h.steps_per_ms
+        self.h.tstop = ic.delay + ic.dur + 50 # With extra 50ms at the end
+        self.h.steps_per_ms = 16
+        self.h.dt = 1.0 / self.h.steps_per_ms
 
         # Record time, voltage, and current
-        self.setupRecorders(t = h._ref_t, v = soma(0.5)._ref_v, i = ic._ref_i)
+        self.setupRecorders(t = self.h._ref_t, v = soma(0.5)._ref_v, i = ic._ref_i)
 
         # Create test levels
         icLevels = np.linspace(np.min(self.currentRange),
@@ -45,10 +44,10 @@ class NEURONCellTest(NEURONTest):
         for level in icLevels:
             ic.amp = level
 
-            h.run()
+            self.h.run()
 
             # Gather output variables - subsample to once per ms
-            t, v, i = self.subSampleTVI(h.steps_per_ms)
+            t, v, i = self.subSampleTVI(self.h.steps_per_ms)
 
             result["iclamp"].append({
                 "label": str(level) + " nA",

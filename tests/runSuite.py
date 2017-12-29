@@ -3,26 +3,25 @@ import channels, cells
 import pydevd
 pydevd.settrace('192.168.177.1', port=4200, stdoutToServer=True, stderrToServer=True, suspend=False)
 
-
 def runSuite():
     import_submodules("channels")
     import_submodules("cells")
 
-    #compare(channels.nax.NEURON(), channels.nax.NeuroML())
-    #compare(channels.kamt.NEURON(), channels.kamt.NeuroML())
-    #compare(channels.kdrmt.NEURON(), channels.kdrmt.NeuroML())
+    # compare(channels.nax.NEURON(), channels.nax.NeuroML())
+    # compare(channels.kamt.NEURON(), channels.kamt.NeuroML())
+    # compare(channels.kdrmt.NEURON(), channels.kdrmt.NeuroML())
 
     #compare(cells.mitral.NEURON(), cells.mitral.NeuroML())
     compare(cells.granule.NEURON(), cells.granule.NeuroML())
 
 def compare(NEURONtest, NMLtest):
-    NEURONtest.getResults()#OwnThread()
+    NEURONtest.getResultsOwnThread()
     NMLtest.getResults()#OwnThread()
 
     NEURONtest.compareTo(NMLtest)
 
     print("Comparison saved to " + NEURONtest.comparisonPath())
-    print(NEURONtest.label + " NeuroML conversion differs from NEURON by " + str(NEURONtest.comparisonMean) + "% on average")
+    print(NEURONtest.label + " NeuroML conversion output differs from NEURON by " + str(NEURONtest.comparisonMean) + " on average")
 
 def import_submodules(package_name):
     import sys, importlib, pkgutil

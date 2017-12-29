@@ -1,0 +1,72 @@
+<Lems>
+    
+    <!-- Specify which component to run -->
+    <Target component="Sim"/>
+    
+    <!-- Include core NeuroML2 ComponentType definitions -->
+    <Include file="Cells.xml"/>
+    <Include file="Networks.xml"/>
+    <Include file="Simulation.xml"/>
+    
+    <Include file="../GranuleCells/Exported/Granule_0_110821.cell.nml"/>
+<!--    <Include file="../MitralCells/Exported/Mitral_0_0.cell.nml"/>-->
+<!--    -->
+    <Include file="../Channels/pas.channel.nml"/>
+    <Include file="../Channels/nax__sh0.channel.nml"/>
+    <Include file="../Channels/nax__sh10.channel.nml"/>
+    <Include file="../Channels/nax__sh15.channel.nml"/>
+    <Include file="../Channels/kamt.channel.nml"/>
+    <Include file="../Channels/kdrmt.channel.nml"/>
+
+<!--    <pulseGenerator id="input_MC" delay="50ms" duration="200ms" amplitude="0.8 nA"/>-->
+    <pulseGenerator id="input_GC" delay="50ms" duration="200ms" amplitude="0.05 nA"/>
+    
+    <network id="network_Migliore2014" type="networkWithTemperature" temperature="35 degC">
+
+        
+<!--        <population id="Pop_Mitral_0_0" component="Mitral_0_0" type="populationList" size="1">-->
+<!--            <instance id="0">-->
+<!--                <location x="198.11964416503906" y="498.2239990234375" z="494.2691955566406"/>-->
+<!--            </instance>-->
+<!--        </population>-->
+
+        <population id="Pop_Granule_0_110821" component="Granule_0_110821" type="populationList" size="1">
+            <instance id="0">
+                <location x="375" y="1050" z="450"/>
+            </instance>
+        </population>
+        
+        
+<!--        <projection id="Proj_703836162_G2M" presynapticPopulation="Pop_Granule_0_110821" postsynapticPopulation="Pop_Mitral_0_0" synapse="FIsyn">-->
+<!--            <connection id="0" preCellId="../Pop_Granule_0_110821/0/Granule_0_110821" postCellId="../Pop_Mitral_0_0/0/Mitral_0_0" preSegmentId="4" preFractionAlong="0.5" postSegmentId="193" postFractionAlong="0.5"/>-->
+<!--        </projection>-->
+<!--        <projection id="Proj_703836162_M2G" presynapticPopulation="Pop_Mitral_0_0" postsynapticPopulation="Pop_Granule_0_110821" synapse="AmpaNmdaSyn">-->
+<!--            <connection id="0" preCellId="../Pop_Mitral_0_0/0/Mitral_0_0" postCellId="../Pop_Granule_0_110821/0/Granule_0_110821" preSegmentId="193" preFractionAlong="0.5" postSegmentId="4" postFractionAlong="0.5"/>-->
+<!--        </projection>-->
+
+<!--        <inputList id="input_MC" component="input_MC" population="Pop_Mitral_0_0">-->
+<!--            <input destination="synapses" id="0" target="../Pop_Mitral_0_0[0]"/>-->
+<!--        </inputList>-->
+        <inputList id="input_GC" component="input_GC" population="Pop_Granule_0_110821">
+            <input destination="synapses" id="0" target="../Pop_Granule_0_110821[0]"/>
+        </inputList>
+
+    </network>
+    
+    
+    <Simulation id="Sim" length="300ms" step="0.01ms" target="network_Migliore2014">
+        
+<!--        <Display id="Mitral" title="Mitral Cell" timeScale="1ms" xmin="-18.0" xmax="198.0" ymin="-90" ymax="50">-->
+<!--            <Line id="soma"       quantity="Pop_Mitral_0_0/0/Mitral_0_0/0/v"  scale="1" color="#f3e4c5" timeScale="1ms"/>-->
+<!--            <Line id="secden"     quantity="Pop_Mitral_0_0/0/Mitral_0_0/193/v" scale="1" color="#c6d577" timeScale="1ms"/>-->
+<!--        </Display>-->
+
+        <Display id="Granule" title="Granule Cell" timeScale="1ms" xmin="-18.0" xmax="198.0" ymin="-90" ymax="50">
+            <Line id="soma"       quantity="Pop_Granule_0_110821/0/Granule_0_110821/0/v"  scale="1" color="#f3e4c5" timeScale="1ms"/>
+            <Line id="priden"     quantity="Pop_Granule_0_110821/0/Granule_0_110821/2/v" scale="1" color="#c6d577" timeScale="1ms"/>
+<!--            <Line id="spine head"     quantity="Pop_Granule_0_110821/0/Granule_0_110821/4/v" scale="1" color="#000000" timeScale="1ms"/>-->
+        </Display>
+        
+    </Simulation>
+    
+</Lems>

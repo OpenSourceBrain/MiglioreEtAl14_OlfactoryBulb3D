@@ -10,7 +10,7 @@ class NEURON(NEURONCellTest):
         self.path = "../NEURON/granule.hoc"
         self.label = "granule"
         self.resultsFile = "results/cells/granule/NEURON.json"
-        self.currentRange = (-0.1, 0.2)
+        self.currentRange = (-0.01, 0.1)
 
     def prepare(self, h):
         # NEURON setup code
@@ -19,7 +19,7 @@ class NEURON(NEURONCellTest):
         custom_params.filename = 'fig7'
         from net_mitral_centric import mkgranule
         import granules
-        gcid = 86086  # 86086 is the GID of first Gran cell of the first Mitral Cell of the full model
+        gcid = 110821  # 110821 is the GID of first Gran cell of the first Mitral Cell of the full model
 
         cell = mkgranule(gcid)
 
@@ -31,11 +31,11 @@ class NeuroML(NeuroMLCellTest):
     def __init__(self):
         super(NeuroML, self).__init__()
 
-        self.path = "../NeuroML2/GranuleCells/Exported/Granule_0_86086.cell.nml"
+        self.path = "../NeuroML2/GranuleCells/Exported/Granule_0_110821.cell.nml"
         self.label = "granule"
         self.resultsFile = "results/cells/granule/NeuroML.json"
-        self.id = "Granule_0_86086"
-        self.currentRange = (-0.1, 0.2)
+        self.id = "Granule_0_110821"
+        self.currentRange = (-0.01, 0.1)
 
         # ToDO: make granules work
         #import changes from my repo under downloads

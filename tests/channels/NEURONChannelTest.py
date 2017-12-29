@@ -17,7 +17,7 @@ class NEURONChannelTest(NEURONTest):
         self.printAndRun("nrnivmodl")
 
         # Start neuron and load mod files
-        from neuron import h
+        self.loadNEURONandModFiles()
 
         # Parse the mod file
         with open(self.modelFileName()) as f:
@@ -30,25 +30,25 @@ class NEURONChannelTest(NEURONTest):
             currentVariable = re.compile(r"USEION.*WRITE (.*?)\W").search(modFile).group(1)
 
         # Create a test cell and insert the mechanism into the soma
-        soma = h.Section()
+        soma = self.h.Section()
         soma.insert(mechanism)
 
         # Perform any model specific preparations
-        self.prepare(h, soma, getattr(soma(0.5), mechanism))
+        self.prepare(self.h, soma, getattr(soma(0.5), mechanism))
 
         # Create a voltage clamp
-        vc = h.SEClamp(soma(0.5))
+        vc = self.h.SEClamp(soma(0.5))
         vc.rs = 0.0001
         vc.dur1 = vc.dur3 = 50
-        vc.amp1 = vc.amp3 = -65
+        vc.amp1 = vc.amp3 = self.h.v_init = -65
         vc.dur2 = 100
 
-        h.tstop = vc.dur1 + vc.dur2 + vc.dur3
-        h.steps_per_ms = 16
-        h.dt = 1.0 / h.steps_per_ms
+        self.h.tstop = vc.dur1 + vc.dur2 + vc.dur3
+        self.h.steps_per_ms = 16
+        self.h.dt = 1.0 / self.h.steps_per_ms
 
         # Setup recorders
-        self.setupRecorders(t=h._ref_t,
+        self.setupRecorders(t=self.h._ref_t,
                             v=soma(0.5)._ref_v,
                             i=getattr(soma(0.5), "_ref_" + currentVariable) )
 
@@ -61,10 +61,10 @@ class NEURONChannelTest(NEURONTest):
         for level in vcLevels:
             vc.amp2 = level
 
-            h.run()
+            self.h.run()
 
             # Gather output variables - subsample to once per ms
-            t, v, i = self.subSampleTVI(h.steps_per_ms)
+            t, v, i = self.subSampleTVI(self.h.steps_per_ms)
 
             result["vclamp"].append({
                 "label": str(level) + " mV",
@@ -86,8 +86,6 @@ class NEURONChannelTest(NEURONTest):
 
         # Return cwd to starting dir
         self.restoreStartDir()
-
-
 
     def compareTo(self, target):
         return self.compareTraces(

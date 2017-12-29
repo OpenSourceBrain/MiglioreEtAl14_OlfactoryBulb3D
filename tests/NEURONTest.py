@@ -45,7 +45,7 @@ class NEURONTest(ModelTest):
         for t in range(len(traces1)):
             i1 = np.array(traces1[t][variable])
             i2 = np.array(traces2[t][variable])
-            error = np.abs((i2 - i1) / i1 * 100.0)  # Point-by-point absolute percent error
+            error = np.abs((i2 - i1))  # Point-by-point absolute error
             errorMean = np.mean(error)
 
             plt.subplot(len(traces1), 2, 2 * t + 1)
@@ -58,7 +58,7 @@ class NEURONTest(ModelTest):
             plt.legend()
 
             plt.subplot(len(traces1), 2, 2 * t + 2)
-            plt.plot(traces1[t]['time'], error, label="|Error| (mean: " + str(errorMean) + "%)")
+            plt.plot(traces1[t]['time'], error, label="|Error| (mean: " + str(errorMean) + ")")
 
             if (t != len(traces1) - 1):
                 plt.gca().axes.get_xaxis().set_visible(False)
@@ -70,9 +70,13 @@ class NEURONTest(ModelTest):
         self.comparisonMean = np.mean(traceErrors)
 
         plt.subplots_adjust(left=0.05, right=0.95, top=0.95, bottom=0.05, hspace=0.05)
-        plt.suptitle(self.label + " Conversion Error: " + str(self.comparisonMean) + "%")
+        plt.suptitle(self.label + " Conversion Error: " + str(self.comparisonMean))
 
         # plt.show()
         plt.savefig(self.comparisonPath())
 
         return self.comparisonMean
+
+    def loadNEURONandModFiles(self):
+        from neuron import h, gui
+        self.h = h

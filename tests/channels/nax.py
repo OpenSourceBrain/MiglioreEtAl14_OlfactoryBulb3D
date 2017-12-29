@@ -19,13 +19,13 @@ class NEURON(NEURONChannelTest):
         soma.ena = 50
 
         mechanism.gbar = 0.04
-        mechanism.sh = 5
+        mechanism.sh = 0
 
 class NeuroML(NeuroMLChannelTest):
     def __init__(self):
         super(NeuroML, self).__init__()
 
-        self.path = "../NeuroML2/Channels/nax.channel.nml"
+        self.path = "../NeuroML2/Channels/nax__sh0.channel.nml"
         self.label = "nax"
         self.resultsFile = "results/channels/nax/NeuroML.json"
 

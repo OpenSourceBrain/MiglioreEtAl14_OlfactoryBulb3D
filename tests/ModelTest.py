@@ -8,6 +8,8 @@ from threading import Thread
 import json
 import psutil
 
+
+
 class ModelTest(object):
 
     @abstractmethod
@@ -60,19 +62,28 @@ class ModelTest(object):
 
         ON_POSIX = 'posix' in sys.builtin_module_names
 
-        def enqueue_output(out, queue):
+        def enqueue_output(out, err, queue):
             for line in iter(out.readline, b''):
                 queue.put(line)
+
             out.close()
 
-        started = False
-        pid = 0
-        p = Popen(command, shell=True, stdout=PIPE, bufsize=1, close_fds=ON_POSIX)
+            for line in iter(err.readline, b''):
+                queue.put(line)
+
+            err.close()
+
+
+
+
         q = Queue()
-        t = Thread(target=enqueue_output, args=(p.stdout, q))
+        p = Popen(command, shell=True, stdout=PIPE, stderr=PIPE, bufsize=1, close_fds=ON_POSIX)
+        t = Thread(target=enqueue_output, args=(p.stdout, p.stderr, q))
         t.daemon = True  # thread dies with the program
 
         lines = ""
+
+
 
         # read line without blocking
         # check if process is alive and if so, wait up to 5 mins for output
@@ -80,35 +91,35 @@ class ModelTest(object):
         # and long running, non-outputting processes like neuron run
         # and long running, hung processes that show an error
 
-        checking_since = time.time()
 
-        # Wait 5 mins at most for next line e.g during sims
-        while not started or (t.isAlive() and time.time() - checking_since < 5 * 60):
+        # Start the process
+        pid = p.pid
+        t.start()
+        keepChecking = True
 
-            if not started:
-                pid = p.pid
-                t.start()
-                started = True
+        # Check for errors in output
+        while keepChecking:
 
+            # Get all lines thus far from process
             try:
-                line = q.get_nowait()
+                line = ""
+
+                while True:
+                    line = line + q.get_nowait()
+
+            # No more lines
             except Empty:
+                pass
+
+            # If no lines received, wait
+            if line == "":
                 time.sleep(0.01)
 
-            else:  # got line
+            # Process the output line
+            else:
                 lines = lines + line
 
-                # Clear false alarms
-                cleanOutput = line \
-                    .replace("NRN Error", "") \
-                    .replace("NMODL Error", "") \
-                    .lower()
-
-                errorsFound = 'error' in cleanOutput or \
-                              'is not valid against the schema' in cleanOutput or \
-                              'problem in model' in cleanOutput or \
-                              'traceback' in cleanOutput or \
-                              'out of range, returning exp' in cleanOutput
+                errorsFound = self.errorsFound(line)
 
                 if errorsFound:
                     logFile = startDir + "/error.log"
@@ -117,15 +128,37 @@ class ModelTest(object):
                         f.write(command)
                         f.write(lines)
 
-                    kill_proc_tree(pid)
+                    self.kill_proc_tree(pid)
 
                     print('ERROR')
 
+                    print(lines)
+
                 assert not errorsFound  # See error.log file in script start folder
+
+            # If the thread is dead and there are no more output lines, stop checking
+            if not t.isAlive() and q.empty():
+                keepChecking = False
 
         print('OK')
 
-    def kill_proc_tree(pid, sig=signal.SIGTERM, include_parent=True,
+    def errorsFound(self, line):
+
+        # Clear false alarms
+        cleanOutput = line \
+            .replace("NRN Error", "") \
+            .replace("NMODL Error", "") \
+            .lower()
+
+        errorsFound = 'error' in cleanOutput or \
+                      'is not valid against the schema' in cleanOutput or \
+                      'problem in model' in cleanOutput or \
+                      'traceback' in cleanOutput or \
+                      'out of range, returning exp' in cleanOutput
+
+        return errorsFound
+
+    def kill_proc_tree(self, pid, sig=signal.SIGTERM, include_parent=True,
                        timeout=None, on_terminate=None):
         """Kill a process tree (including grandchildren) with signal
         "sig" and return a (gone, still_alive) tuple.
