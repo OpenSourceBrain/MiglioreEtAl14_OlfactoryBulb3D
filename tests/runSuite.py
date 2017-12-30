@@ -1,4 +1,4 @@
-import channels, cells
+import channels, cells, synapses
 
 import pydevd
 pydevd.settrace('192.168.177.1', port=4200, stdoutToServer=True, stderrToServer=True, suspend=False)
@@ -6,17 +6,24 @@ pydevd.settrace('192.168.177.1', port=4200, stdoutToServer=True, stderrToServer=
 def runSuite():
     import_submodules("channels")
     import_submodules("cells")
+    import_submodules("synapses")
 
-    # compare(channels.nax.NEURON(), channels.nax.NeuroML())
-    # compare(channels.kamt.NEURON(), channels.kamt.NeuroML())
-    # compare(channels.kdrmt.NEURON(), channels.kdrmt.NeuroML())
+    # compare(channels.nax)
+    # compare(channels.kamt)
+    # compare(channels.kdrmt)
 
-    #compare(cells.mitral.NEURON(), cells.mitral.NeuroML())
-    compare(cells.granule.NEURON(), cells.granule.NeuroML())
+    #compare(cells.mitral)
+    #compare(cells.granule)
 
-def compare(NEURONtest, NMLtest):
+    compare(synapses.FI)
+    compare(synapses.AmpaNmda)
+
+def compare(modelTestModule):
+    NEURONtest = modelTestModule.NEURON()
+    NMLtest =  modelTestModule.NeuroML()
+
     NEURONtest.getResultsOwnThread()
-    NMLtest.getResults()#OwnThread()
+    NMLtest.getResultsOwnThread()
 
     NEURONtest.compareTo(NMLtest)
 
