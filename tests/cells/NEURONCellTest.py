@@ -56,13 +56,13 @@ class NEURONCellTest(NEURONTest):
                 "current": i,
             })
 
-        # DEBUG
-        # Plot the voltage traces
-        for trace in result["iclamp"]:
-            plt.plot(trace["time"], trace["voltage"], label=trace["label"])
-
-        plt.legend()
-        plt.show()
+        # # DEBUG
+        # # Plot the voltage traces
+        # for trace in result["iclamp"]:
+        #     plt.plot(trace["time"], trace["voltage"], label=trace["label"])
+        #
+        # plt.legend()
+        # plt.show()
 
         # Save the traces to json file for later comparison
         self.saveResults(result)

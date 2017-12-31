@@ -8,12 +8,12 @@ def runSuite():
     import_submodules("cells")
     import_submodules("synapses")
 
-    # compare(channels.nax)
-    # compare(channels.kamt)
-    # compare(channels.kdrmt)
+    compare(channels.nax)
+    compare(channels.kamt)
+    compare(channels.kdrmt)
 
-    #compare(cells.mitral)
-    #compare(cells.granule)
+    compare(cells.mitral)
+    compare(cells.granule)
 
     compare(synapses.FI)
     compare(synapses.AmpaNmda)
