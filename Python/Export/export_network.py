@@ -14,7 +14,7 @@ os.chdir("../NeuroML2")
 h.chdir('../NEURON')
 sys.path.append('../NEURON')
 
-from neuronHelper import *
+#from neuronHelper import *
 from pyneuroml import pynml
 from pyneuroml.neuron import export_to_neuroml2
 
@@ -138,7 +138,7 @@ def __main__():
             .replace("[PostGID]", `synapse.ggid`)\
             .replace("[PostSegment]", `4`)\
             .replace("[PostAlong]", "0.5")\
-            .replace("[Synapse]", "AmpaNmdaSyn")\
+            .replace("[Synapse]", "AmpaNmdaSynapse")\
 
         curSyn += 1
 

@@ -18,9 +18,10 @@ class ModelTest(object):
 
     @abstractmethod
     def getResults(self):
-        pass
+        raise NotImplementedError()
 
     def __init__(self):
+        self.error = False
         self.saveStartDir()
 
     def saveStartDir(self):

@@ -70,3 +70,31 @@ def splitSegmentAlongFraction(cell,parentName,parentGroup,fractionAlong,childNam
         .append(neuroml.Member(segments=newSegID))
 
     child.parent.segments = parent.id
+
+def printSegmentTree(rootSection, indentLevel = 0):
+    from neuron import h
+    coordCount = int(h.n3d(sec = rootSection))
+    coords = []
+    for c in range(coordCount):
+        coords.append({
+            "x": h.x3d(c, sec = rootSection),
+            "y": h.y3d(c, sec = rootSection),
+            "z": h.z3d(c, sec = rootSection),
+            "d": h.diam3d(c, sec = rootSection)
+        })
+    sectionInfo = {
+        "name": rootSection.name(),
+        "L": rootSection.L,
+        "Diam": rootSection.diam,
+        "Ra": rootSection.Ra,
+        "Branch": rootSection.rallbranch,
+        "Orientation":rootSection.orientation(),
+        "segs": rootSection.nseg,
+        "locOnParent":rootSection.parentseg().x if rootSection.parentseg() is not None else None
+    }
+    print("   " * indentLevel + str(sectionInfo))
+    for coord in coords:
+        print("   " * indentLevel + str(coord))
+    children = rootSection.children()
+    for child in children:
+        printSegmentTree(child, indentLevel + 1)

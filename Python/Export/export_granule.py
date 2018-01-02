@@ -117,7 +117,7 @@ def exportToNML(cells):
         cell, nml_doc, nml_cell_file = readGCnml(gcid)
 
         # Fix the fractionAlong parent segment bug ( https://github.com/NeuroML/org.neuroml.export/issues/46 )
-        exportHelper.splitSegmentAlongFraction(cell, "Seg0_priden", "priden", 0.8, "Seg0_priden2_0")
+        #exportHelper.splitSegmentAlongFraction(cell, "Seg0_priden", "priden", 0.8, "Seg0_priden2_0")
 
         # Orient cell along the versor
         versor = granules.granule_position_orientation(gcid)[1]
