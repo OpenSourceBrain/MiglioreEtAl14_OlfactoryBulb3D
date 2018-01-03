@@ -7,63 +7,80 @@ import re
 import copy
 import exportHelper
 
-sys.path.append("/usr/local/lib/python2.7/site-packages")
-import neuroml
-
-#Nav to neuron folder where compiled MOD files are present
-os.chdir("../../NEURON")
-from neuron import h
-os.chdir("../NeuroML2")
-
-h.chdir('../NEURON')
-h.load_file('granule.hoc')
-sys.path.append('../NEURON')
-
-import custom_params
-custom_params.filename = 'fig7'
-from net_mitral_centric import mkgranule
-import granules
-from pyneuroml.neuron import export_to_neuroml2
-from pyneuroml import pynml
-from neuroml import SegmentGroup
-
-
-
 
 def __main__():
 
-    numMitralsToUse = 1
-    numGranulesPerMitralToExport = 1
-    numGranulesTotal = numMitralsToUse * numGranulesPerMitralToExport
+    MCs = 1
+    GCsPerMC = 1
+    numGranulesTotal = MCs * GCsPerMC
 
-    mitral2granule = {}
-    import cPickle as pickle
-    with open('mitral2granule.p', 'rb') as fp1:
-        mitral2granule.update(pickle.load(fp1))
+    # Nav to neuron folder where compiled MOD files are present
+    os.chdir("../../NEURON")
+    from neuron import h,gui
 
-    cells = {}
-    for mcid in xrange(0, numMitralsToUse):
-        for gcid in set(mitral2granule[mcid][0:numGranulesPerMitralToExport]):
-            cells.update({ gcid: { 'cell': mkgranule(gcid), 'index': len(cells)} })
+    # Build the network with desired number of GCs - including spines
+    sys.path.append(os.getcwd())
+    import customsim
+    import modeldata
+    customsim.setup(MCs, GCsPerMC)
+    model = modeldata.getmodel()
 
-    exportToNML(cells)
 
-def exportNetworkGCs(netFile):
-
-    with open(netFile, "r") as file:
-        nml = file.read()
-
-    import re
-    rx = re.compile(r"Granule_0_(\d*?).cell")
-    gcids = [int(match) for match in rx.findall(nml)]
-
-    cells = {}
-    for gcid in gcids:
-        cells.update({ gcid: { 'cell': mkgranule(gcid), 'index': len(cells)} })
-
-    exportToNML(cells)
+    exportToNML(model.granules)
 
 def exportToNML(cells):
+    '''
+    GCs only vary these parameters:
+        priden: length (through y position of distal pt), number of subdivitions (nseg)
+	    spine neck: location on parent priden2
+    '''
+
+    for gid in cells.keys():
+        pridenLength = cells[gid].priden.L
+        pridenNseg = cells[gid].priden.nseg
+        neckLoc = cells[gid].priden2[0].children()[0].parentseg().x
+
+        # Translate these by the length of priden
+        priden2DistalY = pridenLength + 250.0
+        spineNeckDistalY = priden2DistalY + 2.0
+        spineHeadDistalY = spineNeckDistalY + 1.0
+
+        # TODO: Align the GC along the bulb versor
+        import granules
+        versor = granules.granule_position_orientation(gcid)[1]
+
+        for seg in cell.morphology.segments:
+            segLength = seg.length
+
+            if seg.parent is not None:
+                parentDistal = [parent for parent in cell.morphology.segments if parent.id == seg.parent.segments][
+                    0].distal
+                seg.proximal.x = parentDistal.x
+                seg.proximal.y = parentDistal.y
+                seg.proximal.z = parentDistal.z
+
+            seg.distal = setAlongVersor(seg.distal, versor, seg.proximal, segLength)
+
+        with open("../NeuroML2/GranuleCells/GranuleCellTemplate.xml") as f:
+            template = f.read()
+
+        template = template\
+            .replace("[GID]", str(gid))\
+            .replace("[PridenLength]", str(pridenLength))\
+            .replace("[PridenSubdivisions]", str(pridenNseg))\
+            .replace("[Priden2DistalY]", str(priden2DistalY))\
+            .replace("[SpineFractionAlongPriden2]", str(neckLoc))\
+            .replace("[SpineNeckDistalY]", str(spineNeckDistalY))\
+            .replace("[SpineHeadDistalY]", str(spineHeadDistalY))
+
+        with open("../NeuroML2/GranuleCells/Exported/Granule_" + str(gid) + ".cell.nml", "w") as f:
+            f.write(template)
+
+def exportToNML2(cells):
+    import neuroml
+    from pyneuroml.neuron import export_to_neuroml2
+    from pyneuroml import pynml
+    from neuroml import SegmentGroup
 
     nml_net_file = "../NeuroML2/GranuleCells/Exported/GCnet%iG.net.nml" % len(cells)
     export_to_neuroml2(None,
