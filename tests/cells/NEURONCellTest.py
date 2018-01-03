@@ -57,7 +57,7 @@ class NEURONCellTest(NEURONTest):
             })
 
         # # DEBUG
-        # # Plot the voltage traces
+        # # # Plot the voltage traces
         # for trace in result["iclamp"]:
         #     plt.plot(trace["time"], trace["voltage"], label=trace["label"])
         #

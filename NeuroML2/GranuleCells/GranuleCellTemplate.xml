@@ -1,11 +1,12 @@
 <neuroml xmlns="http://www.neuroml.org/schema/neuroml2" xmlns:xs="http://www.w3.org/2001/XMLSchema"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://www.neuroml.org/schema/neuroml2 https://raw.github.com/NeuroML/NeuroML2/development/Schemas/NeuroML2/NeuroML_v2beta5.xsd">
+         xsi:schemaLocation="http://www.neuroml.org/schema/neuroml2 https://raw.github.com/NeuroML/NeuroML2/development/Schemas/NeuroML2/NeuroML_v2beta5.xsd"
+         id="Granule">
     <include href="../../Channels/pas.channel.nml"></include>
     <include href="../../Channels/nax__sh15.channel.nml"></include>
     <include href="../../Channels/kamt.channel.nml"></include>
     <include href="../../Channels/kdrmt.channel.nml"></include>
-    <cell id="Granule_[GID]">
+    <cell id="Granule_0">
         <morphology id="morphology">
             <!-- Segments -->
             <segment id="0" name="soma_seg">
@@ -15,22 +16,22 @@
             <segment id="1" name="priden_seg">
                 <parent segment="0"/>
                 <proximal y="0.0" x="0.0" z="0.0" diameter="0.5"/>
-                <distal y="[PridenLength]" x="0.0" z="0.0" diameter="0.5"/>
+                <distal y="0" x="0.0" z="0.0" diameter="0.5"/>
             </segment>
             <segment id="2" name="priden2_seg">
                 <parent segment="1" fractionAlong="0.8"/>
-                <proximal y="[PridenLength]" x="0.0" z="0.0" diameter="0.4"/>
-                <distal y="[Priden2DistalY]" x="0.0" z="0.0" diameter="0.4"/> <!-- PridenLength + 250 -->
+                <proximal y="0" x="0.0" z="0.0" diameter="0.4"/>
+                <distal y="0" x="0.0" z="0.0" diameter="0.4"/> <!-- PridenLength + 250 -->
             </segment>
             <segment id="3" name="neck_seg">
-                <parent segment="2" fractionAlong="[SpineFractionAlongPriden2]"/>
-                <proximal y="[Priden2DistalY]" x="0.0" z="0.0" diameter="0.2"/>
-                <distal y="[SpineNeckDistalY]" x="0.0" z="0.0" diameter="0.2"/> <!-- Priden2DistalY + 2 -->
+                <parent segment="2" fractionAlong="1"/>
+                <proximal y="0" x="0.0" z="0.0" diameter="0.2"/>
+                <distal y="0" x="0.0" z="0.0" diameter="0.2"/> <!-- Priden2DistalY + 2 -->
             </segment>
             <segment id="4" name="head_seg">
                 <parent segment="3"/>
-                <proximal y="[SpineNeckDistalY]" x="0.0" z="0.0" diameter="1.0"/>
-                <distal y="[SpineHeadDistalY]" x="0.0" z="0.0" diameter="1.0"/> <!-- SpineNeckDistalY + 1 -->
+                <proximal y="0" x="0.0" z="0.0" diameter="1.0"/>
+                <distal y="0" x="0.0" z="0.0" diameter="1.0"/> <!-- SpineNeckDistalY + 1 -->
             </segment>
 
             <!-- Sections -->
@@ -38,7 +39,7 @@
                 <member segment="0"/>
             </segmentGroup>
             <segmentGroup neuroLexId="sao864921383" id="priden">
-                <property tag="numberInternalDivisions" value="[PridenSubdivisions]"/>
+                <property tag="numberInternalDivisions" value="1"/>
                 <member segment="1"/>
             </segmentGroup>
             <segmentGroup neuroLexId="sao864921383" id="priden2_0">

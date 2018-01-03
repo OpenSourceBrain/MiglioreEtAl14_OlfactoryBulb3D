@@ -15,8 +15,13 @@ def runSuite():
     summary.append(compare(channels.kamt))
     summary.append(compare(channels.kdrmt))
 
+
+    summary.append(compare(cells.mitral_passive))
     summary.append(compare(cells.mitral))
+
+    summary.append(compare(cells.granule_passive))
     summary.append(compare(cells.granule))
+
 
     summary.append(compare(synapses.FI))
     summary.append(compare(synapses.AmpaNmda))
