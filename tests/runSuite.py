@@ -1,5 +1,3 @@
-import channels, cells, synapses, networks
-
 import pydevd
 pydevd.settrace('192.168.177.1', port=4200, stdoutToServer=True, stderrToServer=True, suspend=False)
 
@@ -11,24 +9,24 @@ def runSuite():
 
     summary = []
 
-    summary.append(compare(channels.nax))
-    summary.append(compare(channels.kamt))
-    summary.append(compare(channels.kdrmt))
-
-
-    summary.append(compare(cells.mitral_passive))
-    summary.append(compare(cells.mitral))
-
+    # summary.append(compare(channels.nax))
+    # summary.append(compare(channels.kamt))
+    # summary.append(compare(channels.kdrmt))
+    #
+    #
+    # summary.append(compare(cells.mitral_passive))
+    # summary.append(compare(cells.mitral))
+    #
     summary.append(compare(cells.granule_passive))
-    summary.append(compare(cells.granule))
-
-
-    summary.append(compare(synapses.FI))
-    summary.append(compare(synapses.AmpaNmda))
-
-    summary.append(compare(networks.Net_1MC_1GC))
-
-    summary.append(compare(networks.Net_1MC_1GC, conversion = "NetPyNE"))
+    # summary.append(compare(cells.granule))
+    #
+    #
+    # summary.append(compare(synapses.FI))
+    # summary.append(compare(synapses.AmpaNmda))
+    #
+    # summary.append(compare(networks.Net_1MC_1GC))
+    #
+    # summary.append(compare(networks.Net_1MC_1GC, conversion = "NetPyNE"))
 
     generateReport(summary)
 
@@ -41,13 +39,13 @@ def compare(modelTestModule, conversion = "NeuroML"):
     if os.path.isfile(NEURONtest.comparisonPath()):
         os.remove(NEURONtest.comparisonPath())
 
-    try:
-        NEURONtest.getResultsOwnThread()
-    except:
-        NEURONtest.error = True
+    # try:
+    #     NEURONtest.getResults()#OwnThread()
+    # except:
+    #     NEURONtest.error = True
 
     try:
-        conversionTest.getResultsOwnThread()
+        conversionTest.getResults()#OwnThread()
     except:
         conversionTest.error = True
 
@@ -101,6 +99,8 @@ def generateReport(summary):
 
 def import_submodules(package_name):
     import sys, importlib, pkgutil
+
+    globals()[package_name] = importlib.import_module(package_name)
 
     package = sys.modules[package_name]
 

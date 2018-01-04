@@ -43,15 +43,10 @@ def exportToNML(cells):
     exported = []
 
     for gid in cells.keys():
-        # S
+        # Obtain the varying values from the network model
         pridenLength = cells[gid].priden.L
         pridenNseg = cells[gid].priden.nseg
         neckLoc = cells[gid].priden2[0].children()[0].parentseg().x
-
-        # Translate these by the length of priden
-        priden2DistalY = pridenLength + 250.0
-        spineNeckDistalY = priden2DistalY + 2.0
-        spineHeadDistalY = spineNeckDistalY + 1.0
 
         # Read the cell template
         from pyneuroml import pynml
@@ -62,13 +57,7 @@ def exportToNML(cells):
         cell.id = "Granule_" + str(gid)
         next(seg for seg in cell.morphology.segments if seg.name == 'priden_seg').distal.y = pridenLength
         next(prop for prop in next(section for section in cell.morphology.segment_groups if section.id == 'priden').properties if prop.tag == 'numberInternalDivisions').value = pridenNseg
-        next(seg for seg in cell.morphology.segments if seg.name == 'priden2_seg').distal.y = priden2DistalY
-
-        neck = next(seg for seg in cell.morphology.segments if seg.name == 'neck_seg')
-        neck.parent.fraction_along = neckLoc
-        neck.distal.y = spineNeckDistalY
-
-        next(seg for seg in cell.morphology.segments if seg.name == 'head_seg').distal.y = spineHeadDistalY
+        next(seg for seg in cell.morphology.segments if seg.name == 'neck_seg').parent.fraction_along = neckLoc
 
         # Align the GC along the bulb versor
         import granules
