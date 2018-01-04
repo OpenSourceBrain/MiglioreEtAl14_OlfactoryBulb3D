@@ -18,7 +18,7 @@ def runSuite():
     # summary.append(compare(cells.mitral))
     #
     summary.append(compare(cells.granule_passive))
-    # summary.append(compare(cells.granule))
+    summary.append(compare(cells.granule))
     #
     #
     # summary.append(compare(synapses.FI))
@@ -39,13 +39,13 @@ def compare(modelTestModule, conversion = "NeuroML"):
     if os.path.isfile(NEURONtest.comparisonPath()):
         os.remove(NEURONtest.comparisonPath())
 
-    # try:
-    #     NEURONtest.getResults()#OwnThread()
-    # except:
-    #     NEURONtest.error = True
+    try:
+        NEURONtest.getResultsOwnThread()
+    except:
+        NEURONtest.error = True
 
     try:
-        conversionTest.getResults()#OwnThread()
+        conversionTest.getResultsOwnThread()
     except:
         conversionTest.error = True
 
