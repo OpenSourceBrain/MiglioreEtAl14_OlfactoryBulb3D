@@ -17,20 +17,20 @@ def runSuite():
     # summary.append(compare(cells.mitral_passive))
     # summary.append(compare(cells.mitral))
     #
-    summary.append(compare(cells.granule_passive))
-    summary.append(compare(cells.granule))
+    # summary.append(compare(cells.granule_passive))
+    # summary.append(compare(cells.granule))
     #
     #
     # summary.append(compare(synapses.FI))
     # summary.append(compare(synapses.AmpaNmda))
     #
-    # summary.append(compare(networks.Net_1MC_1GC))
+    summary.append(compare(networks.Net_1MC_1GC, skipConverted=True,debug=1))
     #
     # summary.append(compare(networks.Net_1MC_1GC, conversion = "NetPyNE"))
 
     generateReport(summary)
 
-def compare(modelTestModule, conversion = "NeuroML"):
+def compare(modelTestModule, conversion = "NeuroML", debug = 0, skipOrig = False, skipConverted = False):
     NEURONtest = modelTestModule.NEURON()
     conversionTest =  getattr(modelTestModule, conversion)()
 
@@ -39,15 +39,23 @@ def compare(modelTestModule, conversion = "NeuroML"):
     if os.path.isfile(NEURONtest.comparisonPath()):
         os.remove(NEURONtest.comparisonPath())
 
-    try:
-        NEURONtest.getResultsOwnThread()
-    except:
-        NEURONtest.error = True
+    if not skipOrig:
+        try:
+            if debug == 1:
+                NEURONtest.getResults()
+            else:
+                NEURONtest.getResultsOwnThread()
+        except:
+            NEURONtest.error = True
 
-    try:
-        conversionTest.getResultsOwnThread()
-    except:
-        conversionTest.error = True
+    if not skipConverted:
+        try:
+            if debug == 2:
+                conversionTest.getResults()
+            else:
+                conversionTest.getResultsOwnThread()
+        except:
+            conversionTest.error = True
 
     if NEURONtest.error or conversionTest.error:
         print(NEURONtest.label + " " + conversion + " comparison could not be peformed because of errors running one of the models")
