@@ -1,6 +1,11 @@
 import pydevd
 pydevd.settrace('192.168.177.1', port=4200, stdoutToServer=True, stderrToServer=True, suspend=False)
 
+def runOne():
+    import_submodules("cells")
+    # cells.mitral.NEURON().getResults()
+    cells.mitral.NeuroML().getResults()
+
 def runSuite():
     import_submodules("channels")
     import_submodules("cells")
@@ -24,13 +29,13 @@ def runSuite():
     # summary.append(compare(synapses.FI))
     # summary.append(compare(synapses.AmpaNmda))
     #
-    summary.append(compare(networks.Net_1MC_1GC, skipConverted=True,debug=1))
+    summary.append(compare(networks.Net_1MC_1GC, runConverted=True,runOrig=True,debug="original"))
     #
     # summary.append(compare(networks.Net_1MC_1GC, conversion = "NetPyNE"))
 
     generateReport(summary)
 
-def compare(modelTestModule, conversion = "NeuroML", debug = 0, skipOrig = False, skipConverted = False):
+def compare(modelTestModule, conversion = "NeuroML", debug = None, runOrig = True, runConverted = True):
     NEURONtest = modelTestModule.NEURON()
     conversionTest =  getattr(modelTestModule, conversion)()
 
@@ -39,22 +44,24 @@ def compare(modelTestModule, conversion = "NeuroML", debug = 0, skipOrig = False
     if os.path.isfile(NEURONtest.comparisonPath()):
         os.remove(NEURONtest.comparisonPath())
 
-    if not skipOrig:
+    if runOrig:
         try:
-            if debug == 1:
+            if debug == 'original':
                 NEURONtest.getResults()
             else:
                 NEURONtest.getResultsOwnThread()
         except:
+            printError()
             NEURONtest.error = True
 
-    if not skipConverted:
+    if runConverted:
         try:
-            if debug == 2:
+            if debug == 'converted':
                 conversionTest.getResults()
             else:
                 conversionTest.getResultsOwnThread()
         except:
+            printError()
             conversionTest.error = True
 
     if NEURONtest.error or conversionTest.error:
@@ -105,6 +112,10 @@ def generateReport(summary):
 
     print("Summary report generated in " + os.path.abspath('report.html'))
 
+def printError():
+    import traceback
+    print(traceback.format_exc())
+
 def import_submodules(package_name):
     import sys, importlib, pkgutil
 
@@ -121,3 +132,4 @@ def import_submodules(package_name):
 
 
 runSuite()
+# runOne()

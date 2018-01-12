@@ -2,7 +2,7 @@ import json
 from matplotlib import pyplot as plt
 import numpy as np
 from tests.ModelTest import ModelTest
-
+import sys, os; sys.path.append(os.path.abspath(os.getcwd()+"/../Python/Export"));
 
 class NEURONTest(ModelTest):
 
@@ -47,6 +47,7 @@ class NEURONTest(ModelTest):
             i2 = np.array(traces2[t][variable])
             rangeExpected = np.max(i1) - np.min(i1)
             error = np.abs((i2 - i1))/rangeExpected*100.0  # Point-by-point absolute error as percentage of expected value range
+            error[np.isnan(error)] = 100.0 # Treat NaNs as 100% error
             errorMean = np.mean(error)
 
             plt.subplot(len(traces1), 2, 2 * t + 1)

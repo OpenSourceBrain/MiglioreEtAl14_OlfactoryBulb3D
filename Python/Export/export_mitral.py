@@ -1,3 +1,6 @@
+import pydevd
+pydevd.settrace('192.168.177.1', port=4200, suspend=False)
+
 import os
 import sys
 import neuroml
@@ -40,9 +43,6 @@ def __main__():
         nml_doc = pynml.read_neuroml2_file(nml_cell_file)
 
         cell = nml_doc.cells[0]
-
-        import pydevd
-        pydevd.settrace('10.211.55.3', port=4200, stdoutToServer=True, stderrToServer=True, suspend=True)
         
         # Set root to id=0 and increment others
         exportHelper.resetRoot(cell)
@@ -56,6 +56,9 @@ def __main__():
         hillockSeg.distal = pointMovedByOffset(hillockSeg.distal, somaSeg.distal)
         initialSeg.proximal = pointMovedByOffset(initialSeg.proximal, somaSeg.distal)
         initialSeg.distal = pointMovedByOffset(initialSeg.distal, somaSeg.distal)
+
+        # And correcting the hillock parent fractionAlong
+        hillockSeg.parent.fraction_along = 0
 
         # Move everything back to the origin
         originOffset = type("", (), dict(x = -somaSeg.proximal.x, y = -somaSeg.proximal.y, z = -somaSeg.proximal.z ))()

@@ -4,7 +4,7 @@ import numpy as np
 sys.path.insert(0,'..');
 from tests.NEURONTest import NEURONTest
 
-class NEURONNetworkTest(NEURONTest):
+class NEURONNetworkTestDebugger(NEURONTest):
 
     def getResults(self):
 
@@ -19,7 +19,6 @@ class NEURONNetworkTest(NEURONTest):
         # Perform any model specific preparations
         net = self.prepare(self.h)
 
-        # First inject current into MC and record GC
         result1 = self.performProtocol(
             inputCellLabel    = "MC",
             outputCellLabel   = "GC",
@@ -28,16 +27,7 @@ class NEURONNetworkTest(NEURONTest):
             outputCell = net["granule"]
         )
 
-        # Then inject current into GC and record MC
-        result2 = self.performProtocol(
-            inputCellLabel="GC",
-            outputCellLabel="MC",
-            currentRange=self.currentRangeGC,
-            inputCell=net["granule"],
-            outputCell=net["mitral"]
-        )
-
-        result = { "iclamp": result1 + result2 }
+        result = { "iclamp": result1 }
 
         # DEBUG
         # # Plot the voltage traces
@@ -64,13 +54,15 @@ class NEURONNetworkTest(NEURONTest):
         self.h.dt = 1.0 / self.h.steps_per_ms
 
         # Record time, voltage, and current
-        self.setupRecorders(t=self.h._ref_t, v=outputCell.soma(0.5)._ref_v, i=ic._ref_i)
+        # self.setupRecorders(t=self.h._ref_t, v=outputCell.soma(0.5)._ref_v, i=ic._ref_i)
+
+        # debugVar = self.h.FIsyn[0]._ref_i if hasattr(self.h, "FIsyn") else self.h.FastInhib[0]._ref_i
+        debugVar = self.h.AmpaNmda[0]._ref_i if hasattr(self.h, "AmpaNmda") else self.h.AmpaNmdaSynapse[0]._ref_i
+
+        self.setupRecorders(t=self.h._ref_t, v=outputCell.soma(0.5)._ref_v, i=debugVar)
 
         # Create test levels
-        icLevels = np.linspace(np.min(currentRange),
-                               np.max(currentRange),
-                               num=5)
-        # icLevels = [2]
+        icLevels = [2]
 
         result = []
 
@@ -82,16 +74,6 @@ class NEURONNetworkTest(NEURONTest):
 
             # Gather output variables - subsample to once per ms
             t, v, i = self.subSampleTVI(self.h.steps_per_ms)
-
-            t = np.array(t)
-            v = np.array(v)
-            i = np.array(i)
-
-            window = np.where(t > ic.delay)
-
-            t = t[window].tolist()
-            v = v[window].tolist()
-            i = i[window].tolist()
 
             result.append({
                 "label": outputCellLabel + " v with " + str(level) + " nA into " + inputCellLabel,
@@ -106,5 +88,5 @@ class NEURONNetworkTest(NEURONTest):
         return self.compareTraces(
             target,
             resultKey = "iclamp",
-            variable = "voltage"
+            variable = "current"
         )

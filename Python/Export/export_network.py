@@ -1,24 +1,18 @@
-import os
-import sys
-sys.path.append("/usr/local/lib/python2.7/site-packages")
-import neuroml
+import pydevd
+pydevd.settrace('192.168.177.1', port=4200, suspend=False)
 
-sys.path.append("/usr/local/lib/python2.7/site-packages")
-import neuroml
+import os, neuroml, sys
 
-#Nav to neuron folder where compiled MOD files are present
-os.chdir("../../NEURON")
-from neuron import h
-os.chdir("../NeuroML2")
+os.chdir('../../NEURON')
+sys.path.append(os.path.abspath(os.getcwd()))
+from neuron import h, gui
 
-h.chdir('../NEURON')
-sys.path.append('../NEURON')
-
-#from neuronHelper import *
 from pyneuroml import pynml
 from pyneuroml.neuron import export_to_neuroml2
 
+
 def __main__():
+
     import customsim
     import modeldata
 
@@ -42,9 +36,6 @@ def __main__():
     mcNMLs = {}
     gcNMLs = {}
 
-#import pydevd
-#pydevd.settrace('10.211.55.3', port=4200, stdoutToServer=True, stderrToServer=True)
-
     # Make MC includes and populations
     for mcgid in model.mitral_gids:
 
@@ -59,7 +50,7 @@ def __main__():
             .replace("[Y]", `model.mitrals[mcgid].y`)\
             .replace("[Z]", `model.mitrals[mcgid].z`)
 
-        # Retain mitral cell NML
+        # Retain mitral cell NML for later
         mcNML = pynml\
                 .read_neuroml2_file("../NeuroML2/MitralCells/Exported/Mitral_0_%i.cell.nml" % mcgid)\
                 .cells[0]
@@ -86,6 +77,7 @@ def __main__():
         # Retain granule cell NML
         gcNML = pynml\
                 .read_neuroml2_file("../NeuroML2/GranuleCells/Exported/Granule_0_%i.cell.nml" % gcgid)\
+                .cells[0]
 
         gcNMLs.update({gcgid:gcNML})
 
@@ -99,19 +91,21 @@ def __main__():
 
         synapse = model.mgrss[sgid]
 
+        # Compute the segment on the MC to which the synapse will be connected
         nsecden = model.mitrals[synapse.mgid].secden[synapse.isec].nseg
-        secdenIndex = min(nsecden-1, int(synapse.xm * nsecden))
-        postSegmentId = [seg.id\
-                         for seg in mcNMLs[synapse.mgid].morphology.segments\
-                         if seg.name == "Seg%i_secden_%i"%(secdenIndex,synapse.isec)\
-                        ][0]
+        if synapse.xm < 1:
+            fractionAlongSection = synapse.xm * nsecden
+            mcSegmentIndex = int(fractionAlongSection)
+            alongMcSegment = fractionAlongSection - mcSegmentIndex
+        else:
+            mcSegmentIndex = nsecden - 1
+            alongMcSegment = 1.0
 
-        gcNML = gcNMLs[synapse.ggid].cells[0]
+        # Get the NML ID of the MC segment
+        mcSegmentID = next(seg.id for seg in mcNMLs[synapse.mgid].morphology.segments if seg.name == "Seg%i_secden_%i"%(mcSegmentIndex,synapse.isec))
 
-        # Position the spine along the GC priden
-        import exportHelper
-        exportHelper.splitSegmentAlongFraction(gcNML,"Seg0_priden2_0","priden2_0",synapse.xg,'Seg0_neck')
-        pynml.write_neuroml2_file(gcNMLs[synapse.ggid], "../NeuroML2/GranuleCells/Exported/Granule_0_%i.cell.nml" % synapse.ggid)
+        # Get the NML ID of the MC spine head, which all syns are attached (at 0.5 position)
+        gcSpineHeadSegmentID = next(seg.id for seg in gcNMLs[synapse.ggid].morphology.segments if seg.name == "head_seg")
 
         # Add Dendro-dendritic synapses
         # GC -> MC part
@@ -119,12 +113,12 @@ def __main__():
             .replace("[ProjectionID]", `sgid`+'_G2M')\
             .replace("[PreCellType]", "Granule")\
             .replace("[PreGID]", `synapse.ggid`)\
-            .replace("[PreSegment]", `4`)\
+            .replace("[PreSegment]", `gcSpineHeadSegmentID`)\
             .replace("[PreAlong]", `0.5`)\
             .replace("[PostCellType]", "Mitral")\
             .replace("[PostGID]", `synapse.mgid`)\
-            .replace("[PostSegment]", `postSegmentId`)\
-            .replace("[PostAlong]", "0.5")\
+            .replace("[PostSegment]", `mcSegmentID`)\
+            .replace("[PostAlong]", `alongMcSegment`)\
             .replace("[Synapse]", "FIsyn")\
 
         # MC -> GC part
@@ -132,11 +126,11 @@ def __main__():
             .replace("[ProjectionID]", `sgid`+'_M2G')\
             .replace("[PreCellType]", "Mitral")\
             .replace("[PreGID]", `synapse.mgid`)\
-            .replace("[PreSegment]", `postSegmentId`)\
-            .replace("[PreAlong]", `0.5`)\
+            .replace("[PreSegment]", `mcSegmentID`)\
+            .replace("[PreAlong]", `alongMcSegment`)\
             .replace("[PostCellType]", "Granule")\
             .replace("[PostGID]", `synapse.ggid`)\
-            .replace("[PostSegment]", `4`)\
+            .replace("[PostSegment]", `gcSpineHeadSegmentID`)\
             .replace("[PostAlong]", "0.5")\
             .replace("[Synapse]", "AmpaNmdaSynapse")\
 
@@ -164,35 +158,3 @@ class FileTemplate():
 
 if __name__ == "__main__":
     __main__()
-
-#makeTestPlots()
-
-#def makeTestPlots():
-#
-h.tstop = 300
-h.dt = 0.025
-
-#clampM = h.IClamp(h.Mitral[0].soma(0.5))
-#clampM.delay = 50
-#clampM.dur = 200
-#clampM.amp = 0.8
-#
-#clampG = h.IClamp(h.Granule[0].soma(0.5))
-#clampG.delay = 50
-#clampG.dur = 200
-#clampG.amp = 0.05
-#
-#g=h.Graph()
-#h.graphList[0].append(g)
-#g.size(0,h.tstop,-80,50)
-#g.addvar('mitral soma',   'v(0.5)',  1,0, sec = h.Mitral[0].soma)
-#g.addvar('mitral secden', 'v(0.829)',2,0, sec = h.Mitral[0].secden[8])
-#
-#g2=h.Graph()
-#h.graphList[0].append(g2)
-#g2.size(0,h.tstop,-80,50)
-#g2.addvar('gran soma',       'v(0.5)',2,0, sec = h.Granule[0].soma)
-#g2.addvar('gran priden',     'v(0.5)',4,0, sec = h.Granule[0].priden2[0])
-#g2.addvar('gran spine head', 'v(0.5)',5,0, sec = h.GranuleSpine[0].head)
-
-h.nrnmainmenu()

@@ -1,7 +1,6 @@
 import sys, os; sys.path.insert(0,'..'); sys.path.insert(0,'../NEURON'); sys.path.insert(0,'../Python/Export')
 from tests.cells.NEURONCellTest  import NEURONCellTest
 from tests.cells.NeuroMLCellTest import NeuroMLCellTest
-from exportHelper import printSegmentTree as printTree
 
 class NEURON(NEURONCellTest):
 
@@ -27,7 +26,8 @@ class NEURON(NEURONCellTest):
 
         self.disableNonPassiveChannels(h)
 
-        printTree(cell.soma)
+        from exportHelper import sendToBlender as sendToBlender
+        sendToBlender(cell.soma)
 
         return cell
 
@@ -62,8 +62,6 @@ class NeuroML(NeuroMLCellTest):
         h.celsius = 24
 
         self.disableNonPassiveChannels(h)
-
-        printTree(cell.soma)
 
         return cell
 

@@ -10,7 +10,7 @@ class NEURON(NEURONCellTest):
         self.path = "../NEURON/mkmitral.py"
         self.label = "mitral"
         self.resultsFile = "results/cells/mitral/NEURON.json"
-        self.currentRange = (-1, 3)
+        self.currentRange = (-1, 3) # was -1
 
     def prepare(self, h):
         import mkmitral
@@ -18,6 +18,21 @@ class NEURON(NEURONCellTest):
         cell = mkmitral.mkmitral(0)
 
         h.celsius = 24
+
+
+        # h.pt3dclear(sec=cell.soma)
+        # cell.soma.L = 10000
+        # cell.soma.nseg = 500
+        # h.define_shape(sec=cell.soma)
+
+        # from exportHelper import printSections
+        # printSections([cell.soma])
+
+        #from exportHelper import sendToBlender as sendToBlender
+        #sendToBlender([cell.soma, cell.secden[0], cell.secden[1], cell.secden[2], cell.secden[3]])
+
+        # from exportHelper import recordSegments as recordSegments
+        # self.vectors = recordSegments([cell.soma, cell.secden[0], cell.secden[1], cell.secden[2], cell.secden[3]])
 
         return cell
 
@@ -38,6 +53,12 @@ class NeuroML(NeuroMLCellTest):
         cell = getattr(h,self.id)()
 
         h.celsius = 24
+
+        # from exportHelper import sendToBlender as sendToBlender
+        # sendToBlender([cell.soma])
+
+        # from exportHelper import printSections
+        # printSections([cell.soma])
 
         return cell
 

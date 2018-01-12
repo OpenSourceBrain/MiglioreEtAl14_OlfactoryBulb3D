@@ -12,15 +12,15 @@
     <include href="../Synapses/FI.synapse.xml"/>
     <include href="../Synapses/AmpaNmda.synapse.xml"/>
     
-    <!-- Exported Cells
+    <!-- Exported Cells -->
     
-    <include href="../MitralCells/Exported/Mitral_0_0.cell.nml"/>-->
+    <include href="../MitralCells/Exported/Mitral_0_0.cell.nml"/>
     <include href="../GranuleCells/Exported/Granule_0_110821.cell.nml"/>
     
     <network id="network_Migliore2014" type="networkWithTemperature" temperature="35 degC">
 
         
-        <population id="Pop_Mitral_0_0" component="Granule_0_110821" type="populationList" size="1">
+        <population id="Pop_Mitral_0_0" component="Mitral_0_0" type="populationList" size="1">
             <instance id="0">
                 <location x="198.11964416503906" y="498.2239990234375" z="494.2691955566406"/>
             </instance>
@@ -30,7 +30,14 @@
                 <location x="375" y="1050" z="450"/>
             </instance>
         </population>
-
+        
+        
+        <projection id="Proj_703836162_G2M" presynapticPopulation="Pop_Granule_0_110821" postsynapticPopulation="Pop_Mitral_0_0" synapse="FIsyn">
+            <connection id="0" preCellId="../Pop_Granule_0_110821/0/Granule_0_110821" postCellId="../Pop_Mitral_0_0/0/Mitral_0_0" preSegmentId="4" preFractionAlong="0.5" postSegmentId="257" postFractionAlong="0.8613035678863525"/>
+        </projection>
+        <projection id="Proj_703836162_M2G" presynapticPopulation="Pop_Mitral_0_0" postsynapticPopulation="Pop_Granule_0_110821" synapse="AmpaNmdaSynapse">
+            <connection id="0" preCellId="../Pop_Mitral_0_0/0/Mitral_0_0" postCellId="../Pop_Granule_0_110821/0/Granule_0_110821" preSegmentId="257" preFractionAlong="0.8613035678863525" postSegmentId="4" postFractionAlong="0.5"/>
+        </projection>
 
     </network>
 

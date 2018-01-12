@@ -3,12 +3,13 @@ from matplotlib import pyplot as plt
 import numpy as np
 sys.path.insert(0,'..')
 from tests.ModelTest import ModelTest
+# from tests.networks.NEURONNetworkTestDebugger import NEURONNetworkTestDebugger as NEURONNetworkTest
 from tests.networks.NEURONNetworkTest import NEURONNetworkTest
 
 class NeuroMLNetworkTest(ModelTest):
     def getResults(self):
 
-        # Gather info from network nml file to generate the test bed
+        # Gather info from network nml file to generate the LEMS test bed
         with open(self.path) as f:
             networkNML = f.read()
             networkID = re.compile('<network.*id="(.*?)"').search(networkNML).group(1)
@@ -23,23 +24,24 @@ class NeuroMLNetworkTest(ModelTest):
 
         testBedFile = self.modelFileName() + "_TestBed.xml"
 
-        # Place the lems test bed in same folder as the channel
+        # Place the lems test bed in same folder as the network
         with open(self.modelDir() + "/" + testBedFile, "w") as f:
             f.write(testBed)
 
         # Convert NML to NEURON
         os.chdir(self.modelDir())
-        self.printAndRun("jnml " + testBedFile + " -neuron")
+        self.printAndRun("jnml " + testBedFile + " -neuron -nogui")
 
         # Return cwd to starting dir
         self.restoreStartDir()
 
         # Once converted to NEURON, create sub model
         subModel = NEURONNetworkTest()
-        subModel.path = self.modelDir() + "/" + networkID + ".hoc"
+        subModel.path = self.modelDir() + "/" + testBedFile.replace(".xml","_nrn.py")
         subModel.label = self.label
         subModel.prepare = self.prepare
-        subModel.currentRange = self.currentRange
+        subModel.currentRangeMC = self.currentRangeMC
+        subModel.currentRangeGC = self.currentRangeGC
         subModel.resultsFile = self.resultsFile
 
         # Now the converted mod file is ready for the protocol

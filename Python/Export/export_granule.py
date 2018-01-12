@@ -54,7 +54,7 @@ def exportToNML(cells):
         cell = nmldoc.cells[0]
 
         # Replace placeholders
-        cell.id = "Granule_" + str(gid)
+        cell.id = "Granule_0_" + str(gid)
         next(seg for seg in cell.morphology.segments if seg.name == 'priden_seg').distal.y = pridenLength
         next(prop for prop in next(section for section in cell.morphology.segment_groups if section.id == 'priden').properties if prop.tag == 'numberInternalDivisions').value = pridenNseg
         next(seg for seg in cell.morphology.segments if seg.name == 'neck_seg').parent.fraction_along = neckLoc
@@ -75,7 +75,7 @@ def exportToNML(cells):
             seg.distal = setAlongVersor(seg.distal, versor, seg.proximal, segLength)
 
         # Save the file
-        cellFile = "../NeuroML2/GranuleCells/Exported/Granule_" + str(gid) + ".cell.nml"
+        cellFile = "../NeuroML2/GranuleCells/Exported/Granule_0_" + str(gid) + ".cell.nml"
         pynml.write_neuroml2_file(nmldoc, cellFile)
 
         exported.append(cellFile)
