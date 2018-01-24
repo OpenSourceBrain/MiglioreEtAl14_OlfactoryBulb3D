@@ -1,5 +1,14 @@
 import copy
 import neuroml
+import os
+import signal
+import sys
+import time
+from abc import ABCMeta, abstractmethod
+from subprocess import Popen, PIPE
+from threading import Thread
+import json
+import psutil
 
 def resetRoot(cell, startSegId = -1):
 
@@ -109,83 +118,3 @@ def printSegmentTree(rootSection, indentLevel = 0):
     for child in children:
         printSegmentTree(child, indentLevel + 1)
 
-def sendVectorsToBlender(t, vectors):
-    import xmlrpclib
-    import numpy as np
-
-    blender = xmlrpclib.ServerProxy('http://192.168.0.34:8000')
-
-    for name in vectors:
-        v = np.array(vectors[name])
-        values = np.divide(np.add(v,100),150.0).tolist() # Scale to between 0-1
-
-        blender.animateBrightness(name, t, values)
-
-def sendToBlender(rootSectionList):
-    import xmlrpclib
-    blender = xmlrpclib.ServerProxy('http://192.168.0.34:8000')
-
-    # try:
-    for sec in rootSectionList:
-        sendToBlenderRecursive(sec, blender)
-
-    # finally:
-    #     blender.stop()
-
-def sendToBlenderRecursive(rootSection, blender):
-    from neuron import h
-    coordCount = int(h.n3d(sec=rootSection))
-
-    if coordCount == 0:
-        h.define_shape(sec=rootSection)
-        coordCount = int(h.n3d(sec=rootSection))
-
-    coords = []
-
-    # If it has coords, collect them
-    for c in range(coordCount):
-        coords.append({
-            "x": h.x3d(c, sec=rootSection),
-            "y": h.y3d(c, sec=rootSection),
-            "z": h.z3d(c, sec=rootSection),
-            "d": h.diam3d(c, sec=rootSection)
-        })
-
-    if len(coords) < 2:
-        newCoord = coords[0].copy()
-        newCoord["y"] += 0.1
-        coords.append(newCoord)
-
-    for i in range(1, len(coords)):
-        start = coords[i-1]
-        end = coords[i]
-
-        blender.cyl(start, end, rootSection.diam, rootSection.name() + str(i))
-
-    children = rootSection.children()
-    for child in children:
-        sendToBlenderRecursive(child, blender)
-
-def recordSegments(rootSectionList):
-    vectors = {}
-
-    for section in rootSectionList:
-        recordSegmentsRecursive(section, vectors)
-
-    return vectors
-
-def recordSegmentsRecursive(rootSection, vectors):
-    from neuron import h
-
-    coordCount = int(h.n3d(sec=rootSection))
-
-    for i in range(1, coordCount):
-        startL = h.arc3d(i-1, sec=rootSection)
-        endL = h.arc3d(i, sec=rootSection)
-        vectorPos = (endL + startL) / 2.0 / rootSection.L
-        vector = h.Vector()
-        vector.record(rootSection(vectorPos)._ref_v)
-        vectors.update({rootSection.name()+str(i):vector})
-
-    for child in rootSection.children():
-        recordSegmentsRecursive(child, vectors)
