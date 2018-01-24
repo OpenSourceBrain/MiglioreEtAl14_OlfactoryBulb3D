@@ -20,10 +20,9 @@ from pyneuroml.neuron import export_to_neuroml2
 from pyneuroml import pynml
 from neuroml import SegmentGroup
 
-def __main__():
-    num_cells_to_export = 1
-
+def export(num_cells_to_export = 1):
     cells = []
+
     for mgid in range(num_cells_to_export):
       print mgid
       cells.append(mkmitral(mgid))
@@ -165,4 +164,4 @@ def buildStandardSegmentGroups(cell):
         cell.morphology.segment_groups.append(axonGroup)
 
 if __name__ == "__main__":
-    __main__()
+    export()

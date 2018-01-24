@@ -1,17 +1,11 @@
-import pydevd
-pydevd.settrace('192.168.177.1', port=4200, suspend=False)
 
-import os
-import sys
-import re
-import copy
-import exportHelper
+def export(MCs = 1, GCsPerMC = 10):
+    import os
+    import sys
+    import re
+    import copy
+    import exportHelper
 
-
-def __main__():
-
-    MCs = 1
-    GCsPerMC = 1
     numGranulesTotal = MCs * GCsPerMC
 
     # Nav to neuron folder where compiled MOD files are present
@@ -92,4 +86,4 @@ def setAlongVersor(segmentPoint, versor, startPoint, distance):
 
 
 if __name__ == "__main__":
-    __main__()
+    export()

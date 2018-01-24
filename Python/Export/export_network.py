@@ -1,23 +1,24 @@
 import pydevd
 pydevd.settrace('192.168.177.1', port=4200, suspend=False)
 
-import os, neuroml, sys
+def export(MCs = 1, GCsPerMC = 1):
+    # Export cells first - in their own NEURON instances
+    import subprocess
+    subprocess.Popen("python -c 'import export_mitral; export_mitral.export("+`MCs`+");'", shell=True).wait()
+    subprocess.Popen("python -c 'import export_granule; export_granule.export(" + `MCs` + ","+`GCsPerMC`+");'", shell=True).wait()
 
-os.chdir('../../NEURON')
-sys.path.append(os.path.abspath(os.getcwd()))
-from neuron import h, gui
+    import os, neuroml, sys
+    os.chdir('../../NEURON')
+    sys.path.append(os.path.abspath(os.getcwd()))
+    from neuron import h, gui
 
-from pyneuroml import pynml
-from pyneuroml.neuron import export_to_neuroml2
-
-
-def __main__():
+    from pyneuroml import pynml
+    from pyneuroml.neuron import export_to_neuroml2
 
     import customsim
     import modeldata
 
-    MCs = 1
-    GCsPerMC = 1
+
 
     networkTemplate = FileTemplate("../NeuroML2/Networks/NetworkTemplate.xml")
     includeTemplate = FileTemplate("../NeuroML2/Networks/IncludeTemplate.xml")
@@ -157,4 +158,4 @@ class FileTemplate():
 
 
 if __name__ == "__main__":
-    __main__()
+    export()
