@@ -28,6 +28,8 @@ class NEURONNetworkTest(NEURONTest):
             outputCell = net["granule"]
         )
 
+        return
+
         # Then inject current into GC and record MC
         result2 = self.performProtocol(
             inputCellLabel="GC",
@@ -70,7 +72,7 @@ class NEURONNetworkTest(NEURONTest):
         icLevels = np.linspace(np.min(currentRange),
                                np.max(currentRange),
                                num=5)
-        # icLevels = [2]
+        icLevels = [2]
 
         result = []
 
@@ -82,6 +84,9 @@ class NEURONNetworkTest(NEURONTest):
 
             # Gather output variables - subsample to once per ms
             t, v, i = self.subSampleTVI(self.h.steps_per_ms)
+
+            self.on_run_complete()
+            return
 
             t = np.array(t)
             v = np.array(v)

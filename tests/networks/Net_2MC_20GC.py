@@ -4,10 +4,11 @@ from tests.NEURONTest import NEURONTest
 from tests.networks.NEURONNetworkTest import NEURONNetworkTest as NEURONNetworkTest
 from tests.networks.NeuroMLNetworkTest import NeuroMLNetworkTest
 
+import sys; sys.path.append("/home/justas/Repositories/BlenderNEURON/ForNEURON");
+from blenderneuron import BlenderNEURON
 
 currentRangeMC = (-1, 3)
 currentRangeGC = (-0.01, 0.1)
-syngmax = 0.1 # Make the synapse do something interesting
 
 class NEURON(NEURONNetworkTest):
 
@@ -15,22 +16,21 @@ class NEURON(NEURONNetworkTest):
         super(NEURON, self).__init__()
 
         self.path = "../NEURON/customsim.py"
-        self.label = "Net_1MC_1GC"
+        self.label = "Net_2MC_20GC"
         self.currentRangeMC = currentRangeMC
         self.currentRangeGC = currentRangeGC
-        self.resultsFile = "results/networks/Net_1MC_1GC/NEURON.json"
+        self.resultsFile = "results/networks/Net_2MC_20GC/NEURON.json"
 
     def prepare(self, h):
-        # Build the network with 1GC 1MC
+        # Build the network with 20GC 2MC
         sys.path.append(os.getcwd())
         import customsim
         import modeldata
-        customsim.setup(1, 1)
+        customsim.setup(8, 1)
         model = modeldata.getmodel()
 
 
-        h.AmpaNmda[0].gmax = syngmax
-        h.FastInhib[0].gmax = syngmax
+        self.blender = BlenderNEURON(h)
 
         net = {
             "granule": model.granules[110821],
@@ -41,15 +41,18 @@ class NEURON(NEURONNetworkTest):
 
         return net
 
+    def on_run_complete(self):
+        self.blender.send_model()
+
 class NeuroML(NeuroMLNetworkTest):
     def __init__(self):
         super(NeuroML, self).__init__()
 
         self.path = "../NeuroML2/Networks/Bulb_1MC_1GC.net.nml"
-        self.label = "Net_1MC_1GC"
+        self.label = "Net_2MC_20GC"
         self.currentRangeMC = currentRangeMC
         self.currentRangeGC = currentRangeGC
-        self.resultsFile = "results/networks/Net_1MC_1GC/NeuroML.json"
+        self.resultsFile = "results/networks/Net_2MC_20GC/NeuroML.json"
 
     def prepare(self, h):
         networkFile = os.path.basename(self.path)+"_TestBed_nrn.py"
@@ -63,10 +66,7 @@ class NeuroML(NeuroMLNetworkTest):
                 ('.py', 'rb', imp.PY_SOURCE)
             )
 
-        model = modelFile.NeuronSimulation(tstop=5, dt=0.01) # Params don't matter here
-
-        h.AmpaNmdaSynapse[0].gMax = syngmax
-        h.FIsyn[0].gbase = syngmax
+        model = modelFile.NeuronSimulation(tstop=5, dt=0.01) # The params are ignored
 
         net = {
             "granule": h.a_Pop_Granule_0_110821[0],
@@ -76,4 +76,15 @@ class NeuroML(NeuroMLNetworkTest):
         h.celsius = 24
 
         return net
+
+class NetPyNE(NEURONTest):
+    def __init__(self):
+        super(NetPyNE, self).__init__()
+
+        self.path = "../NeuroML2/Networks/Bulb_1MC_1GC.net.nml"
+        self.label = "Net_1MC_1GC"
+        self.resultsFile = "results/networks/Net_1MC_1GC/NetPyNE.json"
+
+    def prepare(self, h, soma, mechanism):
+        raise NotImplementedError()
 

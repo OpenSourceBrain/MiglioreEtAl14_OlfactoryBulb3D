@@ -17,6 +17,10 @@ class ModelTest(object):
         pass
 
     @abstractmethod
+    def on_run_complete(self):
+        pass
+
+    @abstractmethod
     def getResults(self):
         raise NotImplementedError()
 

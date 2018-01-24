@@ -30,6 +30,12 @@ class NEURONTest(ModelTest):
 
     def saveResults(self, result):
         self.resultsFilePath = self.startPath + "/" + self.resultsFile
+
+        try:
+            os.mkdir(os.path.dirname(self.resultsFilePath))
+        except:
+            pass
+
         with open(self.resultsFilePath, "w") as file:
             json.dump(result, file, indent=4)
 
