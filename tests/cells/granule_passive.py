@@ -26,9 +26,6 @@ class NEURON(NEURONCellTest):
 
         self.disableNonPassiveChannels(h)
 
-        from exportHelper import sendToBlender as sendToBlender
-        sendToBlender(cell.soma)
-
         return cell
 
     def disableNonPassiveChannels(self, h):
@@ -47,10 +44,10 @@ class NeuroML(NeuroMLCellTest):
     def __init__(self):
         super(NeuroML, self).__init__()
 
-        self.path = "../NeuroML2/GranuleCells/Exported/Granule_110821.cell.nml"
+        self.path = "../NeuroML2/GranuleCells/Exported/Granule_0_110821.cell.nml"
         self.label = "granule_passive"
         self.resultsFile = "results/cells/granule_passive/NeuroML.json"
-        self.id = "Granule_110821"
+        self.id = "Granule_0_110821"
         self.currentRange = (-0.01, 0.1)
 
     def prepare(self, h):

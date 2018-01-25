@@ -151,6 +151,13 @@
             <TimeDerivative variable="Ron" value="(synon*Rinf - Ron)/Rtau" />
             <TimeDerivative variable="Roff" value="-Beta*Roff" />
             <TimeDerivative variable="gAmpa" value="-gAmpa/Ampatau" />
+
+            <!--NEURON 7.5 shows error if no derivates are specified for state variables-->
+            <TimeDerivative variable="isSpiking" value="0" />
+            <TimeDerivative variable="weight_" value="0" />
+            <TimeDerivative variable="timeSinceSpike" value="0" />
+            <TimeDerivative variable="lastSpike" value="0" />
+
             
         </Dynamics>
         

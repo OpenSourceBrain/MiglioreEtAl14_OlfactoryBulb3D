@@ -15,15 +15,14 @@
     <!-- Exported Cells -->
     
     <include href="../MitralCells/Exported/Mitral_0_0.cell.nml"/>
-    <include href="../MitralCells/Exported/Mitral_0_1.cell.nml"/>
     <include href="../GranuleCells/Exported/Granule_0_92389.cell.nml"/>
     <include href="../GranuleCells/Exported/Granule_0_86086.cell.nml"/>
-    <include href="../GranuleCells/Exported/Granule_0_112551.cell.nml"/>
-    <include href="../GranuleCells/Exported/Granule_0_112879.cell.nml"/>
-    <include href="../GranuleCells/Exported/Granule_0_112690.cell.nml"/>
+    <include href="../GranuleCells/Exported/Granule_0_92391.cell.nml"/>
+    <include href="../GranuleCells/Exported/Granule_0_97708.cell.nml"/>
+    <include href="../GranuleCells/Exported/Granule_0_80845.cell.nml"/>
     <include href="../GranuleCells/Exported/Granule_0_103156.cell.nml"/>
-    <include href="../GranuleCells/Exported/Granule_0_116309.cell.nml"/>
-    <include href="../GranuleCells/Exported/Granule_0_116279.cell.nml"/>
+    <include href="../GranuleCells/Exported/Granule_0_100790.cell.nml"/>
+    <include href="../GranuleCells/Exported/Granule_0_105721.cell.nml"/>
     <include href="../GranuleCells/Exported/Granule_0_92220.cell.nml"/>
     <include href="../GranuleCells/Exported/Granule_0_110821.cell.nml"/>
     
@@ -31,11 +30,6 @@
 
         
         <population id="Pop_Mitral_0_0" component="Mitral_0_0" type="populationList" size="1">
-            <instance id="0">
-                <location x="0" y="0" z="0"/>
-            </instance>
-        </population>
-        <population id="Pop_Mitral_0_1" component="Mitral_0_1" type="populationList" size="1">
             <instance id="0">
                 <location x="0" y="0" z="0"/>
             </instance>
@@ -50,19 +44,19 @@
                 <location x="425" y="925" z="225"/>
             </instance>
         </population>
-        <population id="Pop_Granule_0_112551" component="Granule_0_112551" type="populationList" size="1">
+        <population id="Pop_Granule_0_92391" component="Granule_0_92391" type="populationList" size="1">
             <instance id="0">
-                <location x="300" y="800" z="475"/>
+                <location x="275" y="1225" z="275"/>
             </instance>
         </population>
-        <population id="Pop_Granule_0_112879" component="Granule_0_112879" type="populationList" size="1">
+        <population id="Pop_Granule_0_97708" component="Granule_0_97708" type="populationList" size="1">
             <instance id="0">
-                <location x="400" y="1025" z="475"/>
+                <location x="150" y="900" z="325"/>
             </instance>
         </population>
-        <population id="Pop_Granule_0_112690" component="Granule_0_112690" type="populationList" size="1">
+        <population id="Pop_Granule_0_80845" component="Granule_0_80845" type="populationList" size="1">
             <instance id="0">
-                <location x="350" y="900" z="475"/>
+                <location x="300" y="1225" z="175"/>
             </instance>
         </population>
         <population id="Pop_Granule_0_103156" component="Granule_0_103156" type="populationList" size="1">
@@ -70,14 +64,14 @@
                 <location x="125" y="825" z="375"/>
             </instance>
         </population>
-        <population id="Pop_Granule_0_116309" component="Granule_0_116309" type="populationList" size="1">
+        <population id="Pop_Granule_0_100790" component="Granule_0_100790" type="populationList" size="1">
             <instance id="0">
-                <location x="325" y="850" z="525"/>
+                <location x="300" y="1025" z="350"/>
             </instance>
         </population>
-        <population id="Pop_Granule_0_116279" component="Granule_0_116279" type="populationList" size="1">
+        <population id="Pop_Granule_0_105721" component="Granule_0_105721" type="populationList" size="1">
             <instance id="0">
-                <location x="300" y="825" z="525"/>
+                <location x="500" y="800" z="400"/>
             </instance>
         </population>
         <population id="Pop_Granule_0_92220" component="Granule_0_92220" type="populationList" size="1">
@@ -98,11 +92,11 @@
         <projection id="Proj_546768912_M2G" presynapticPopulation="Pop_Mitral_0_0" postsynapticPopulation="Pop_Granule_0_86086" synapse="AmpaNmdaSynapse">
             <connection id="0" preCellId="../Pop_Mitral_0_0/0/Mitral_0_0" postCellId="../Pop_Granule_0_86086/0/Granule_0_86086" preSegmentId="598" preFractionAlong="0.6483111083507538" postSegmentId="4" postFractionAlong="0.5"/>
         </projection>
-        <projection id="Proj_716904472_G2M" presynapticPopulation="Pop_Granule_0_112879" postsynapticPopulation="Pop_Mitral_0_1" synapse="FIsyn">
-            <connection id="0" preCellId="../Pop_Granule_0_112879/0/Granule_0_112879" postCellId="../Pop_Mitral_0_1/0/Mitral_0_1" preSegmentId="4" preFractionAlong="0.5" postSegmentId="50" postFractionAlong="0.8726105690002441"/>
+        <projection id="Proj_640139312_G2M" presynapticPopulation="Pop_Granule_0_100790" postsynapticPopulation="Pop_Mitral_0_0" synapse="FIsyn">
+            <connection id="0" preCellId="../Pop_Granule_0_100790/0/Granule_0_100790" postCellId="../Pop_Mitral_0_0/0/Mitral_0_0" preSegmentId="4" preFractionAlong="0.5" postSegmentId="283" postFractionAlong="0.04972913861274719"/>
         </projection>
-        <projection id="Proj_716904472_M2G" presynapticPopulation="Pop_Mitral_0_1" postsynapticPopulation="Pop_Granule_0_112879" synapse="AmpaNmdaSynapse">
-            <connection id="0" preCellId="../Pop_Mitral_0_1/0/Mitral_0_1" postCellId="../Pop_Granule_0_112879/0/Granule_0_112879" preSegmentId="50" preFractionAlong="0.8726105690002441" postSegmentId="4" postFractionAlong="0.5"/>
+        <projection id="Proj_640139312_M2G" presynapticPopulation="Pop_Mitral_0_0" postsynapticPopulation="Pop_Granule_0_100790" synapse="AmpaNmdaSynapse">
+            <connection id="0" preCellId="../Pop_Mitral_0_0/0/Mitral_0_0" postCellId="../Pop_Granule_0_100790/0/Granule_0_100790" preSegmentId="283" preFractionAlong="0.04972913861274719" postSegmentId="4" postFractionAlong="0.5"/>
         </projection>
         <projection id="Proj_703836162_G2M" presynapticPopulation="Pop_Granule_0_110821" postsynapticPopulation="Pop_Mitral_0_0" synapse="FIsyn">
             <connection id="0" preCellId="../Pop_Granule_0_110821/0/Granule_0_110821" postCellId="../Pop_Mitral_0_0/0/Mitral_0_0" preSegmentId="4" preFractionAlong="0.5" postSegmentId="257" postFractionAlong="0.8613035678863525"/>
@@ -110,29 +104,17 @@
         <projection id="Proj_703836162_M2G" presynapticPopulation="Pop_Mitral_0_0" postsynapticPopulation="Pop_Granule_0_110821" synapse="AmpaNmdaSynapse">
             <connection id="0" preCellId="../Pop_Mitral_0_0/0/Mitral_0_0" postCellId="../Pop_Granule_0_110821/0/Granule_0_110821" preSegmentId="257" preFractionAlong="0.8613035678863525" postSegmentId="4" postFractionAlong="0.5"/>
         </projection>
-        <projection id="Proj_715704322_G2M" presynapticPopulation="Pop_Granule_0_112690" postsynapticPopulation="Pop_Mitral_0_1" synapse="FIsyn">
-            <connection id="0" preCellId="../Pop_Granule_0_112690/0/Granule_0_112690" postCellId="../Pop_Mitral_0_1/0/Mitral_0_1" preSegmentId="4" preFractionAlong="0.5" postSegmentId="35" postFractionAlong="0.5688080787658691"/>
-        </projection>
-        <projection id="Proj_715704322_M2G" presynapticPopulation="Pop_Mitral_0_1" postsynapticPopulation="Pop_Granule_0_112690" synapse="AmpaNmdaSynapse">
-            <connection id="0" preCellId="../Pop_Mitral_0_1/0/Mitral_0_1" postCellId="../Pop_Granule_0_112690/0/Granule_0_112690" preSegmentId="35" preFractionAlong="0.5688080787658691" postSegmentId="4" postFractionAlong="0.5"/>
-        </projection>
         <projection id="Proj_655163412_G2M" presynapticPopulation="Pop_Granule_0_103156" postsynapticPopulation="Pop_Mitral_0_0" synapse="FIsyn">
             <connection id="0" preCellId="../Pop_Granule_0_103156/0/Granule_0_103156" postCellId="../Pop_Mitral_0_0/0/Mitral_0_0" preSegmentId="4" preFractionAlong="0.5" postSegmentId="227" postFractionAlong="0.2950470894575119"/>
         </projection>
         <projection id="Proj_655163412_M2G" presynapticPopulation="Pop_Mitral_0_0" postsynapticPopulation="Pop_Granule_0_103156" synapse="AmpaNmdaSynapse">
             <connection id="0" preCellId="../Pop_Mitral_0_0/0/Mitral_0_0" postCellId="../Pop_Granule_0_103156/0/Granule_0_103156" preSegmentId="227" preFractionAlong="0.2950470894575119" postSegmentId="4" postFractionAlong="0.5"/>
         </projection>
-        <projection id="Proj_714821672_G2M" presynapticPopulation="Pop_Granule_0_112551" postsynapticPopulation="Pop_Mitral_0_1" synapse="FIsyn">
-            <connection id="0" preCellId="../Pop_Granule_0_112551/0/Granule_0_112551" postCellId="../Pop_Mitral_0_1/0/Mitral_0_1" preSegmentId="4" preFractionAlong="0.5" postSegmentId="36" postFractionAlong="0.07920265197753906"/>
+        <projection id="Proj_513488562_G2M" presynapticPopulation="Pop_Granule_0_80845" postsynapticPopulation="Pop_Mitral_0_0" synapse="FIsyn">
+            <connection id="0" preCellId="../Pop_Granule_0_80845/0/Granule_0_80845" postCellId="../Pop_Mitral_0_0/0/Mitral_0_0" preSegmentId="4" preFractionAlong="0.5" postSegmentId="310" postFractionAlong="0.6726828217506409"/>
         </projection>
-        <projection id="Proj_714821672_M2G" presynapticPopulation="Pop_Mitral_0_1" postsynapticPopulation="Pop_Granule_0_112551" synapse="AmpaNmdaSynapse">
-            <connection id="0" preCellId="../Pop_Mitral_0_1/0/Mitral_0_1" postCellId="../Pop_Granule_0_112551/0/Granule_0_112551" preSegmentId="36" preFractionAlong="0.07920265197753906" postSegmentId="4" postFractionAlong="0.5"/>
-        </projection>
-        <projection id="Proj_738494472_G2M" presynapticPopulation="Pop_Granule_0_116279" postsynapticPopulation="Pop_Mitral_0_1" synapse="FIsyn">
-            <connection id="0" preCellId="../Pop_Granule_0_116279/0/Granule_0_116279" postCellId="../Pop_Mitral_0_1/0/Mitral_0_1" preSegmentId="4" preFractionAlong="0.5" postSegmentId="33" postFractionAlong="0.18634605407714844"/>
-        </projection>
-        <projection id="Proj_738494472_M2G" presynapticPopulation="Pop_Mitral_0_1" postsynapticPopulation="Pop_Granule_0_116279" synapse="AmpaNmdaSynapse">
-            <connection id="0" preCellId="../Pop_Mitral_0_1/0/Mitral_0_1" postCellId="../Pop_Granule_0_116279/0/Granule_0_116279" preSegmentId="33" preFractionAlong="0.18634605407714844" postSegmentId="4" postFractionAlong="0.5"/>
+        <projection id="Proj_513488562_M2G" presynapticPopulation="Pop_Mitral_0_0" postsynapticPopulation="Pop_Granule_0_80845" synapse="AmpaNmdaSynapse">
+            <connection id="0" preCellId="../Pop_Mitral_0_0/0/Mitral_0_0" postCellId="../Pop_Granule_0_80845/0/Granule_0_80845" preSegmentId="310" preFractionAlong="0.6726828217506409" postSegmentId="4" postFractionAlong="0.5"/>
         </projection>
         <projection id="Proj_585719812_G2M" presynapticPopulation="Pop_Granule_0_92220" postsynapticPopulation="Pop_Mitral_0_0" synapse="FIsyn">
             <connection id="0" preCellId="../Pop_Granule_0_92220/0/Granule_0_92220" postCellId="../Pop_Mitral_0_0/0/Mitral_0_0" preSegmentId="4" preFractionAlong="0.5" postSegmentId="292" postFractionAlong="0.18026983737945557"/>
@@ -140,17 +122,29 @@
         <projection id="Proj_585719812_M2G" presynapticPopulation="Pop_Mitral_0_0" postsynapticPopulation="Pop_Granule_0_92220" synapse="AmpaNmdaSynapse">
             <connection id="0" preCellId="../Pop_Mitral_0_0/0/Mitral_0_0" postCellId="../Pop_Granule_0_92220/0/Granule_0_92220" preSegmentId="292" preFractionAlong="0.18026983737945557" postSegmentId="4" postFractionAlong="0.5"/>
         </projection>
-        <projection id="Proj_738684972_G2M" presynapticPopulation="Pop_Granule_0_116309" postsynapticPopulation="Pop_Mitral_0_1" synapse="FIsyn">
-            <connection id="0" preCellId="../Pop_Granule_0_116309/0/Granule_0_116309" postCellId="../Pop_Mitral_0_1/0/Mitral_0_1" preSegmentId="4" preFractionAlong="0.5" postSegmentId="32" postFractionAlong="0.2680470943450928"/>
+        <projection id="Proj_671451162_G2M" presynapticPopulation="Pop_Granule_0_105721" postsynapticPopulation="Pop_Mitral_0_0" synapse="FIsyn">
+            <connection id="0" preCellId="../Pop_Granule_0_105721/0/Granule_0_105721" postCellId="../Pop_Mitral_0_0/0/Mitral_0_0" preSegmentId="4" preFractionAlong="0.5" postSegmentId="654" postFractionAlong="0.7507119476795197"/>
         </projection>
-        <projection id="Proj_738684972_M2G" presynapticPopulation="Pop_Mitral_0_1" postsynapticPopulation="Pop_Granule_0_116309" synapse="AmpaNmdaSynapse">
-            <connection id="0" preCellId="../Pop_Mitral_0_1/0/Mitral_0_1" postCellId="../Pop_Granule_0_116309/0/Granule_0_116309" preSegmentId="32" preFractionAlong="0.2680470943450928" postSegmentId="4" postFractionAlong="0.5"/>
+        <projection id="Proj_671451162_M2G" presynapticPopulation="Pop_Mitral_0_0" postsynapticPopulation="Pop_Granule_0_105721" synapse="AmpaNmdaSynapse">
+            <connection id="0" preCellId="../Pop_Mitral_0_0/0/Mitral_0_0" postCellId="../Pop_Granule_0_105721/0/Granule_0_105721" preSegmentId="654" preFractionAlong="0.7507119476795197" postSegmentId="4" postFractionAlong="0.5"/>
         </projection>
         <projection id="Proj_586792962_G2M" presynapticPopulation="Pop_Granule_0_92389" postsynapticPopulation="Pop_Mitral_0_0" synapse="FIsyn">
             <connection id="0" preCellId="../Pop_Granule_0_92389/0/Granule_0_92389" postCellId="../Pop_Mitral_0_0/0/Mitral_0_0" preSegmentId="4" preFractionAlong="0.5" postSegmentId="311" postFractionAlong="0.7164685726165771"/>
         </projection>
         <projection id="Proj_586792962_M2G" presynapticPopulation="Pop_Mitral_0_0" postsynapticPopulation="Pop_Granule_0_92389" synapse="AmpaNmdaSynapse">
             <connection id="0" preCellId="../Pop_Mitral_0_0/0/Mitral_0_0" postCellId="../Pop_Granule_0_92389/0/Granule_0_92389" preSegmentId="311" preFractionAlong="0.7164685726165771" postSegmentId="4" postFractionAlong="0.5"/>
+        </projection>
+        <projection id="Proj_586805662_G2M" presynapticPopulation="Pop_Granule_0_92391" postsynapticPopulation="Pop_Mitral_0_0" synapse="FIsyn">
+            <connection id="0" preCellId="../Pop_Granule_0_92391/0/Granule_0_92391" postCellId="../Pop_Mitral_0_0/0/Mitral_0_0" preSegmentId="4" preFractionAlong="0.5" postSegmentId="308" postFractionAlong="0.04232412576675415"/>
+        </projection>
+        <projection id="Proj_586805662_M2G" presynapticPopulation="Pop_Mitral_0_0" postsynapticPopulation="Pop_Granule_0_92391" synapse="AmpaNmdaSynapse">
+            <connection id="0" preCellId="../Pop_Mitral_0_0/0/Mitral_0_0" postCellId="../Pop_Granule_0_92391/0/Granule_0_92391" preSegmentId="308" preFractionAlong="0.04232412576675415" postSegmentId="4" postFractionAlong="0.5"/>
+        </projection>
+        <projection id="Proj_620568612_G2M" presynapticPopulation="Pop_Granule_0_97708" postsynapticPopulation="Pop_Mitral_0_0" synapse="FIsyn">
+            <connection id="0" preCellId="../Pop_Granule_0_97708/0/Granule_0_97708" postCellId="../Pop_Mitral_0_0/0/Mitral_0_0" preSegmentId="4" preFractionAlong="0.5" postSegmentId="316" postFractionAlong="0.7212064862251282"/>
+        </projection>
+        <projection id="Proj_620568612_M2G" presynapticPopulation="Pop_Mitral_0_0" postsynapticPopulation="Pop_Granule_0_97708" synapse="AmpaNmdaSynapse">
+            <connection id="0" preCellId="../Pop_Mitral_0_0/0/Mitral_0_0" postCellId="../Pop_Granule_0_97708/0/Granule_0_97708" preSegmentId="316" preFractionAlong="0.7212064862251282" postSegmentId="4" postFractionAlong="0.5"/>
         </projection>
 
     </network>

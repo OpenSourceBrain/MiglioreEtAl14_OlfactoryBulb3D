@@ -87,6 +87,12 @@
             <TimeDerivative variable="A" value="-A/tauRiseCapped" />
             <TimeDerivative variable="B" value="-B/tauDecay" />
 
+            <!--NEURON 7.5 shows error if no derivates are specified for state variables-->
+            <TimeDerivative variable="isSpiking" value="0" />
+            <TimeDerivative variable="weight_" value="0" />
+            <TimeDerivative variable="timeSinceSpike" value="0" />
+            <TimeDerivative variable="lastSpike" value="0" />
+
         </Dynamics>
         
     </ComponentType>

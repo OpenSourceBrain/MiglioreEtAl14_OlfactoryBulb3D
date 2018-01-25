@@ -1,6 +1,3 @@
-import pydevd
-pydevd.settrace('192.168.177.1', port=4200, suspend=False)
-
 import os
 import sys
 import neuroml
@@ -46,9 +43,9 @@ def export(num_cells_to_export = 1):
         # Set root to id=0 and increment others
         exportHelper.resetRoot(cell)
 
-        somaSeg = [seg for seg in cell.morphology.segments if seg.name == "Seg0_soma"][0]
-        initialSeg = [seg for seg in cell.morphology.segments if seg.name == "Seg0_initialseg"][0]
-        hillockSeg = [seg for seg in cell.morphology.segments if seg.name == "Seg0_hillock"][0]
+        somaSeg = next(seg for seg in cell.morphology.segments if seg.name == "Seg0_soma")
+        initialSeg = next(seg for seg in cell.morphology.segments if seg.name == "Seg0_initialseg")
+        hillockSeg = next(seg for seg in cell.morphology.segments if seg.name == "Seg0_hillock")
 
         # Fix initial and hillock segs by moving them to the soma
         hillockSeg.proximal = pointMovedByOffset(hillockSeg.proximal, somaSeg.distal)
@@ -59,12 +56,15 @@ def export(num_cells_to_export = 1):
         # And correcting the hillock parent fractionAlong
         hillockSeg.parent.fraction_along = 0
 
-        # Move everything back to the origin
-        originOffset = type("", (), dict(x = -somaSeg.proximal.x, y = -somaSeg.proximal.y, z = -somaSeg.proximal.z ))()
-
-        for seg in cell.morphology.segments:
-            seg.proximal = pointMovedByOffset(seg.proximal, originOffset)
-            seg.distal =   pointMovedByOffset(seg.distal, originOffset)
+        # TODO: cell.position(x,y,z) used for cell positioning in networks does not work as expected
+        # See: https://github.com/NeuroML/jNeuroML/issues/55
+        # Skipping the translation for now
+        # # Move everything back to the origin
+        # originOffset = type("", (), dict(x = -somaSeg.proximal.x, y = -somaSeg.proximal.y, z = -somaSeg.proximal.z ))()
+        #
+        # for seg in cell.morphology.segments:
+        #     seg.proximal = pointMovedByOffset(seg.proximal, originOffset)
+        #     seg.distal =   pointMovedByOffset(seg.distal, originOffset)
 
         # Replace ModelViewParmSubset_N groups with all, axon, soma, dendrite groups
         buildStandardSegmentGroups(cell)

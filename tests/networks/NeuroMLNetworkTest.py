@@ -1,4 +1,4 @@
-import os, sys, re, json
+import os, sys, re, json, imp
 from matplotlib import pyplot as plt
 import numpy as np
 sys.path.insert(0,'..')
@@ -46,3 +46,18 @@ class NeuroMLNetworkTest(ModelTest):
 
         # Now the converted mod file is ready for the protocol
         subModel.getResults()
+
+    def load_python_network(self):
+
+        networkFile = os.path.basename(self.path) + "_TestBed_nrn.py"
+
+        # Imports underscore containing py file
+        with open(networkFile, 'rb') as f:
+            modelFile = imp.load_module(
+                networkFile.replace(".py", ""),
+                f,
+                networkFile,
+                ('.py', 'rb', imp.PY_SOURCE)
+            )
+
+        return modelFile

@@ -1,62 +1,57 @@
-<neuroml xmlns="http://www.neuroml.org/schema/neuroml2"  xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.neuroml.org/schema/neuroml2 https://raw.github.com/NeuroML/NeuroML2/development/Schemas/NeuroML2/NeuroML_v2beta4.xsd" id="NeuroML2_file_exported_from_NEURON">
-    
-    <include href="../../Channels/pas.channel.nml"/>
-    <include href="../../Channels/nax__sh15.channel.nml"/>
-    <include href="../../Channels/kamt.channel.nml"/>
-    <include href="../../Channels/kdrmt.channel.nml"/>
-
+<neuroml xmlns="http://www.neuroml.org/schema/neuroml2"  xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.neuroml.org/schema/neuroml2 https://raw.github.com/NeuroML/NeuroML2/development/Schemas/NeuroML2/NeuroML_v2beta5.xsd" id="Granule">
+    <include href="../../Channels/pas.channel.nml"></include>
+    <include href="../../Channels/nax__sh15.channel.nml"></include>
+    <include href="../../Channels/kamt.channel.nml"></include>
+    <include href="../../Channels/kdrmt.channel.nml"></include>
     <cell id="Granule_0_100790">
-        <notes>Cell: Granule_0_29 exported from NEURON ModelView</notes>
         <morphology id="morphology">
-            <segment id="0" name="Seg0_soma">
-                <proximal y="0.000000e+00" x="0.000000e+00" z="0.000000e+00" diameter="8.000000e+00"/>
-                <distal y="-4.020151e+00" x="4.020151e+00" z="5.628212e+00" diameter="8.000000e+00"/>
+            <segment id="0" name="soma_seg">
+                <proximal x="0.000000e+00" y="0.000000e+00" z="0.000000e+00" diameter="8.0"/>
+                <distal x="4.020151e+00" y="-4.020151e+00" z="5.628212e+00" diameter="8.0"/>
             </segment>
-            <segment id="89" name="Seg0_priden">
-                <parent fractionAlong="1" segment="0"/>
-                <proximal y="0.000000e+00" x="0.000000e+00" z="0.000000e+00" diameter="5.000000e-01"/>
-                <distal y="-1.552648e+02" x="1.552648e+02" z="2.173707e+02" diameter="5.000000e-01"/>
+            <segment id="1" name="priden_seg">
+                <parent segment="0" fractionAlong="1"/>
+                <proximal x="4.020151e+00" y="-4.020151e+00" z="5.628212e+00" diameter="0.5"/>
+                <distal x="1.592849e+02" y="-1.592849e+02" z="2.229989e+02" diameter="0.5"/>
             </segment>
-            <segment id="90" name="Seg0_priden2_0">
-                <parent fractionAlong="1" segment="0"/>
-                <proximal y="0.000000e+00" x="0.000000e+00" z="0.000000e+00" diameter="4.000000e-01"/>
-                <distal y="-1.256297e+02" x="1.256297e+02" z="1.758816e+02" diameter="4.000000e-01"/>
+            <segment id="2" name="priden2_seg">
+                <parent segment="1" fractionAlong="0.8"/>
+                <proximal x="1.592849e+02" y="-1.592849e+02" z="2.229989e+02" diameter="0.4"/>
+                <distal x="2.849146e+02" y="-2.849146e+02" z="3.988805e+02" diameter="0.4"/>
+            </segment>
+            <segment id="3" name="neck_seg">
+                <parent segment="2" fractionAlong="0.520602226257"/>
+                <proximal x="2.849146e+02" y="-2.849146e+02" z="3.988805e+02" diameter="0.2"/>
+                <distal x="2.859197e+02" y="-2.859197e+02" z="4.002875e+02" diameter="0.2"/>
+            </segment>
+            <segment id="4" name="head_seg">
+                <parent segment="3" fractionAlong="1"/>
+                <proximal x="2.859197e+02" y="-2.859197e+02" z="4.002875e+02" diameter="1.0"/>
+                <distal x="2.864222e+02" y="-2.864222e+02" z="4.009911e+02" diameter="1.0"/>
             </segment>
             <segmentGroup neuroLexId="sao864921383" id="soma">
-                <notes>This group contains an unbranched set of segments, and all of the segmentGroups marked with
-             neuroLexId = sao864921383 form a non-overlapping set of all of the segments.
-             These segmentGroups correspond to the 'cables' of NeuroML v1.8.1, and map to/from NEURON sections.</notes>
                 <member segment="0"/>
             </segmentGroup>
             <segmentGroup neuroLexId="sao864921383" id="priden">
-                <notes>This group contains an unbranched set of segments, and all of the segmentGroups marked with
-             neuroLexId = sao864921383 form a non-overlapping set of all of the segments.
-             These segmentGroups correspond to the 'cables' of NeuroML v1.8.1, and map to/from NEURON sections.</notes>
                 <property tag="numberInternalDivisions" value="21"/>
-                <annotation/>
-                <member segment="89"/>
+                <member segment="1"/>
             </segmentGroup>
             <segmentGroup neuroLexId="sao864921383" id="priden2_0">
-                <notes>This group contains an unbranched set of segments, and all of the segmentGroups marked with
-             neuroLexId = sao864921383 form a non-overlapping set of all of the segments.
-             These segmentGroups correspond to the 'cables' of NeuroML v1.8.1, and map to/from NEURON sections.</notes>
                 <property tag="numberInternalDivisions" value="26"/>
-                <annotation/>
-                <member segment="90"/>
+                <member segment="2"/>
             </segmentGroup>
-            <segmentGroup id="OneSecGrp_SectionRef_176">
-                <include segmentGroup="priden"/>
+            <segmentGroup neuroLexId="sao864921383" id="neck">
+                <member segment="3"/>
             </segmentGroup>
-            <segmentGroup id="OneSecGrp_SectionRef_177">
-                <include segmentGroup="priden2_0"/>
+            <segmentGroup neuroLexId="sao864921383" id="head">
+                <member segment="4"/>
             </segmentGroup>
-            <segmentGroup id="OneSecGrp_SectionRef_175">
-                <include segmentGroup="soma"/>
-            </segmentGroup>
-            <segmentGroup id="all">
+            <segmentGroup neuroLexId="GO:0043025" id="all">
                 <include segmentGroup="soma"/>
                 <include segmentGroup="priden"/>
                 <include segmentGroup="priden2_0"/>
+                <include segmentGroup="neck"/>
+                <include segmentGroup="head"/>
             </segmentGroup>
             <segmentGroup neuroLexId="GO:0043025" id="soma_group">
                 <include segmentGroup="soma"/>
@@ -64,36 +59,36 @@
             <segmentGroup neuroLexId="GO:0030425" id="dendrite_group">
                 <include segmentGroup="priden"/>
                 <include segmentGroup="priden2_0"/>
+                <include segmentGroup="neck"/>
+                <include segmentGroup="head"/>
             </segmentGroup>
             <segmentGroup neuroLexId="GO:0030424" id="axon_group"/>
+            <segmentGroup neuroLexId="GO:0030425" id="spine_group">
+                <include segmentGroup="neck"/>
+                <include segmentGroup="head"/>
+            </segmentGroup>
         </morphology>
-        
         <biophysicalProperties id="biophys">
-
             <membraneProperties>
-
-                <channelDensity segmentGroup="dendrite_group" ionChannel="pas"       condDensity="0.00013333333333 S_per_cm2" erev="-65.0 mV" id="passive_dendritic" ion="non_specific"/>
-                <channelDensity segmentGroup="dendrite_group" ionChannel="nax__sh15" condDensity="0.02 S_per_cm2"    erev="60.0 mV" id="nax_dendritic" ion="na" />
-                <channelDensity segmentGroup="dendrite_group" ionChannel="kamt"      condDensity="0.008 S_per_cm2"  erev="-90.0 mV" id="kamt_dendritic" ion="k" />
-
-                <channelDensity segmentGroup="soma_group" ionChannel="pas"      condDensity="0.00013333333333 S_per_cm2" erev="-65.0 mV" id="passive_somatic" ion="non_specific"/>
-                <channelDensity segmentGroup="soma_group" ionChannel="nax__sh15" condDensity="0.04 S_per_cm2"    erev="60.0 mV" id="nax_somatic" ion="na" />
-                <channelDensity segmentGroup="soma_group" ionChannel="kdrmt"    condDensity="0.006 S_per_cm2"  erev="-90.0 mV" id="kdrmt_somatic" ion="k" />
-                <channelDensity segmentGroup="soma_group" ionChannel="kamt"     condDensity="0.004 S_per_cm2"  erev="-90.0 mV" id="kamt_somatic" ion="k" />
-
-
+                <channelDensity id="passive_dendritic" ionChannel="pas" condDensity="0.00013333333333 S_per_cm2" erev="-65.0 mV" segmentGroup="dendrite_group" ion="non_specific"/>
+                <channelDensity id="nax_dendritic" ionChannel="nax__sh15" condDensity="0.02 S_per_cm2" erev="60.0 mV" segmentGroup="dendrite_group" ion="na"/>
+                <channelDensity id="kamt_dendritic" ionChannel="kamt" condDensity="0.008 S_per_cm2" erev="-90.0 mV" segmentGroup="dendrite_group" ion="k"/>
+                <channelDensity id="passive_somatic" ionChannel="pas" condDensity="0.00013333333333 S_per_cm2" erev="-65.0 mV" segmentGroup="soma_group" ion="non_specific"/>
+                <channelDensity id="nax_somatic" ionChannel="nax__sh15" condDensity="0.04 S_per_cm2" erev="60.0 mV" segmentGroup="soma_group" ion="na"/>
+                <channelDensity id="kdrmt_somatic" ionChannel="kdrmt" condDensity="0.006 S_per_cm2" erev="-90.0 mV" segmentGroup="soma_group" ion="k"/>
+                <channelDensity id="kamt_somatic" ionChannel="kamt" condDensity="0.004 S_per_cm2" erev="-90.0 mV" segmentGroup="soma_group" ion="k"/>
+                <channelDensity id="passive_spine" ionChannel="pas" condDensity="0.00003333333333 S_per_cm2" erev="-65.0 mV" segmentGroup="spine_group" ion="non_specific"/>
+                <channelDensity id="kamt_spine" ionChannel="kamt" condDensity="0.008 S_per_cm2" erev="-90.0 mV" segmentGroup="spine_group" ion="k"/>
+                <channelDensity id="nax_spine" ionChannel="nax__sh15" condDensity="0.02 S_per_cm2" erev="60.0 mV" segmentGroup="spine_group" ion="na"/>
                 <spikeThresh value="0 mV"/>
-
-                <specificCapacitance value="4.0 uF_per_cm2"/>
-
+                <specificCapacitance value="4.0 uF_per_cm2" segmentGroup="soma_group"/>
+                <specificCapacitance value="4.0 uF_per_cm2" segmentGroup="dendrite_group"/>
+                <specificCapacitance value="1.0 uF_per_cm2" segmentGroup="spine_group"/>
                 <initMembPotential value="-65.0 mV"/>
-
             </membraneProperties>
-            
             <intracellularProperties>
                 <resistivity value="80 ohm_cm"/>
             </intracellularProperties>
-
         </biophysicalProperties>
     </cell>
 </neuroml>

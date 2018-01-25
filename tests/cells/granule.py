@@ -30,10 +30,10 @@ class NeuroML(NeuroMLCellTest):
     def __init__(self):
         super(NeuroML, self).__init__()
 
-        self.path = "../NeuroML2/GranuleCells/Exported/Granule_110821.cell.nml"
+        self.path = "../NeuroML2/GranuleCells/Exported/Granule_0_110821.cell.nml"
         self.label = "granule"
         self.resultsFile = "results/cells/granule/NeuroML.json"
-        self.id = "Granule_110821"
+        self.id = "Granule_0_110821"
         self.currentRange = (-0.01, 0.1)
 
     def prepare(self, h):

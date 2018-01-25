@@ -1,5 +1,7 @@
-import imp, sys, os; sys.path.insert(0,'..'); sys.path.insert(0,'../NEURON');
-from tests.NEURONTest import NEURONTest
+import os
+import sys
+
+sys.path.insert(0,'..'); sys.path.insert(0,'../NEURON');
 # from tests.networks.NEURONNetworkTestDebugger import NEURONNetworkTestDebugger as NEURONNetworkTest
 from tests.networks.NEURONNetworkTest import NEURONNetworkTest as NEURONNetworkTest
 from tests.networks.NeuroMLNetworkTest import NeuroMLNetworkTest
@@ -52,16 +54,7 @@ class NeuroML(NeuroMLNetworkTest):
         self.resultsFile = "results/networks/Net_1MC_1GC/NeuroML.json"
 
     def prepare(self, h):
-        networkFile = os.path.basename(self.path)+"_TestBed_nrn.py"
-
-        # Load the python file with the network code
-        with open(networkFile, 'rb') as f:
-            modelFile = imp.load_module(
-                networkFile.replace(".py",""),
-                f,
-                networkFile,
-                ('.py', 'rb', imp.PY_SOURCE)
-            )
+        modelFile = self.load_python_network()
 
         model = modelFile.NeuronSimulation(tstop=5, dt=0.01) # Params don't matter here
 

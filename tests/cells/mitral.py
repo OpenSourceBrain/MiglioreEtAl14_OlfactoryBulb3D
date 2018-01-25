@@ -54,12 +54,6 @@ class NeuroML(NeuroMLCellTest):
 
         h.celsius = 24
 
-        # from exportHelper import sendToBlender as sendToBlender
-        # sendToBlender([cell.soma])
-
-        # from exportHelper import printSections
-        # printSections([cell.soma])
-
         return cell
 
 

@@ -1,7 +1,7 @@
 import pydevd
 pydevd.settrace('192.168.177.1', port=4200, suspend=False)
 
-def export(MCs = 1, GCsPerMC = 1):
+def export(MCs = 2, GCsPerMC = 10):
     # Export cells first - in their own NEURON instances
     import subprocess
     subprocess.Popen("python -c 'import export_mitral; export_mitral.export("+`MCs`+");'", shell=True).wait()
@@ -46,10 +46,15 @@ def export(MCs = 1, GCsPerMC = 1):
 
         populations += populationTemplate.text\
             .replace("[CellType]", "Mitral")\
-            .replace("[GID]", `mcgid`)\
-            .replace("[X]", `model.mitrals[mcgid].x`)\
-            .replace("[Y]", `model.mitrals[mcgid].y`)\
-            .replace("[Z]", `model.mitrals[mcgid].z`)
+            .replace("[GID]", `mcgid`) \
+            .replace("[X]", `0`) \
+            .replace("[Y]", `0`) \
+            .replace("[Z]", `0`)
+
+            # TODO: restore these when this is resolved: https://github.com/NeuroML/jNeuroML/issues/55
+            # .replace("[X]", `model.mitrals[mcgid].x`)\
+            # .replace("[Y]", `model.mitrals[mcgid].y`)\
+            # .replace("[Z]", `model.mitrals[mcgid].z`)
 
         # Retain mitral cell NML for later
         mcNML = pynml\

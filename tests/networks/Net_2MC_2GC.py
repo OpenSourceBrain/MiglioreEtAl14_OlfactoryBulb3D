@@ -1,11 +1,8 @@
-import imp, sys, os; sys.path.insert(0,'..'); sys.path.insert(0,'../NEURON');
+import sys, os; sys.path.insert(0,'..'); sys.path.insert(0,'../NEURON');
 from tests.NEURONTest import NEURONTest
 # from tests.networks.NEURONNetworkTestDebugger import NEURONNetworkTestDebugger as NEURONNetworkTest
 from tests.networks.NEURONNetworkTest import NEURONNetworkTest as NEURONNetworkTest
 from tests.networks.NeuroMLNetworkTest import NeuroMLNetworkTest
-
-import sys; sys.path.append("/home/justas/Repositories/BlenderNEURON/ForNEURON");
-from blenderneuron import BlenderNEURON
 
 currentRangeMC = (-1, 3)
 currentRangeGC = (-0.01, 0.1)
@@ -16,17 +13,17 @@ class NEURON(NEURONNetworkTest):
         super(NEURON, self).__init__()
 
         self.path = "../NEURON/customsim.py"
-        self.label = "Net_2MC_20GC"
+        self.label = "Net_2MC_2GC"
         self.currentRangeMC = currentRangeMC
         self.currentRangeGC = currentRangeGC
-        self.resultsFile = "results/networks/Net_2MC_20GC/NEURON.json"
+        self.resultsFile = "results/networks/Net_2MC_2GC/NEURON.json"
 
     def prepare(self, h):
-        # Build the network with 20GC 2MC
+        # Build the network with 2GC 2MC
         sys.path.append(os.getcwd())
         import customsim
         import modeldata
-        customsim.setup(8, 1)
+        customsim.setup(2, 1)
         model = modeldata.getmodel()
 
 
@@ -48,23 +45,15 @@ class NeuroML(NeuroMLNetworkTest):
     def __init__(self):
         super(NeuroML, self).__init__()
 
-        self.path = "../NeuroML2/Networks/Bulb_1MC_1GC.net.nml"
-        self.label = "Net_2MC_20GC"
+        self.path = "../NeuroML2/Networks/Bulb_2MC_2GC.net.nml"
+        self.label = "Net_2MC_2GC"
         self.currentRangeMC = currentRangeMC
         self.currentRangeGC = currentRangeGC
-        self.resultsFile = "results/networks/Net_2MC_20GC/NeuroML.json"
+        self.resultsFile = "results/networks/Net_2MC_2GC/NeuroML.json"
 
     def prepare(self, h):
-        networkFile = os.path.basename(self.path)+"_TestBed_nrn.py"
-
         # Load the python file with the network code
-        with open(networkFile, 'rb') as f:
-            modelFile = imp.load_module(
-                networkFile.replace(".py",""),
-                f,
-                networkFile,
-                ('.py', 'rb', imp.PY_SOURCE)
-            )
+        modelFile = self.load_python_network()
 
         model = modelFile.NeuronSimulation(tstop=5, dt=0.01) # The params are ignored
 
@@ -76,15 +65,4 @@ class NeuroML(NeuroMLNetworkTest):
         h.celsius = 24
 
         return net
-
-class NetPyNE(NEURONTest):
-    def __init__(self):
-        super(NetPyNE, self).__init__()
-
-        self.path = "../NeuroML2/Networks/Bulb_1MC_1GC.net.nml"
-        self.label = "Net_1MC_1GC"
-        self.resultsFile = "results/networks/Net_1MC_1GC/NetPyNE.json"
-
-    def prepare(self, h, soma, mechanism):
-        raise NotImplementedError()
 

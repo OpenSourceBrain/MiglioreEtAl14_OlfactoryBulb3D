@@ -20,20 +20,22 @@ def runSuite():
     #
     #
     # summary.append(compare(cells.mitral_passive))
-    # summary.append(compare(cells.mitral))
-    #
+    # summary.append(compare(cells.mitral))#, debug="converted", runOrig=False, runConverted=True))
+
     # summary.append(compare(cells.granule_passive))
     # summary.append(compare(cells.granule))
-    #
-    #
+
+
     # summary.append(compare(synapses.FI))
     # summary.append(compare(synapses.AmpaNmda))
     #
-    summary.append(compare(networks.Net_1MC_1GC, runConverted=True,runOrig=True,debug="original"))
+    summary.append(compare(networks.Net_1MC_1GC))#, runConverted=True,runOrig=False,debug="converted"))
     #
     # summary.append(compare(networks.Net_1MC_1GC, conversion = "NetPyNE"))
 
-    generateReport(summary)
+    report = generate_report(summary)
+
+    open_report(report)
 
 def compare(modelTestModule, conversion = "NeuroML", debug = None, runOrig = True, runConverted = True):
     NEURONtest = modelTestModule.NEURON()
@@ -72,9 +74,12 @@ def compare(modelTestModule, conversion = "NeuroML", debug = None, runOrig = Tru
         print("Comparison saved to " + NEURONtest.comparisonPath())
         print(NEURONtest.label + " "+ conversion +" conversion output differs from NEURON by " + str(NEURONtest.comparisonMean) + "% on average")
 
+    # Note if either failed
+    NEURONtest.error = (NEURONtest.error or conversionTest.error)
+
     return { "result": NEURONtest, "conversion": conversion }
 
-def generateReport(summary):
+def generate_report(summary):
     import os, math
 
     def round_to_n(x, n):
@@ -110,7 +115,11 @@ def generateReport(summary):
     with open("report.html", "w") as f:
         f.write(reportHTML)
 
-    print("Summary report generated in " + os.path.abspath('report.html'))
+    report_path = os.path.abspath('report.html')
+
+    print("Summary report generated in " + report_path)
+
+    return report_path
 
 def printError():
     import traceback
@@ -129,7 +138,14 @@ def import_submodules(package_name):
         if is_pkg:
             import_submodules(package_name + '.' + name)
 
-
+def open_report(filepath):
+    import subprocess, os, sys
+    if sys.platform.startswith('darwin'):
+        subprocess.call(('open', filepath))
+    elif os.name == 'nt':
+        os.startfile(filepath)
+    elif os.name == 'posix':
+        subprocess.call(('xdg-open', filepath))
 
 runSuite()
 # runOne()
