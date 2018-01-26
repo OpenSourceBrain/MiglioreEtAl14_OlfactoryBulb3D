@@ -14,21 +14,21 @@ class NEURON(NEURONNetworkTest):
         super(NEURON, self).__init__()
 
         self.path = "../NEURON/customsim.py"
-        self.label = "Net_1MC_10GC"
+        self.label = "Net_1MC_2GC"
         self.currentRangeMC = currentRangeMC
         self.currentRangeGC = currentRangeGC
-        self.resultsFile = "results/networks/Net_1MC_10GC/NEURON.json"
+        self.resultsFile = "results/networks/Net_1MC_2GC/NEURON.json"
 
     def prepare(self, h):
-        # Build the network with 1GC 1MC
+        # Build the network with 2GC 1MC
         sys.path.append(os.getcwd())
         import customsim
         import modeldata
-        customsim.setup(1, 10)
+        customsim.setup(1, 2)
         model = modeldata.getmodel()
 
         net = {
-            "granule": model.granules[110821],
+            "granule": model.granules[92220],
             "mitral": model.mitrals[0]
         }
 
@@ -40,11 +40,11 @@ class NeuroML(NeuroMLNetworkTest):
     def __init__(self):
         super(NeuroML, self).__init__()
 
-        self.path = "../NeuroML2/Networks/Bulb_1MC_10GC.net.nml"
-        self.label = "Net_1MC_10GC"
+        self.path = "../NeuroML2/Networks/Bulb_1MC_2GC.net.nml"
+        self.label = "Net_1MC_2GC"
         self.currentRangeMC = currentRangeMC
         self.currentRangeGC = currentRangeGC
-        self.resultsFile = "results/networks/Net_1MC_10GC/NeuroML.json"
+        self.resultsFile = "results/networks/Net_1MC_2GC/NeuroML.json"
 
     def prepare(self, h):
         modelFile = self.load_python_network()
@@ -52,7 +52,7 @@ class NeuroML(NeuroMLNetworkTest):
         model = modelFile.NeuronSimulation(tstop=5, dt=0.01) # The params are ignored
 
         net = {
-            "granule": h.a_Pop_Granule_0_110821[0],
+            "granule": h.a_Pop_Granule_0_92220[0],
             "mitral": h.a_Pop_Mitral_0_0[0]
         }
 

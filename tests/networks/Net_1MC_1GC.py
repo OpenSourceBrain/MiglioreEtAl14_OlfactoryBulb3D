@@ -41,7 +41,15 @@ class NEURON(NEURONNetworkTest):
 
         h.celsius = 24
 
+        # sys.path.append("/home/justas/Repositories/BlenderNEURON/ForNEURON");
+        # from blenderneuron import BlenderNEURON
+        # self.blender = BlenderNEURON(h)
+
+
         return net
+
+    # def on_run_complete(self):
+    #     self.blender.send_model()
 
 class NeuroML(NeuroMLNetworkTest):
     def __init__(self):
@@ -68,5 +76,12 @@ class NeuroML(NeuroMLNetworkTest):
 
         h.celsius = 24
 
+        # sys.path.append("/home/justas/Repositories/BlenderNEURON/ForNEURON");
+        # from blenderneuron import BlenderNEURON
+        # self.blender = BlenderNEURON(h)
+
         return net
+
+    # def on_run_complete(self):
+    #     self.blender.send_model()
 

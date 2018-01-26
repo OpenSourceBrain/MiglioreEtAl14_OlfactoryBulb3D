@@ -40,11 +40,12 @@ class NeuroMLNetworkTest(ModelTest):
         subModel.path = self.modelDir() + "/" + testBedFile.replace(".xml","_nrn.py")
         subModel.label = self.label
         subModel.prepare = self.prepare
+        subModel.on_run_complete = self.on_run_complete
         subModel.currentRangeMC = self.currentRangeMC
         subModel.currentRangeGC = self.currentRangeGC
         subModel.resultsFile = self.resultsFile
 
-        # Now the converted mod file is ready for the protocol
+        # Now the converted network file is ready for the protocol
         subModel.getResults()
 
     def load_python_network(self):

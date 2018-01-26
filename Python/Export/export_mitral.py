@@ -1,3 +1,6 @@
+import pydevd
+pydevd.settrace('192.168.177.1', port=4200, suspend=False)
+
 import os
 import sys
 import neuroml
@@ -17,7 +20,7 @@ from pyneuroml.neuron import export_to_neuroml2
 from pyneuroml import pynml
 from neuroml import SegmentGroup
 
-def export(num_cells_to_export = 1):
+def export(num_cells_to_export = 2):
     cells = []
 
     for mgid in range(num_cells_to_export):
@@ -31,36 +34,25 @@ def export(num_cells_to_export = 1):
                        separateCellFiles=True)
 
     for i in range(num_cells_to_export):
-
         print("Processing cell %i out of %i"%(i, num_cells_to_export))
-
         nml_cell_file = "../NeuroML2/MitralCells/Exported/Mitral_0_%i.cell.nml" % i
-
         nml_doc = pynml.read_neuroml2_file(nml_cell_file)
-
         cell = nml_doc.cells[0]
+
+        soma_seg = next(seg for seg in cell.morphology.segments if seg.name == "Seg0_soma")
+        hillock_seg = next(seg for seg in cell.morphology.segments if seg.name == "Seg0_hillock")
+
+        # Ensure hillock parent is soma
+        hillock_seg.parent.segments = soma_seg.id
         
         # Set root to id=0 and increment others
         exportHelper.resetRoot(cell)
-
-        somaSeg = next(seg for seg in cell.morphology.segments if seg.name == "Seg0_soma")
-        initialSeg = next(seg for seg in cell.morphology.segments if seg.name == "Seg0_initialseg")
-        hillockSeg = next(seg for seg in cell.morphology.segments if seg.name == "Seg0_hillock")
-
-        # Fix initial and hillock segs by moving them to the soma
-        hillockSeg.proximal = pointMovedByOffset(hillockSeg.proximal, somaSeg.distal)
-        hillockSeg.distal = pointMovedByOffset(hillockSeg.distal, somaSeg.distal)
-        initialSeg.proximal = pointMovedByOffset(initialSeg.proximal, somaSeg.distal)
-        initialSeg.distal = pointMovedByOffset(initialSeg.distal, somaSeg.distal)
-
-        # And correcting the hillock parent fractionAlong
-        hillockSeg.parent.fraction_along = 0
 
         # TODO: cell.position(x,y,z) used for cell positioning in networks does not work as expected
         # See: https://github.com/NeuroML/jNeuroML/issues/55
         # Skipping the translation for now
         # # Move everything back to the origin
-        # originOffset = type("", (), dict(x = -somaSeg.proximal.x, y = -somaSeg.proximal.y, z = -somaSeg.proximal.z ))()
+        # originOffset = type("", (), dict(x = -soma_seg.proximal.x, y = -soma_seg.proximal.y, z = -soma_seg.proximal.z ))()
         #
         # for seg in cell.morphology.segments:
         #     seg.proximal = pointMovedByOffset(seg.proximal, originOffset)

@@ -22,6 +22,9 @@ def runSuite():
     # summary.append(compare(cells.mitral_passive))
     # summary.append(compare(cells.mitral))#, debug="converted", runOrig=False, runConverted=True))
 
+    # summary.append(compare(cells.mitral2_passive, debug="converted", runOrig=False))
+    # summary.append(compare(cells.mitral2))  # , debug="converted", runOrig=False, runConverted=True))
+
     # summary.append(compare(cells.granule_passive))
     # summary.append(compare(cells.granule))
 
@@ -29,7 +32,9 @@ def runSuite():
     # summary.append(compare(synapses.FI))
     # summary.append(compare(synapses.AmpaNmda))
     #
-    summary.append(compare(networks.Net_1MC_1GC))#, runConverted=True,runOrig=False,debug="converted"))
+    # summary.append(compare(networks.Net_1MC_1GC))#, runConverted=True,runOrig=True,debug=""))
+    # summary.append(compare(networks.Net_1MC_2GC))# , runConverted=True,runOrig=True,debug="original"))
+    summary.append(compare(networks.Net_2MC_2GC, runConverted=True,runOrig=True,debug=""))
     #
     # summary.append(compare(networks.Net_1MC_1GC, conversion = "NetPyNE"))
 
@@ -68,6 +73,7 @@ def compare(modelTestModule, conversion = "NeuroML", debug = None, runOrig = Tru
 
     if NEURONtest.error or conversionTest.error:
         print(NEURONtest.label + " " + conversion + " comparison could not be peformed because of errors running one of the models")
+
     else:
         NEURONtest.compareTo(conversionTest)
 

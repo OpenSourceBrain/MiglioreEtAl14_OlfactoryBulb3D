@@ -1,7 +1,6 @@
-import pydevd
-pydevd.settrace('192.168.177.1', port=4200, suspend=False)
 
-def export(MCs = 2, GCsPerMC = 10):
+
+def export(MCs = 2, GCsPerMC = 1):
     # Export cells first - in their own NEURON instances
     import subprocess
     subprocess.Popen("python -c 'import export_mitral; export_mitral.export("+`MCs`+");'", shell=True).wait()

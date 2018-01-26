@@ -156,6 +156,7 @@ class ModelTest(object):
             .lower()
 
         errorsFound = 'error' in cleanOutput or \
+                      'segmentation fault' in cleanOutput or \
                       'is not valid against the schema' in cleanOutput or \
                       'problem in model' in cleanOutput or \
                       'traceback' in cleanOutput or \

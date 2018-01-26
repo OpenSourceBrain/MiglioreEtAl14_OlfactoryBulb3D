@@ -71,6 +71,9 @@ class NEURONNetworkTest(NEURONTest):
                                np.max(currentRange),
                                num=5)
 
+        #DEBUG
+        #icLevels = [np.max(currentRange)]
+
         result = []
 
         # Run simulations for each IClamp test level
@@ -88,7 +91,7 @@ class NEURONNetworkTest(NEURONTest):
             v = np.array(v)
             i = np.array(i)
 
-            window = np.where(t > ic.delay)
+            window = np.where(t > ic.delay) # Show the interesting part
 
             t = t[window].tolist()
             v = v[window].tolist()
@@ -100,6 +103,9 @@ class NEURONNetworkTest(NEURONTest):
                 "voltage": v,
                 "current": i,
             })
+
+        # Remove the stim
+        ic.amp = 0
 
         return result
 

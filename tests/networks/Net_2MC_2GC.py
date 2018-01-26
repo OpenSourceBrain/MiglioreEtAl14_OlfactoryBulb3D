@@ -26,15 +26,16 @@ class NEURON(NEURONNetworkTest):
         customsim.setup(2, 1)
         model = modeldata.getmodel()
 
-
-        self.blender = BlenderNEURON(h)
-
         net = {
-            "granule": model.granules[110821],
-            "mitral": model.mitrals[0]
+            "granule": model.granules[112690],
+            "mitral": model.mitrals[1]
         }
 
         h.celsius = 24
+
+        sys.path.append("/home/justas/Repositories/BlenderNEURON/ForNEURON");
+        from blenderneuron import BlenderNEURON
+        self.blender = BlenderNEURON(h)
 
         return net
 
@@ -58,8 +59,8 @@ class NeuroML(NeuroMLNetworkTest):
         model = modelFile.NeuronSimulation(tstop=5, dt=0.01) # The params are ignored
 
         net = {
-            "granule": h.a_Pop_Granule_0_110821[0],
-            "mitral": h.a_Pop_Mitral_0_0[0]
+            "granule": h.a_Pop_Granule_0_112690[0],
+            "mitral": h.a_Pop_Mitral_0_1[0]
         }
 
         h.celsius = 24
