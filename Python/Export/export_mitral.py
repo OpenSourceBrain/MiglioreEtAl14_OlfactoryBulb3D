@@ -1,6 +1,3 @@
-import pydevd
-pydevd.settrace('192.168.177.1', port=4200, suspend=False)
-
 import os
 import sys
 import neuroml

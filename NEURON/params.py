@@ -46,7 +46,7 @@ stream_dummysyn = stream_last; stream_last +=  Nmitral * 5 #needs to be greater 
 stream_dummygen = stream_last; stream_last += Nmitral * 5
 
 # for the odorstim
-stream_last += stream_ods_shift
+stream_last += stream_ods_shift # THIS LINE FAILS - and is NEEDED for OdorStim
 stream_ods_w = stream_last; stream_last += 6
 stream_ods_act = stream_last; stream_last += 1
 stream_ods_bg = stream_last; stream_last += 1

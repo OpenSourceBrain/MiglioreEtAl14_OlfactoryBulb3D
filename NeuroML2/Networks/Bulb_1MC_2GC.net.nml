@@ -11,6 +11,8 @@
     
     <include href="../Synapses/FI.synapse.xml"/>
     <include href="../Synapses/AmpaNmda.synapse.xml"/>
+
+    <include href="Glomerulus.cell.nml"/>
     
     <!-- Exported Cells -->
     
@@ -19,6 +21,13 @@
     <include href="../GranuleCells/Exported/Granule_0_110821.cell.nml"/>
     
     <network id="network_Migliore2014" type="networkWithTemperature" temperature="35 degC">
+
+        <population id="Pop_Gloms" component="Glomerulus" type="populationList" size="1">
+            <instance id="0">
+                <location x="207.282545379" y="221.710431868" z="866.200622035"/>
+            </instance>
+
+        </population>
 
         
         <population id="Pop_Mitral_0_0" component="Mitral_0_0" type="populationList" size="1">

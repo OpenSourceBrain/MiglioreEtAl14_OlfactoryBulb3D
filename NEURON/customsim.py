@@ -1,13 +1,14 @@
 # Launch this with "python customsim.py 2 10"
 # to get a network with 2 Mitral cells and 10 Granule cells/Mitral (20 total)
 
-def setup(mitralArg, granArg, run = False):
+def setup(mitralArg, granArg, run = False, enableOdorInput = False):
     import sys
     import custom_params
     custom_params.filename = 'fig7'
 
     custom_params.customMitralCount = mitralArg
     custom_params.customGranulesPerMitralCount = granArg
+    custom_params.enableOdorInput = enableOdorInput
 
     import params
     import runsim

@@ -13,11 +13,13 @@ def export(MCs = 1, GCsPerMC = 10):
     from neuron import h,gui
 
     # Build the network with desired number of GCs - including spines
+    print("Building GC network...")
     sys.path.append(os.getcwd())
     import customsim
     import modeldata
     customsim.setup(MCs, GCsPerMC)
     model = modeldata.getmodel()
+    print("GC network built.")
 
 
     result = exportToNML(model.granules)
@@ -34,9 +36,13 @@ def exportToNML(cells):
 	    spine neck: location on parent priden2
     '''
 
+    print("Exporting " + str(len(cells)) + "GCs...")
+
     exported = []
 
     for gid in cells.keys():
+        print("Exporting GC:" + `gid` + "...")
+
         # Obtain the varying values from the network model
         pridenLength = cells[gid].priden.L
         pridenNseg = cells[gid].priden.nseg

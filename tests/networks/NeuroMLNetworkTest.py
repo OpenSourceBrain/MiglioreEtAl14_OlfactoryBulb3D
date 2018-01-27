@@ -41,8 +41,7 @@ class NeuroMLNetworkTest(ModelTest):
         subModel.label = self.label
         subModel.prepare = self.prepare
         subModel.on_run_complete = self.on_run_complete
-        subModel.currentRangeMC = self.currentRangeMC
-        subModel.currentRangeGC = self.currentRangeGC
+        subModel.currentMC = self.currentMC
         subModel.resultsFile = self.resultsFile
 
         # Now the converted network file is ready for the protocol

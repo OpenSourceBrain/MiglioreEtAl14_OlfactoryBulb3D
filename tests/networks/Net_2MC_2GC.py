@@ -4,8 +4,7 @@ from tests.NEURONTest import NEURONTest
 from tests.networks.NEURONNetworkTest import NEURONNetworkTest as NEURONNetworkTest
 from tests.networks.NeuroMLNetworkTest import NeuroMLNetworkTest
 
-currentRangeMC = (-1, 3)
-currentRangeGC = (-0.01, 0.1)
+currentMC = 1
 
 class NEURON(NEURONNetworkTest):
 
@@ -14,8 +13,7 @@ class NEURON(NEURONNetworkTest):
 
         self.path = "../NEURON/customsim.py"
         self.label = "Net_2MC_2GC"
-        self.currentRangeMC = currentRangeMC
-        self.currentRangeGC = currentRangeGC
+        self.currentMC = currentMC
         self.resultsFile = "results/networks/Net_2MC_2GC/NEURON.json"
 
     def prepare(self, h):
@@ -26,21 +24,26 @@ class NEURON(NEURONNetworkTest):
         customsim.setup(2, 1)
         model = modeldata.getmodel()
 
+        for syn in h.AmpaNmda:
+            syn.gmax = 100
+
+        for syn in h.FastInhib:
+            syn.gmax = 4
+
         net = {
-            "granule": model.granules[112690],
-            "mitral": model.mitrals[1]
+            "granules": [
+                {'id':110821, 'cell':model.granules[110821]},
+                {'id':112690, 'cell':model.granules[112690]}
+            ],
+            "mitrals": [
+                {'id': 0, 'cell': model.mitrals[0]},
+                {'id': 1, 'cell': model.mitrals[1]}
+            ]
         }
 
         h.celsius = 24
 
-        sys.path.append("/home/justas/Repositories/BlenderNEURON/ForNEURON");
-        from blenderneuron import BlenderNEURON
-        self.blender = BlenderNEURON(h)
-
         return net
-
-    def on_run_complete(self):
-        self.blender.send_model()
 
 class NeuroML(NeuroMLNetworkTest):
     def __init__(self):
@@ -48,19 +51,28 @@ class NeuroML(NeuroMLNetworkTest):
 
         self.path = "../NeuroML2/Networks/Bulb_2MC_2GC.net.nml"
         self.label = "Net_2MC_2GC"
-        self.currentRangeMC = currentRangeMC
-        self.currentRangeGC = currentRangeGC
+        self.currentMC = currentMC
         self.resultsFile = "results/networks/Net_2MC_2GC/NeuroML.json"
 
     def prepare(self, h):
-        # Load the python file with the network code
         modelFile = self.load_python_network()
-
         model = modelFile.NeuronSimulation(tstop=5, dt=0.01) # The params are ignored
 
+        for syn in h.AmpaNmdaSynapse:
+            syn.gMax = 100
+
+        for syn in h.FIsyn:
+            syn.gbase = 4
+
         net = {
-            "granule": h.a_Pop_Granule_0_112690[0],
-            "mitral": h.a_Pop_Mitral_0_1[0]
+            "granules": [
+                {'id': 110821, 'cell':h.a_Pop_Granule_0_110821[0]},
+                {'id': 112690, 'cell':h.a_Pop_Granule_0_112690[0]}
+            ],
+            "mitrals": [
+                {'id': 0, 'cell':h.a_Pop_Mitral_0_0[0]},
+                {'id': 1, 'cell':h.a_Pop_Mitral_0_1[0]}
+            ]
         }
 
         h.celsius = 24

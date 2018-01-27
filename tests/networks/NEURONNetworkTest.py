@@ -19,25 +19,56 @@ class NEURONNetworkTest(NEURONTest):
         # Perform any model specific preparations
         net = self.prepare(self.h)
 
-        # First inject current into MC and record GC
-        result1 = self.performProtocol(
-            inputCellLabel    = "MC",
-            outputCellLabel   = "GC",
-            currentRange = self.currentRangeMC,
-            inputCell = net["mitral"],
-            outputCell = net["granule"]
-        )
+        # Record time and voltage
+        self.tVector = self.h.Vector()
+        self.tVector.record(self.h._ref_t)
 
-        # Then inject current into GC and record MC
-        result2 = self.performProtocol(
-            inputCellLabel="GC",
-            outputCellLabel="MC",
-            currentRange=self.currentRangeGC,
-            inputCell=net["granule"],
-            outputCell=net["mitral"]
-        )
+        vectors = []
+        ics = []
 
-        result = { "iclamp": result1 + result2 }
+        for mc in net["mitrals"]:
+            # Inject into MC tuft
+            ic = self.h.IClamp(mc["cell"].priden(1.0))
+            ic.delay = 25
+            ic.dur = 150
+            ic.amp = self.currentMC
+            ics.append(ic)
+
+            # Record at the soma
+            vector = self.h.Vector()
+            vector.record(mc["cell"].soma(0.5)._ref_v)
+            vectors.append({"label":"MC"+str(mc["id"])+" soma V","vector":vector})
+
+        for gc in net["granules"]:
+            # Record at each GC primary dendrite
+            vector = self.h.Vector()
+            vector.record(gc["cell"].priden(1.0)._ref_v)
+            vectors.append({"label":"GC"+str(gc["id"])+" pridend V","vector":vector})
+
+        self.h.tstop = 200
+        self.h.steps_per_ms = 16
+        self.h.dt = 1.0 / self.h.steps_per_ms
+
+        result = []
+
+        # Run simulations
+        self.h.run()
+
+        # Gather output variables - subsample to once per ms
+        t = self.subSampleVector(self.tVector, self.h.steps_per_ms)
+
+        for vector in vectors:
+            v = self.subSampleVector(vector["vector"], self.h.steps_per_ms)
+
+            result.append({
+                "label": vector["label"],
+                "time": t,
+                "voltage": v
+            })
+
+        self.on_run_complete()
+
+        result = { "iclamp": result }
 
         # DEBUG
         # # Plot the voltage traces
@@ -52,62 +83,6 @@ class NEURONNetworkTest(NEURONTest):
 
         # Return cwd to starting dir
         self.restoreStartDir()
-
-    def performProtocol(self, inputCellLabel, outputCellLabel, currentRange, inputCell, outputCell):
-        ic = self.h.IClamp(inputCell.soma(0.5))
-        ic.delay = 50
-        ic.dur = 100
-        ic.amp = -65
-
-        self.h.tstop = ic.delay + ic.dur + 50  # With extra 50ms at the end
-        self.h.steps_per_ms = 16
-        self.h.dt = 1.0 / self.h.steps_per_ms
-
-        # Record time, voltage, and current
-        self.setupRecorders(t=self.h._ref_t, v=outputCell.soma(0.5)._ref_v, i=ic._ref_i)
-
-        # Create test levels
-        icLevels = np.linspace(np.min(currentRange),
-                               np.max(currentRange),
-                               num=5)
-
-        #DEBUG
-        #icLevels = [np.max(currentRange)]
-
-        result = []
-
-        # Run simulations for each IClamp test level
-        for level in icLevels:
-            ic.amp = level
-
-            self.h.run()
-
-            # Gather output variables - subsample to once per ms
-            t, v, i = self.subSampleTVI(self.h.steps_per_ms)
-
-            self.on_run_complete()
-
-            t = np.array(t)
-            v = np.array(v)
-            i = np.array(i)
-
-            window = np.where(t > ic.delay) # Show the interesting part
-
-            t = t[window].tolist()
-            v = v[window].tolist()
-            i = i[window].tolist()
-
-            result.append({
-                "label": outputCellLabel + " v with " + str(level) + " nA into " + inputCellLabel,
-                "time": t,
-                "voltage": v,
-                "current": i,
-            })
-
-        # Remove the stim
-        ic.amp = 0
-
-        return result
 
     def compareTo(self, target):
         return self.compareTraces(

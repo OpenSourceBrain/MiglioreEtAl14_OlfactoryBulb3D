@@ -6,10 +6,7 @@ sys.path.insert(0,'..'); sys.path.insert(0,'../NEURON');
 from tests.networks.NEURONNetworkTest import NEURONNetworkTest as NEURONNetworkTest
 from tests.networks.NeuroMLNetworkTest import NeuroMLNetworkTest
 
-
-currentRangeMC = (-1, 3)
-currentRangeGC = (-0.01, 0.1)
-syngmax = 0.1 # Make the synapse do something interesting
+currentMC = 1
 
 class NEURON(NEURONNetworkTest):
 
@@ -18,8 +15,7 @@ class NEURON(NEURONNetworkTest):
 
         self.path = "../NEURON/customsim.py"
         self.label = "Net_1MC_1GC"
-        self.currentRangeMC = currentRangeMC
-        self.currentRangeGC = currentRangeGC
+        self.currentMC = currentMC
         self.resultsFile = "results/networks/Net_1MC_1GC/NEURON.json"
 
     def prepare(self, h):
@@ -31,12 +27,12 @@ class NEURON(NEURONNetworkTest):
         model = modeldata.getmodel()
 
 
-        h.AmpaNmda[0].gmax = syngmax
-        h.FastInhib[0].gmax = syngmax
+        h.AmpaNmda[0].gmax = 100
+        h.FastInhib[0].gmax = 4
 
         net = {
-            "granule": model.granules[110821],
-            "mitral": model.mitrals[0]
+            "granules": [{'id':110821, 'cell':model.granules[110821]}],
+            "mitrals": [{'id':0, 'cell':model.mitrals[0]}]
         }
 
         h.celsius = 24
@@ -57,8 +53,7 @@ class NeuroML(NeuroMLNetworkTest):
 
         self.path = "../NeuroML2/Networks/Bulb_1MC_1GC.net.nml"
         self.label = "Net_1MC_1GC"
-        self.currentRangeMC = currentRangeMC
-        self.currentRangeGC = currentRangeGC
+        self.currentMC = currentMC
         self.resultsFile = "results/networks/Net_1MC_1GC/NeuroML.json"
 
     def prepare(self, h):
@@ -66,12 +61,12 @@ class NeuroML(NeuroMLNetworkTest):
 
         model = modelFile.NeuronSimulation(tstop=5, dt=0.01) # Params don't matter here
 
-        h.AmpaNmdaSynapse[0].gMax = syngmax
-        h.FIsyn[0].gbase = syngmax
+        h.AmpaNmdaSynapse[0].gMax = 100
+        h.FIsyn[0].gbase = 4
 
         net = {
-            "granule": h.a_Pop_Granule_0_110821[0],
-            "mitral": h.a_Pop_Mitral_0_0[0]
+            "granules": [{'id':110821, 'cell':h.a_Pop_Granule_0_110821[0]}],
+            "mitrals": [{'id':0, 'cell':h.a_Pop_Mitral_0_0[0]}]
         }
 
         h.celsius = 24
