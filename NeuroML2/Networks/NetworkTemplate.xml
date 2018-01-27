@@ -11,11 +11,17 @@
     
     <include href="../Synapses/FI.synapse.xml"/>
     <include href="../Synapses/AmpaNmda.synapse.xml"/>
+
+    <include href="Glomerulus.cell.nml"/>
     
     <!-- Exported Cells -->
     [IncludesPlaceholder]
     
     <network id="network_Migliore2014" type="networkWithTemperature" temperature="35 degC">
+
+        <population id="Pop_Gloms" component="Glomerulus" type="populationList" size="[NumGloms]">
+[GlomeruliPlaceholder]
+        </population>
 
         [PopulationsPlaceholder]
         

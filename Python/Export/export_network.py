@@ -1,12 +1,14 @@
 
 
-def export(MCs = 2, GCsPerMC = 1):
+
+def export(MCs = 5, GCsPerMC = 2):
     # Export cells first - in their own NEURON instances
     import subprocess
     subprocess.Popen("python -c 'import export_mitral; export_mitral.export("+`MCs`+");'", shell=True).wait()
     subprocess.Popen("python -c 'import export_granule; export_granule.export(" + `MCs` + ","+`GCsPerMC`+");'", shell=True).wait()
 
     import os, neuroml, sys
+    from math import ceil
     os.chdir('../../NEURON')
     sys.path.append(os.path.abspath(os.getcwd()))
     from neuron import h, gui
@@ -21,6 +23,7 @@ def export(MCs = 2, GCsPerMC = 1):
 
     networkTemplate = FileTemplate("../NeuroML2/Networks/NetworkTemplate.xml")
     includeTemplate = FileTemplate("../NeuroML2/Networks/IncludeTemplate.xml")
+    glomsTemplate = FileTemplate("../NeuroML2/Networks/GlomeruliTemplate.xml")
     populationTemplate = FileTemplate("../NeuroML2/Networks/PopulationTemplate.xml")
     projectionTemplate = FileTemplate("../NeuroML2/Networks/ProjectionTemplate.xml")
 
@@ -32,6 +35,7 @@ def export(MCs = 2, GCsPerMC = 1):
     includes = ""
     populations = ""
     projections = ""
+    gloms = ""
 
     mcNMLs = {}
     gcNMLs = {}
@@ -61,6 +65,19 @@ def export(MCs = 2, GCsPerMC = 1):
                 .cells[0]
         
         mcNMLs.update({mcgid:mcNML})
+
+    # Each glom consists of 5 mcs -- using the highest mc id, generate the required gloms
+    num_gloms = int(ceil((max(model.mitral_gids)+1)/5.0))
+
+    with open('realgloms.txt') as f:
+        for g in range(num_gloms):
+            g_x, g_y, g_z = map(float, f.readline().split(' '))
+
+            gloms += glomsTemplate.text \
+                .replace("[GlomID]", `g`) \
+                .replace("[X]", `g_x`) \
+                .replace("[Y]", `g_y`) \
+                .replace("[Z]", `g_z`)
 
     # Make GC includes and populations
     import granules
@@ -143,6 +160,8 @@ def export(MCs = 2, GCsPerMC = 1):
 
 
     network = networkTemplate.text\
+        .replace("[NumGloms]", `num_gloms`) \
+        .replace("[GlomeruliPlaceholder]", gloms) \
         .replace("[IncludesPlaceholder]", includes)\
         .replace("[PopulationsPlaceholder]", populations)\
         .replace("[ProjectionsPlaceholder]", projections)
