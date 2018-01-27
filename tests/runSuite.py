@@ -14,29 +14,28 @@ def runSuite():
 
     summary = []
 
-    # summary.append(compare(channels.nax))
-    # summary.append(compare(channels.kamt))
-    # summary.append(compare(channels.kdrmt))
-    #
-    #
-    # summary.append(compare(cells.mitral_passive))
-    # summary.append(compare(cells.mitral))#, debug="converted", runOrig=False, runConverted=True))
-
-    # summary.append(compare(cells.mitral2_passive, debug="converted", runOrig=False))
-    # summary.append(compare(cells.mitral2))  # , debug="converted", runOrig=False, runConverted=True))
-
-    # summary.append(compare(cells.granule_passive))
-    # summary.append(compare(cells.granule))
+    summary.append(compare(channels.nax))
+    summary.append(compare(channels.kamt))
+    summary.append(compare(channels.kdrmt))
 
 
-    # summary.append(compare(synapses.FI))
-    # summary.append(compare(synapses.AmpaNmda))
-    #
-    # summary.append(compare(networks.Net_1MC_1GC, runConverted=True,runOrig=True,debug="converted"))
-    # summary.append(compare(networks.Net_1MC_2GC, runConverted=True,runOrig=True,debug="original"))
-    # summary.append(compare(networks.Net_2MC_2GC, runConverted=True,runOrig=True,debug="original"))
-    # summary.append(compare(networks.Net_5MC_10GC, runConverted=True, runOrig=True, debug="original"))
-    summary.append(compare(networks.Net_1MC_80GC, runConverted=True, runOrig=False, debug="converted"))
+    summary.append(compare(cells.mitral_passive))
+    summary.append(compare(cells.mitral))#, debug="converted", runOrig=False, runConverted=True))
+
+    summary.append(compare(cells.mitral2_passive)) #, debug="converted", runOrig=False))
+    summary.append(compare(cells.mitral2))  # , debug="converted", runOrig=False, runConverted=True))
+
+    summary.append(compare(cells.granule_passive))
+    summary.append(compare(cells.granule))
+
+
+    summary.append(compare(synapses.FI))
+    summary.append(compare(synapses.AmpaNmda))
+
+    summary.append(compare(networks.Net_1MC_1GC))#, runConverted=True,runOrig=True,debug="converted"))
+    summary.append(compare(networks.Net_1MC_2GC))#, runConverted=True,runOrig=True,debug="original"))
+    summary.append(compare(networks.Net_2MC_2GC))#, runConverted=True,runOrig=True,debug="original"))
+    summary.append(compare(networks.Net_5MC_10GC))#, runConverted=True, runOrig=True, debug="original"))
     #
     # summary.append(compare(networks.Net_1MC_1GC, conversion = "NetPyNE"))
 
