@@ -41,19 +41,25 @@
         </population>
         
         
-        <projection id="Proj_703836162_G2M" presynapticPopulation="Pop_Granule_0_110821" postsynapticPopulation="Pop_Mitral_0_0" synapse="FIsyn">
-            <connection id="0" preCellId="../Pop_Granule_0_110821/0/Granule_0_110821" postCellId="../Pop_Mitral_0_0/0/Mitral_0_0" preSegmentId="4" preFractionAlong="0.5" postSegmentId="257" postFractionAlong="0.8613035678863525"/>
-        </projection>
+        <!--<projection id="Proj_703836162_G2M" presynapticPopulation="Pop_Granule_0_110821" postsynapticPopulation="Pop_Mitral_0_0" synapse="FIsyn">-->
+            <!--<connection id="0" preCellId="../Pop_Granule_0_110821/0/Granule_0_110821" postCellId="../Pop_Mitral_0_0/0/Mitral_0_0" preSegmentId="4" preFractionAlong="0.5" postSegmentId="257" postFractionAlong="0.8613035678863525"/>-->
+        <!--</projection>-->
+
+        <inputList id="stimInput1" component="synTrain" population="Pop_Mitral_0_0">
+            <input id="0" target="../Pop_Mitral_0_0/0/Mitral_0_0" segmentId="0" fractionAlong="0.5" destination="synapses"/>
+        </inputList>
+
         <projection id="Proj_703836162_M2G" presynapticPopulation="Pop_Mitral_0_0" postsynapticPopulation="Pop_Granule_0_110821" synapse="AmpaNmdaSynapse">
             <connection id="0" preCellId="../Pop_Mitral_0_0/0/Mitral_0_0" postCellId="../Pop_Granule_0_110821/0/Granule_0_110821" preSegmentId="257" preFractionAlong="0.8613035678863525" postSegmentId="4" postFractionAlong="0.5"/>
         </projection>
 
-        <!-- Odor Inputs -->
-
-
     </network>
 
-    <!-- Odor Input Synapses & Times-->
+    <expTwoSynapse id="AMPA" tauRise="3e-5s" tauDecay="0.5e-3s" gbase=".3nS" erev="0V"/>
 
+    <timedSynapticInput id="synTrain" synapse="AMPA" spikeTarget="./AMPA">
+        <spike id="0" time="2 ms"/>
+        <spike id="1" time="15 ms"/>
+    </timedSynapticInput>
 
 </neuroml>

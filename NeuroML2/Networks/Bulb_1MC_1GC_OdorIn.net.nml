@@ -49,11 +49,47 @@
         </projection>
 
         <!-- Odor Inputs -->
+        <inputList id="OdorInputList0" component="OdorSynTimes0" population="Pop_Mitral_0_0">
+            <input id="0" target="../Pop_Mitral_0_0/0/Mitral_0_0" segmentId="209" fractionAlong="0.2" destination="synapses"/>
+        </inputList>
+
+        <inputList id="OdorInputList1" component="OdorSynTimes1" population="Pop_Mitral_0_0">
+            <input id="0" target="../Pop_Mitral_0_0/0/Mitral_0_0" segmentId="207" fractionAlong="0.2" destination="synapses"/>
+        </inputList>
+
+        <inputList id="OdorInputList2" component="OdorSynTimes2" population="Pop_Mitral_0_0">
+            <input id="0" target="../Pop_Mitral_0_0/0/Mitral_0_0" segmentId="204" fractionAlong="0.30000000000000004" destination="synapses"/>
+        </inputList>
+
+        <inputList id="OdorInputList3" component="OdorSynTimes3" population="Pop_Mitral_0_0">
+            <input id="0" target="../Pop_Mitral_0_0/0/Mitral_0_0" segmentId="201" fractionAlong="0.30000000000000004" destination="synapses"/>
+        </inputList>
+
 
 
     </network>
 
     <!-- Odor Input Synapses & Times-->
+    <expTwoSynapse id="OdorSyn0" weight="0.06692797546466227" tauRise="20ms" tauDecay="200ms" gbase="100nS" erev="0V"/>
+    <timedSynapticInput id="OdorSynTimes0" synapse="OdorSyn0" spikeTarget="./OdorSyn0">
+        <spike id="0" time="57.270142296964735 ms"/>
+    </timedSynapticInput>
+
+    <expTwoSynapse id="OdorSyn1" weight="0.06830086451620723" tauRise="20ms" tauDecay="200ms" gbase="100nS" erev="0V"/>
+    <timedSynapticInput id="OdorSynTimes1" synapse="OdorSyn1" spikeTarget="./OdorSyn1">
+        <spike id="0" time="57.270142296964735 ms"/>
+    </timedSynapticInput>
+
+    <expTwoSynapse id="OdorSyn2" weight="0.0613942984838275" tauRise="20ms" tauDecay="200ms" gbase="100nS" erev="0V"/>
+    <timedSynapticInput id="OdorSynTimes2" synapse="OdorSyn2" spikeTarget="./OdorSyn2">
+        <spike id="0" time="57.270142296964735 ms"/>
+    </timedSynapticInput>
+
+    <expTwoSynapse id="OdorSyn3" weight="0.03804117803967222" tauRise="20ms" tauDecay="200ms" gbase="100nS" erev="0V"/>
+    <timedSynapticInput id="OdorSynTimes3" synapse="OdorSyn3" spikeTarget="./OdorSyn3">
+        <spike id="0" time="57.270142296964735 ms"/>
+    </timedSynapticInput>
+
 
 
 </neuroml>

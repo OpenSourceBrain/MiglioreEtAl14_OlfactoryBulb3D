@@ -182,4 +182,13 @@
 
     </network>
 
+    [OdorInputSynapses]
+    <expTwoSynapse id="AMPA" tauRise="3e-5s" tauDecay="0.5e-3s" gbase=".3nS" erev="0V" weight="1.0"/>
+
+    [OdorInputSynapseTimes]
+    <timedSynapticInput id="synTrain" synapse="AMPA" spikeTarget="./AMPA">
+        <spike id="0" time="2 ms"/>
+        <spike id="1" time="15 ms"/>
+    </timedSynapticInput>
+
 </neuroml>

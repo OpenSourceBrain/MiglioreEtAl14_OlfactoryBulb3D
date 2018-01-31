@@ -1,11 +1,16 @@
+import pydevd
+pydevd.settrace('192.168.177.1', port=4200, suspend=False)
 
 
-
-def export(MCs = 5, GCsPerMC = 2):
+def export(MCs = 2, GCsPerMC = 1, useOdorInput = True, odorInputMaxTime = 200):
     # Export cells first - in their own NEURON instances
     import subprocess
     subprocess.Popen("python -c 'import export_mitral; export_mitral.export("+`MCs`+");'", shell=True).wait()
     subprocess.Popen("python -c 'import export_granule; export_granule.export(" + `MCs` + ","+`GCsPerMC`+");'", shell=True).wait()
+
+    # Export the odor input
+    if useOdorInput:
+        subprocess.Popen("python -c 'import export_input; export_input.export(" + `MCs` + ");'", shell=True).wait()
 
     import os, neuroml, sys
     from math import ceil
@@ -27,15 +32,24 @@ def export(MCs = 5, GCsPerMC = 2):
     populationTemplate = FileTemplate("../NeuroML2/Networks/PopulationTemplate.xml")
     projectionTemplate = FileTemplate("../NeuroML2/Networks/ProjectionTemplate.xml")
 
+    odorInputListTemplate = FileTemplate("../NeuroML2/Networks/OdorInputListTemplate.xml")
+    odorSynapseTemplate = FileTemplate("../NeuroML2/Networks/OdorSynapseTemplate.xml")
+
     customsim.setup(MCs, GCsPerMC)
     model = modeldata.getmodel()
 
-    netFile = "../NeuroML2/Networks/Bulb_%iMC_%iGC.net.nml" % (len(model.mitral_gids), len(model.granule_gids))
+    # Exp2Syns are used for odor input
+    if useOdorInput:
+        section2synapse = {syn.get_segment().sec.name(): syn for syn in h.Exp2Syn}
+
+    netFile = "../NeuroML2/Networks/Bulb_%iMC_%iGC%s.net.nml" % (len(model.mitral_gids), len(model.granule_gids),"_OdorIn" if useOdorInput else "")
 
     includes = ""
     populations = ""
     projections = ""
     gloms = ""
+    odorInputLists = ""
+    odorSyns = ""
 
     mcNMLs = {}
     gcNMLs = {}
@@ -114,14 +128,9 @@ def export(MCs = 5, GCsPerMC = 2):
         synapse = model.mgrss[sgid]
 
         # Compute the segment on the MC to which the synapse will be connected
-        nsecden = model.mitrals[synapse.mgid].secden[synapse.isec].nseg
-        if synapse.xm < 1:
-            fractionAlongSection = synapse.xm * nsecden
-            mcSegmentIndex = int(fractionAlongSection)
-            alongMcSegment = fractionAlongSection - mcSegmentIndex
-        else:
-            mcSegmentIndex = nsecden - 1
-            alongMcSegment = 1.0
+        alongSegment = getFractionAlongSegment(model.mitrals[synapse.mgid].secden[synapse.isec], synapse.xm)
+        mcSegmentIndex = alongSegment["segment_index"]
+        alongMcSegment = alongSegment["along_segment"]
 
         # Get the NML ID of the MC segment
         mcSegmentID = next(seg.id for seg in mcNMLs[synapse.mgid].morphology.segments if seg.name == "Seg%i_secden_%i"%(mcSegmentIndex,synapse.isec))
@@ -158,19 +167,77 @@ def export(MCs = 5, GCsPerMC = 2):
 
         curSyn += 1
 
+    # Add odor inputs
+    if useOdorInput:
+        import re, json
+        synId = 0
+
+        with open('odor-events.json') as r:
+            odorTimes = json.load(r)
+
+        for mcid in model.mitral_gids:
+            mc = model.mitrals[mcid]
+            nmlmc = mcNMLs[mcid]
+
+            for tuftden in mc.tuftden:
+                # Translate NRN name into NML name
+                tuftdenIndex = re.compile('tuftden\[(.*)\]').search(tuftden.name()).groups(1)[0]
+                nmlTuftDenName = 'tuftden_'+tuftdenIndex
+                nmlTuftDenSegs = [seg for seg in nmlmc.morphology.segments if seg.name.endswith(nmlTuftDenName)]
+                alongSegment = getFractionAlongSegment(tuftden, 0.1) # Syns are placed at 0.1
+
+                nmlTuftDenSeg = nmlTuftDenSegs[alongSegment['segment_index']]
+                nmlAlongTuftDenSeg = alongSegment['along_segment']
+
+                times = odorTimes[tuftden.name()]
+
+                for i, time in enumerate(times['times']):
+                    if time > odorInputMaxTime:
+                        break
+
+                    # Add inputList
+                    odorInputLists += odorInputListTemplate.text\
+                        .replace("[ID]", `synId`)\
+                        .replace("[SynInputID]", "OdorSynTimes"+`synId`)\
+                        .replace("[McID]", `mcid`)\
+                        .replace("[SegmentID]", `nmlTuftDenSeg.id`)\
+                        .replace("[FractionAlong]", `nmlAlongTuftDenSeg`)
+
+                    # Add synapse and timed input
+                    odorSyns += odorSynapseTemplate.text\
+                        .replace("[ID]", `synId`)\
+                        .replace("[Weight]", `times['weights'][i]`)\
+                        .replace("[Time]", `time`)
+
+                    synId += 1
+
 
     network = networkTemplate.text\
         .replace("[NumGloms]", `num_gloms`) \
         .replace("[GlomeruliPlaceholder]", gloms) \
         .replace("[IncludesPlaceholder]", includes)\
         .replace("[PopulationsPlaceholder]", populations)\
-        .replace("[ProjectionsPlaceholder]", projections)
+        .replace("[ProjectionsPlaceholder]", projections)\
+        .replace("[OdorInputLists]", odorInputLists)\
+        .replace("[OdorInputSynapses]", odorSyns)
 
     with open(netFile, "w") as file:
         file.write(network)
 
     print('Net file saved to: ' + netFile)
 
+def getFractionAlongSegment(section, fractionAlong):
+    nseg = section.nseg
+
+    if fractionAlong < 1:
+        alongSection = fractionAlong * nseg
+        segmentIndex = int(alongSection)
+        alongSegment = alongSection - segmentIndex
+    else:
+        segmentIndex = nseg - 1
+        alongSegment = 1.0
+
+    return {"segment_index":segmentIndex, "along_segment": alongSegment}
 
 class FileTemplate():
     def __init__(self, path):

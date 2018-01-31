@@ -32,12 +32,12 @@ def runSuite():
     summary.append(compare(synapses.FI))
     summary.append(compare(synapses.AmpaNmda))
 
-    summary.append(compare(networks.Net_1MC_1GC))#, runConverted=True,runOrig=True,debug="converted"))
+    summary.append(compare(networks.Net_1MC_1GC))
+    summary.append(compare(networks.Net_1MC_1GC_OdorInput))
     summary.append(compare(networks.Net_1MC_2GC))#, runConverted=True,runOrig=True,debug="original"))
     summary.append(compare(networks.Net_2MC_2GC))#, runConverted=True,runOrig=True,debug="original"))
+    summary.append(compare(networks.Net_2MC_2GC_OdorInput))
     summary.append(compare(networks.Net_5MC_10GC))#, runConverted=True, runOrig=True, debug="original"))
-    #
-    # summary.append(compare(networks.Net_1MC_1GC, conversion = "NetPyNE"))
 
     report = generate_report(summary)
 

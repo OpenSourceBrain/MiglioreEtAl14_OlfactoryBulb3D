@@ -39,7 +39,7 @@ stream_ods_shift = 1
 # 'Oregano', 'Pear', 'Pineapple'
 
 # ('Mint', t init, t duration, rel. conc.), (...), (...)
-odor_sequence = [ ('Mint', 50, 20000, 4e-3) ]
+odor_sequence = [ ('Mint', 50, 20000, 100e-3) ]
 # sim. duration
 tstop = 1000.
 

@@ -46,7 +46,7 @@ class NEURONNetworkTest(NEURONTest):
             vectors.append({"label":"GC"+str(gc["id"])+" pridend V","vector":vector})
 
         self.h.tstop = 200
-        self.h.steps_per_ms = 16
+        self.h.steps_per_ms = 128
         self.h.dt = 1.0 / self.h.steps_per_ms
 
         result = []
