@@ -2,11 +2,13 @@
 # pydevd.settrace('192.168.177.1', port=4200, suspend=False)
 
 
-def export(MCs = 2, GCsPerMC = 1, useOdorInput = True, odorInputMaxTime = 200):
-    # Export cells first - in their own NEURON instances
+def export(MCs = 30, GCsPerMC = 3, useOdorInput = True, odorInputMaxTime = 200, export_cells = True):
     import subprocess
-    subprocess.Popen("python -c 'import export_mitral; export_mitral.export("+`MCs`+");'", shell=True).wait()
-    subprocess.Popen("python -c 'import export_granule; export_granule.export(" + `MCs` + ","+`GCsPerMC`+");'", shell=True).wait()
+
+    if export_cells:
+        # Export cells first - in their own NEURON instances
+        subprocess.Popen("python -c 'import export_mitral; export_mitral.export("+`MCs`+");'", shell=True).wait()
+        subprocess.Popen("python -c 'import export_granule; export_granule.export(" + `MCs` + ","+`GCsPerMC`+");'", shell=True).wait()
 
     # Export the odor input
     if useOdorInput:
