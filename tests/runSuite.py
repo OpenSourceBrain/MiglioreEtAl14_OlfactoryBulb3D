@@ -1,5 +1,5 @@
-import pydevd
-pydevd.settrace('192.168.177.1', port=4200, stdoutToServer=True, stderrToServer=True, suspend=False)
+# import pydevd
+# pydevd.settrace('192.168.177.1', port=4200, stdoutToServer=True, stderrToServer=True, suspend=False)
 
 def runOne():
     import_submodules("cells")

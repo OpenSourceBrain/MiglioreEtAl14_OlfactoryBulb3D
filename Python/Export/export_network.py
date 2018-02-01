@@ -1,5 +1,5 @@
-import pydevd
-pydevd.settrace('192.168.177.1', port=4200, suspend=False)
+# import pydevd
+# pydevd.settrace('192.168.177.1', port=4200, suspend=False)
 
 
 def export(MCs = 2, GCsPerMC = 1, useOdorInput = True, odorInputMaxTime = 200):
