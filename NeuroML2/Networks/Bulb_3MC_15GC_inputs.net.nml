@@ -1,0 +1,237 @@
+<neuroml xmlns="http://www.neuroml.org/schema/neuroml2"  xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.neuroml.org/schema/neuroml2 https://raw.github.com/NeuroML/NeuroML2/development/Schemas/NeuroML2/NeuroML_v2beta5.xsd" id="network_Migliore2014">
+    <include href="../Channels/pas.channel.nml"></include>
+    <include href="../Channels/nax.channel.nml"></include>
+    <include href="../Channels/nax__sh0.channel.nml"></include>
+    <include href="../Channels/nax__sh10.channel.nml"></include>
+    <include href="../Channels/nax__sh15.channel.nml"></include>
+    <include href="../Channels/kamt.channel.nml"></include>
+    <include href="../Channels/kdrmt.channel.nml"></include>
+    <include href="../Synapses/TEST.synapse.nml"></include>
+    <include href="../MitralCells/Exported/Mitral_0_0.cell.nml"></include>
+    <include href="../MitralCells/Exported/Mitral_0_1.cell.nml"></include>
+    <include href="../MitralCells/Exported/Mitral_0_2.cell.nml"></include>
+    <include href="../GranuleCells/Exported/Granule_0_98523.cell.nml"></include>
+    <include href="../GranuleCells/Exported/Granule_0_122244.cell.nml"></include>
+    <include href="../GranuleCells/Exported/Granule_0_110821.cell.nml"></include>
+    <include href="../GranuleCells/Exported/Granule_0_86086.cell.nml"></include>
+    <include href="../GranuleCells/Exported/Granule_0_112551.cell.nml"></include>
+    <include href="../GranuleCells/Exported/Granule_0_112690.cell.nml"></include>
+    <include href="../GranuleCells/Exported/Granule_0_112879.cell.nml"></include>
+    <include href="../GranuleCells/Exported/Granule_0_119346.cell.nml"></include>
+    <include href="../GranuleCells/Exported/Granule_0_100735.cell.nml"></include>
+    <include href="../GranuleCells/Exported/Granule_0_103156.cell.nml"></include>
+    <include href="../GranuleCells/Exported/Granule_0_116309.cell.nml"></include>
+    <include href="../GranuleCells/Exported/Granule_0_116279.cell.nml"></include>
+    <include href="../GranuleCells/Exported/Granule_0_118143.cell.nml"></include>
+    <include href="../GranuleCells/Exported/Granule_0_92220.cell.nml"></include>
+    <include href="../GranuleCells/Exported/Granule_0_92389.cell.nml"></include>
+    <pulseGenerator id="stim_Pop_Mitral_0_0" delay="0ms" duration="2000ms" amplitude="0.101949277819nA"/>
+    <pulseGenerator id="stim_Pop_Mitral_0_1" delay="0ms" duration="2000ms" amplitude="0.100157513683nA"/>
+    <pulseGenerator id="stim_Pop_Mitral_0_2" delay="0ms" duration="2000ms" amplitude="0.148097646715nA"/>
+    <pulseGenerator id="stim_Pop_Granule_0_98523" delay="0ms" duration="2000ms" amplitude="0.078701717744nA"/>
+    <pulseGenerator id="stim_Pop_Granule_0_122244" delay="0ms" duration="2000ms" amplitude="0.0560790557463nA"/>
+    <pulseGenerator id="stim_Pop_Granule_0_110821" delay="0ms" duration="2000ms" amplitude="0.0881256501173nA"/>
+    <pulseGenerator id="stim_Pop_Granule_0_86086" delay="0ms" duration="2000ms" amplitude="0.066801510012nA"/>
+    <pulseGenerator id="stim_Pop_Granule_0_112551" delay="0ms" duration="2000ms" amplitude="0.0619486131337nA"/>
+    <pulseGenerator id="stim_Pop_Granule_0_112690" delay="0ms" duration="2000ms" amplitude="0.0747440904045nA"/>
+    <pulseGenerator id="stim_Pop_Granule_0_112879" delay="0ms" duration="2000ms" amplitude="0.0728804876246nA"/>
+    <pulseGenerator id="stim_Pop_Granule_0_119346" delay="0ms" duration="2000ms" amplitude="0.0803559035557nA"/>
+    <pulseGenerator id="stim_Pop_Granule_0_100735" delay="0ms" duration="2000ms" amplitude="0.0997401732453nA"/>
+    <pulseGenerator id="stim_Pop_Granule_0_103156" delay="0ms" duration="2000ms" amplitude="0.0798441341077nA"/>
+    <pulseGenerator id="stim_Pop_Granule_0_116309" delay="0ms" duration="2000ms" amplitude="0.0832447139607nA"/>
+    <pulseGenerator id="stim_Pop_Granule_0_116279" delay="0ms" duration="2000ms" amplitude="0.0824529144407nA"/>
+    <pulseGenerator id="stim_Pop_Granule_0_118143" delay="0ms" duration="2000ms" amplitude="0.0503385776181nA"/>
+    <pulseGenerator id="stim_Pop_Granule_0_92220" delay="0ms" duration="2000ms" amplitude="0.0881278695561nA"/>
+    <pulseGenerator id="stim_Pop_Granule_0_92389" delay="0ms" duration="2000ms" amplitude="0.0636322366073nA"/>
+    <network id="network_Migliore2014" type="networkWithTemperature" temperature="35 degC">
+        <population id="Pop_Mitral_0_0" component="Mitral_0_0" size="1" type="populationList">
+            <instance id="0">
+                <location x="198.119644165039062" y="498.2239990234375" z="494.269195556640625"/>
+            </instance>
+        </population>
+        <population id="Pop_Mitral_0_1" component="Mitral_0_1" size="1" type="populationList">
+            <instance id="0">
+                <location x="179.67626953125" y="580.22064208984375" z="534.02789306640625"/>
+            </instance>
+        </population>
+        <population id="Pop_Mitral_0_2" component="Mitral_0_2" size="1" type="populationList">
+            <instance id="0">
+                <location x="131.980239868164062" y="552.41107177734375" z="550.6746826171875"/>
+            </instance>
+        </population>
+        <population id="Pop_Granule_0_98523" component="Granule_0_98523" size="1" type="populationList">
+            <instance id="0">
+                <location x="50." y="1325." z="325."/>
+            </instance>
+        </population>
+        <population id="Pop_Granule_0_122244" component="Granule_0_122244" size="1" type="populationList">
+            <instance id="0">
+                <location x="150." y="1225." z="650."/>
+            </instance>
+        </population>
+        <population id="Pop_Granule_0_110821" component="Granule_0_110821" size="1" type="populationList">
+            <instance id="0">
+                <location x="375." y="1050." z="450."/>
+            </instance>
+        </population>
+        <population id="Pop_Granule_0_86086" component="Granule_0_86086" size="1" type="populationList">
+            <instance id="0">
+                <location x="425." y="925." z="225."/>
+            </instance>
+        </population>
+        <population id="Pop_Granule_0_112551" component="Granule_0_112551" size="1" type="populationList">
+            <instance id="0">
+                <location x="300." y="800." z="475."/>
+            </instance>
+        </population>
+        <population id="Pop_Granule_0_112690" component="Granule_0_112690" size="1" type="populationList">
+            <instance id="0">
+                <location x="350." y="900." z="475."/>
+            </instance>
+        </population>
+        <population id="Pop_Granule_0_112879" component="Granule_0_112879" size="1" type="populationList">
+            <instance id="0">
+                <location x="400." y="1025." z="475."/>
+            </instance>
+        </population>
+        <population id="Pop_Granule_0_119346" component="Granule_0_119346" size="1" type="populationList">
+            <instance id="0">
+                <location x="150." y="975." z="575."/>
+            </instance>
+        </population>
+        <population id="Pop_Granule_0_100735" component="Granule_0_100735" size="1" type="populationList">
+            <instance id="0">
+                <location x="100." y="1000." z="350."/>
+            </instance>
+        </population>
+        <population id="Pop_Granule_0_103156" component="Granule_0_103156" size="1" type="populationList">
+            <instance id="0">
+                <location x="125." y="825." z="375."/>
+            </instance>
+        </population>
+        <population id="Pop_Granule_0_116309" component="Granule_0_116309" size="1" type="populationList">
+            <instance id="0">
+                <location x="325." y="850." z="525."/>
+            </instance>
+        </population>
+        <population id="Pop_Granule_0_116279" component="Granule_0_116279" size="1" type="populationList">
+            <instance id="0">
+                <location x="300." y="825." z="525."/>
+            </instance>
+        </population>
+        <population id="Pop_Granule_0_118143" component="Granule_0_118143" size="1" type="populationList">
+            <instance id="0">
+                <location x="325." y="1075." z="550."/>
+            </instance>
+        </population>
+        <population id="Pop_Granule_0_92220" component="Granule_0_92220" size="1" type="populationList">
+            <instance id="0">
+                <location x="200." y="1125." z="275."/>
+            </instance>
+        </population>
+        <population id="Pop_Granule_0_92389" component="Granule_0_92389" size="1" type="populationList">
+            <instance id="0">
+                <location x="225." y="1225." z="275."/>
+            </instance>
+        </population>
+        <projection id="Proj_703836162" presynapticPopulation="Pop_Granule_0_110821" postsynapticPopulation="Pop_Mitral_0_0" synapse="TEST_syn">
+            <connection id="0" preCellId="../Pop_Granule_0_110821/0/Granule_0_110821" preFractionAlong="0.517321586609" postCellId="../Pop_Mitral_0_0/0/Mitral_0_0" postSegmentId="193"/>
+        </projection>
+        <projection id="Proj_585719812" presynapticPopulation="Pop_Granule_0_92220" postsynapticPopulation="Pop_Mitral_0_0" synapse="TEST_syn">
+            <connection id="0" preCellId="../Pop_Granule_0_92220/0/Granule_0_92220" preFractionAlong="0.45849481225" postCellId="../Pop_Mitral_0_0/0/Mitral_0_0" postSegmentId="284"/>
+        </projection>
+        <projection id="Proj_639790082" presynapticPopulation="Pop_Granule_0_100735" postsynapticPopulation="Pop_Mitral_0_2" synapse="TEST_syn">
+            <connection id="0" preCellId="../Pop_Granule_0_100735/0/Granule_0_100735" preFractionAlong="0.464349716902" postCellId="../Pop_Mitral_0_2/0/Mitral_0_2" postSegmentId="1393"/>
+        </projection>
+        <projection id="Proj_714821672" presynapticPopulation="Pop_Granule_0_112551" postsynapticPopulation="Pop_Mitral_0_1" synapse="TEST_syn">
+            <connection id="0" preCellId="../Pop_Granule_0_112551/0/Granule_0_112551" preFractionAlong="0.594336688519" postCellId="../Pop_Mitral_0_1/0/Mitral_0_1" postSegmentId="754"/>
+        </projection>
+        <projection id="Proj_757969932" presynapticPopulation="Pop_Granule_0_119346" postsynapticPopulation="Pop_Mitral_0_2" synapse="TEST_syn">
+            <connection id="0" preCellId="../Pop_Granule_0_119346/0/Granule_0_119346" preFractionAlong="0.639115154743" postCellId="../Pop_Mitral_0_2/0/Mitral_0_2" postSegmentId="1508"/>
+        </projection>
+        <projection id="Proj_625743882" presynapticPopulation="Pop_Granule_0_98523" postsynapticPopulation="Pop_Mitral_0_2" synapse="TEST_syn">
+            <connection id="0" preCellId="../Pop_Granule_0_98523/0/Granule_0_98523" preFractionAlong="0.513926625252" postCellId="../Pop_Mitral_0_2/0/Mitral_0_2" postSegmentId="1491"/>
+        </projection>
+        <projection id="Proj_738684972" presynapticPopulation="Pop_Granule_0_116309" postsynapticPopulation="Pop_Mitral_0_1" synapse="TEST_syn">
+            <connection id="0" preCellId="../Pop_Granule_0_116309/0/Granule_0_116309" preFractionAlong="0.645086944103" postCellId="../Pop_Mitral_0_1/0/Mitral_0_1" postSegmentId="750"/>
+        </projection>
+        <projection id="Proj_715704322" presynapticPopulation="Pop_Granule_0_112690" postsynapticPopulation="Pop_Mitral_0_1" synapse="TEST_syn">
+            <connection id="0" preCellId="../Pop_Granule_0_112690/0/Granule_0_112690" preFractionAlong="0.674418091774" postCellId="../Pop_Mitral_0_1/0/Mitral_0_1" postSegmentId="753"/>
+        </projection>
+        <projection id="Proj_546768912" presynapticPopulation="Pop_Granule_0_86086" postsynapticPopulation="Pop_Mitral_0_0" synapse="TEST_syn">
+            <connection id="0" preCellId="../Pop_Granule_0_86086/0/Granule_0_86086" preFractionAlong="0.71450561285" postCellId="../Pop_Mitral_0_0/0/Mitral_0_0" postSegmentId="519"/>
+        </projection>
+        <projection id="Proj_738494472" presynapticPopulation="Pop_Granule_0_116279" postsynapticPopulation="Pop_Mitral_0_1" synapse="TEST_syn">
+            <connection id="0" preCellId="../Pop_Granule_0_116279/0/Granule_0_116279" preFractionAlong="0.380228787661" postCellId="../Pop_Mitral_0_1/0/Mitral_0_1" postSegmentId="751"/>
+        </projection>
+        <projection id="Proj_655163412" presynapticPopulation="Pop_Granule_0_103156" postsynapticPopulation="Pop_Mitral_0_0" synapse="TEST_syn">
+            <connection id="0" preCellId="../Pop_Granule_0_103156/0/Granule_0_103156" preFractionAlong="0.290742278099" postCellId="../Pop_Mitral_0_0/0/Mitral_0_0" postSegmentId="163"/>
+        </projection>
+        <projection id="Proj_776372232" presynapticPopulation="Pop_Granule_0_122244" postsynapticPopulation="Pop_Mitral_0_2" synapse="TEST_syn">
+            <connection id="0" preCellId="../Pop_Granule_0_122244/0/Granule_0_122244" preFractionAlong="0.637180030346" postCellId="../Pop_Mitral_0_2/0/Mitral_0_2" postSegmentId="1518"/>
+        </projection>
+        <projection id="Proj_750330882" presynapticPopulation="Pop_Granule_0_118143" postsynapticPopulation="Pop_Mitral_0_2" synapse="TEST_syn">
+            <connection id="0" preCellId="../Pop_Granule_0_118143/0/Granule_0_118143" preFractionAlong="0.572038054466" postCellId="../Pop_Mitral_0_2/0/Mitral_0_2" postSegmentId="1560"/>
+        </projection>
+        <projection id="Proj_716904472" presynapticPopulation="Pop_Granule_0_112879" postsynapticPopulation="Pop_Mitral_0_1" synapse="TEST_syn">
+            <connection id="0" preCellId="../Pop_Granule_0_112879/0/Granule_0_112879" preFractionAlong="0.919730424881" postCellId="../Pop_Mitral_0_1/0/Mitral_0_1" postSegmentId="768"/>
+        </projection>
+        <projection id="Proj_586792962" presynapticPopulation="Pop_Granule_0_92389" postsynapticPopulation="Pop_Mitral_0_0" synapse="TEST_syn">
+            <connection id="0" preCellId="../Pop_Granule_0_92389/0/Granule_0_92389" preFractionAlong="0.45792683959" postCellId="../Pop_Mitral_0_0/0/Mitral_0_0" postSegmentId="303"/>
+        </projection>
+        <inputList id="stim_Pop_Mitral_0_0_input" population="Pop_Mitral_0_0" component="stim_Pop_Mitral_0_0">
+            <input id="0" target="../Pop_Mitral_0_0/0/Mitral_0_0" destination="synapses"/>
+        </inputList>
+        <inputList id="stim_Pop_Mitral_0_1_input" population="Pop_Mitral_0_1" component="stim_Pop_Mitral_0_1">
+            <input id="0" target="../Pop_Mitral_0_1/0/Mitral_0_1" destination="synapses"/>
+        </inputList>
+        <inputList id="stim_Pop_Mitral_0_2_input" population="Pop_Mitral_0_2" component="stim_Pop_Mitral_0_2">
+            <input id="0" target="../Pop_Mitral_0_2/0/Mitral_0_2" destination="synapses"/>
+        </inputList>
+        <inputList id="stim_Pop_Granule_0_98523_input" population="Pop_Granule_0_98523" component="stim_Pop_Granule_0_98523">
+            <input id="0" target="../Pop_Granule_0_98523/0/Granule_0_98523" destination="synapses"/>
+        </inputList>
+        <inputList id="stim_Pop_Granule_0_122244_input" population="Pop_Granule_0_122244" component="stim_Pop_Granule_0_122244">
+            <input id="0" target="../Pop_Granule_0_122244/0/Granule_0_122244" destination="synapses"/>
+        </inputList>
+        <inputList id="stim_Pop_Granule_0_110821_input" population="Pop_Granule_0_110821" component="stim_Pop_Granule_0_110821">
+            <input id="0" target="../Pop_Granule_0_110821/0/Granule_0_110821" destination="synapses"/>
+        </inputList>
+        <inputList id="stim_Pop_Granule_0_86086_input" population="Pop_Granule_0_86086" component="stim_Pop_Granule_0_86086">
+            <input id="0" target="../Pop_Granule_0_86086/0/Granule_0_86086" destination="synapses"/>
+        </inputList>
+        <inputList id="stim_Pop_Granule_0_112551_input" population="Pop_Granule_0_112551" component="stim_Pop_Granule_0_112551">
+            <input id="0" target="../Pop_Granule_0_112551/0/Granule_0_112551" destination="synapses"/>
+        </inputList>
+        <inputList id="stim_Pop_Granule_0_112690_input" population="Pop_Granule_0_112690" component="stim_Pop_Granule_0_112690">
+            <input id="0" target="../Pop_Granule_0_112690/0/Granule_0_112690" destination="synapses"/>
+        </inputList>
+        <inputList id="stim_Pop_Granule_0_112879_input" population="Pop_Granule_0_112879" component="stim_Pop_Granule_0_112879">
+            <input id="0" target="../Pop_Granule_0_112879/0/Granule_0_112879" destination="synapses"/>
+        </inputList>
+        <inputList id="stim_Pop_Granule_0_119346_input" population="Pop_Granule_0_119346" component="stim_Pop_Granule_0_119346">
+            <input id="0" target="../Pop_Granule_0_119346/0/Granule_0_119346" destination="synapses"/>
+        </inputList>
+        <inputList id="stim_Pop_Granule_0_100735_input" population="Pop_Granule_0_100735" component="stim_Pop_Granule_0_100735">
+            <input id="0" target="../Pop_Granule_0_100735/0/Granule_0_100735" destination="synapses"/>
+        </inputList>
+        <inputList id="stim_Pop_Granule_0_103156_input" population="Pop_Granule_0_103156" component="stim_Pop_Granule_0_103156">
+            <input id="0" target="../Pop_Granule_0_103156/0/Granule_0_103156" destination="synapses"/>
+        </inputList>
+        <inputList id="stim_Pop_Granule_0_116309_input" population="Pop_Granule_0_116309" component="stim_Pop_Granule_0_116309">
+            <input id="0" target="../Pop_Granule_0_116309/0/Granule_0_116309" destination="synapses"/>
+        </inputList>
+        <inputList id="stim_Pop_Granule_0_116279_input" population="Pop_Granule_0_116279" component="stim_Pop_Granule_0_116279">
+            <input id="0" target="../Pop_Granule_0_116279/0/Granule_0_116279" destination="synapses"/>
+        </inputList>
+        <inputList id="stim_Pop_Granule_0_118143_input" population="Pop_Granule_0_118143" component="stim_Pop_Granule_0_118143">
+            <input id="0" target="../Pop_Granule_0_118143/0/Granule_0_118143" destination="synapses"/>
+        </inputList>
+        <inputList id="stim_Pop_Granule_0_92220_input" population="Pop_Granule_0_92220" component="stim_Pop_Granule_0_92220">
+            <input id="0" target="../Pop_Granule_0_92220/0/Granule_0_92220" destination="synapses"/>
+        </inputList>
+        <inputList id="stim_Pop_Granule_0_92389_input" population="Pop_Granule_0_92389" component="stim_Pop_Granule_0_92389">
+            <input id="0" target="../Pop_Granule_0_92389/0/Granule_0_92389" destination="synapses"/>
+        </inputList>
+    </network>
+</neuroml>
