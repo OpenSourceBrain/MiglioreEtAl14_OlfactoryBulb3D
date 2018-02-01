@@ -17,7 +17,7 @@ from pyneuroml.neuron import export_to_neuroml2
 from pyneuroml import pynml
 from neuroml import SegmentGroup
 
-def export(num_cells_to_export = 2):
+def export(num_cells_to_export = 5):
     cells = []
 
     for mgid in range(num_cells_to_export):
@@ -37,11 +37,18 @@ def export(num_cells_to_export = 2):
         cell = nml_doc.cells[0]
 
         soma_seg = next(seg for seg in cell.morphology.segments if seg.name == "Seg0_soma")
+        initial_seg = next(seg for seg in cell.morphology.segments if seg.name == "Seg0_initialseg")
         hillock_seg = next(seg for seg in cell.morphology.segments if seg.name == "Seg0_hillock")
 
         # Ensure hillock parent is soma
         hillock_seg.parent.segments = soma_seg.id
-        
+
+        # Fix initial and hillock segs by moving them to the soma
+        hillock_seg.proximal = pointMovedByOffset(hillock_seg.proximal, soma_seg.distal)
+        hillock_seg.distal = pointMovedByOffset(hillock_seg.distal, soma_seg.distal)
+        initial_seg.proximal = pointMovedByOffset(initial_seg.proximal, soma_seg.distal)
+        initial_seg.distal = pointMovedByOffset(initial_seg.distal, soma_seg.distal)
+
         # Set root to id=0 and increment others
         exportHelper.resetRoot(cell)
 

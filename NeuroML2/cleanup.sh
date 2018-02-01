@@ -5,5 +5,6 @@ find . -type f -name '*.dat' -delete
 find . -type f -name '*.mod' -delete
 find . -type f -name '*_nrn.py' -delete
 find . -type f -name '*_TestBed.xml' -delete
+find . -type f -name 'PartialBulb*.nml' -delete
 
 find . -type d -name "x86_64" -exec rm -Rf {} +
