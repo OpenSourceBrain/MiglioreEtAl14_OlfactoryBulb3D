@@ -1,0 +1,2639 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<neuroml xmlns="http://www.neuroml.org/schema/neuroml2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.neuroml.org/schema/neuroml2  https://raw.githubusercontent.com/NeuroML/NeuroML2/development/Schemas/NeuroML2/NeuroML_v2beta4.xsd" id="network_Migliore2014">
+
+    <include href="../Channels/pas.channel.nml"/>
+    <include href="../Channels/nax.channel.nml"/>
+    <include href="../Channels/nax__sh0.channel.nml"/>
+    <include href="../Channels/nax__sh10.channel.nml"/>
+    <include href="../Channels/nax__sh15.channel.nml"/>
+    <include href="../Channels/kamt.channel.nml"/>
+    <include href="../Channels/kdrmt.channel.nml"/>
+    
+    <include href="../Synapses/FI.synapse.xml"/>
+    <include href="../Synapses/AmpaNmda.synapse.xml"/>
+
+    <include href="Glomerulus.cell.nml"/>
+    
+    <!-- Exported Cells -->
+    
+    <include href="../MitralCells/Exported/Mitral_0_0.cell.nml"/>
+    <include href="../MitralCells/Exported/Mitral_0_1.cell.nml"/>
+    <include href="../MitralCells/Exported/Mitral_0_2.cell.nml"/>
+    <include href="../MitralCells/Exported/Mitral_0_3.cell.nml"/>
+    <include href="../MitralCells/Exported/Mitral_0_4.cell.nml"/>
+    <include href="../MitralCells/Exported/Mitral_0_5.cell.nml"/>
+    <include href="../MitralCells/Exported/Mitral_0_6.cell.nml"/>
+    <include href="../MitralCells/Exported/Mitral_0_7.cell.nml"/>
+    <include href="../MitralCells/Exported/Mitral_0_8.cell.nml"/>
+    <include href="../MitralCells/Exported/Mitral_0_9.cell.nml"/>
+    <include href="../MitralCells/Exported/Mitral_0_10.cell.nml"/>
+    <include href="../MitralCells/Exported/Mitral_0_11.cell.nml"/>
+    <include href="../MitralCells/Exported/Mitral_0_12.cell.nml"/>
+    <include href="../MitralCells/Exported/Mitral_0_13.cell.nml"/>
+    <include href="../MitralCells/Exported/Mitral_0_14.cell.nml"/>
+    <include href="../MitralCells/Exported/Mitral_0_15.cell.nml"/>
+    <include href="../MitralCells/Exported/Mitral_0_16.cell.nml"/>
+    <include href="../MitralCells/Exported/Mitral_0_17.cell.nml"/>
+    <include href="../MitralCells/Exported/Mitral_0_18.cell.nml"/>
+    <include href="../MitralCells/Exported/Mitral_0_19.cell.nml"/>
+    <include href="../MitralCells/Exported/Mitral_0_20.cell.nml"/>
+    <include href="../MitralCells/Exported/Mitral_0_21.cell.nml"/>
+    <include href="../MitralCells/Exported/Mitral_0_22.cell.nml"/>
+    <include href="../MitralCells/Exported/Mitral_0_23.cell.nml"/>
+    <include href="../MitralCells/Exported/Mitral_0_24.cell.nml"/>
+    <include href="../MitralCells/Exported/Mitral_0_25.cell.nml"/>
+    <include href="../MitralCells/Exported/Mitral_0_26.cell.nml"/>
+    <include href="../MitralCells/Exported/Mitral_0_27.cell.nml"/>
+    <include href="../MitralCells/Exported/Mitral_0_28.cell.nml"/>
+    <include href="../MitralCells/Exported/Mitral_0_29.cell.nml"/>
+    <include href="../GranuleCells/Exported/Granule_0_120832.cell.nml"/>
+    <include href="../GranuleCells/Exported/Granule_0_89604.cell.nml"/>
+    <include href="../GranuleCells/Exported/Granule_0_73221.cell.nml"/>
+    <include href="../GranuleCells/Exported/Granule_0_96266.cell.nml"/>
+    <include href="../GranuleCells/Exported/Granule_0_72719.cell.nml"/>
+    <include href="../GranuleCells/Exported/Granule_0_98834.cell.nml"/>
+    <include href="../GranuleCells/Exported/Granule_0_113689.cell.nml"/>
+    <include href="../GranuleCells/Exported/Granule_0_106530.cell.nml"/>
+    <include href="../GranuleCells/Exported/Granule_0_86363.cell.nml"/>
+    <include href="../GranuleCells/Exported/Granule_0_64551.cell.nml"/>
+    <include href="../GranuleCells/Exported/Granule_0_95277.cell.nml"/>
+    <include href="../GranuleCells/Exported/Granule_0_112690.cell.nml"/>
+    <include href="../GranuleCells/Exported/Granule_0_106038.cell.nml"/>
+    <include href="../GranuleCells/Exported/Granule_0_94775.cell.nml"/>
+    <include href="../GranuleCells/Exported/Granule_0_92220.cell.nml"/>
+    <include href="../GranuleCells/Exported/Granule_0_109120.cell.nml"/>
+    <include href="../GranuleCells/Exported/Granule_0_98885.cell.nml"/>
+    <include href="../GranuleCells/Exported/Granule_0_72782.cell.nml"/>
+    <include href="../GranuleCells/Exported/Granule_0_95321.cell.nml"/>
+    <include href="../GranuleCells/Exported/Granule_0_110821.cell.nml"/>
+    <include href="../GranuleCells/Exported/Granule_0_87142.cell.nml"/>
+    <include href="../GranuleCells/Exported/Granule_0_108817.cell.nml"/>
+    <include href="../GranuleCells/Exported/Granule_0_72302.cell.nml"/>
+    <include href="../GranuleCells/Exported/Granule_0_61559.cell.nml"/>
+    <include href="../GranuleCells/Exported/Granule_0_118904.cell.nml"/>
+    <include href="../GranuleCells/Exported/Granule_0_89724.cell.nml"/>
+    <include href="../GranuleCells/Exported/Granule_0_84107.cell.nml"/>
+    <include href="../GranuleCells/Exported/Granule_0_63634.cell.nml"/>
+    <include href="../GranuleCells/Exported/Granule_0_84634.cell.nml"/>
+    <include href="../GranuleCells/Exported/Granule_0_119967.cell.nml"/>
+    <include href="../GranuleCells/Exported/Granule_0_106664.cell.nml"/>
+    <include href="../GranuleCells/Exported/Granule_0_54441.cell.nml"/>
+    <include href="../GranuleCells/Exported/Granule_0_101037.cell.nml"/>
+    <include href="../GranuleCells/Exported/Granule_0_78002.cell.nml"/>
+    <include href="../GranuleCells/Exported/Granule_0_62142.cell.nml"/>
+    <include href="../GranuleCells/Exported/Granule_0_62145.cell.nml"/>
+    <include href="../GranuleCells/Exported/Granule_0_117451.cell.nml"/>
+    <include href="../GranuleCells/Exported/Granule_0_98512.cell.nml"/>
+    <include href="../GranuleCells/Exported/Granule_0_113873.cell.nml"/>
+    <include href="../GranuleCells/Exported/Granule_0_87250.cell.nml"/>
+    <include href="../GranuleCells/Exported/Granule_0_109518.cell.nml"/>
+    <include href="../GranuleCells/Exported/Granule_0_106198.cell.nml"/>
+    <include href="../GranuleCells/Exported/Granule_0_118649.cell.nml"/>
+    <include href="../GranuleCells/Exported/Granule_0_101594.cell.nml"/>
+    <include href="../GranuleCells/Exported/Granule_0_98523.cell.nml"/>
+    <include href="../GranuleCells/Exported/Granule_0_92389.cell.nml"/>
+    <include href="../GranuleCells/Exported/Granule_0_95978.cell.nml"/>
+    <include href="../GranuleCells/Exported/Granule_0_25836.cell.nml"/>
+    <include href="../GranuleCells/Exported/Granule_0_92398.cell.nml"/>
+    <include href="../GranuleCells/Exported/Granule_0_112879.cell.nml"/>
+    <include href="../GranuleCells/Exported/Granule_0_118515.cell.nml"/>
+    <include href="../GranuleCells/Exported/Granule_0_101117.cell.nml"/>
+    <include href="../GranuleCells/Exported/Granule_0_107271.cell.nml"/>
+    <include href="../GranuleCells/Exported/Granule_0_104209.cell.nml"/>
+    <include href="../GranuleCells/Exported/Granule_0_95530.cell.nml"/>
+    <include href="../GranuleCells/Exported/Granule_0_104756.cell.nml"/>
+    <include href="../GranuleCells/Exported/Granule_0_83277.cell.nml"/>
+    <include href="../GranuleCells/Exported/Granule_0_92478.cell.nml"/>
+    <include href="../GranuleCells/Exported/Granule_0_104259.cell.nml"/>
+    <include href="../GranuleCells/Exported/Granule_0_101704.cell.nml"/>
+    <include href="../GranuleCells/Exported/Granule_0_116279.cell.nml"/>
+    <include href="../GranuleCells/Exported/Granule_0_93005.cell.nml"/>
+    <include href="../GranuleCells/Exported/Granule_0_99159.cell.nml"/>
+    <include href="../GranuleCells/Exported/Granule_0_95579.cell.nml"/>
+    <include href="../GranuleCells/Exported/Granule_0_109329.cell.nml"/>
+    <include href="../GranuleCells/Exported/Granule_0_110943.cell.nml"/>
+    <include href="../GranuleCells/Exported/Granule_0_102241.cell.nml"/>
+    <include href="../GranuleCells/Exported/Granule_0_69990.cell.nml"/>
+    <include href="../GranuleCells/Exported/Granule_0_95609.cell.nml"/>
+    <include href="../GranuleCells/Exported/Granule_0_100735.cell.nml"/>
+    <include href="../GranuleCells/Exported/Granule_0_122244.cell.nml"/>
+    <include href="../GranuleCells/Exported/Granule_0_122760.cell.nml"/>
+    <include href="../GranuleCells/Exported/Granule_0_51011.cell.nml"/>
+    <include href="../GranuleCells/Exported/Granule_0_92566.cell.nml"/>
+    <include href="../GranuleCells/Exported/Granule_0_90012.cell.nml"/>
+    <include href="../GranuleCells/Exported/Granule_0_39846.cell.nml"/>
+    <include href="../GranuleCells/Exported/Granule_0_104875.cell.nml"/>
+    <include href="../GranuleCells/Exported/Granule_0_86957.cell.nml"/>
+    <include href="../GranuleCells/Exported/Granule_0_94639.cell.nml"/>
+    <include href="../GranuleCells/Exported/Granule_0_90054.cell.nml"/>
+    <include href="../GranuleCells/Exported/Granule_0_75209.cell.nml"/>
+    <include href="../GranuleCells/Exported/Granule_0_115150.cell.nml"/>
+    <include href="../GranuleCells/Exported/Granule_0_84813.cell.nml"/>
+    <include href="../GranuleCells/Exported/Granule_0_93661.cell.nml"/>
+    <include href="../GranuleCells/Exported/Granule_0_110559.cell.nml"/>
+    <include href="../GranuleCells/Exported/Granule_0_96741.cell.nml"/>
+    <include href="../GranuleCells/Exported/Granule_0_83709.cell.nml"/>
+    <include href="../GranuleCells/Exported/Granule_0_113654.cell.nml"/>
+    <include href="../GranuleCells/Exported/Granule_0_61947.cell.nml"/>
+    <include href="../GranuleCells/Exported/Granule_0_69631.cell.nml"/>
+    
+    <network id="network_Migliore2014" type="networkWithTemperature" temperature="35 degC">
+
+        <population id="Pop_Gloms" component="Glomerulus" type="populationList" size="6">
+            <instance id="0">
+                <location x="207.282545379" y="221.710431868" z="866.200622035"/>
+            </instance>
+            <instance id="1">
+                <location x="563.37827647" y="1699.8037022" z="1033.57655885"/>
+            </instance>
+            <instance id="2">
+                <location x="759.67610953" y="1839.35221927" z="863.401768809"/>
+            </instance>
+            <instance id="3">
+                <location x="1002.92213569" y="1799.8037022" z="605.689694077"/>
+            </instance>
+            <instance id="4">
+                <location x="218.39365649" y="1502.09454884" z="1175.04579268"/>
+            </instance>
+            <instance id="5">
+                <location x="831.50284775" y="1066.81522439" z="896.256558334"/>
+            </instance>
+
+        </population>
+
+        
+        <population id="Pop_Mitral_0_0" component="Mitral_0_0" type="populationList" size="1">
+            <instance id="0">
+                <location x="0" y="0" z="0"/>
+            </instance>
+        </population>
+        <population id="Pop_Mitral_0_1" component="Mitral_0_1" type="populationList" size="1">
+            <instance id="0">
+                <location x="0" y="0" z="0"/>
+            </instance>
+        </population>
+        <population id="Pop_Mitral_0_2" component="Mitral_0_2" type="populationList" size="1">
+            <instance id="0">
+                <location x="0" y="0" z="0"/>
+            </instance>
+        </population>
+        <population id="Pop_Mitral_0_3" component="Mitral_0_3" type="populationList" size="1">
+            <instance id="0">
+                <location x="0" y="0" z="0"/>
+            </instance>
+        </population>
+        <population id="Pop_Mitral_0_4" component="Mitral_0_4" type="populationList" size="1">
+            <instance id="0">
+                <location x="0" y="0" z="0"/>
+            </instance>
+        </population>
+        <population id="Pop_Mitral_0_5" component="Mitral_0_5" type="populationList" size="1">
+            <instance id="0">
+                <location x="0" y="0" z="0"/>
+            </instance>
+        </population>
+        <population id="Pop_Mitral_0_6" component="Mitral_0_6" type="populationList" size="1">
+            <instance id="0">
+                <location x="0" y="0" z="0"/>
+            </instance>
+        </population>
+        <population id="Pop_Mitral_0_7" component="Mitral_0_7" type="populationList" size="1">
+            <instance id="0">
+                <location x="0" y="0" z="0"/>
+            </instance>
+        </population>
+        <population id="Pop_Mitral_0_8" component="Mitral_0_8" type="populationList" size="1">
+            <instance id="0">
+                <location x="0" y="0" z="0"/>
+            </instance>
+        </population>
+        <population id="Pop_Mitral_0_9" component="Mitral_0_9" type="populationList" size="1">
+            <instance id="0">
+                <location x="0" y="0" z="0"/>
+            </instance>
+        </population>
+        <population id="Pop_Mitral_0_10" component="Mitral_0_10" type="populationList" size="1">
+            <instance id="0">
+                <location x="0" y="0" z="0"/>
+            </instance>
+        </population>
+        <population id="Pop_Mitral_0_11" component="Mitral_0_11" type="populationList" size="1">
+            <instance id="0">
+                <location x="0" y="0" z="0"/>
+            </instance>
+        </population>
+        <population id="Pop_Mitral_0_12" component="Mitral_0_12" type="populationList" size="1">
+            <instance id="0">
+                <location x="0" y="0" z="0"/>
+            </instance>
+        </population>
+        <population id="Pop_Mitral_0_13" component="Mitral_0_13" type="populationList" size="1">
+            <instance id="0">
+                <location x="0" y="0" z="0"/>
+            </instance>
+        </population>
+        <population id="Pop_Mitral_0_14" component="Mitral_0_14" type="populationList" size="1">
+            <instance id="0">
+                <location x="0" y="0" z="0"/>
+            </instance>
+        </population>
+        <population id="Pop_Mitral_0_15" component="Mitral_0_15" type="populationList" size="1">
+            <instance id="0">
+                <location x="0" y="0" z="0"/>
+            </instance>
+        </population>
+        <population id="Pop_Mitral_0_16" component="Mitral_0_16" type="populationList" size="1">
+            <instance id="0">
+                <location x="0" y="0" z="0"/>
+            </instance>
+        </population>
+        <population id="Pop_Mitral_0_17" component="Mitral_0_17" type="populationList" size="1">
+            <instance id="0">
+                <location x="0" y="0" z="0"/>
+            </instance>
+        </population>
+        <population id="Pop_Mitral_0_18" component="Mitral_0_18" type="populationList" size="1">
+            <instance id="0">
+                <location x="0" y="0" z="0"/>
+            </instance>
+        </population>
+        <population id="Pop_Mitral_0_19" component="Mitral_0_19" type="populationList" size="1">
+            <instance id="0">
+                <location x="0" y="0" z="0"/>
+            </instance>
+        </population>
+        <population id="Pop_Mitral_0_20" component="Mitral_0_20" type="populationList" size="1">
+            <instance id="0">
+                <location x="0" y="0" z="0"/>
+            </instance>
+        </population>
+        <population id="Pop_Mitral_0_21" component="Mitral_0_21" type="populationList" size="1">
+            <instance id="0">
+                <location x="0" y="0" z="0"/>
+            </instance>
+        </population>
+        <population id="Pop_Mitral_0_22" component="Mitral_0_22" type="populationList" size="1">
+            <instance id="0">
+                <location x="0" y="0" z="0"/>
+            </instance>
+        </population>
+        <population id="Pop_Mitral_0_23" component="Mitral_0_23" type="populationList" size="1">
+            <instance id="0">
+                <location x="0" y="0" z="0"/>
+            </instance>
+        </population>
+        <population id="Pop_Mitral_0_24" component="Mitral_0_24" type="populationList" size="1">
+            <instance id="0">
+                <location x="0" y="0" z="0"/>
+            </instance>
+        </population>
+        <population id="Pop_Mitral_0_25" component="Mitral_0_25" type="populationList" size="1">
+            <instance id="0">
+                <location x="0" y="0" z="0"/>
+            </instance>
+        </population>
+        <population id="Pop_Mitral_0_26" component="Mitral_0_26" type="populationList" size="1">
+            <instance id="0">
+                <location x="0" y="0" z="0"/>
+            </instance>
+        </population>
+        <population id="Pop_Mitral_0_27" component="Mitral_0_27" type="populationList" size="1">
+            <instance id="0">
+                <location x="0" y="0" z="0"/>
+            </instance>
+        </population>
+        <population id="Pop_Mitral_0_28" component="Mitral_0_28" type="populationList" size="1">
+            <instance id="0">
+                <location x="0" y="0" z="0"/>
+            </instance>
+        </population>
+        <population id="Pop_Mitral_0_29" component="Mitral_0_29" type="populationList" size="1">
+            <instance id="0">
+                <location x="0" y="0" z="0"/>
+            </instance>
+        </population>
+        <population id="Pop_Granule_0_120832" component="Granule_0_120832" type="populationList" size="1">
+            <instance id="0">
+                <location x="325" y="1300" z="600"/>
+            </instance>
+        </population>
+        <population id="Pop_Granule_0_89604" component="Granule_0_89604" type="populationList" size="1">
+            <instance id="0">
+                <location x="350" y="1325" z="250"/>
+            </instance>
+        </population>
+        <population id="Pop_Granule_0_73221" component="Granule_0_73221" type="populationList" size="1">
+            <instance id="0">
+                <location x="325" y="1750" z="100"/>
+            </instance>
+        </population>
+        <population id="Pop_Granule_0_96266" component="Granule_0_96266" type="populationList" size="1">
+            <instance id="0">
+                <location x="350" y="1675" z="300"/>
+            </instance>
+        </population>
+        <population id="Pop_Granule_0_72719" component="Granule_0_72719" type="populationList" size="1">
+            <instance id="0">
+                <location x="450" y="1375" z="100"/>
+            </instance>
+        </population>
+        <population id="Pop_Granule_0_98834" component="Granule_0_98834" type="populationList" size="1">
+            <instance id="0">
+                <location x="475" y="1475" z="325"/>
+            </instance>
+        </population>
+        <population id="Pop_Granule_0_113689" component="Granule_0_113689" type="populationList" size="1">
+            <instance id="0">
+                <location x="400" y="1525" z="475"/>
+            </instance>
+        </population>
+        <population id="Pop_Granule_0_106530" component="Granule_0_106530" type="populationList" size="1">
+            <instance id="0">
+                <location x="225" y="1275" z="400"/>
+            </instance>
+        </population>
+        <population id="Pop_Granule_0_86363" component="Granule_0_86363" type="populationList" size="1">
+            <instance id="0">
+                <location x="700" y="1100" z="225"/>
+            </instance>
+        </population>
+        <population id="Pop_Granule_0_64551" component="Granule_0_64551" type="populationList" size="1">
+            <instance id="0">
+                <location x="475" y="1375" z="25"/>
+            </instance>
+        </population>
+        <population id="Pop_Granule_0_95277" component="Granule_0_95277" type="populationList" size="1">
+            <instance id="0">
+                <location x="375" y="1175" z="300"/>
+            </instance>
+        </population>
+        <population id="Pop_Granule_0_112690" component="Granule_0_112690" type="populationList" size="1">
+            <instance id="0">
+                <location x="350" y="900" z="475"/>
+            </instance>
+        </population>
+        <population id="Pop_Granule_0_106038" component="Granule_0_106038" type="populationList" size="1">
+            <instance id="0">
+                <location x="225" y="1000" z="400"/>
+            </instance>
+        </population>
+        <population id="Pop_Granule_0_94775" component="Granule_0_94775" type="populationList" size="1">
+            <instance id="0">
+                <location x="75" y="925" z="300"/>
+            </instance>
+        </population>
+        <population id="Pop_Granule_0_92220" component="Granule_0_92220" type="populationList" size="1">
+            <instance id="0">
+                <location x="200" y="1125" z="275"/>
+            </instance>
+        </population>
+        <population id="Pop_Granule_0_109120" component="Granule_0_109120" type="populationList" size="1">
+            <instance id="0">
+                <location x="175" y="1375" z="425"/>
+            </instance>
+        </population>
+        <population id="Pop_Granule_0_98885" component="Granule_0_98885" type="populationList" size="1">
+            <instance id="0">
+                <location x="525" y="1500" z="325"/>
+            </instance>
+        </population>
+        <population id="Pop_Granule_0_72782" component="Granule_0_72782" type="populationList" size="1">
+            <instance id="0">
+                <location x="375" y="1425" z="100"/>
+            </instance>
+        </population>
+        <population id="Pop_Granule_0_95321" component="Granule_0_95321" type="populationList" size="1">
+            <instance id="0">
+                <location x="200" y="1200" z="300"/>
+            </instance>
+        </population>
+        <population id="Pop_Granule_0_110821" component="Granule_0_110821" type="populationList" size="1">
+            <instance id="0">
+                <location x="375" y="1050" z="450"/>
+            </instance>
+        </population>
+        <population id="Pop_Granule_0_87142" component="Granule_0_87142" type="populationList" size="1">
+            <instance id="0">
+                <location x="-150" y="1625" z="225"/>
+            </instance>
+        </population>
+        <population id="Pop_Granule_0_108817" component="Granule_0_108817" type="populationList" size="1">
+            <instance id="0">
+                <location x="475" y="1200" z="425"/>
+            </instance>
+        </population>
+        <population id="Pop_Granule_0_72302" component="Granule_0_72302" type="populationList" size="1">
+            <instance id="0">
+                <location x="575" y="1050" z="100"/>
+            </instance>
+        </population>
+        <population id="Pop_Granule_0_61559" component="Granule_0_61559" type="populationList" size="1">
+            <instance id="0">
+                <location x="350" y="1150" z="0"/>
+            </instance>
+        </population>
+        <population id="Pop_Granule_0_118904" component="Granule_0_118904" type="populationList" size="1">
+            <instance id="0">
+                <location x="325" y="1650" z="550"/>
+            </instance>
+        </population>
+        <population id="Pop_Granule_0_89724" component="Granule_0_89724" type="populationList" size="1">
+            <instance id="0">
+                <location x="375" y="1400" z="250"/>
+            </instance>
+        </population>
+        <population id="Pop_Granule_0_84107" component="Granule_0_84107" type="populationList" size="1">
+            <instance id="0">
+                <location x="300" y="1525" z="200"/>
+            </instance>
+        </population>
+        <population id="Pop_Granule_0_63634" component="Granule_0_63634" type="populationList" size="1">
+            <instance id="0">
+                <location x="225" y="675" z="25"/>
+            </instance>
+        </population>
+        <population id="Pop_Granule_0_84634" component="Granule_0_84634" type="populationList" size="1">
+            <instance id="0">
+                <location x="100" y="1850" z="200"/>
+            </instance>
+        </population>
+        <population id="Pop_Granule_0_119967" component="Granule_0_119967" type="populationList" size="1">
+            <instance id="0">
+                <location x="375" y="1475" z="575"/>
+            </instance>
+        </population>
+        <population id="Pop_Granule_0_106664" component="Granule_0_106664" type="populationList" size="1">
+            <instance id="0">
+                <location x="200" y="1350" z="400"/>
+            </instance>
+        </population>
+        <population id="Pop_Granule_0_54441" component="Granule_0_54441" type="populationList" size="1">
+            <instance id="0">
+                <location x="450" y="1900" z="-75"/>
+            </instance>
+        </population>
+        <population id="Pop_Granule_0_101037" component="Granule_0_101037" type="populationList" size="1">
+            <instance id="0">
+                <location x="575" y="1150" z="350"/>
+            </instance>
+        </population>
+        <population id="Pop_Granule_0_78002" component="Granule_0_78002" type="populationList" size="1">
+            <instance id="0">
+                <location x="725" y="1175" z="150"/>
+            </instance>
+        </population>
+        <population id="Pop_Granule_0_62142" component="Granule_0_62142" type="populationList" size="1">
+            <instance id="0">
+                <location x="500" y="1600" z="0"/>
+            </instance>
+        </population>
+        <population id="Pop_Granule_0_62145" component="Granule_0_62145" type="populationList" size="1">
+            <instance id="0">
+                <location x="575" y="1600" z="0"/>
+            </instance>
+        </population>
+        <population id="Pop_Granule_0_117451" component="Granule_0_117451" type="populationList" size="1">
+            <instance id="0">
+                <location x="175" y="1675" z="525"/>
+            </instance>
+        </population>
+        <population id="Pop_Granule_0_98512" component="Granule_0_98512" type="populationList" size="1">
+            <instance id="0">
+                <location x="-225" y="1325" z="325"/>
+            </instance>
+        </population>
+        <population id="Pop_Granule_0_113873" component="Granule_0_113873" type="populationList" size="1">
+            <instance id="0">
+                <location x="325" y="1650" z="475"/>
+            </instance>
+        </population>
+        <population id="Pop_Granule_0_87250" component="Granule_0_87250" type="populationList" size="1">
+            <instance id="0">
+                <location x="625" y="1675" z="225"/>
+            </instance>
+        </population>
+        <population id="Pop_Granule_0_109518" component="Granule_0_109518" type="populationList" size="1">
+            <instance id="0">
+                <location x="500" y="1600" z="425"/>
+            </instance>
+        </population>
+        <population id="Pop_Granule_0_106198" component="Granule_0_106198" type="populationList" size="1">
+            <instance id="0">
+                <location x="-200" y="1100" z="400"/>
+            </instance>
+        </population>
+        <population id="Pop_Granule_0_118649" component="Granule_0_118649" type="populationList" size="1">
+            <instance id="0">
+                <location x="150" y="1450" z="550"/>
+            </instance>
+        </population>
+        <population id="Pop_Granule_0_101594" component="Granule_0_101594" type="populationList" size="1">
+            <instance id="0">
+                <location x="-125" y="1450" z="350"/>
+            </instance>
+        </population>
+        <population id="Pop_Granule_0_98523" component="Granule_0_98523" type="populationList" size="1">
+            <instance id="0">
+                <location x="50" y="1325" z="325"/>
+            </instance>
+        </population>
+        <population id="Pop_Granule_0_92389" component="Granule_0_92389" type="populationList" size="1">
+            <instance id="0">
+                <location x="225" y="1225" z="275"/>
+            </instance>
+        </population>
+        <population id="Pop_Granule_0_95978" component="Granule_0_95978" type="populationList" size="1">
+            <instance id="0">
+                <location x="300" y="1525" z="300"/>
+            </instance>
+        </population>
+        <population id="Pop_Granule_0_25836" component="Granule_0_25836" type="populationList" size="1">
+            <instance id="0">
+                <location x="425" y="1700" z="-325"/>
+            </instance>
+        </population>
+        <population id="Pop_Granule_0_92398" component="Granule_0_92398" type="populationList" size="1">
+            <instance id="0">
+                <location x="450" y="1225" z="275"/>
+            </instance>
+        </population>
+        <population id="Pop_Granule_0_112879" component="Granule_0_112879" type="populationList" size="1">
+            <instance id="0">
+                <location x="400" y="1025" z="475"/>
+            </instance>
+        </population>
+        <population id="Pop_Granule_0_118515" component="Granule_0_118515" type="populationList" size="1">
+            <instance id="0">
+                <location x="175" y="1350" z="550"/>
+            </instance>
+        </population>
+        <population id="Pop_Granule_0_101117" component="Granule_0_101117" type="populationList" size="1">
+            <instance id="0">
+                <location x="125" y="1200" z="350"/>
+            </instance>
+        </population>
+        <population id="Pop_Granule_0_107271" component="Granule_0_107271" type="populationList" size="1">
+            <instance id="0">
+                <location x="200" y="1700" z="400"/>
+            </instance>
+        </population>
+        <population id="Pop_Granule_0_104209" component="Granule_0_104209" type="populationList" size="1">
+            <instance id="0">
+                <location x="250" y="1400" z="375"/>
+            </instance>
+        </population>
+        <population id="Pop_Granule_0_95530" component="Granule_0_95530" type="populationList" size="1">
+            <instance id="0">
+                <location x="350" y="1300" z="300"/>
+            </instance>
+        </population>
+        <population id="Pop_Granule_0_104756" component="Granule_0_104756" type="populationList" size="1">
+            <instance id="0">
+                <location x="500" y="1700" z="375"/>
+            </instance>
+        </population>
+        <population id="Pop_Granule_0_83277" component="Granule_0_83277" type="populationList" size="1">
+            <instance id="0">
+                <location x="350" y="950" z="200"/>
+            </instance>
+        </population>
+        <population id="Pop_Granule_0_92478" component="Granule_0_92478" type="populationList" size="1">
+            <instance id="0">
+                <location x="350" y="1275" z="275"/>
+            </instance>
+        </population>
+        <population id="Pop_Granule_0_104259" component="Granule_0_104259" type="populationList" size="1">
+            <instance id="0">
+                <location x="325" y="1425" z="375"/>
+            </instance>
+        </population>
+        <population id="Pop_Granule_0_101704" component="Granule_0_101704" type="populationList" size="1">
+            <instance id="0">
+                <location x="275" y="1500" z="350"/>
+            </instance>
+        </population>
+        <population id="Pop_Granule_0_116279" component="Granule_0_116279" type="populationList" size="1">
+            <instance id="0">
+                <location x="300" y="825" z="525"/>
+            </instance>
+        </population>
+        <population id="Pop_Granule_0_93005" component="Granule_0_93005" type="populationList" size="1">
+            <instance id="0">
+                <location x="200" y="1575" z="275"/>
+            </instance>
+        </population>
+        <population id="Pop_Granule_0_99159" component="Granule_0_99159" type="populationList" size="1">
+            <instance id="0">
+                <location x="375" y="1650" z="325"/>
+            </instance>
+        </population>
+        <population id="Pop_Granule_0_95579" component="Granule_0_95579" type="populationList" size="1">
+            <instance id="0">
+                <location x="300" y="1325" z="300"/>
+            </instance>
+        </population>
+        <population id="Pop_Granule_0_109329" component="Granule_0_109329" type="populationList" size="1">
+            <instance id="0">
+                <location x="0" y="1500" z="425"/>
+            </instance>
+        </population>
+        <population id="Pop_Granule_0_110943" component="Granule_0_110943" type="populationList" size="1">
+            <instance id="0">
+                <location x="325" y="1125" z="450"/>
+            </instance>
+        </population>
+        <population id="Pop_Granule_0_102241" component="Granule_0_102241" type="populationList" size="1">
+            <instance id="0">
+                <location x="500" y="1800" z="350"/>
+            </instance>
+        </population>
+        <population id="Pop_Granule_0_69990" component="Granule_0_69990" type="populationList" size="1">
+            <instance id="0">
+                <location x="600" y="1375" z="75"/>
+            </instance>
+        </population>
+        <population id="Pop_Granule_0_95609" component="Granule_0_95609" type="populationList" size="1">
+            <instance id="0">
+                <location x="-225" y="1350" z="300"/>
+            </instance>
+        </population>
+        <population id="Pop_Granule_0_100735" component="Granule_0_100735" type="populationList" size="1">
+            <instance id="0">
+                <location x="100" y="1000" z="350"/>
+            </instance>
+        </population>
+        <population id="Pop_Granule_0_122244" component="Granule_0_122244" type="populationList" size="1">
+            <instance id="0">
+                <location x="150" y="1225" z="650"/>
+            </instance>
+        </population>
+        <population id="Pop_Granule_0_122760" component="Granule_0_122760" type="populationList" size="1">
+            <instance id="0">
+                <location x="-75" y="1450" z="675"/>
+            </instance>
+        </population>
+        <population id="Pop_Granule_0_51011" component="Granule_0_51011" type="populationList" size="1">
+            <instance id="0">
+                <location x="400" y="1400" z="-100"/>
+            </instance>
+        </population>
+        <population id="Pop_Granule_0_92566" component="Granule_0_92566" type="populationList" size="1">
+            <instance id="0">
+                <location x="450" y="1325" z="275"/>
+            </instance>
+        </population>
+        <population id="Pop_Granule_0_90012" component="Granule_0_90012" type="populationList" size="1">
+            <instance id="0">
+                <location x="450" y="1575" z="250"/>
+            </instance>
+        </population>
+        <population id="Pop_Granule_0_39846" component="Granule_0_39846" type="populationList" size="1">
+            <instance id="0">
+                <location x="500" y="1375" z="-200"/>
+            </instance>
+        </population>
+        <population id="Pop_Granule_0_104875" component="Granule_0_104875" type="populationList" size="1">
+            <instance id="0">
+                <location x="475" y="1775" z="375"/>
+            </instance>
+        </population>
+        <population id="Pop_Granule_0_86957" component="Granule_0_86957" type="populationList" size="1">
+            <instance id="0">
+                <location x="375" y="1500" z="225"/>
+            </instance>
+        </population>
+        <population id="Pop_Granule_0_94639" component="Granule_0_94639" type="populationList" size="1">
+            <instance id="0">
+                <location x="125" y="850" z="300"/>
+            </instance>
+        </population>
+        <population id="Pop_Granule_0_90054" component="Granule_0_90054" type="populationList" size="1">
+            <instance id="0">
+                <location x="400" y="1600" z="250"/>
+            </instance>
+        </population>
+        <population id="Pop_Granule_0_75209" component="Granule_0_75209" type="populationList" size="1">
+            <instance id="0">
+                <location x="375" y="1175" z="125"/>
+            </instance>
+        </population>
+        <population id="Pop_Granule_0_115150" component="Granule_0_115150" type="populationList" size="1">
+            <instance id="0">
+                <location x="500" y="1250" z="500"/>
+            </instance>
+        </population>
+        <population id="Pop_Granule_0_84813" component="Granule_0_84813" type="populationList" size="1">
+            <instance id="0">
+                <location x="350" y="1950" z="200"/>
+            </instance>
+        </population>
+        <population id="Pop_Granule_0_93661" component="Granule_0_93661" type="populationList" size="1">
+            <instance id="0">
+                <location x="75" y="1950" z="275"/>
+            </instance>
+        </population>
+        <population id="Pop_Granule_0_110559" component="Granule_0_110559" type="populationList" size="1">
+            <instance id="0">
+                <location x="-225" y="900" z="450"/>
+            </instance>
+        </population>
+        <population id="Pop_Granule_0_96741" component="Granule_0_96741" type="populationList" size="1">
+            <instance id="0">
+                <location x="-50" y="1975" z="300"/>
+            </instance>
+        </population>
+        <population id="Pop_Granule_0_83709" component="Granule_0_83709" type="populationList" size="1">
+            <instance id="0">
+                <location x="325" y="1250" z="200"/>
+            </instance>
+        </population>
+        <population id="Pop_Granule_0_113654" component="Granule_0_113654" type="populationList" size="1">
+            <instance id="0">
+                <location x="500" y="1500" z="475"/>
+            </instance>
+        </population>
+        <population id="Pop_Granule_0_61947" component="Granule_0_61947" type="populationList" size="1">
+            <instance id="0">
+                <location x="500" y="1450" z="0"/>
+            </instance>
+        </population>
+        <population id="Pop_Granule_0_69631" component="Granule_0_69631" type="populationList" size="1">
+            <instance id="0">
+                <location x="425" y="1100" z="75"/>
+            </instance>
+        </population>
+        
+        
+        <projection id="Proj_461888512_G2M" presynapticPopulation="Pop_Granule_0_72719" postsynapticPopulation="Pop_Mitral_0_5" synapse="FIsyn">
+            <connection id="0" preCellId="../Pop_Granule_0_72719/0/Granule_0_72719" postCellId="../Pop_Mitral_0_5/0/Mitral_0_5" preSegmentId="4" preFractionAlong="0.5" postSegmentId="540" postFractionAlong="0.0692548155784607"/>
+        </projection>
+        <projection id="Proj_461888512_M2G" presynapticPopulation="Pop_Mitral_0_5" postsynapticPopulation="Pop_Granule_0_72719" synapse="AmpaNmdaSynapse">
+            <connection id="0" preCellId="../Pop_Mitral_0_5/0/Mitral_0_5" postCellId="../Pop_Granule_0_72719/0/Granule_0_72719" preSegmentId="540" preFractionAlong="0.0692548155784607" postSegmentId="4" postFractionAlong="0.5"/>
+        </projection>
+        <projection id="Proj_345823232_G2M" presynapticPopulation="Pop_Granule_0_54441" postsynapticPopulation="Pop_Mitral_0_7" synapse="FIsyn">
+            <connection id="0" preCellId="../Pop_Granule_0_54441/0/Granule_0_54441" postCellId="../Pop_Mitral_0_7/0/Mitral_0_7" preSegmentId="4" preFractionAlong="0.5" postSegmentId="454" postFractionAlong="0.6953635811805725"/>
+        </projection>
+        <projection id="Proj_345823232_M2G" presynapticPopulation="Pop_Mitral_0_7" postsynapticPopulation="Pop_Granule_0_54441" synapse="AmpaNmdaSynapse">
+            <connection id="0" preCellId="../Pop_Mitral_0_7/0/Mitral_0_7" postCellId="../Pop_Granule_0_54441/0/Granule_0_54441" preSegmentId="454" preFractionAlong="0.6953635811805725" postSegmentId="4" postFractionAlong="0.5"/>
+        </projection>
+        <projection id="Proj_703836162_G2M" presynapticPopulation="Pop_Granule_0_110821" postsynapticPopulation="Pop_Mitral_0_0" synapse="FIsyn">
+            <connection id="0" preCellId="../Pop_Granule_0_110821/0/Granule_0_110821" postCellId="../Pop_Mitral_0_0/0/Mitral_0_0" preSegmentId="4" preFractionAlong="0.5" postSegmentId="257" postFractionAlong="0.8613035678863525"/>
+        </projection>
+        <projection id="Proj_703836162_M2G" presynapticPopulation="Pop_Mitral_0_0" postsynapticPopulation="Pop_Granule_0_110821" synapse="AmpaNmdaSynapse">
+            <connection id="0" preCellId="../Pop_Mitral_0_0/0/Mitral_0_0" postCellId="../Pop_Granule_0_110821/0/Granule_0_110821" preSegmentId="257" preFractionAlong="0.8613035678863525" postSegmentId="4" postFractionAlong="0.5"/>
+        </projection>
+        <projection id="Proj_553474732_G2M" presynapticPopulation="Pop_Granule_0_87142" postsynapticPopulation="Pop_Mitral_0_22" synapse="FIsyn">
+            <connection id="0" preCellId="../Pop_Granule_0_87142/0/Granule_0_87142" postCellId="../Pop_Mitral_0_22/0/Mitral_0_22" preSegmentId="4" preFractionAlong="0.5" postSegmentId="520" postFractionAlong="0.06358247995376587"/>
+        </projection>
+        <projection id="Proj_553474732_M2G" presynapticPopulation="Pop_Mitral_0_22" postsynapticPopulation="Pop_Granule_0_87142" synapse="AmpaNmdaSynapse">
+            <connection id="0" preCellId="../Pop_Mitral_0_22/0/Mitral_0_22" postCellId="../Pop_Granule_0_87142/0/Granule_0_87142" preSegmentId="520" preFractionAlong="0.06358247995376587" postSegmentId="4" postFractionAlong="0.5"/>
+        </projection>
+        <projection id="Proj_585719812_G2M" presynapticPopulation="Pop_Granule_0_92220" postsynapticPopulation="Pop_Mitral_0_0" synapse="FIsyn">
+            <connection id="0" preCellId="../Pop_Granule_0_92220/0/Granule_0_92220" postCellId="../Pop_Mitral_0_0/0/Mitral_0_0" preSegmentId="4" preFractionAlong="0.5" postSegmentId="292" postFractionAlong="0.18026983737945557"/>
+        </projection>
+        <projection id="Proj_585719812_M2G" presynapticPopulation="Pop_Mitral_0_0" postsynapticPopulation="Pop_Granule_0_92220" synapse="AmpaNmdaSynapse">
+            <connection id="0" preCellId="../Pop_Mitral_0_0/0/Mitral_0_0" postCellId="../Pop_Granule_0_92220/0/Granule_0_92220" preSegmentId="292" preFractionAlong="0.18026983737945557" postSegmentId="4" postFractionAlong="0.5"/>
+        </projection>
+        <projection id="Proj_394724694_G2M" presynapticPopulation="Pop_Granule_0_62142" postsynapticPopulation="Pop_Mitral_0_18" synapse="FIsyn">
+            <connection id="0" preCellId="../Pop_Granule_0_62142/0/Granule_0_62142" postCellId="../Pop_Mitral_0_18/0/Mitral_0_18" preSegmentId="4" preFractionAlong="0.5" postSegmentId="562" postFractionAlong="0.33114443719387054"/>
+        </projection>
+        <projection id="Proj_394724694_M2G" presynapticPopulation="Pop_Mitral_0_18" postsynapticPopulation="Pop_Granule_0_62142" synapse="AmpaNmdaSynapse">
+            <connection id="0" preCellId="../Pop_Mitral_0_18/0/Mitral_0_18" postCellId="../Pop_Granule_0_62142/0/Granule_0_62142" preSegmentId="562" preFractionAlong="0.33114443719387054" postSegmentId="4" postFractionAlong="0.5"/>
+        </projection>
+        <projection id="Proj_324042752_G2M" presynapticPopulation="Pop_Granule_0_51011" postsynapticPopulation="Pop_Mitral_0_9" synapse="FIsyn">
+            <connection id="0" preCellId="../Pop_Granule_0_51011/0/Granule_0_51011" postCellId="../Pop_Mitral_0_9/0/Mitral_0_9" preSegmentId="4" preFractionAlong="0.5" postSegmentId="808" postFractionAlong="0.37068504095077515"/>
+        </projection>
+        <projection id="Proj_324042752_M2G" presynapticPopulation="Pop_Mitral_0_9" postsynapticPopulation="Pop_Granule_0_51011" synapse="AmpaNmdaSynapse">
+            <connection id="0" preCellId="../Pop_Mitral_0_9/0/Mitral_0_9" postCellId="../Pop_Granule_0_51011/0/Granule_0_51011" preSegmentId="808" preFractionAlong="0.37068504095077515" postSegmentId="4" postFractionAlong="0.5"/>
+        </projection>
+        <projection id="Proj_738494472_G2M" presynapticPopulation="Pop_Granule_0_116279" postsynapticPopulation="Pop_Mitral_0_1" synapse="FIsyn">
+            <connection id="0" preCellId="../Pop_Granule_0_116279/0/Granule_0_116279" postCellId="../Pop_Mitral_0_1/0/Mitral_0_1" preSegmentId="4" preFractionAlong="0.5" postSegmentId="33" postFractionAlong="0.18634605407714844"/>
+        </projection>
+        <projection id="Proj_738494472_M2G" presynapticPopulation="Pop_Mitral_0_1" postsynapticPopulation="Pop_Granule_0_116279" synapse="AmpaNmdaSynapse">
+            <connection id="0" preCellId="../Pop_Mitral_0_1/0/Mitral_0_1" postCellId="../Pop_Granule_0_116279/0/Granule_0_116279" preSegmentId="33" preFractionAlong="0.18634605407714844" postSegmentId="4" postFractionAlong="0.5"/>
+        </projection>
+        <projection id="Proj_601080492_G2M" presynapticPopulation="Pop_Granule_0_94639" postsynapticPopulation="Pop_Mitral_0_3" synapse="FIsyn">
+            <connection id="0" preCellId="../Pop_Granule_0_94639/0/Granule_0_94639" postCellId="../Pop_Mitral_0_3/0/Mitral_0_3" preSegmentId="4" preFractionAlong="0.5" postSegmentId="168" postFractionAlong="0.605968713760376"/>
+        </projection>
+        <projection id="Proj_601080492_M2G" presynapticPopulation="Pop_Mitral_0_3" postsynapticPopulation="Pop_Granule_0_94639" synapse="AmpaNmdaSynapse">
+            <connection id="0" preCellId="../Pop_Mitral_0_3/0/Mitral_0_3" postCellId="../Pop_Granule_0_94639/0/Granule_0_94639" preSegmentId="168" preFractionAlong="0.605968713760376" postSegmentId="4" postFractionAlong="0.5"/>
+        </projection>
+        <projection id="Proj_625743882_G2M" presynapticPopulation="Pop_Granule_0_98523" postsynapticPopulation="Pop_Mitral_0_2" synapse="FIsyn">
+            <connection id="0" preCellId="../Pop_Granule_0_98523/0/Granule_0_98523" postCellId="../Pop_Mitral_0_2/0/Mitral_0_2" preSegmentId="4" preFractionAlong="0.5" postSegmentId="374" postFractionAlong="0.04385495185852051"/>
+        </projection>
+        <projection id="Proj_625743882_M2G" presynapticPopulation="Pop_Mitral_0_2" postsynapticPopulation="Pop_Granule_0_98523" synapse="AmpaNmdaSynapse">
+            <connection id="0" preCellId="../Pop_Mitral_0_2/0/Mitral_0_2" postCellId="../Pop_Granule_0_98523/0/Granule_0_98523" preSegmentId="374" preFractionAlong="0.04385495185852051" postSegmentId="4" postFractionAlong="0.5"/>
+        </projection>
+        <projection id="Proj_722048012_G2M" presynapticPopulation="Pop_Granule_0_113689" postsynapticPopulation="Pop_Mitral_0_5" synapse="FIsyn">
+            <connection id="0" preCellId="../Pop_Granule_0_113689/0/Granule_0_113689" postCellId="../Pop_Mitral_0_5/0/Mitral_0_5" preSegmentId="4" preFractionAlong="0.5" postSegmentId="184" postFractionAlong="0.21935343742370605"/>
+        </projection>
+        <projection id="Proj_722048012_M2G" presynapticPopulation="Pop_Mitral_0_5" postsynapticPopulation="Pop_Granule_0_113689" synapse="AmpaNmdaSynapse">
+            <connection id="0" preCellId="../Pop_Mitral_0_5/0/Mitral_0_5" postCellId="../Pop_Granule_0_113689/0/Granule_0_113689" preSegmentId="184" preFractionAlong="0.21935343742370605" postSegmentId="4" postFractionAlong="0.5"/>
+        </projection>
+        <projection id="Proj_715704322_G2M" presynapticPopulation="Pop_Granule_0_112690" postsynapticPopulation="Pop_Mitral_0_1" synapse="FIsyn">
+            <connection id="0" preCellId="../Pop_Granule_0_112690/0/Granule_0_112690" postCellId="../Pop_Mitral_0_1/0/Mitral_0_1" preSegmentId="4" preFractionAlong="0.5" postSegmentId="35" postFractionAlong="0.5688080787658691"/>
+        </projection>
+        <projection id="Proj_715704322_M2G" presynapticPopulation="Pop_Mitral_0_1" postsynapticPopulation="Pop_Granule_0_112690" synapse="AmpaNmdaSynapse">
+            <connection id="0" preCellId="../Pop_Mitral_0_1/0/Mitral_0_1" postCellId="../Pop_Granule_0_112690/0/Granule_0_112690" preSegmentId="35" preFractionAlong="0.5688080787658691" postSegmentId="4" postFractionAlong="0.5"/>
+        </projection>
+        <projection id="Proj_677439502_G2M" presynapticPopulation="Pop_Granule_0_106664" postsynapticPopulation="Pop_Mitral_0_29" synapse="FIsyn">
+            <connection id="0" preCellId="../Pop_Granule_0_106664/0/Granule_0_106664" postCellId="../Pop_Mitral_0_29/0/Mitral_0_29" preSegmentId="4" preFractionAlong="0.5" postSegmentId="170" postFractionAlong="0.7410986423492432"/>
+        </projection>
+        <projection id="Proj_677439502_M2G" presynapticPopulation="Pop_Mitral_0_29" postsynapticPopulation="Pop_Granule_0_106664" synapse="AmpaNmdaSynapse">
+            <connection id="0" preCellId="../Pop_Mitral_0_29/0/Mitral_0_29" postCellId="../Pop_Granule_0_106664/0/Granule_0_106664" preSegmentId="170" preFractionAlong="0.7410986423492432" postSegmentId="4" postFractionAlong="0.5"/>
+        </projection>
+        <projection id="Proj_164181592_G2M" presynapticPopulation="Pop_Granule_0_25836" postsynapticPopulation="Pop_Mitral_0_18" synapse="FIsyn">
+            <connection id="0" preCellId="../Pop_Granule_0_25836/0/Granule_0_25836" postCellId="../Pop_Mitral_0_18/0/Mitral_0_18" preSegmentId="4" preFractionAlong="0.5" postSegmentId="595" postFractionAlong="0.20745575428009033"/>
+        </projection>
+        <projection id="Proj_164181592_M2G" presynapticPopulation="Pop_Mitral_0_18" postsynapticPopulation="Pop_Granule_0_25836" synapse="AmpaNmdaSynapse">
+            <connection id="0" preCellId="../Pop_Mitral_0_18/0/Mitral_0_18" postCellId="../Pop_Granule_0_25836/0/Granule_0_25836" preSegmentId="595" preFractionAlong="0.20745575428009033" postSegmentId="4" postFractionAlong="0.5"/>
+        </projection>
+        <projection id="Proj_465076242_G2M" presynapticPopulation="Pop_Granule_0_73221" postsynapticPopulation="Pop_Mitral_0_8" synapse="FIsyn">
+            <connection id="0" preCellId="../Pop_Granule_0_73221/0/Granule_0_73221" postCellId="../Pop_Mitral_0_8/0/Mitral_0_8" preSegmentId="4" preFractionAlong="0.5" postSegmentId="570" postFractionAlong="0.31404900550842285"/>
+        </projection>
+        <projection id="Proj_465076242_M2G" presynapticPopulation="Pop_Mitral_0_8" postsynapticPopulation="Pop_Granule_0_73221" synapse="AmpaNmdaSynapse">
+            <connection id="0" preCellId="../Pop_Mitral_0_8/0/Mitral_0_8" postCellId="../Pop_Granule_0_73221/0/Granule_0_73221" preSegmentId="570" preFractionAlong="0.31404900550842285" postSegmentId="4" postFractionAlong="0.5"/>
+        </projection>
+        <projection id="Proj_721825812_G2M" presynapticPopulation="Pop_Granule_0_113654" postsynapticPopulation="Pop_Mitral_0_10" synapse="FIsyn">
+            <connection id="0" preCellId="../Pop_Granule_0_113654/0/Granule_0_113654" postCellId="../Pop_Mitral_0_10/0/Mitral_0_10" preSegmentId="4" preFractionAlong="0.5" postSegmentId="209" postFractionAlong="0.8878329545259476"/>
+        </projection>
+        <projection id="Proj_721825812_M2G" presynapticPopulation="Pop_Mitral_0_10" postsynapticPopulation="Pop_Granule_0_113654" synapse="AmpaNmdaSynapse">
+            <connection id="0" preCellId="../Pop_Mitral_0_10/0/Mitral_0_10" postCellId="../Pop_Granule_0_113654/0/Granule_0_113654" preSegmentId="209" preFractionAlong="0.8878329545259476" postSegmentId="4" postFractionAlong="0.5"/>
+        </projection>
+        <projection id="Proj_569108502_G2M" presynapticPopulation="Pop_Granule_0_89604" postsynapticPopulation="Pop_Mitral_0_29" synapse="FIsyn">
+            <connection id="0" preCellId="../Pop_Granule_0_89604/0/Granule_0_89604" postCellId="../Pop_Mitral_0_29/0/Mitral_0_29" preSegmentId="4" preFractionAlong="0.5" postSegmentId="290" postFractionAlong="0.5742520540952682"/>
+        </projection>
+        <projection id="Proj_569108502_M2G" presynapticPopulation="Pop_Mitral_0_29" postsynapticPopulation="Pop_Granule_0_89604" synapse="AmpaNmdaSynapse">
+            <connection id="0" preCellId="../Pop_Mitral_0_29/0/Mitral_0_29" postCellId="../Pop_Granule_0_89604/0/Granule_0_89604" preSegmentId="290" preFractionAlong="0.5742520540952682" postSegmentId="4" postFractionAlong="0.5"/>
+        </projection>
+        <projection id="Proj_410021912_G2M" presynapticPopulation="Pop_Granule_0_64551" postsynapticPopulation="Pop_Mitral_0_25" synapse="FIsyn">
+            <connection id="0" preCellId="../Pop_Granule_0_64551/0/Granule_0_64551" postCellId="../Pop_Mitral_0_25/0/Mitral_0_25" preSegmentId="4" preFractionAlong="0.5" postSegmentId="259" postFractionAlong="0.731407642364502"/>
+        </projection>
+        <projection id="Proj_410021912_M2G" presynapticPopulation="Pop_Mitral_0_25" postsynapticPopulation="Pop_Granule_0_64551" synapse="AmpaNmdaSynapse">
+            <connection id="0" preCellId="../Pop_Mitral_0_25/0/Mitral_0_25" postCellId="../Pop_Granule_0_64551/0/Granule_0_64551" preSegmentId="259" preFractionAlong="0.731407642364502" postSegmentId="4" postFractionAlong="0.5"/>
+        </projection>
+        <projection id="Proj_534202372_G2M" presynapticPopulation="Pop_Granule_0_84107" postsynapticPopulation="Pop_Mitral_0_11" synapse="FIsyn">
+            <connection id="0" preCellId="../Pop_Granule_0_84107/0/Granule_0_84107" postCellId="../Pop_Mitral_0_11/0/Mitral_0_11" preSegmentId="4" preFractionAlong="0.5" postSegmentId="108" postFractionAlong="0.3749532401561737"/>
+        </projection>
+        <projection id="Proj_534202372_M2G" presynapticPopulation="Pop_Mitral_0_11" postsynapticPopulation="Pop_Granule_0_84107" synapse="AmpaNmdaSynapse">
+            <connection id="0" preCellId="../Pop_Mitral_0_11/0/Mitral_0_11" postCellId="../Pop_Granule_0_84107/0/Granule_0_84107" preSegmentId="108" preFractionAlong="0.3749532401561737" postSegmentId="4" postFractionAlong="0.5"/>
+        </projection>
+        <projection id="Proj_704611102_G2M" presynapticPopulation="Pop_Granule_0_110943" postsynapticPopulation="Pop_Mitral_0_24" synapse="FIsyn">
+            <connection id="0" preCellId="../Pop_Granule_0_110943/0/Granule_0_110943" postCellId="../Pop_Mitral_0_24/0/Mitral_0_24" preSegmentId="4" preFractionAlong="0.5" postSegmentId="646" postFractionAlong="0.9484742879867554"/>
+        </projection>
+        <projection id="Proj_704611102_M2G" presynapticPopulation="Pop_Mitral_0_24" postsynapticPopulation="Pop_Granule_0_110943" synapse="AmpaNmdaSynapse">
+            <connection id="0" preCellId="../Pop_Mitral_0_24/0/Mitral_0_24" postCellId="../Pop_Granule_0_110943/0/Granule_0_110943" preSegmentId="646" preFractionAlong="0.9484742879867554" postSegmentId="4" postFractionAlong="0.5"/>
+        </projection>
+        <projection id="Proj_605411362_G2M" presynapticPopulation="Pop_Granule_0_95321" postsynapticPopulation="Pop_Mitral_0_20" synapse="FIsyn">
+            <connection id="0" preCellId="../Pop_Granule_0_95321/0/Granule_0_95321" postCellId="../Pop_Mitral_0_20/0/Mitral_0_20" preSegmentId="4" preFractionAlong="0.5" postSegmentId="284" postFractionAlong="0.1710195541381836"/>
+        </projection>
+        <projection id="Proj_605411362_M2G" presynapticPopulation="Pop_Mitral_0_20" postsynapticPopulation="Pop_Granule_0_95321" synapse="AmpaNmdaSynapse">
+            <connection id="0" preCellId="../Pop_Mitral_0_20/0/Mitral_0_20" postCellId="../Pop_Granule_0_95321/0/Granule_0_95321" preSegmentId="284" preFractionAlong="0.1710195541381836" postSegmentId="4" postFractionAlong="0.5"/>
+        </projection>
+        <projection id="Proj_571965782_G2M" presynapticPopulation="Pop_Granule_0_90054" postsynapticPopulation="Pop_Mitral_0_7" synapse="FIsyn">
+            <connection id="0" preCellId="../Pop_Granule_0_90054/0/Granule_0_90054" postCellId="../Pop_Mitral_0_7/0/Mitral_0_7" preSegmentId="4" preFractionAlong="0.5" postSegmentId="201" postFractionAlong="0.0371793657541275"/>
+        </projection>
+        <projection id="Proj_571965782_M2G" presynapticPopulation="Pop_Mitral_0_7" postsynapticPopulation="Pop_Granule_0_90054" synapse="AmpaNmdaSynapse">
+            <connection id="0" preCellId="../Pop_Mitral_0_7/0/Mitral_0_7" postCellId="../Pop_Granule_0_90054/0/Granule_0_90054" preSegmentId="201" preFractionAlong="0.0371793657541275" postSegmentId="4" postFractionAlong="0.5"/>
+        </projection>
+        <projection id="Proj_495435782_G2M" presynapticPopulation="Pop_Granule_0_78002" postsynapticPopulation="Pop_Mitral_0_27" synapse="FIsyn">
+            <connection id="0" preCellId="../Pop_Granule_0_78002/0/Granule_0_78002" postCellId="../Pop_Mitral_0_27/0/Mitral_0_27" preSegmentId="4" preFractionAlong="0.5" postSegmentId="568" postFractionAlong="0.10652923583984375"/>
+        </projection>
+        <projection id="Proj_495435782_M2G" presynapticPopulation="Pop_Mitral_0_27" postsynapticPopulation="Pop_Granule_0_78002" synapse="AmpaNmdaSynapse">
+            <connection id="0" preCellId="../Pop_Mitral_0_27/0/Mitral_0_27" postCellId="../Pop_Granule_0_78002/0/Granule_0_78002" preSegmentId="568" preFractionAlong="0.10652923583984375" postSegmentId="4" postFractionAlong="0.5"/>
+        </projection>
+        <projection id="Proj_691110912_G2M" presynapticPopulation="Pop_Granule_0_108817" postsynapticPopulation="Pop_Mitral_0_15" synapse="FIsyn">
+            <connection id="0" preCellId="../Pop_Granule_0_108817/0/Granule_0_108817" postCellId="../Pop_Mitral_0_15/0/Mitral_0_15" preSegmentId="4" preFractionAlong="0.5" postSegmentId="682" postFractionAlong="0.8018419593572617"/>
+        </projection>
+        <projection id="Proj_691110912_M2G" presynapticPopulation="Pop_Mitral_0_15" postsynapticPopulation="Pop_Granule_0_108817" synapse="AmpaNmdaSynapse">
+            <connection id="0" preCellId="../Pop_Mitral_0_15/0/Mitral_0_15" postCellId="../Pop_Granule_0_108817/0/Granule_0_108817" preSegmentId="682" preFractionAlong="0.8018419593572617" postSegmentId="4" postFractionAlong="0.5"/>
+        </projection>
+        <projection id="Proj_590704642_G2M" presynapticPopulation="Pop_Granule_0_93005" postsynapticPopulation="Pop_Mitral_0_8" synapse="FIsyn">
+            <connection id="0" preCellId="../Pop_Granule_0_93005/0/Granule_0_93005" postCellId="../Pop_Mitral_0_8/0/Mitral_0_8" preSegmentId="4" preFractionAlong="0.5" postSegmentId="616" postFractionAlong="0.6831555366516113"/>
+        </projection>
+        <projection id="Proj_590704642_M2G" presynapticPopulation="Pop_Mitral_0_8" postsynapticPopulation="Pop_Granule_0_93005" synapse="AmpaNmdaSynapse">
+            <connection id="0" preCellId="../Pop_Mitral_0_8/0/Mitral_0_8" postCellId="../Pop_Granule_0_93005/0/Granule_0_93005" preSegmentId="616" preFractionAlong="0.6831555366516113" postSegmentId="4" postFractionAlong="0.5"/>
+        </projection>
+        <projection id="Proj_755163272_G2M" presynapticPopulation="Pop_Granule_0_118904" postsynapticPopulation="Pop_Mitral_0_6" synapse="FIsyn">
+            <connection id="0" preCellId="../Pop_Granule_0_118904/0/Granule_0_118904" postCellId="../Pop_Mitral_0_6/0/Mitral_0_6" preSegmentId="4" preFractionAlong="0.5" postSegmentId="29" postFractionAlong="0.524660050868988"/>
+        </projection>
+        <projection id="Proj_755163272_M2G" presynapticPopulation="Pop_Mitral_0_6" postsynapticPopulation="Pop_Granule_0_118904" synapse="AmpaNmdaSynapse">
+            <connection id="0" preCellId="../Pop_Mitral_0_6/0/Mitral_0_6" postCellId="../Pop_Granule_0_118904/0/Granule_0_118904" preSegmentId="29" preFractionAlong="0.524660050868988" postSegmentId="4" postFractionAlong="0.5"/>
+        </projection>
+        <projection id="Proj_694362122_G2M" presynapticPopulation="Pop_Granule_0_109329" postsynapticPopulation="Pop_Mitral_0_16" synapse="FIsyn">
+            <connection id="0" preCellId="../Pop_Granule_0_109329/0/Granule_0_109329" postCellId="../Pop_Mitral_0_16/0/Mitral_0_16" preSegmentId="4" preFractionAlong="0.5" postSegmentId="818" postFractionAlong="0.45134711265563965"/>
+        </projection>
+        <projection id="Proj_694362122_M2G" presynapticPopulation="Pop_Mitral_0_16" postsynapticPopulation="Pop_Granule_0_109329" synapse="AmpaNmdaSynapse">
+            <connection id="0" preCellId="../Pop_Mitral_0_16/0/Mitral_0_16" postCellId="../Pop_Granule_0_109329/0/Granule_0_109329" preSegmentId="818" preFractionAlong="0.45134711265563965" postSegmentId="4" postFractionAlong="0.5"/>
+        </projection>
+        <projection id="Proj_645943302_G2M" presynapticPopulation="Pop_Granule_0_101704" postsynapticPopulation="Pop_Mitral_0_9" synapse="FIsyn">
+            <connection id="0" preCellId="../Pop_Granule_0_101704/0/Granule_0_101704" postCellId="../Pop_Mitral_0_9/0/Mitral_0_9" preSegmentId="4" preFractionAlong="0.5" postSegmentId="620" postFractionAlong="0.024935424327850342"/>
+        </projection>
+        <projection id="Proj_645943302_M2G" presynapticPopulation="Pop_Mitral_0_9" postsynapticPopulation="Pop_Granule_0_101704" synapse="AmpaNmdaSynapse">
+            <connection id="0" preCellId="../Pop_Mitral_0_9/0/Mitral_0_9" postCellId="../Pop_Granule_0_101704/0/Granule_0_101704" preSegmentId="620" preFractionAlong="0.024935424327850342" postSegmentId="4" postFractionAlong="0.5"/>
+        </projection>
+        <projection id="Proj_662167562_G2M" presynapticPopulation="Pop_Granule_0_104259" postsynapticPopulation="Pop_Mitral_0_10" synapse="FIsyn">
+            <connection id="0" preCellId="../Pop_Granule_0_104259/0/Granule_0_104259" postCellId="../Pop_Mitral_0_10/0/Mitral_0_10" preSegmentId="4" preFractionAlong="0.5" postSegmentId="218" postFractionAlong="0.5273845195770264"/>
+        </projection>
+        <projection id="Proj_662167562_M2G" presynapticPopulation="Pop_Mitral_0_10" postsynapticPopulation="Pop_Granule_0_104259" synapse="AmpaNmdaSynapse">
+            <connection id="0" preCellId="../Pop_Mitral_0_10/0/Mitral_0_10" postCellId="../Pop_Granule_0_104259/0/Granule_0_104259" preSegmentId="218" preFractionAlong="0.5273845195770264" postSegmentId="4" postFractionAlong="0.5"/>
+        </projection>
+        <projection id="Proj_629782532_G2M" presynapticPopulation="Pop_Granule_0_99159" postsynapticPopulation="Pop_Mitral_0_7" synapse="FIsyn">
+            <connection id="0" preCellId="../Pop_Granule_0_99159/0/Granule_0_99159" postCellId="../Pop_Mitral_0_7/0/Mitral_0_7" preSegmentId="4" preFractionAlong="0.5" postSegmentId="220" postFractionAlong="0.2518310546875"/>
+        </projection>
+        <projection id="Proj_629782532_M2G" presynapticPopulation="Pop_Mitral_0_7" postsynapticPopulation="Pop_Granule_0_99159" synapse="AmpaNmdaSynapse">
+            <connection id="0" preCellId="../Pop_Mitral_0_7/0/Mitral_0_7" postCellId="../Pop_Granule_0_99159/0/Granule_0_99159" preSegmentId="220" preFractionAlong="0.2518310546875" postSegmentId="4" postFractionAlong="0.5"/>
+        </projection>
+        <projection id="Proj_611412032_G2M" presynapticPopulation="Pop_Granule_0_96266" postsynapticPopulation="Pop_Mitral_0_12" synapse="FIsyn">
+            <connection id="0" preCellId="../Pop_Granule_0_96266/0/Granule_0_96266" postCellId="../Pop_Mitral_0_12/0/Mitral_0_12" preSegmentId="4" preFractionAlong="0.5" postSegmentId="26" postFractionAlong="0.6944971084594727"/>
+        </projection>
+        <projection id="Proj_611412032_M2G" presynapticPopulation="Pop_Mitral_0_12" postsynapticPopulation="Pop_Granule_0_96266" synapse="AmpaNmdaSynapse">
+            <connection id="0" preCellId="../Pop_Mitral_0_12/0/Mitral_0_12" postCellId="../Pop_Granule_0_96266/0/Granule_0_96266" preSegmentId="26" preFractionAlong="0.6944971084594727" postSegmentId="4" postFractionAlong="0.5"/>
+        </projection>
+        <projection id="Proj_649353282_G2M" presynapticPopulation="Pop_Granule_0_102241" postsynapticPopulation="Pop_Mitral_0_12" synapse="FIsyn">
+            <connection id="0" preCellId="../Pop_Granule_0_102241/0/Granule_0_102241" postCellId="../Pop_Mitral_0_12/0/Mitral_0_12" preSegmentId="4" preFractionAlong="0.5" postSegmentId="31" postFractionAlong="0.5613603591918945"/>
+        </projection>
+        <projection id="Proj_649353282_M2G" presynapticPopulation="Pop_Mitral_0_12" postsynapticPopulation="Pop_Granule_0_102241" synapse="AmpaNmdaSynapse">
+            <connection id="0" preCellId="../Pop_Mitral_0_12/0/Mitral_0_12" postCellId="../Pop_Granule_0_102241/0/Granule_0_102241" preSegmentId="31" preFractionAlong="0.5613603591918945" postSegmentId="4" postFractionAlong="0.5"/>
+        </projection>
+        <projection id="Proj_609583172_G2M" presynapticPopulation="Pop_Granule_0_95978" postsynapticPopulation="Pop_Mitral_0_6" synapse="FIsyn">
+            <connection id="0" preCellId="../Pop_Granule_0_95978/0/Granule_0_95978" postCellId="../Pop_Mitral_0_6/0/Mitral_0_6" preSegmentId="4" preFractionAlong="0.5" postSegmentId="32" postFractionAlong="0.5892570614814758"/>
+        </projection>
+        <projection id="Proj_609583172_M2G" presynapticPopulation="Pop_Mitral_0_6" postsynapticPopulation="Pop_Granule_0_95978" synapse="AmpaNmdaSynapse">
+            <connection id="0" preCellId="../Pop_Mitral_0_6/0/Mitral_0_6" postCellId="../Pop_Granule_0_95978/0/Granule_0_95978" preSegmentId="32" preFractionAlong="0.5892570614814758" postSegmentId="4" postFractionAlong="0.5"/>
+        </projection>
+        <projection id="Proj_661850112_G2M" presynapticPopulation="Pop_Granule_0_104209" postsynapticPopulation="Pop_Mitral_0_15" synapse="FIsyn">
+            <connection id="0" preCellId="../Pop_Granule_0_104209/0/Granule_0_104209" postCellId="../Pop_Mitral_0_15/0/Mitral_0_15" preSegmentId="4" preFractionAlong="0.5" postSegmentId="287" postFractionAlong="0.7402958273887634"/>
+        </projection>
+        <projection id="Proj_661850112_M2G" presynapticPopulation="Pop_Mitral_0_15" postsynapticPopulation="Pop_Granule_0_104209" synapse="AmpaNmdaSynapse">
+            <connection id="0" preCellId="../Pop_Mitral_0_15/0/Mitral_0_15" postCellId="../Pop_Granule_0_104209/0/Granule_0_104209" preSegmentId="287" preFractionAlong="0.7402958273887634" postSegmentId="4" postFractionAlong="0.5"/>
+        </projection>
+        <projection id="Proj_695562252_G2M" presynapticPopulation="Pop_Granule_0_109518" postsynapticPopulation="Pop_Mitral_0_14" synapse="FIsyn">
+            <connection id="0" preCellId="../Pop_Granule_0_109518/0/Granule_0_109518" postCellId="../Pop_Mitral_0_14/0/Mitral_0_14" preSegmentId="4" preFractionAlong="0.5" postSegmentId="471" postFractionAlong="0.6401218771934509"/>
+        </projection>
+        <projection id="Proj_695562252_M2G" presynapticPopulation="Pop_Mitral_0_14" postsynapticPopulation="Pop_Granule_0_109518" synapse="AmpaNmdaSynapse">
+            <connection id="0" preCellId="../Pop_Mitral_0_14/0/Mitral_0_14" postCellId="../Pop_Granule_0_109518/0/Granule_0_109518" preSegmentId="471" preFractionAlong="0.6401218771934509" postSegmentId="4" postFractionAlong="0.5"/>
+        </projection>
+        <projection id="Proj_625674242_G2M" presynapticPopulation="Pop_Granule_0_98512" postsynapticPopulation="Pop_Mitral_0_23" synapse="FIsyn">
+            <connection id="0" preCellId="../Pop_Granule_0_98512/0/Granule_0_98512" postCellId="../Pop_Mitral_0_23/0/Mitral_0_23" preSegmentId="4" preFractionAlong="0.5" postSegmentId="285" postFractionAlong="0.4356123208999634"/>
+        </projection>
+        <projection id="Proj_625674242_M2G" presynapticPopulation="Pop_Mitral_0_23" postsynapticPopulation="Pop_Granule_0_98512" synapse="AmpaNmdaSynapse">
+            <connection id="0" preCellId="../Pop_Mitral_0_23/0/Mitral_0_23" postCellId="../Pop_Granule_0_98512/0/Granule_0_98512" preSegmentId="285" preFractionAlong="0.4356123208999634" postSegmentId="4" postFractionAlong="0.5"/>
+        </projection>
+        <projection id="Proj_702172502_G2M" presynapticPopulation="Pop_Granule_0_110559" postsynapticPopulation="Pop_Mitral_0_4" synapse="FIsyn">
+            <connection id="0" preCellId="../Pop_Granule_0_110559/0/Granule_0_110559" postCellId="../Pop_Mitral_0_4/0/Mitral_0_4" preSegmentId="4" preFractionAlong="0.5" postSegmentId="59" postFractionAlong="0.8014361262321472"/>
+        </projection>
+        <projection id="Proj_702172502_M2G" presynapticPopulation="Pop_Mitral_0_4" postsynapticPopulation="Pop_Granule_0_110559" synapse="AmpaNmdaSynapse">
+            <connection id="0" preCellId="../Pop_Mitral_0_4/0/Mitral_0_4" postCellId="../Pop_Granule_0_110559/0/Granule_0_110559" preSegmentId="59" preFractionAlong="0.8014361262321472" postSegmentId="4" postFractionAlong="0.5"/>
+        </projection>
+        <projection id="Proj_554160472_G2M" presynapticPopulation="Pop_Granule_0_87250" postsynapticPopulation="Pop_Mitral_0_16" synapse="FIsyn">
+            <connection id="0" preCellId="../Pop_Granule_0_87250/0/Granule_0_87250" postCellId="../Pop_Mitral_0_16/0/Mitral_0_16" preSegmentId="4" preFractionAlong="0.5" postSegmentId="237" postFractionAlong="0.06263776868581772"/>
+        </projection>
+        <projection id="Proj_554160472_M2G" presynapticPopulation="Pop_Mitral_0_16" postsynapticPopulation="Pop_Granule_0_87250" synapse="AmpaNmdaSynapse">
+            <connection id="0" preCellId="../Pop_Mitral_0_16/0/Mitral_0_16" postCellId="../Pop_Granule_0_87250/0/Granule_0_87250" preSegmentId="237" preFractionAlong="0.06263776868581772" postSegmentId="4" postFractionAlong="0.5"/>
+        </projection>
+        <projection id="Proj_673464322_G2M" presynapticPopulation="Pop_Granule_0_106038" postsynapticPopulation="Pop_Mitral_0_21" synapse="FIsyn">
+            <connection id="0" preCellId="../Pop_Granule_0_106038/0/Granule_0_106038" postCellId="../Pop_Mitral_0_21/0/Mitral_0_21" preSegmentId="4" preFractionAlong="0.5" postSegmentId="567" postFractionAlong="0.21435308456420898"/>
+        </projection>
+        <projection id="Proj_673464322_M2G" presynapticPopulation="Pop_Mitral_0_21" postsynapticPopulation="Pop_Granule_0_106038" synapse="AmpaNmdaSynapse">
+            <connection id="0" preCellId="../Pop_Mitral_0_21/0/Mitral_0_21" postCellId="../Pop_Granule_0_106038/0/Granule_0_106038" preSegmentId="567" preFractionAlong="0.21435308456420898" postSegmentId="4" postFractionAlong="0.5"/>
+        </projection>
+        <projection id="Proj_393486522_G2M" presynapticPopulation="Pop_Granule_0_61947" postsynapticPopulation="Pop_Mitral_0_26" synapse="FIsyn">
+            <connection id="0" preCellId="../Pop_Granule_0_61947/0/Granule_0_61947" postCellId="../Pop_Mitral_0_26/0/Mitral_0_26" preSegmentId="4" preFractionAlong="0.5" postSegmentId="127" postFractionAlong="0.24106836318969727"/>
+        </projection>
+        <projection id="Proj_393486522_M2G" presynapticPopulation="Pop_Mitral_0_26" postsynapticPopulation="Pop_Granule_0_61947" synapse="AmpaNmdaSynapse">
+            <connection id="0" preCellId="../Pop_Mitral_0_26/0/Mitral_0_26" postCellId="../Pop_Granule_0_61947/0/Granule_0_61947" preSegmentId="127" preFractionAlong="0.24106836318969727" postSegmentId="4" postFractionAlong="0.5"/>
+        </projection>
+        <projection id="Proj_594870272_G2M" presynapticPopulation="Pop_Granule_0_93661" postsynapticPopulation="Pop_Mitral_0_11" synapse="FIsyn">
+            <connection id="0" preCellId="../Pop_Granule_0_93661/0/Granule_0_93661" postCellId="../Pop_Mitral_0_11/0/Mitral_0_11" preSegmentId="4" preFractionAlong="0.5" postSegmentId="455" postFractionAlong="0.7768099904060364"/>
+        </projection>
+        <projection id="Proj_594870272_M2G" presynapticPopulation="Pop_Mitral_0_11" postsynapticPopulation="Pop_Granule_0_93661" synapse="AmpaNmdaSynapse">
+            <connection id="0" preCellId="../Pop_Mitral_0_11/0/Mitral_0_11" postCellId="../Pop_Granule_0_93661/0/Granule_0_93661" preSegmentId="455" preFractionAlong="0.7768099904060364" postSegmentId="4" postFractionAlong="0.5"/>
+        </projection>
+        <projection id="Proj_731325442_G2M" presynapticPopulation="Pop_Granule_0_115150" postsynapticPopulation="Pop_Mitral_0_13" synapse="FIsyn">
+            <connection id="0" preCellId="../Pop_Granule_0_115150/0/Granule_0_115150" postCellId="../Pop_Mitral_0_13/0/Mitral_0_13" preSegmentId="4" preFractionAlong="0.5" postSegmentId="489" postFractionAlong="0.9787384420633316"/>
+        </projection>
+        <projection id="Proj_731325442_M2G" presynapticPopulation="Pop_Mitral_0_13" postsynapticPopulation="Pop_Granule_0_115150" synapse="AmpaNmdaSynapse">
+            <connection id="0" preCellId="../Pop_Mitral_0_13/0/Mitral_0_13" postCellId="../Pop_Granule_0_115150/0/Granule_0_115150" preSegmentId="489" preFractionAlong="0.9787384420633316" postSegmentId="4" postFractionAlong="0.5"/>
+        </projection>
+        <projection id="Proj_753544192_G2M" presynapticPopulation="Pop_Granule_0_118649" postsynapticPopulation="Pop_Mitral_0_23" synapse="FIsyn">
+            <connection id="0" preCellId="../Pop_Granule_0_118649/0/Granule_0_118649" postCellId="../Pop_Mitral_0_23/0/Mitral_0_23" preSegmentId="4" preFractionAlong="0.5" postSegmentId="114" postFractionAlong="0.04628324508666992"/>
+        </projection>
+        <projection id="Proj_753544192_M2G" presynapticPopulation="Pop_Mitral_0_23" postsynapticPopulation="Pop_Granule_0_118649" synapse="AmpaNmdaSynapse">
+            <connection id="0" preCellId="../Pop_Mitral_0_23/0/Mitral_0_23" postCellId="../Pop_Granule_0_118649/0/Granule_0_118649" preSegmentId="114" preFractionAlong="0.04628324508666992" postSegmentId="4" postFractionAlong="0.5"/>
+        </projection>
+        <projection id="Proj_552299884_G2M" presynapticPopulation="Pop_Granule_0_86957" postsynapticPopulation="Pop_Mitral_0_12" synapse="FIsyn">
+            <connection id="0" preCellId="../Pop_Granule_0_86957/0/Granule_0_86957" postCellId="../Pop_Mitral_0_12/0/Mitral_0_12" preSegmentId="4" preFractionAlong="0.5" postSegmentId="33" postFractionAlong="0.4114055633544922"/>
+        </projection>
+        <projection id="Proj_552299884_M2G" presynapticPopulation="Pop_Mitral_0_12" postsynapticPopulation="Pop_Granule_0_86957" synapse="AmpaNmdaSynapse">
+            <connection id="0" preCellId="../Pop_Mitral_0_12/0/Mitral_0_12" postCellId="../Pop_Granule_0_86957/0/Granule_0_86957" preSegmentId="33" preFractionAlong="0.4114055633544922" postSegmentId="4" postFractionAlong="0.5"/>
+        </projection>
+        <projection id="Proj_761913362_G2M" presynapticPopulation="Pop_Granule_0_119967" postsynapticPopulation="Pop_Mitral_0_10" synapse="FIsyn">
+            <connection id="0" preCellId="../Pop_Granule_0_119967/0/Granule_0_119967" postCellId="../Pop_Mitral_0_10/0/Mitral_0_10" preSegmentId="4" preFractionAlong="0.5" postSegmentId="198" postFractionAlong="0.33765077590942383"/>
+        </projection>
+        <projection id="Proj_761913362_M2G" presynapticPopulation="Pop_Mitral_0_10" postsynapticPopulation="Pop_Granule_0_119967" synapse="AmpaNmdaSynapse">
+            <connection id="0" preCellId="../Pop_Mitral_0_10/0/Mitral_0_10" postCellId="../Pop_Granule_0_119967/0/Granule_0_119967" preSegmentId="198" preFractionAlong="0.33765077590942383" postSegmentId="4" postFractionAlong="0.5"/>
+        </projection>
+        <projection id="Proj_776372232_G2M" presynapticPopulation="Pop_Granule_0_122244" postsynapticPopulation="Pop_Mitral_0_2" synapse="FIsyn">
+            <connection id="0" preCellId="../Pop_Granule_0_122244/0/Granule_0_122244" postCellId="../Pop_Mitral_0_2/0/Mitral_0_2" preSegmentId="4" preFractionAlong="0.5" postSegmentId="332" postFractionAlong="0.3878992199897766"/>
+        </projection>
+        <projection id="Proj_776372232_M2G" presynapticPopulation="Pop_Mitral_0_2" postsynapticPopulation="Pop_Granule_0_122244" synapse="AmpaNmdaSynapse">
+            <connection id="0" preCellId="../Pop_Mitral_0_2/0/Mitral_0_2" postCellId="../Pop_Granule_0_122244/0/Granule_0_122244" preSegmentId="332" preFractionAlong="0.3878992199897766" postSegmentId="4" postFractionAlong="0.5"/>
+        </projection>
+        <projection id="Proj_391022602_G2M" presynapticPopulation="Pop_Granule_0_61559" postsynapticPopulation="Pop_Mitral_0_14" synapse="FIsyn">
+            <connection id="0" preCellId="../Pop_Granule_0_61559/0/Granule_0_61559" postCellId="../Pop_Mitral_0_14/0/Mitral_0_14" preSegmentId="4" preFractionAlong="0.5" postSegmentId="647" postFractionAlong="0.035039544105529785"/>
+        </projection>
+        <projection id="Proj_391022602_M2G" presynapticPopulation="Pop_Mitral_0_14" postsynapticPopulation="Pop_Granule_0_61559" synapse="AmpaNmdaSynapse">
+            <connection id="0" preCellId="../Pop_Mitral_0_14/0/Mitral_0_14" postCellId="../Pop_Granule_0_61559/0/Granule_0_61559" preSegmentId="647" preFractionAlong="0.035039544105529785" postSegmentId="4" postFractionAlong="0.5"/>
+        </projection>
+        <projection id="Proj_462288762_G2M" presynapticPopulation="Pop_Granule_0_72782" postsynapticPopulation="Pop_Mitral_0_25" synapse="FIsyn">
+            <connection id="0" preCellId="../Pop_Granule_0_72782/0/Granule_0_72782" postCellId="../Pop_Mitral_0_25/0/Mitral_0_25" preSegmentId="4" preFractionAlong="0.5" postSegmentId="298" postFractionAlong="0.2249908447265625"/>
+        </projection>
+        <projection id="Proj_462288762_M2G" presynapticPopulation="Pop_Mitral_0_25" postsynapticPopulation="Pop_Granule_0_72782" synapse="AmpaNmdaSynapse">
+            <connection id="0" preCellId="../Pop_Mitral_0_25/0/Mitral_0_25" postCellId="../Pop_Granule_0_72782/0/Granule_0_72782" preSegmentId="298" preFractionAlong="0.2249908447265625" postSegmentId="4" postFractionAlong="0.5"/>
+        </projection>
+        <projection id="Proj_681293832_G2M" presynapticPopulation="Pop_Granule_0_107271" postsynapticPopulation="Pop_Mitral_0_17" synapse="FIsyn">
+            <connection id="0" preCellId="../Pop_Granule_0_107271/0/Granule_0_107271" postCellId="../Pop_Mitral_0_17/0/Mitral_0_17" preSegmentId="4" preFractionAlong="0.5" postSegmentId="282" postFractionAlong="0.235222396440804"/>
+        </projection>
+        <projection id="Proj_681293832_M2G" presynapticPopulation="Pop_Mitral_0_17" postsynapticPopulation="Pop_Granule_0_107271" synapse="AmpaNmdaSynapse">
+            <connection id="0" preCellId="../Pop_Mitral_0_17/0/Mitral_0_17" postCellId="../Pop_Granule_0_107271/0/Granule_0_107271" preSegmentId="282" preFractionAlong="0.235222396440804" postSegmentId="4" postFractionAlong="0.5"/>
+        </projection>
+        <projection id="Proj_693035012_G2M" presynapticPopulation="Pop_Granule_0_109120" postsynapticPopulation="Pop_Mitral_0_20" synapse="FIsyn">
+            <connection id="0" preCellId="../Pop_Granule_0_109120/0/Granule_0_109120" postCellId="../Pop_Mitral_0_20/0/Mitral_0_20" preSegmentId="4" preFractionAlong="0.5" postSegmentId="110" postFractionAlong="0.05018801614642143"/>
+        </projection>
+        <projection id="Proj_693035012_M2G" presynapticPopulation="Pop_Mitral_0_20" postsynapticPopulation="Pop_Granule_0_109120" synapse="AmpaNmdaSynapse">
+            <connection id="0" preCellId="../Pop_Mitral_0_20/0/Mitral_0_20" postCellId="../Pop_Granule_0_109120/0/Granule_0_109120" preSegmentId="110" preFractionAlong="0.05018801614642143" postSegmentId="4" postFractionAlong="0.5"/>
+        </projection>
+        <projection id="Proj_665323522_G2M" presynapticPopulation="Pop_Granule_0_104756" postsynapticPopulation="Pop_Mitral_0_11" synapse="FIsyn">
+            <connection id="0" preCellId="../Pop_Granule_0_104756/0/Granule_0_104756" postCellId="../Pop_Mitral_0_11/0/Mitral_0_11" preSegmentId="4" preFractionAlong="0.5" postSegmentId="331" postFractionAlong="0.497257512062788"/>
+        </projection>
+        <projection id="Proj_665323522_M2G" presynapticPopulation="Pop_Mitral_0_11" postsynapticPopulation="Pop_Granule_0_104756" synapse="AmpaNmdaSynapse">
+            <connection id="0" preCellId="../Pop_Mitral_0_11/0/Mitral_0_11" postCellId="../Pop_Granule_0_104756/0/Granule_0_104756" preSegmentId="331" preFractionAlong="0.497257512062788" postSegmentId="4" postFractionAlong="0.5"/>
+        </projection>
+        <projection id="Proj_666079232_G2M" presynapticPopulation="Pop_Granule_0_104875" postsynapticPopulation="Pop_Mitral_0_17" synapse="FIsyn">
+            <connection id="0" preCellId="../Pop_Granule_0_104875/0/Granule_0_104875" postCellId="../Pop_Mitral_0_17/0/Mitral_0_17" preSegmentId="4" preFractionAlong="0.5" postSegmentId="162" postFractionAlong="0.09708806872367859"/>
+        </projection>
+        <projection id="Proj_666079232_M2G" presynapticPopulation="Pop_Mitral_0_17" postsynapticPopulation="Pop_Granule_0_104875" synapse="AmpaNmdaSynapse">
+            <connection id="0" preCellId="../Pop_Mitral_0_17/0/Mitral_0_17" postCellId="../Pop_Granule_0_104875/0/Granule_0_104875" preSegmentId="162" preFractionAlong="0.09708806872367859" postSegmentId="4" postFractionAlong="0.5"/>
+        </projection>
+        <projection id="Proj_605131912_G2M" presynapticPopulation="Pop_Granule_0_95277" postsynapticPopulation="Pop_Mitral_0_15" synapse="FIsyn">
+            <connection id="0" preCellId="../Pop_Granule_0_95277/0/Granule_0_95277" postCellId="../Pop_Mitral_0_15/0/Mitral_0_15" preSegmentId="4" preFractionAlong="0.5" postSegmentId="329" postFractionAlong="0.9955400824546814"/>
+        </projection>
+        <projection id="Proj_605131912_M2G" presynapticPopulation="Pop_Mitral_0_15" postsynapticPopulation="Pop_Granule_0_95277" synapse="AmpaNmdaSynapse">
+            <connection id="0" preCellId="../Pop_Mitral_0_15/0/Mitral_0_15" postCellId="../Pop_Granule_0_95277/0/Granule_0_95277" preSegmentId="329" preFractionAlong="0.9955400824546814" postSegmentId="4" postFractionAlong="0.5"/>
+        </projection>
+        <projection id="Proj_607240192_G2M" presynapticPopulation="Pop_Granule_0_95609" postsynapticPopulation="Pop_Mitral_0_23" synapse="FIsyn">
+            <connection id="0" preCellId="../Pop_Granule_0_95609/0/Granule_0_95609" postCellId="../Pop_Mitral_0_23/0/Mitral_0_23" preSegmentId="4" preFractionAlong="0.5" postSegmentId="287" postFractionAlong="0.5754749178886414"/>
+        </projection>
+        <projection id="Proj_607240192_M2G" presynapticPopulation="Pop_Mitral_0_23" postsynapticPopulation="Pop_Granule_0_95609" synapse="AmpaNmdaSynapse">
+            <connection id="0" preCellId="../Pop_Mitral_0_23/0/Mitral_0_23" postCellId="../Pop_Granule_0_95609/0/Granule_0_95609" preSegmentId="287" preFractionAlong="0.5754749178886414" postSegmentId="4" postFractionAlong="0.5"/>
+        </projection>
+        <projection id="Proj_716904472_G2M" presynapticPopulation="Pop_Granule_0_112879" postsynapticPopulation="Pop_Mitral_0_1" synapse="FIsyn">
+            <connection id="0" preCellId="../Pop_Granule_0_112879/0/Granule_0_112879" postCellId="../Pop_Mitral_0_1/0/Mitral_0_1" preSegmentId="4" preFractionAlong="0.5" postSegmentId="50" postFractionAlong="0.8726105690002441"/>
+        </projection>
+        <projection id="Proj_716904472_M2G" presynapticPopulation="Pop_Mitral_0_1" postsynapticPopulation="Pop_Granule_0_112879" synapse="AmpaNmdaSynapse">
+            <connection id="0" preCellId="../Pop_Mitral_0_1/0/Mitral_0_1" postCellId="../Pop_Granule_0_112879/0/Granule_0_112879" preSegmentId="50" preFractionAlong="0.8726105690002441" postSegmentId="4" postFractionAlong="0.5"/>
+        </projection>
+        <projection id="Proj_607049752_G2M" presynapticPopulation="Pop_Granule_0_95579" postsynapticPopulation="Pop_Mitral_0_29" synapse="FIsyn">
+            <connection id="0" preCellId="../Pop_Granule_0_95579/0/Granule_0_95579" postCellId="../Pop_Mitral_0_29/0/Mitral_0_29" preSegmentId="4" preFractionAlong="0.5" postSegmentId="149" postFractionAlong="0.5098810195922852"/>
+        </projection>
+        <projection id="Proj_607049752_M2G" presynapticPopulation="Pop_Mitral_0_29" postsynapticPopulation="Pop_Granule_0_95579" synapse="AmpaNmdaSynapse">
+            <connection id="0" preCellId="../Pop_Mitral_0_29/0/Mitral_0_29" postCellId="../Pop_Granule_0_95579/0/Granule_0_95579" preSegmentId="149" preFractionAlong="0.5098810195922852" postSegmentId="4" postFractionAlong="0.5"/>
+        </projection>
+        <projection id="Proj_779649032_G2M" presynapticPopulation="Pop_Granule_0_122760" postsynapticPopulation="Pop_Mitral_0_22" synapse="FIsyn">
+            <connection id="0" preCellId="../Pop_Granule_0_122760/0/Granule_0_122760" postCellId="../Pop_Mitral_0_22/0/Mitral_0_22" preSegmentId="4" preFractionAlong="0.5" postSegmentId="303" postFractionAlong="0.1586151123046875"/>
+        </projection>
+        <projection id="Proj_779649032_M2G" presynapticPopulation="Pop_Mitral_0_22" postsynapticPopulation="Pop_Granule_0_122760" synapse="AmpaNmdaSynapse">
+            <connection id="0" preCellId="../Pop_Mitral_0_22/0/Mitral_0_22" postCellId="../Pop_Granule_0_122760/0/Granule_0_122760" preSegmentId="303" preFractionAlong="0.1586151123046875" postSegmentId="4" postFractionAlong="0.5"/>
+        </projection>
+        <projection id="Proj_537548802_G2M" presynapticPopulation="Pop_Granule_0_84634" postsynapticPopulation="Pop_Mitral_0_9" synapse="FIsyn">
+            <connection id="0" preCellId="../Pop_Granule_0_84634/0/Granule_0_84634" postCellId="../Pop_Mitral_0_9/0/Mitral_0_9" preSegmentId="4" preFractionAlong="0.5" postSegmentId="237" postFractionAlong="0.5287688970565796"/>
+        </projection>
+        <projection id="Proj_537548802_M2G" presynapticPopulation="Pop_Mitral_0_9" postsynapticPopulation="Pop_Granule_0_84634" synapse="AmpaNmdaSynapse">
+            <connection id="0" preCellId="../Pop_Mitral_0_9/0/Mitral_0_9" postCellId="../Pop_Granule_0_84634/0/Granule_0_84634" preSegmentId="237" preFractionAlong="0.5287688970565796" postSegmentId="4" postFractionAlong="0.5"/>
+        </projection>
+        <projection id="Proj_639790082_G2M" presynapticPopulation="Pop_Granule_0_100735" postsynapticPopulation="Pop_Mitral_0_2" synapse="FIsyn">
+            <connection id="0" preCellId="../Pop_Granule_0_100735/0/Granule_0_100735" postCellId="../Pop_Mitral_0_2/0/Mitral_0_2" preSegmentId="4" preFractionAlong="0.5" postSegmentId="119" postFractionAlong="0.6994917541742325"/>
+        </projection>
+        <projection id="Proj_639790082_M2G" presynapticPopulation="Pop_Mitral_0_2" postsynapticPopulation="Pop_Granule_0_100735" synapse="AmpaNmdaSynapse">
+            <connection id="0" preCellId="../Pop_Mitral_0_2/0/Mitral_0_2" postCellId="../Pop_Granule_0_100735/0/Granule_0_100735" preSegmentId="119" preFractionAlong="0.6994917541742325" postSegmentId="4" postFractionAlong="0.5"/>
+        </projection>
+        <projection id="Proj_253145092_G2M" presynapticPopulation="Pop_Granule_0_39846" postsynapticPopulation="Pop_Mitral_0_18" synapse="FIsyn">
+            <connection id="0" preCellId="../Pop_Granule_0_39846/0/Granule_0_39846" postCellId="../Pop_Mitral_0_18/0/Mitral_0_18" preSegmentId="4" preFractionAlong="0.5" postSegmentId="547" postFractionAlong="0.7958506345748901"/>
+        </projection>
+        <projection id="Proj_253145092_M2G" presynapticPopulation="Pop_Mitral_0_18" postsynapticPopulation="Pop_Granule_0_39846" synapse="AmpaNmdaSynapse">
+            <connection id="0" preCellId="../Pop_Mitral_0_18/0/Mitral_0_18" postCellId="../Pop_Granule_0_39846/0/Granule_0_39846" preSegmentId="547" preFractionAlong="0.7958506345748901" postSegmentId="4" postFractionAlong="0.5"/>
+        </projection>
+        <projection id="Proj_587358372_G2M" presynapticPopulation="Pop_Granule_0_92478" postsynapticPopulation="Pop_Mitral_0_26" synapse="FIsyn">
+            <connection id="0" preCellId="../Pop_Granule_0_92478/0/Granule_0_92478" postCellId="../Pop_Mitral_0_26/0/Mitral_0_26" preSegmentId="4" preFractionAlong="0.5" postSegmentId="94" postFractionAlong="0.8772852420806885"/>
+        </projection>
+        <projection id="Proj_587358372_M2G" presynapticPopulation="Pop_Mitral_0_26" postsynapticPopulation="Pop_Granule_0_92478" synapse="AmpaNmdaSynapse">
+            <connection id="0" preCellId="../Pop_Mitral_0_26/0/Mitral_0_26" postCellId="../Pop_Granule_0_92478/0/Granule_0_92478" preSegmentId="94" preFractionAlong="0.8772852420806885" postSegmentId="4" postFractionAlong="0.5"/>
+        </projection>
+        <projection id="Proj_571699202_G2M" presynapticPopulation="Pop_Granule_0_90012" postsynapticPopulation="Pop_Mitral_0_19" synapse="FIsyn">
+            <connection id="0" preCellId="../Pop_Granule_0_90012/0/Granule_0_90012" postCellId="../Pop_Mitral_0_19/0/Mitral_0_19" preSegmentId="4" preFractionAlong="0.5" postSegmentId="126" postFractionAlong="0.6149353981018066"/>
+        </projection>
+        <projection id="Proj_571699202_M2G" presynapticPopulation="Pop_Mitral_0_19" postsynapticPopulation="Pop_Granule_0_90012" synapse="AmpaNmdaSynapse">
+            <connection id="0" preCellId="../Pop_Mitral_0_19/0/Mitral_0_19" postCellId="../Pop_Granule_0_90012/0/Granule_0_90012" preSegmentId="126" preFractionAlong="0.6149353981018066" postSegmentId="4" postFractionAlong="0.5"/>
+        </projection>
+        <projection id="Proj_676588552_G2M" presynapticPopulation="Pop_Granule_0_106530" postsynapticPopulation="Pop_Mitral_0_24" synapse="FIsyn">
+            <connection id="0" preCellId="../Pop_Granule_0_106530/0/Granule_0_106530" postCellId="../Pop_Mitral_0_24/0/Mitral_0_24" preSegmentId="4" preFractionAlong="0.5" postSegmentId="184" postFractionAlong="0.9487243890762329"/>
+        </projection>
+        <projection id="Proj_676588552_M2G" presynapticPopulation="Pop_Mitral_0_24" postsynapticPopulation="Pop_Granule_0_106530" synapse="AmpaNmdaSynapse">
+            <connection id="0" preCellId="../Pop_Mitral_0_24/0/Mitral_0_24" postCellId="../Pop_Granule_0_106530/0/Granule_0_106530" preSegmentId="184" preFractionAlong="0.9487243890762329" postSegmentId="4" postFractionAlong="0.5"/>
+        </projection>
+        <projection id="Proj_614428332_G2M" presynapticPopulation="Pop_Granule_0_96741" postsynapticPopulation="Pop_Mitral_0_17" synapse="FIsyn">
+            <connection id="0" preCellId="../Pop_Granule_0_96741/0/Granule_0_96741" postCellId="../Pop_Mitral_0_17/0/Mitral_0_17" preSegmentId="4" preFractionAlong="0.5" postSegmentId="279" postFractionAlong="0.375530481338501"/>
+        </projection>
+        <projection id="Proj_614428332_M2G" presynapticPopulation="Pop_Mitral_0_17" postsynapticPopulation="Pop_Granule_0_96741" synapse="AmpaNmdaSynapse">
+            <connection id="0" preCellId="../Pop_Mitral_0_17/0/Mitral_0_17" postCellId="../Pop_Granule_0_96741/0/Granule_0_96741" preSegmentId="279" preFractionAlong="0.375530481338501" postSegmentId="4" postFractionAlong="0.5"/>
+        </projection>
+        <projection id="Proj_641708042_G2M" presynapticPopulation="Pop_Granule_0_101037" postsynapticPopulation="Pop_Mitral_0_28" synapse="FIsyn">
+            <connection id="0" preCellId="../Pop_Granule_0_101037/0/Granule_0_101037" postCellId="../Pop_Mitral_0_28/0/Mitral_0_28" preSegmentId="4" preFractionAlong="0.5" postSegmentId="320" postFractionAlong="0.9671319723129272"/>
+        </projection>
+        <projection id="Proj_641708042_M2G" presynapticPopulation="Pop_Mitral_0_28" postsynapticPopulation="Pop_Granule_0_101037" synapse="AmpaNmdaSynapse">
+            <connection id="0" preCellId="../Pop_Mitral_0_28/0/Mitral_0_28" postCellId="../Pop_Granule_0_101037/0/Granule_0_101037" preSegmentId="320" preFractionAlong="0.9671319723129272" postSegmentId="4" postFractionAlong="0.5"/>
+        </projection>
+        <projection id="Proj_767406252_G2M" presynapticPopulation="Pop_Granule_0_120832" postsynapticPopulation="Pop_Mitral_0_24" synapse="FIsyn">
+            <connection id="0" preCellId="../Pop_Granule_0_120832/0/Granule_0_120832" postCellId="../Pop_Mitral_0_24/0/Mitral_0_24" preSegmentId="4" preFractionAlong="0.5" postSegmentId="632" postFractionAlong="0.17618077993392944"/>
+        </projection>
+        <projection id="Proj_767406252_M2G" presynapticPopulation="Pop_Mitral_0_24" postsynapticPopulation="Pop_Granule_0_120832" synapse="AmpaNmdaSynapse">
+            <connection id="0" preCellId="../Pop_Mitral_0_24/0/Mitral_0_24" postCellId="../Pop_Granule_0_120832/0/Granule_0_120832" preSegmentId="632" preFractionAlong="0.17618077993392944" postSegmentId="4" postFractionAlong="0.5"/>
+        </projection>
+        <projection id="Proj_745936822_G2M" presynapticPopulation="Pop_Granule_0_117451" postsynapticPopulation="Pop_Mitral_0_16" synapse="FIsyn">
+            <connection id="0" preCellId="../Pop_Granule_0_117451/0/Granule_0_117451" postCellId="../Pop_Mitral_0_16/0/Mitral_0_16" preSegmentId="4" preFractionAlong="0.5" postSegmentId="755" postFractionAlong="0.340619333088398"/>
+        </projection>
+        <projection id="Proj_745936822_M2G" presynapticPopulation="Pop_Mitral_0_16" postsynapticPopulation="Pop_Granule_0_117451" synapse="AmpaNmdaSynapse">
+            <connection id="0" preCellId="../Pop_Mitral_0_16/0/Mitral_0_16" postCellId="../Pop_Granule_0_117451/0/Granule_0_117451" preSegmentId="755" preFractionAlong="0.340619333088398" postSegmentId="4" postFractionAlong="0.5"/>
+        </projection>
+        <projection id="Proj_538685442_G2M" presynapticPopulation="Pop_Granule_0_84813" postsynapticPopulation="Pop_Mitral_0_8" synapse="FIsyn">
+            <connection id="0" preCellId="../Pop_Granule_0_84813/0/Granule_0_84813" postCellId="../Pop_Mitral_0_8/0/Mitral_0_8" preSegmentId="4" preFractionAlong="0.5" postSegmentId="644" postFractionAlong="0.5955500602722168"/>
+        </projection>
+        <projection id="Proj_538685442_M2G" presynapticPopulation="Pop_Mitral_0_8" postsynapticPopulation="Pop_Granule_0_84813" synapse="AmpaNmdaSynapse">
+            <connection id="0" preCellId="../Pop_Mitral_0_8/0/Mitral_0_8" postCellId="../Pop_Granule_0_84813/0/Granule_0_84813" preSegmentId="644" preFractionAlong="0.5955500602722168" postSegmentId="4" postFractionAlong="0.5"/>
+        </projection>
+        <projection id="Proj_477700102_G2M" presynapticPopulation="Pop_Granule_0_75209" postsynapticPopulation="Pop_Mitral_0_14" synapse="FIsyn">
+            <connection id="0" preCellId="../Pop_Granule_0_75209/0/Granule_0_75209" postCellId="../Pop_Mitral_0_14/0/Mitral_0_14" preSegmentId="4" preFractionAlong="0.5" postSegmentId="406" postFractionAlong="0.871869683265686"/>
+        </projection>
+        <projection id="Proj_477700102_M2G" presynapticPopulation="Pop_Mitral_0_14" postsynapticPopulation="Pop_Granule_0_75209" synapse="AmpaNmdaSynapse">
+            <connection id="0" preCellId="../Pop_Mitral_0_14/0/Mitral_0_14" postCellId="../Pop_Granule_0_75209/0/Granule_0_75209" preSegmentId="406" preFractionAlong="0.871869683265686" postSegmentId="4" postFractionAlong="0.5"/>
+        </projection>
+        <projection id="Proj_586792962_G2M" presynapticPopulation="Pop_Granule_0_92389" postsynapticPopulation="Pop_Mitral_0_0" synapse="FIsyn">
+            <connection id="0" preCellId="../Pop_Granule_0_92389/0/Granule_0_92389" postCellId="../Pop_Mitral_0_0/0/Mitral_0_0" preSegmentId="4" preFractionAlong="0.5" postSegmentId="311" postFractionAlong="0.7164685726165771"/>
+        </projection>
+        <projection id="Proj_586792962_M2G" presynapticPopulation="Pop_Mitral_0_0" postsynapticPopulation="Pop_Granule_0_92389" synapse="AmpaNmdaSynapse">
+            <connection id="0" preCellId="../Pop_Mitral_0_0/0/Mitral_0_0" postCellId="../Pop_Granule_0_92389/0/Granule_0_92389" preSegmentId="311" preFractionAlong="0.7164685726165771" postSegmentId="4" postFractionAlong="0.5"/>
+        </projection>
+        <projection id="Proj_645244932_G2M" presynapticPopulation="Pop_Granule_0_101594" postsynapticPopulation="Pop_Mitral_0_22" synapse="FIsyn">
+            <connection id="0" preCellId="../Pop_Granule_0_101594/0/Granule_0_101594" postCellId="../Pop_Mitral_0_22/0/Mitral_0_22" preSegmentId="4" preFractionAlong="0.5" postSegmentId="326" postFractionAlong="0.7808895111083984"/>
+        </projection>
+        <projection id="Proj_645244932_M2G" presynapticPopulation="Pop_Mitral_0_22" postsynapticPopulation="Pop_Granule_0_101594" synapse="AmpaNmdaSynapse">
+            <connection id="0" preCellId="../Pop_Mitral_0_22/0/Mitral_0_22" postCellId="../Pop_Granule_0_101594/0/Granule_0_101594" preSegmentId="326" preFractionAlong="0.7808895111083984" postSegmentId="4" postFractionAlong="0.5"/>
+        </projection>
+        <projection id="Proj_723216422_G2M" presynapticPopulation="Pop_Granule_0_113873" postsynapticPopulation="Pop_Mitral_0_6" synapse="FIsyn">
+            <connection id="0" preCellId="../Pop_Granule_0_113873/0/Granule_0_113873" postCellId="../Pop_Mitral_0_6/0/Mitral_0_6" preSegmentId="4" preFractionAlong="0.5" postSegmentId="33" postFractionAlong="0.5806939005851746"/>
+        </projection>
+        <projection id="Proj_723216422_M2G" presynapticPopulation="Pop_Mitral_0_6" postsynapticPopulation="Pop_Granule_0_113873" synapse="AmpaNmdaSynapse">
+            <connection id="0" preCellId="../Pop_Mitral_0_6/0/Mitral_0_6" postCellId="../Pop_Granule_0_113873/0/Granule_0_113873" preSegmentId="33" preFractionAlong="0.5806939005851746" postSegmentId="4" postFractionAlong="0.5"/>
+        </projection>
+        <projection id="Proj_444559362_G2M" presynapticPopulation="Pop_Granule_0_69990" postsynapticPopulation="Pop_Mitral_0_5" synapse="FIsyn">
+            <connection id="0" preCellId="../Pop_Granule_0_69990/0/Granule_0_69990" postCellId="../Pop_Mitral_0_5/0/Mitral_0_5" preSegmentId="4" preFractionAlong="0.5" postSegmentId="539" postFractionAlong="0.5116691589355469"/>
+        </projection>
+        <projection id="Proj_444559362_M2G" presynapticPopulation="Pop_Mitral_0_5" postsynapticPopulation="Pop_Granule_0_69990" synapse="AmpaNmdaSynapse">
+            <connection id="0" preCellId="../Pop_Mitral_0_5/0/Mitral_0_5" postCellId="../Pop_Granule_0_69990/0/Granule_0_69990" preSegmentId="539" preFractionAlong="0.5116691589355469" postSegmentId="4" postFractionAlong="0.5"/>
+        </projection>
+        <projection id="Proj_404198742_G2M" presynapticPopulation="Pop_Granule_0_63634" postsynapticPopulation="Pop_Mitral_0_3" synapse="FIsyn">
+            <connection id="0" preCellId="../Pop_Granule_0_63634/0/Granule_0_63634" postCellId="../Pop_Mitral_0_3/0/Mitral_0_3" preSegmentId="4" preFractionAlong="0.5" postSegmentId="531" postFractionAlong="0.05713784694671631"/>
+        </projection>
+        <projection id="Proj_404198742_M2G" presynapticPopulation="Pop_Mitral_0_3" postsynapticPopulation="Pop_Granule_0_63634" synapse="AmpaNmdaSynapse">
+            <connection id="0" preCellId="../Pop_Mitral_0_3/0/Mitral_0_3" postCellId="../Pop_Granule_0_63634/0/Granule_0_63634" preSegmentId="531" preFractionAlong="0.05713784694671631" postSegmentId="4" postFractionAlong="0.5"/>
+        </projection>
+        <projection id="Proj_627718902_G2M" presynapticPopulation="Pop_Granule_0_98834" postsynapticPopulation="Pop_Mitral_0_19" synapse="FIsyn">
+            <connection id="0" preCellId="../Pop_Granule_0_98834/0/Granule_0_98834" postCellId="../Pop_Mitral_0_19/0/Mitral_0_19" preSegmentId="4" preFractionAlong="0.5" postSegmentId="496" postFractionAlong="0.31215378642082214"/>
+        </projection>
+        <projection id="Proj_627718902_M2G" presynapticPopulation="Pop_Mitral_0_19" postsynapticPopulation="Pop_Granule_0_98834" synapse="AmpaNmdaSynapse">
+            <connection id="0" preCellId="../Pop_Mitral_0_19/0/Mitral_0_19" postCellId="../Pop_Granule_0_98834/0/Granule_0_98834" preSegmentId="496" preFractionAlong="0.31215378642082214" postSegmentId="4" postFractionAlong="0.5"/>
+        </projection>
+        <projection id="Proj_569870342_G2M" presynapticPopulation="Pop_Granule_0_89724" postsynapticPopulation="Pop_Mitral_0_13" synapse="FIsyn">
+            <connection id="0" preCellId="../Pop_Granule_0_89724/0/Granule_0_89724" postCellId="../Pop_Mitral_0_13/0/Mitral_0_13" preSegmentId="4" preFractionAlong="0.5" postSegmentId="200" postFractionAlong="0.9965260326862335"/>
+        </projection>
+        <projection id="Proj_569870342_M2G" presynapticPopulation="Pop_Mitral_0_13" postsynapticPopulation="Pop_Granule_0_89724" synapse="AmpaNmdaSynapse">
+            <connection id="0" preCellId="../Pop_Mitral_0_13/0/Mitral_0_13" postCellId="../Pop_Granule_0_89724/0/Granule_0_89724" preSegmentId="200" preFractionAlong="0.9965260326862335" postSegmentId="4" postFractionAlong="0.5"/>
+        </projection>
+        <projection id="Proj_628042752_G2M" presynapticPopulation="Pop_Granule_0_98885" postsynapticPopulation="Pop_Mitral_0_19" synapse="FIsyn">
+            <connection id="0" preCellId="../Pop_Granule_0_98885/0/Granule_0_98885" postCellId="../Pop_Mitral_0_19/0/Mitral_0_19" preSegmentId="4" preFractionAlong="0.5" postSegmentId="266" postFractionAlong="0.9690147042274475"/>
+        </projection>
+        <projection id="Proj_628042752_M2G" presynapticPopulation="Pop_Mitral_0_19" postsynapticPopulation="Pop_Granule_0_98885" synapse="AmpaNmdaSynapse">
+            <connection id="0" preCellId="../Pop_Mitral_0_19/0/Mitral_0_19" postCellId="../Pop_Granule_0_98885/0/Granule_0_98885" preSegmentId="266" preFractionAlong="0.9690147042274475" postSegmentId="4" postFractionAlong="0.5"/>
+        </projection>
+        <projection id="Proj_528931792_G2M" presynapticPopulation="Pop_Granule_0_83277" postsynapticPopulation="Pop_Mitral_0_3" synapse="FIsyn">
+            <connection id="0" preCellId="../Pop_Granule_0_83277/0/Granule_0_83277" postCellId="../Pop_Mitral_0_3/0/Mitral_0_3" preSegmentId="4" preFractionAlong="0.5" postSegmentId="452" postFractionAlong="0.4216870665550232"/>
+        </projection>
+        <projection id="Proj_528931792_M2G" presynapticPopulation="Pop_Mitral_0_3" postsynapticPopulation="Pop_Granule_0_83277" synapse="AmpaNmdaSynapse">
+            <connection id="0" preCellId="../Pop_Mitral_0_3/0/Mitral_0_3" postCellId="../Pop_Granule_0_83277/0/Granule_0_83277" preSegmentId="452" preFractionAlong="0.4216870665550232" postSegmentId="4" postFractionAlong="0.5"/>
+        </projection>
+        <projection id="Proj_674480152_G2M" presynapticPopulation="Pop_Granule_0_106198" postsynapticPopulation="Pop_Mitral_0_4" synapse="FIsyn">
+            <connection id="0" preCellId="../Pop_Granule_0_106198/0/Granule_0_106198" postCellId="../Pop_Mitral_0_4/0/Mitral_0_4" preSegmentId="4" preFractionAlong="0.5" postSegmentId="67" postFractionAlong="0.8278493881225586"/>
+        </projection>
+        <projection id="Proj_674480152_M2G" presynapticPopulation="Pop_Mitral_0_4" postsynapticPopulation="Pop_Granule_0_106198" synapse="AmpaNmdaSynapse">
+            <connection id="0" preCellId="../Pop_Mitral_0_4/0/Mitral_0_4" postCellId="../Pop_Granule_0_106198/0/Granule_0_106198" preSegmentId="67" preFractionAlong="0.8278493881225586" postSegmentId="4" postFractionAlong="0.5"/>
+        </projection>
+        <projection id="Proj_642215972_G2M" presynapticPopulation="Pop_Granule_0_101117" postsynapticPopulation="Pop_Mitral_0_21" synapse="FIsyn">
+            <connection id="0" preCellId="../Pop_Granule_0_101117/0/Granule_0_101117" postCellId="../Pop_Mitral_0_21/0/Mitral_0_21" preSegmentId="4" preFractionAlong="0.5" postSegmentId="555" postFractionAlong="0.3599247932434082"/>
+        </projection>
+        <projection id="Proj_642215972_M2G" presynapticPopulation="Pop_Mitral_0_21" postsynapticPopulation="Pop_Granule_0_101117" synapse="AmpaNmdaSynapse">
+            <connection id="0" preCellId="../Pop_Mitral_0_21/0/Mitral_0_21" postCellId="../Pop_Granule_0_101117/0/Granule_0_101117" preSegmentId="555" preFractionAlong="0.3599247932434082" postSegmentId="4" postFractionAlong="0.5"/>
+        </projection>
+        <projection id="Proj_531675222_G2M" presynapticPopulation="Pop_Granule_0_83709" postsynapticPopulation="Pop_Mitral_0_26" synapse="FIsyn">
+            <connection id="0" preCellId="../Pop_Granule_0_83709/0/Granule_0_83709" postCellId="../Pop_Mitral_0_26/0/Mitral_0_26" preSegmentId="4" preFractionAlong="0.5" postSegmentId="102" postFractionAlong="0.7298896312713623"/>
+        </projection>
+        <projection id="Proj_531675222_M2G" presynapticPopulation="Pop_Mitral_0_26" postsynapticPopulation="Pop_Granule_0_83709" synapse="AmpaNmdaSynapse">
+            <connection id="0" preCellId="../Pop_Mitral_0_26/0/Mitral_0_26" postCellId="../Pop_Granule_0_83709/0/Granule_0_83709" preSegmentId="102" preFractionAlong="0.7298896312713623" postSegmentId="4" postFractionAlong="0.5"/>
+        </projection>
+        <projection id="Proj_459240792_G2M" presynapticPopulation="Pop_Granule_0_72302" postsynapticPopulation="Pop_Mitral_0_28" synapse="FIsyn">
+            <connection id="0" preCellId="../Pop_Granule_0_72302/0/Granule_0_72302" postCellId="../Pop_Mitral_0_28/0/Mitral_0_28" preSegmentId="4" preFractionAlong="0.5" postSegmentId="751" postFractionAlong="0.22716626524925232"/>
+        </projection>
+        <projection id="Proj_459240792_M2G" presynapticPopulation="Pop_Mitral_0_28" postsynapticPopulation="Pop_Granule_0_72302" synapse="AmpaNmdaSynapse">
+            <connection id="0" preCellId="../Pop_Mitral_0_28/0/Mitral_0_28" postCellId="../Pop_Granule_0_72302/0/Granule_0_72302" preSegmentId="751" preFractionAlong="0.22716626524925232" postSegmentId="4" postFractionAlong="0.5"/>
+        </projection>
+        <projection id="Proj_601944102_G2M" presynapticPopulation="Pop_Granule_0_94775" postsynapticPopulation="Pop_Mitral_0_4" synapse="FIsyn">
+            <connection id="0" preCellId="../Pop_Granule_0_94775/0/Granule_0_94775" postCellId="../Pop_Mitral_0_4/0/Mitral_0_4" preSegmentId="4" preFractionAlong="0.5" postSegmentId="31" postFractionAlong="0.2858886122703552"/>
+        </projection>
+        <projection id="Proj_601944102_M2G" presynapticPopulation="Pop_Mitral_0_4" postsynapticPopulation="Pop_Granule_0_94775" synapse="AmpaNmdaSynapse">
+            <connection id="0" preCellId="../Pop_Mitral_0_4/0/Mitral_0_4" postCellId="../Pop_Granule_0_94775/0/Granule_0_94775" preSegmentId="31" preFractionAlong="0.2858886122703552" postSegmentId="4" postFractionAlong="0.5"/>
+        </projection>
+        <projection id="Proj_548528132_G2M" presynapticPopulation="Pop_Granule_0_86363" postsynapticPopulation="Pop_Mitral_0_27" synapse="FIsyn">
+            <connection id="0" preCellId="../Pop_Granule_0_86363/0/Granule_0_86363" postCellId="../Pop_Mitral_0_27/0/Mitral_0_27" preSegmentId="4" preFractionAlong="0.5" postSegmentId="563" postFractionAlong="0.6741390228271484"/>
+        </projection>
+        <projection id="Proj_548528132_M2G" presynapticPopulation="Pop_Mitral_0_27" postsynapticPopulation="Pop_Granule_0_86363" synapse="AmpaNmdaSynapse">
+            <connection id="0" preCellId="../Pop_Mitral_0_27/0/Mitral_0_27" postCellId="../Pop_Granule_0_86363/0/Granule_0_86363" preSegmentId="563" preFractionAlong="0.6741390228271484" postSegmentId="4" postFractionAlong="0.5"/>
+        </projection>
+        <projection id="Proj_606738442_G2M" presynapticPopulation="Pop_Granule_0_95530" postsynapticPopulation="Pop_Mitral_0_13" synapse="FIsyn">
+            <connection id="0" preCellId="../Pop_Granule_0_95530/0/Granule_0_95530" postCellId="../Pop_Mitral_0_13/0/Mitral_0_13" preSegmentId="4" preFractionAlong="0.5" postSegmentId="533" postFractionAlong="0.14109647274017334"/>
+        </projection>
+        <projection id="Proj_606738442_M2G" presynapticPopulation="Pop_Mitral_0_13" postsynapticPopulation="Pop_Granule_0_95530" synapse="AmpaNmdaSynapse">
+            <connection id="0" preCellId="../Pop_Mitral_0_13/0/Mitral_0_13" postCellId="../Pop_Granule_0_95530/0/Granule_0_95530" preSegmentId="533" preFractionAlong="0.14109647274017334" postSegmentId="4" postFractionAlong="0.5"/>
+        </projection>
+        <projection id="Proj_587917182_G2M" presynapticPopulation="Pop_Granule_0_92566" postsynapticPopulation="Pop_Mitral_0_27" synapse="FIsyn">
+            <connection id="0" preCellId="../Pop_Granule_0_92566/0/Granule_0_92566" postCellId="../Pop_Mitral_0_27/0/Mitral_0_27" preSegmentId="4" preFractionAlong="0.5" postSegmentId="604" postFractionAlong="0.5959579944610596"/>
+        </projection>
+        <projection id="Proj_587917182_M2G" presynapticPopulation="Pop_Mitral_0_27" postsynapticPopulation="Pop_Granule_0_92566" synapse="AmpaNmdaSynapse">
+            <connection id="0" preCellId="../Pop_Mitral_0_27/0/Mitral_0_27" postCellId="../Pop_Granule_0_92566/0/Granule_0_92566" preSegmentId="604" preFractionAlong="0.5959579944610596" postSegmentId="4" postFractionAlong="0.5"/>
+        </projection>
+        <projection id="Proj_586850312_G2M" presynapticPopulation="Pop_Granule_0_92398" postsynapticPopulation="Pop_Mitral_0_20" synapse="FIsyn">
+            <connection id="0" preCellId="../Pop_Granule_0_92398/0/Granule_0_92398" postCellId="../Pop_Mitral_0_20/0/Mitral_0_20" preSegmentId="4" preFractionAlong="0.5" postSegmentId="151" postFractionAlong="0.7400861978530884"/>
+        </projection>
+        <projection id="Proj_586850312_M2G" presynapticPopulation="Pop_Mitral_0_20" postsynapticPopulation="Pop_Granule_0_92398" synapse="AmpaNmdaSynapse">
+            <connection id="0" preCellId="../Pop_Mitral_0_20/0/Mitral_0_20" postCellId="../Pop_Granule_0_92398/0/Granule_0_92398" preSegmentId="151" preFractionAlong="0.7400861978530884" postSegmentId="4" postFractionAlong="0.5"/>
+        </projection>
+        <projection id="Proj_442279942_G2M" presynapticPopulation="Pop_Granule_0_69631" postsynapticPopulation="Pop_Mitral_0_28" synapse="FIsyn">
+            <connection id="0" preCellId="../Pop_Granule_0_69631/0/Granule_0_69631" postCellId="../Pop_Mitral_0_28/0/Mitral_0_28" preSegmentId="4" preFractionAlong="0.5" postSegmentId="556" postFractionAlong="0.8153938055038452"/>
+        </projection>
+        <projection id="Proj_442279942_M2G" presynapticPopulation="Pop_Mitral_0_28" postsynapticPopulation="Pop_Granule_0_69631" synapse="AmpaNmdaSynapse">
+            <connection id="0" preCellId="../Pop_Mitral_0_28/0/Mitral_0_28" postCellId="../Pop_Granule_0_69631/0/Granule_0_69631" preSegmentId="556" preFractionAlong="0.8153938055038452" postSegmentId="4" postFractionAlong="0.5"/>
+        </projection>
+        <projection id="Proj_752693272_G2M" presynapticPopulation="Pop_Granule_0_118515" postsynapticPopulation="Pop_Mitral_0_21" synapse="FIsyn">
+            <connection id="0" preCellId="../Pop_Granule_0_118515/0/Granule_0_118515" postCellId="../Pop_Mitral_0_21/0/Mitral_0_21" preSegmentId="4" preFractionAlong="0.5" postSegmentId="578" postFractionAlong="0.13451257348060608"/>
+        </projection>
+        <projection id="Proj_752693272_M2G" presynapticPopulation="Pop_Mitral_0_21" postsynapticPopulation="Pop_Granule_0_118515" synapse="AmpaNmdaSynapse">
+            <connection id="0" preCellId="../Pop_Mitral_0_21/0/Mitral_0_21" postCellId="../Pop_Granule_0_118515/0/Granule_0_118515" preSegmentId="578" preFractionAlong="0.13451257348060608" postSegmentId="4" postFractionAlong="0.5"/>
+        </projection>
+        <projection id="Proj_394743812_G2M" presynapticPopulation="Pop_Granule_0_62145" postsynapticPopulation="Pop_Mitral_0_25" synapse="FIsyn">
+            <connection id="0" preCellId="../Pop_Granule_0_62145/0/Granule_0_62145" postCellId="../Pop_Mitral_0_25/0/Mitral_0_25" preSegmentId="4" preFractionAlong="0.5" postSegmentId="270" postFractionAlong="0.8061234951019287"/>
+        </projection>
+        <projection id="Proj_394743812_M2G" presynapticPopulation="Pop_Mitral_0_25" postsynapticPopulation="Pop_Granule_0_62145" synapse="AmpaNmdaSynapse">
+            <connection id="0" preCellId="../Pop_Mitral_0_25/0/Mitral_0_25" postCellId="../Pop_Granule_0_62145/0/Granule_0_62145" preSegmentId="270" preFractionAlong="0.8061234951019287" postSegmentId="4" postFractionAlong="0.5"/>
+        </projection>
+
+        <!-- Odor Inputs -->
+        <inputList id="OdorInputList0" component="OdorSynTimes0" population="Pop_Mitral_0_0">
+            <input id="0" target="../Pop_Mitral_0_0/0/Mitral_0_0" segmentId="209" fractionAlong="0.2" destination="synapses"/>
+        </inputList>
+
+        <inputList id="OdorInputList1" component="OdorSynTimes1" population="Pop_Mitral_0_0">
+            <input id="0" target="../Pop_Mitral_0_0/0/Mitral_0_0" segmentId="207" fractionAlong="0.2" destination="synapses"/>
+        </inputList>
+
+        <inputList id="OdorInputList2" component="OdorSynTimes2" population="Pop_Mitral_0_0">
+            <input id="0" target="../Pop_Mitral_0_0/0/Mitral_0_0" segmentId="204" fractionAlong="0.30000000000000004" destination="synapses"/>
+        </inputList>
+
+        <inputList id="OdorInputList3" component="OdorSynTimes3" population="Pop_Mitral_0_0">
+            <input id="0" target="../Pop_Mitral_0_0/0/Mitral_0_0" segmentId="201" fractionAlong="0.30000000000000004" destination="synapses"/>
+        </inputList>
+
+        <inputList id="OdorInputList4" component="OdorSynTimes4" population="Pop_Mitral_0_1">
+            <input id="0" target="../Pop_Mitral_0_1/0/Mitral_0_1" segmentId="255" fractionAlong="0.2" destination="synapses"/>
+        </inputList>
+
+        <inputList id="OdorInputList5" component="OdorSynTimes5" population="Pop_Mitral_0_1">
+            <input id="0" target="../Pop_Mitral_0_1/0/Mitral_0_1" segmentId="253" fractionAlong="0.2" destination="synapses"/>
+        </inputList>
+
+        <inputList id="OdorInputList6" component="OdorSynTimes6" population="Pop_Mitral_0_1">
+            <input id="0" target="../Pop_Mitral_0_1/0/Mitral_0_1" segmentId="250" fractionAlong="0.30000000000000004" destination="synapses"/>
+        </inputList>
+
+        <inputList id="OdorInputList7" component="OdorSynTimes7" population="Pop_Mitral_0_1">
+            <input id="0" target="../Pop_Mitral_0_1/0/Mitral_0_1" segmentId="247" fractionAlong="0.30000000000000004" destination="synapses"/>
+        </inputList>
+
+        <inputList id="OdorInputList8" component="OdorSynTimes8" population="Pop_Mitral_0_1">
+            <input id="0" target="../Pop_Mitral_0_1/0/Mitral_0_1" segmentId="244" fractionAlong="0.30000000000000004" destination="synapses"/>
+        </inputList>
+
+        <inputList id="OdorInputList9" component="OdorSynTimes9" population="Pop_Mitral_0_1">
+            <input id="0" target="../Pop_Mitral_0_1/0/Mitral_0_1" segmentId="242" fractionAlong="0.2" destination="synapses"/>
+        </inputList>
+
+        <inputList id="OdorInputList10" component="OdorSynTimes10" population="Pop_Mitral_0_2">
+            <input id="0" target="../Pop_Mitral_0_2/0/Mitral_0_2" segmentId="220" fractionAlong="0.30000000000000004" destination="synapses"/>
+        </inputList>
+
+        <inputList id="OdorInputList11" component="OdorSynTimes11" population="Pop_Mitral_0_2">
+            <input id="0" target="../Pop_Mitral_0_2/0/Mitral_0_2" segmentId="217" fractionAlong="0.30000000000000004" destination="synapses"/>
+        </inputList>
+
+        <inputList id="OdorInputList12" component="OdorSynTimes12" population="Pop_Mitral_0_2">
+            <input id="0" target="../Pop_Mitral_0_2/0/Mitral_0_2" segmentId="214" fractionAlong="0.30000000000000004" destination="synapses"/>
+        </inputList>
+
+        <inputList id="OdorInputList13" component="OdorSynTimes13" population="Pop_Mitral_0_2">
+            <input id="0" target="../Pop_Mitral_0_2/0/Mitral_0_2" segmentId="212" fractionAlong="0.2" destination="synapses"/>
+        </inputList>
+
+        <inputList id="OdorInputList14" component="OdorSynTimes14" population="Pop_Mitral_0_3">
+            <input id="0" target="../Pop_Mitral_0_3/0/Mitral_0_3" segmentId="247" fractionAlong="0.30000000000000004" destination="synapses"/>
+        </inputList>
+
+        <inputList id="OdorInputList15" component="OdorSynTimes15" population="Pop_Mitral_0_3">
+            <input id="0" target="../Pop_Mitral_0_3/0/Mitral_0_3" segmentId="245" fractionAlong="0.2" destination="synapses"/>
+        </inputList>
+
+        <inputList id="OdorInputList16" component="OdorSynTimes16" population="Pop_Mitral_0_3">
+            <input id="0" target="../Pop_Mitral_0_3/0/Mitral_0_3" segmentId="242" fractionAlong="0.30000000000000004" destination="synapses"/>
+        </inputList>
+
+        <inputList id="OdorInputList17" component="OdorSynTimes17" population="Pop_Mitral_0_3">
+            <input id="0" target="../Pop_Mitral_0_3/0/Mitral_0_3" segmentId="239" fractionAlong="0.30000000000000004" destination="synapses"/>
+        </inputList>
+
+        <inputList id="OdorInputList18" component="OdorSynTimes18" population="Pop_Mitral_0_3">
+            <input id="0" target="../Pop_Mitral_0_3/0/Mitral_0_3" segmentId="237" fractionAlong="0.2" destination="synapses"/>
+        </inputList>
+
+        <inputList id="OdorInputList19" component="OdorSynTimes19" population="Pop_Mitral_0_4">
+            <input id="0" target="../Pop_Mitral_0_4/0/Mitral_0_4" segmentId="171" fractionAlong="0.30000000000000004" destination="synapses"/>
+        </inputList>
+
+        <inputList id="OdorInputList20" component="OdorSynTimes20" population="Pop_Mitral_0_4">
+            <input id="0" target="../Pop_Mitral_0_4/0/Mitral_0_4" segmentId="169" fractionAlong="0.2" destination="synapses"/>
+        </inputList>
+
+        <inputList id="OdorInputList21" component="OdorSynTimes21" population="Pop_Mitral_0_4">
+            <input id="0" target="../Pop_Mitral_0_4/0/Mitral_0_4" segmentId="166" fractionAlong="0.30000000000000004" destination="synapses"/>
+        </inputList>
+
+        <inputList id="OdorInputList22" component="OdorSynTimes22" population="Pop_Mitral_0_4">
+            <input id="0" target="../Pop_Mitral_0_4/0/Mitral_0_4" segmentId="164" fractionAlong="0.2" destination="synapses"/>
+        </inputList>
+
+        <inputList id="OdorInputList23" component="OdorSynTimes23" population="Pop_Mitral_0_5">
+            <input id="0" target="../Pop_Mitral_0_5/0/Mitral_0_5" segmentId="310" fractionAlong="0.2" destination="synapses"/>
+        </inputList>
+
+        <inputList id="OdorInputList24" component="OdorSynTimes24" population="Pop_Mitral_0_5">
+            <input id="0" target="../Pop_Mitral_0_5/0/Mitral_0_5" segmentId="307" fractionAlong="0.30000000000000004" destination="synapses"/>
+        </inputList>
+
+        <inputList id="OdorInputList25" component="OdorSynTimes25" population="Pop_Mitral_0_5">
+            <input id="0" target="../Pop_Mitral_0_5/0/Mitral_0_5" segmentId="305" fractionAlong="0.2" destination="synapses"/>
+        </inputList>
+
+        <inputList id="OdorInputList26" component="OdorSynTimes26" population="Pop_Mitral_0_5">
+            <input id="0" target="../Pop_Mitral_0_5/0/Mitral_0_5" segmentId="302" fractionAlong="0.30000000000000004" destination="synapses"/>
+        </inputList>
+
+        <inputList id="OdorInputList27" component="OdorSynTimes27" population="Pop_Mitral_0_6">
+            <input id="0" target="../Pop_Mitral_0_6/0/Mitral_0_6" segmentId="184" fractionAlong="0.2" destination="synapses"/>
+        </inputList>
+
+        <inputList id="OdorInputList28" component="OdorSynTimes28" population="Pop_Mitral_0_6">
+            <input id="0" target="../Pop_Mitral_0_6/0/Mitral_0_6" segmentId="181" fractionAlong="0.30000000000000004" destination="synapses"/>
+        </inputList>
+
+        <inputList id="OdorInputList29" component="OdorSynTimes29" population="Pop_Mitral_0_6">
+            <input id="0" target="../Pop_Mitral_0_6/0/Mitral_0_6" segmentId="178" fractionAlong="0.30000000000000004" destination="synapses"/>
+        </inputList>
+
+        <inputList id="OdorInputList30" component="OdorSynTimes30" population="Pop_Mitral_0_6">
+            <input id="0" target="../Pop_Mitral_0_6/0/Mitral_0_6" segmentId="176" fractionAlong="0.2" destination="synapses"/>
+        </inputList>
+
+        <inputList id="OdorInputList31" component="OdorSynTimes31" population="Pop_Mitral_0_7">
+            <input id="0" target="../Pop_Mitral_0_7/0/Mitral_0_7" segmentId="180" fractionAlong="0.30000000000000004" destination="synapses"/>
+        </inputList>
+
+        <inputList id="OdorInputList32" component="OdorSynTimes32" population="Pop_Mitral_0_7">
+            <input id="0" target="../Pop_Mitral_0_7/0/Mitral_0_7" segmentId="178" fractionAlong="0.2" destination="synapses"/>
+        </inputList>
+
+        <inputList id="OdorInputList33" component="OdorSynTimes33" population="Pop_Mitral_0_7">
+            <input id="0" target="../Pop_Mitral_0_7/0/Mitral_0_7" segmentId="176" fractionAlong="0.2" destination="synapses"/>
+        </inputList>
+
+        <inputList id="OdorInputList34" component="OdorSynTimes34" population="Pop_Mitral_0_7">
+            <input id="0" target="../Pop_Mitral_0_7/0/Mitral_0_7" segmentId="174" fractionAlong="0.2" destination="synapses"/>
+        </inputList>
+
+        <inputList id="OdorInputList35" component="OdorSynTimes35" population="Pop_Mitral_0_7">
+            <input id="0" target="../Pop_Mitral_0_7/0/Mitral_0_7" segmentId="171" fractionAlong="0.30000000000000004" destination="synapses"/>
+        </inputList>
+
+        <inputList id="OdorInputList36" component="OdorSynTimes36" population="Pop_Mitral_0_8">
+            <input id="0" target="../Pop_Mitral_0_8/0/Mitral_0_8" segmentId="296" fractionAlong="0.2" destination="synapses"/>
+        </inputList>
+
+        <inputList id="OdorInputList37" component="OdorSynTimes37" population="Pop_Mitral_0_8">
+            <input id="0" target="../Pop_Mitral_0_8/0/Mitral_0_8" segmentId="293" fractionAlong="0.30000000000000004" destination="synapses"/>
+        </inputList>
+
+        <inputList id="OdorInputList38" component="OdorSynTimes38" population="Pop_Mitral_0_8">
+            <input id="0" target="../Pop_Mitral_0_8/0/Mitral_0_8" segmentId="291" fractionAlong="0.2" destination="synapses"/>
+        </inputList>
+
+        <inputList id="OdorInputList39" component="OdorSynTimes39" population="Pop_Mitral_0_8">
+            <input id="0" target="../Pop_Mitral_0_8/0/Mitral_0_8" segmentId="288" fractionAlong="0.30000000000000004" destination="synapses"/>
+        </inputList>
+
+        <inputList id="OdorInputList40" component="OdorSynTimes40" population="Pop_Mitral_0_8">
+            <input id="0" target="../Pop_Mitral_0_8/0/Mitral_0_8" segmentId="286" fractionAlong="0.2" destination="synapses"/>
+        </inputList>
+
+        <inputList id="OdorInputList41" component="OdorSynTimes41" population="Pop_Mitral_0_8">
+            <input id="0" target="../Pop_Mitral_0_8/0/Mitral_0_8" segmentId="284" fractionAlong="0.2" destination="synapses"/>
+        </inputList>
+
+        <inputList id="OdorInputList42" component="OdorSynTimes42" population="Pop_Mitral_0_9">
+            <input id="0" target="../Pop_Mitral_0_9/0/Mitral_0_9" segmentId="338" fractionAlong="0.2" destination="synapses"/>
+        </inputList>
+
+        <inputList id="OdorInputList43" component="OdorSynTimes43" population="Pop_Mitral_0_9">
+            <input id="0" target="../Pop_Mitral_0_9/0/Mitral_0_9" segmentId="336" fractionAlong="0.2" destination="synapses"/>
+        </inputList>
+
+        <inputList id="OdorInputList44" component="OdorSynTimes44" population="Pop_Mitral_0_9">
+            <input id="0" target="../Pop_Mitral_0_9/0/Mitral_0_9" segmentId="333" fractionAlong="0.30000000000000004" destination="synapses"/>
+        </inputList>
+
+        <inputList id="OdorInputList45" component="OdorSynTimes45" population="Pop_Mitral_0_9">
+            <input id="0" target="../Pop_Mitral_0_9/0/Mitral_0_9" segmentId="330" fractionAlong="0.30000000000000004" destination="synapses"/>
+        </inputList>
+
+        <inputList id="OdorInputList46" component="OdorSynTimes46" population="Pop_Mitral_0_10">
+            <input id="0" target="../Pop_Mitral_0_10/0/Mitral_0_10" segmentId="180" fractionAlong="0.30000000000000004" destination="synapses"/>
+        </inputList>
+
+        <inputList id="OdorInputList47" component="OdorSynTimes47" population="Pop_Mitral_0_10">
+            <input id="0" target="../Pop_Mitral_0_10/0/Mitral_0_10" segmentId="178" fractionAlong="0.2" destination="synapses"/>
+        </inputList>
+
+        <inputList id="OdorInputList48" component="OdorSynTimes48" population="Pop_Mitral_0_10">
+            <input id="0" target="../Pop_Mitral_0_10/0/Mitral_0_10" segmentId="175" fractionAlong="0.30000000000000004" destination="synapses"/>
+        </inputList>
+
+        <inputList id="OdorInputList49" component="OdorSynTimes49" population="Pop_Mitral_0_10">
+            <input id="0" target="../Pop_Mitral_0_10/0/Mitral_0_10" segmentId="172" fractionAlong="0.30000000000000004" destination="synapses"/>
+        </inputList>
+
+        <inputList id="OdorInputList50" component="OdorSynTimes50" population="Pop_Mitral_0_10">
+            <input id="0" target="../Pop_Mitral_0_10/0/Mitral_0_10" segmentId="170" fractionAlong="0.2" destination="synapses"/>
+        </inputList>
+
+        <inputList id="OdorInputList51" component="OdorSynTimes51" population="Pop_Mitral_0_11">
+            <input id="0" target="../Pop_Mitral_0_11/0/Mitral_0_11" segmentId="284" fractionAlong="0.2" destination="synapses"/>
+        </inputList>
+
+        <inputList id="OdorInputList52" component="OdorSynTimes52" population="Pop_Mitral_0_11">
+            <input id="0" target="../Pop_Mitral_0_11/0/Mitral_0_11" segmentId="281" fractionAlong="0.30000000000000004" destination="synapses"/>
+        </inputList>
+
+        <inputList id="OdorInputList53" component="OdorSynTimes53" population="Pop_Mitral_0_11">
+            <input id="0" target="../Pop_Mitral_0_11/0/Mitral_0_11" segmentId="279" fractionAlong="0.2" destination="synapses"/>
+        </inputList>
+
+        <inputList id="OdorInputList54" component="OdorSynTimes54" population="Pop_Mitral_0_11">
+            <input id="0" target="../Pop_Mitral_0_11/0/Mitral_0_11" segmentId="277" fractionAlong="0.2" destination="synapses"/>
+        </inputList>
+
+        <inputList id="OdorInputList55" component="OdorSynTimes55" population="Pop_Mitral_0_11">
+            <input id="0" target="../Pop_Mitral_0_11/0/Mitral_0_11" segmentId="275" fractionAlong="0.2" destination="synapses"/>
+        </inputList>
+
+        <inputList id="OdorInputList56" component="OdorSynTimes56" population="Pop_Mitral_0_11">
+            <input id="0" target="../Pop_Mitral_0_11/0/Mitral_0_11" segmentId="273" fractionAlong="0.2" destination="synapses"/>
+        </inputList>
+
+        <inputList id="OdorInputList57" component="OdorSynTimes57" population="Pop_Mitral_0_12">
+            <input id="0" target="../Pop_Mitral_0_12/0/Mitral_0_12" segmentId="313" fractionAlong="0.2" destination="synapses"/>
+        </inputList>
+
+        <inputList id="OdorInputList58" component="OdorSynTimes58" population="Pop_Mitral_0_12">
+            <input id="0" target="../Pop_Mitral_0_12/0/Mitral_0_12" segmentId="311" fractionAlong="0.2" destination="synapses"/>
+        </inputList>
+
+        <inputList id="OdorInputList59" component="OdorSynTimes59" population="Pop_Mitral_0_12">
+            <input id="0" target="../Pop_Mitral_0_12/0/Mitral_0_12" segmentId="309" fractionAlong="0.2" destination="synapses"/>
+        </inputList>
+
+        <inputList id="OdorInputList60" component="OdorSynTimes60" population="Pop_Mitral_0_12">
+            <input id="0" target="../Pop_Mitral_0_12/0/Mitral_0_12" segmentId="307" fractionAlong="0.2" destination="synapses"/>
+        </inputList>
+
+        <inputList id="OdorInputList61" component="OdorSynTimes61" population="Pop_Mitral_0_13">
+            <input id="0" target="../Pop_Mitral_0_13/0/Mitral_0_13" segmentId="267" fractionAlong="0.2" destination="synapses"/>
+        </inputList>
+
+        <inputList id="OdorInputList62" component="OdorSynTimes62" population="Pop_Mitral_0_13">
+            <input id="0" target="../Pop_Mitral_0_13/0/Mitral_0_13" segmentId="265" fractionAlong="0.2" destination="synapses"/>
+        </inputList>
+
+        <inputList id="OdorInputList63" component="OdorSynTimes63" population="Pop_Mitral_0_13">
+            <input id="0" target="../Pop_Mitral_0_13/0/Mitral_0_13" segmentId="263" fractionAlong="0.2" destination="synapses"/>
+        </inputList>
+
+        <inputList id="OdorInputList64" component="OdorSynTimes64" population="Pop_Mitral_0_13">
+            <input id="0" target="../Pop_Mitral_0_13/0/Mitral_0_13" segmentId="261" fractionAlong="0.2" destination="synapses"/>
+        </inputList>
+
+        <inputList id="OdorInputList65" component="OdorSynTimes65" population="Pop_Mitral_0_13">
+            <input id="0" target="../Pop_Mitral_0_13/0/Mitral_0_13" segmentId="258" fractionAlong="0.30000000000000004" destination="synapses"/>
+        </inputList>
+
+        <inputList id="OdorInputList66" component="OdorSynTimes66" population="Pop_Mitral_0_13">
+            <input id="0" target="../Pop_Mitral_0_13/0/Mitral_0_13" segmentId="256" fractionAlong="0.2" destination="synapses"/>
+        </inputList>
+
+        <inputList id="OdorInputList67" component="OdorSynTimes67" population="Pop_Mitral_0_14">
+            <input id="0" target="../Pop_Mitral_0_14/0/Mitral_0_14" segmentId="286" fractionAlong="0.2" destination="synapses"/>
+        </inputList>
+
+        <inputList id="OdorInputList68" component="OdorSynTimes68" population="Pop_Mitral_0_14">
+            <input id="0" target="../Pop_Mitral_0_14/0/Mitral_0_14" segmentId="284" fractionAlong="0.2" destination="synapses"/>
+        </inputList>
+
+        <inputList id="OdorInputList69" component="OdorSynTimes69" population="Pop_Mitral_0_14">
+            <input id="0" target="../Pop_Mitral_0_14/0/Mitral_0_14" segmentId="282" fractionAlong="0.2" destination="synapses"/>
+        </inputList>
+
+        <inputList id="OdorInputList70" component="OdorSynTimes70" population="Pop_Mitral_0_14">
+            <input id="0" target="../Pop_Mitral_0_14/0/Mitral_0_14" segmentId="280" fractionAlong="0.2" destination="synapses"/>
+        </inputList>
+
+        <inputList id="OdorInputList71" component="OdorSynTimes71" population="Pop_Mitral_0_15">
+            <input id="0" target="../Pop_Mitral_0_15/0/Mitral_0_15" segmentId="256" fractionAlong="0.2" destination="synapses"/>
+        </inputList>
+
+        <inputList id="OdorInputList72" component="OdorSynTimes72" population="Pop_Mitral_0_15">
+            <input id="0" target="../Pop_Mitral_0_15/0/Mitral_0_15" segmentId="253" fractionAlong="0.30000000000000004" destination="synapses"/>
+        </inputList>
+
+        <inputList id="OdorInputList73" component="OdorSynTimes73" population="Pop_Mitral_0_15">
+            <input id="0" target="../Pop_Mitral_0_15/0/Mitral_0_15" segmentId="251" fractionAlong="0.2" destination="synapses"/>
+        </inputList>
+
+        <inputList id="OdorInputList74" component="OdorSynTimes74" population="Pop_Mitral_0_15">
+            <input id="0" target="../Pop_Mitral_0_15/0/Mitral_0_15" segmentId="249" fractionAlong="0.2" destination="synapses"/>
+        </inputList>
+
+        <inputList id="OdorInputList75" component="OdorSynTimes75" population="Pop_Mitral_0_16">
+            <input id="0" target="../Pop_Mitral_0_16/0/Mitral_0_16" segmentId="397" fractionAlong="0.30000000000000004" destination="synapses"/>
+        </inputList>
+
+        <inputList id="OdorInputList76" component="OdorSynTimes76" population="Pop_Mitral_0_16">
+            <input id="0" target="../Pop_Mitral_0_16/0/Mitral_0_16" segmentId="395" fractionAlong="0.2" destination="synapses"/>
+        </inputList>
+
+        <inputList id="OdorInputList77" component="OdorSynTimes77" population="Pop_Mitral_0_16">
+            <input id="0" target="../Pop_Mitral_0_16/0/Mitral_0_16" segmentId="393" fractionAlong="0.2" destination="synapses"/>
+        </inputList>
+
+        <inputList id="OdorInputList78" component="OdorSynTimes78" population="Pop_Mitral_0_16">
+            <input id="0" target="../Pop_Mitral_0_16/0/Mitral_0_16" segmentId="390" fractionAlong="0.30000000000000004" destination="synapses"/>
+        </inputList>
+
+        <inputList id="OdorInputList79" component="OdorSynTimes79" population="Pop_Mitral_0_17">
+            <input id="0" target="../Pop_Mitral_0_17/0/Mitral_0_17" segmentId="212" fractionAlong="0.2" destination="synapses"/>
+        </inputList>
+
+        <inputList id="OdorInputList80" component="OdorSynTimes80" population="Pop_Mitral_0_17">
+            <input id="0" target="../Pop_Mitral_0_17/0/Mitral_0_17" segmentId="209" fractionAlong="0.30000000000000004" destination="synapses"/>
+        </inputList>
+
+        <inputList id="OdorInputList81" component="OdorSynTimes81" population="Pop_Mitral_0_17">
+            <input id="0" target="../Pop_Mitral_0_17/0/Mitral_0_17" segmentId="207" fractionAlong="0.2" destination="synapses"/>
+        </inputList>
+
+        <inputList id="OdorInputList82" component="OdorSynTimes82" population="Pop_Mitral_0_17">
+            <input id="0" target="../Pop_Mitral_0_17/0/Mitral_0_17" segmentId="205" fractionAlong="0.2" destination="synapses"/>
+        </inputList>
+
+        <inputList id="OdorInputList83" component="OdorSynTimes83" population="Pop_Mitral_0_17">
+            <input id="0" target="../Pop_Mitral_0_17/0/Mitral_0_17" segmentId="202" fractionAlong="0.30000000000000004" destination="synapses"/>
+        </inputList>
+
+        <inputList id="OdorInputList84" component="OdorSynTimes84" population="Pop_Mitral_0_18">
+            <input id="0" target="../Pop_Mitral_0_18/0/Mitral_0_18" segmentId="401" fractionAlong="0.30000000000000004" destination="synapses"/>
+        </inputList>
+
+        <inputList id="OdorInputList85" component="OdorSynTimes85" population="Pop_Mitral_0_18">
+            <input id="0" target="../Pop_Mitral_0_18/0/Mitral_0_18" segmentId="398" fractionAlong="0.30000000000000004" destination="synapses"/>
+        </inputList>
+
+        <inputList id="OdorInputList86" component="OdorSynTimes86" population="Pop_Mitral_0_18">
+            <input id="0" target="../Pop_Mitral_0_18/0/Mitral_0_18" segmentId="396" fractionAlong="0.2" destination="synapses"/>
+        </inputList>
+
+        <inputList id="OdorInputList87" component="OdorSynTimes87" population="Pop_Mitral_0_18">
+            <input id="0" target="../Pop_Mitral_0_18/0/Mitral_0_18" segmentId="393" fractionAlong="0.30000000000000004" destination="synapses"/>
+        </inputList>
+
+        <inputList id="OdorInputList88" component="OdorSynTimes88" population="Pop_Mitral_0_18">
+            <input id="0" target="../Pop_Mitral_0_18/0/Mitral_0_18" segmentId="390" fractionAlong="0.30000000000000004" destination="synapses"/>
+        </inputList>
+
+        <inputList id="OdorInputList89" component="OdorSynTimes89" population="Pop_Mitral_0_19">
+            <input id="0" target="../Pop_Mitral_0_19/0/Mitral_0_19" segmentId="220" fractionAlong="0.30000000000000004" destination="synapses"/>
+        </inputList>
+
+        <inputList id="OdorInputList90" component="OdorSynTimes90" population="Pop_Mitral_0_19">
+            <input id="0" target="../Pop_Mitral_0_19/0/Mitral_0_19" segmentId="218" fractionAlong="0.2" destination="synapses"/>
+        </inputList>
+
+        <inputList id="OdorInputList91" component="OdorSynTimes91" population="Pop_Mitral_0_19">
+            <input id="0" target="../Pop_Mitral_0_19/0/Mitral_0_19" segmentId="215" fractionAlong="0.30000000000000004" destination="synapses"/>
+        </inputList>
+
+        <inputList id="OdorInputList92" component="OdorSynTimes92" population="Pop_Mitral_0_19">
+            <input id="0" target="../Pop_Mitral_0_19/0/Mitral_0_19" segmentId="212" fractionAlong="0.30000000000000004" destination="synapses"/>
+        </inputList>
+
+        <inputList id="OdorInputList93" component="OdorSynTimes93" population="Pop_Mitral_0_19">
+            <input id="0" target="../Pop_Mitral_0_19/0/Mitral_0_19" segmentId="210" fractionAlong="0.2" destination="synapses"/>
+        </inputList>
+
+        <inputList id="OdorInputList94" component="OdorSynTimes94" population="Pop_Mitral_0_19">
+            <input id="0" target="../Pop_Mitral_0_19/0/Mitral_0_19" segmentId="207" fractionAlong="0.30000000000000004" destination="synapses"/>
+        </inputList>
+
+        <inputList id="OdorInputList95" component="OdorSynTimes95" population="Pop_Mitral_0_20">
+            <input id="0" target="../Pop_Mitral_0_20/0/Mitral_0_20" segmentId="235" fractionAlong="0.2" destination="synapses"/>
+        </inputList>
+
+        <inputList id="OdorInputList96" component="OdorSynTimes96" population="Pop_Mitral_0_20">
+            <input id="0" target="../Pop_Mitral_0_20/0/Mitral_0_20" segmentId="233" fractionAlong="0.2" destination="synapses"/>
+        </inputList>
+
+        <inputList id="OdorInputList97" component="OdorSynTimes97" population="Pop_Mitral_0_20">
+            <input id="0" target="../Pop_Mitral_0_20/0/Mitral_0_20" segmentId="231" fractionAlong="0.2" destination="synapses"/>
+        </inputList>
+
+        <inputList id="OdorInputList98" component="OdorSynTimes98" population="Pop_Mitral_0_20">
+            <input id="0" target="../Pop_Mitral_0_20/0/Mitral_0_20" segmentId="229" fractionAlong="0.2" destination="synapses"/>
+        </inputList>
+
+        <inputList id="OdorInputList99" component="OdorSynTimes99" population="Pop_Mitral_0_21">
+            <input id="0" target="../Pop_Mitral_0_21/0/Mitral_0_21" segmentId="283" fractionAlong="0.2" destination="synapses"/>
+        </inputList>
+
+        <inputList id="OdorInputList100" component="OdorSynTimes100" population="Pop_Mitral_0_21">
+            <input id="0" target="../Pop_Mitral_0_21/0/Mitral_0_21" segmentId="280" fractionAlong="0.30000000000000004" destination="synapses"/>
+        </inputList>
+
+        <inputList id="OdorInputList101" component="OdorSynTimes101" population="Pop_Mitral_0_21">
+            <input id="0" target="../Pop_Mitral_0_21/0/Mitral_0_21" segmentId="278" fractionAlong="0.2" destination="synapses"/>
+        </inputList>
+
+        <inputList id="OdorInputList102" component="OdorSynTimes102" population="Pop_Mitral_0_21">
+            <input id="0" target="../Pop_Mitral_0_21/0/Mitral_0_21" segmentId="275" fractionAlong="0.30000000000000004" destination="synapses"/>
+        </inputList>
+
+        <inputList id="OdorInputList103" component="OdorSynTimes103" population="Pop_Mitral_0_21">
+            <input id="0" target="../Pop_Mitral_0_21/0/Mitral_0_21" segmentId="273" fractionAlong="0.2" destination="synapses"/>
+        </inputList>
+
+        <inputList id="OdorInputList104" component="OdorSynTimes104" population="Pop_Mitral_0_21">
+            <input id="0" target="../Pop_Mitral_0_21/0/Mitral_0_21" segmentId="271" fractionAlong="0.2" destination="synapses"/>
+        </inputList>
+
+        <inputList id="OdorInputList105" component="OdorSynTimes105" population="Pop_Mitral_0_22">
+            <input id="0" target="../Pop_Mitral_0_22/0/Mitral_0_22" segmentId="258" fractionAlong="0.30000000000000004" destination="synapses"/>
+        </inputList>
+
+        <inputList id="OdorInputList106" component="OdorSynTimes106" population="Pop_Mitral_0_22">
+            <input id="0" target="../Pop_Mitral_0_22/0/Mitral_0_22" segmentId="255" fractionAlong="0.30000000000000004" destination="synapses"/>
+        </inputList>
+
+        <inputList id="OdorInputList107" component="OdorSynTimes107" population="Pop_Mitral_0_22">
+            <input id="0" target="../Pop_Mitral_0_22/0/Mitral_0_22" segmentId="252" fractionAlong="0.30000000000000004" destination="synapses"/>
+        </inputList>
+
+        <inputList id="OdorInputList108" component="OdorSynTimes108" population="Pop_Mitral_0_22">
+            <input id="0" target="../Pop_Mitral_0_22/0/Mitral_0_22" segmentId="250" fractionAlong="0.2" destination="synapses"/>
+        </inputList>
+
+        <inputList id="OdorInputList109" component="OdorSynTimes109" population="Pop_Mitral_0_22">
+            <input id="0" target="../Pop_Mitral_0_22/0/Mitral_0_22" segmentId="247" fractionAlong="0.30000000000000004" destination="synapses"/>
+        </inputList>
+
+        <inputList id="OdorInputList110" component="OdorSynTimes110" population="Pop_Mitral_0_22">
+            <input id="0" target="../Pop_Mitral_0_22/0/Mitral_0_22" segmentId="244" fractionAlong="0.30000000000000004" destination="synapses"/>
+        </inputList>
+
+        <inputList id="OdorInputList111" component="OdorSynTimes111" population="Pop_Mitral_0_23">
+            <input id="0" target="../Pop_Mitral_0_23/0/Mitral_0_23" segmentId="242" fractionAlong="0.2" destination="synapses"/>
+        </inputList>
+
+        <inputList id="OdorInputList112" component="OdorSynTimes112" population="Pop_Mitral_0_23">
+            <input id="0" target="../Pop_Mitral_0_23/0/Mitral_0_23" segmentId="240" fractionAlong="0.2" destination="synapses"/>
+        </inputList>
+
+        <inputList id="OdorInputList113" component="OdorSynTimes113" population="Pop_Mitral_0_23">
+            <input id="0" target="../Pop_Mitral_0_23/0/Mitral_0_23" segmentId="238" fractionAlong="0.2" destination="synapses"/>
+        </inputList>
+
+        <inputList id="OdorInputList114" component="OdorSynTimes114" population="Pop_Mitral_0_23">
+            <input id="0" target="../Pop_Mitral_0_23/0/Mitral_0_23" segmentId="235" fractionAlong="0.30000000000000004" destination="synapses"/>
+        </inputList>
+
+        <inputList id="OdorInputList115" component="OdorSynTimes115" population="Pop_Mitral_0_23">
+            <input id="0" target="../Pop_Mitral_0_23/0/Mitral_0_23" segmentId="232" fractionAlong="0.30000000000000004" destination="synapses"/>
+        </inputList>
+
+        <inputList id="OdorInputList116" component="OdorSynTimes116" population="Pop_Mitral_0_23">
+            <input id="0" target="../Pop_Mitral_0_23/0/Mitral_0_23" segmentId="229" fractionAlong="0.30000000000000004" destination="synapses"/>
+        </inputList>
+
+        <inputList id="OdorInputList117" component="OdorSynTimes117" population="Pop_Mitral_0_24">
+            <input id="0" target="../Pop_Mitral_0_24/0/Mitral_0_24" segmentId="267" fractionAlong="0.30000000000000004" destination="synapses"/>
+        </inputList>
+
+        <inputList id="OdorInputList118" component="OdorSynTimes118" population="Pop_Mitral_0_24">
+            <input id="0" target="../Pop_Mitral_0_24/0/Mitral_0_24" segmentId="264" fractionAlong="0.30000000000000004" destination="synapses"/>
+        </inputList>
+
+        <inputList id="OdorInputList119" component="OdorSynTimes119" population="Pop_Mitral_0_24">
+            <input id="0" target="../Pop_Mitral_0_24/0/Mitral_0_24" segmentId="261" fractionAlong="0.30000000000000004" destination="synapses"/>
+        </inputList>
+
+        <inputList id="OdorInputList120" component="OdorSynTimes120" population="Pop_Mitral_0_24">
+            <input id="0" target="../Pop_Mitral_0_24/0/Mitral_0_24" segmentId="258" fractionAlong="0.30000000000000004" destination="synapses"/>
+        </inputList>
+
+        <inputList id="OdorInputList121" component="OdorSynTimes121" population="Pop_Mitral_0_24">
+            <input id="0" target="../Pop_Mitral_0_24/0/Mitral_0_24" segmentId="255" fractionAlong="0.30000000000000004" destination="synapses"/>
+        </inputList>
+
+        <inputList id="OdorInputList122" component="OdorSynTimes122" population="Pop_Mitral_0_24">
+            <input id="0" target="../Pop_Mitral_0_24/0/Mitral_0_24" segmentId="252" fractionAlong="0.30000000000000004" destination="synapses"/>
+        </inputList>
+
+        <inputList id="OdorInputList123" component="OdorSynTimes123" population="Pop_Mitral_0_25">
+            <input id="0" target="../Pop_Mitral_0_25/0/Mitral_0_25" segmentId="184" fractionAlong="0.2" destination="synapses"/>
+        </inputList>
+
+        <inputList id="OdorInputList124" component="OdorSynTimes124" population="Pop_Mitral_0_25">
+            <input id="0" target="../Pop_Mitral_0_25/0/Mitral_0_25" segmentId="182" fractionAlong="0.2" destination="synapses"/>
+        </inputList>
+
+        <inputList id="OdorInputList125" component="OdorSynTimes125" population="Pop_Mitral_0_25">
+            <input id="0" target="../Pop_Mitral_0_25/0/Mitral_0_25" segmentId="179" fractionAlong="0.30000000000000004" destination="synapses"/>
+        </inputList>
+
+        <inputList id="OdorInputList126" component="OdorSynTimes126" population="Pop_Mitral_0_25">
+            <input id="0" target="../Pop_Mitral_0_25/0/Mitral_0_25" segmentId="177" fractionAlong="0.2" destination="synapses"/>
+        </inputList>
+
+        <inputList id="OdorInputList127" component="OdorSynTimes127" population="Pop_Mitral_0_25">
+            <input id="0" target="../Pop_Mitral_0_25/0/Mitral_0_25" segmentId="174" fractionAlong="0.30000000000000004" destination="synapses"/>
+        </inputList>
+
+        <inputList id="OdorInputList128" component="OdorSynTimes128" population="Pop_Mitral_0_25">
+            <input id="0" target="../Pop_Mitral_0_25/0/Mitral_0_25" segmentId="171" fractionAlong="0.30000000000000004" destination="synapses"/>
+        </inputList>
+
+        <inputList id="OdorInputList129" component="OdorSynTimes129" population="Pop_Mitral_0_26">
+            <input id="0" target="../Pop_Mitral_0_26/0/Mitral_0_26" segmentId="361" fractionAlong="0.2" destination="synapses"/>
+        </inputList>
+
+        <inputList id="OdorInputList130" component="OdorSynTimes130" population="Pop_Mitral_0_26">
+            <input id="0" target="../Pop_Mitral_0_26/0/Mitral_0_26" segmentId="359" fractionAlong="0.2" destination="synapses"/>
+        </inputList>
+
+        <inputList id="OdorInputList131" component="OdorSynTimes131" population="Pop_Mitral_0_26">
+            <input id="0" target="../Pop_Mitral_0_26/0/Mitral_0_26" segmentId="357" fractionAlong="0.2" destination="synapses"/>
+        </inputList>
+
+        <inputList id="OdorInputList132" component="OdorSynTimes132" population="Pop_Mitral_0_26">
+            <input id="0" target="../Pop_Mitral_0_26/0/Mitral_0_26" segmentId="354" fractionAlong="0.30000000000000004" destination="synapses"/>
+        </inputList>
+
+        <inputList id="OdorInputList133" component="OdorSynTimes133" population="Pop_Mitral_0_27">
+            <input id="0" target="../Pop_Mitral_0_27/0/Mitral_0_27" segmentId="363" fractionAlong="0.30000000000000004" destination="synapses"/>
+        </inputList>
+
+        <inputList id="OdorInputList134" component="OdorSynTimes134" population="Pop_Mitral_0_27">
+            <input id="0" target="../Pop_Mitral_0_27/0/Mitral_0_27" segmentId="360" fractionAlong="0.30000000000000004" destination="synapses"/>
+        </inputList>
+
+        <inputList id="OdorInputList135" component="OdorSynTimes135" population="Pop_Mitral_0_27">
+            <input id="0" target="../Pop_Mitral_0_27/0/Mitral_0_27" segmentId="358" fractionAlong="0.2" destination="synapses"/>
+        </inputList>
+
+        <inputList id="OdorInputList136" component="OdorSynTimes136" population="Pop_Mitral_0_27">
+            <input id="0" target="../Pop_Mitral_0_27/0/Mitral_0_27" segmentId="355" fractionAlong="0.30000000000000004" destination="synapses"/>
+        </inputList>
+
+        <inputList id="OdorInputList137" component="OdorSynTimes137" population="Pop_Mitral_0_27">
+            <input id="0" target="../Pop_Mitral_0_27/0/Mitral_0_27" segmentId="352" fractionAlong="0.30000000000000004" destination="synapses"/>
+        </inputList>
+
+        <inputList id="OdorInputList138" component="OdorSynTimes138" population="Pop_Mitral_0_28">
+            <input id="0" target="../Pop_Mitral_0_28/0/Mitral_0_28" segmentId="179" fractionAlong="0.2" destination="synapses"/>
+        </inputList>
+
+        <inputList id="OdorInputList139" component="OdorSynTimes139" population="Pop_Mitral_0_28">
+            <input id="0" target="../Pop_Mitral_0_28/0/Mitral_0_28" segmentId="176" fractionAlong="0.30000000000000004" destination="synapses"/>
+        </inputList>
+
+        <inputList id="OdorInputList140" component="OdorSynTimes140" population="Pop_Mitral_0_28">
+            <input id="0" target="../Pop_Mitral_0_28/0/Mitral_0_28" segmentId="174" fractionAlong="0.2" destination="synapses"/>
+        </inputList>
+
+        <inputList id="OdorInputList141" component="OdorSynTimes141" population="Pop_Mitral_0_28">
+            <input id="0" target="../Pop_Mitral_0_28/0/Mitral_0_28" segmentId="171" fractionAlong="0.30000000000000004" destination="synapses"/>
+        </inputList>
+
+        <inputList id="OdorInputList142" component="OdorSynTimes142" population="Pop_Mitral_0_28">
+            <input id="0" target="../Pop_Mitral_0_28/0/Mitral_0_28" segmentId="169" fractionAlong="0.2" destination="synapses"/>
+        </inputList>
+
+        <inputList id="OdorInputList143" component="OdorSynTimes143" population="Pop_Mitral_0_29">
+            <input id="0" target="../Pop_Mitral_0_29/0/Mitral_0_29" segmentId="221" fractionAlong="0.2" destination="synapses"/>
+        </inputList>
+
+        <inputList id="OdorInputList144" component="OdorSynTimes144" population="Pop_Mitral_0_29">
+            <input id="0" target="../Pop_Mitral_0_29/0/Mitral_0_29" segmentId="219" fractionAlong="0.2" destination="synapses"/>
+        </inputList>
+
+        <inputList id="OdorInputList145" component="OdorSynTimes145" population="Pop_Mitral_0_29">
+            <input id="0" target="../Pop_Mitral_0_29/0/Mitral_0_29" segmentId="216" fractionAlong="0.30000000000000004" destination="synapses"/>
+        </inputList>
+
+        <inputList id="OdorInputList146" component="OdorSynTimes146" population="Pop_Mitral_0_29">
+            <input id="0" target="../Pop_Mitral_0_29/0/Mitral_0_29" segmentId="213" fractionAlong="0.30000000000000004" destination="synapses"/>
+        </inputList>
+
+
+
+    </network>
+
+    <!-- Odor Input Synapses & Times-->
+    <expTwoSynapse id="OdorSyn0" weight="0.06692797546466227" tauRise="20ms" tauDecay="200ms" gbase="100nS" erev="0V"/>
+    <timedSynapticInput id="OdorSynTimes0" synapse="OdorSyn0" spikeTarget="./OdorSyn0">
+        <spike id="0" time="57.270142296964735 ms"/>
+    </timedSynapticInput>
+
+    <expTwoSynapse id="OdorSyn1" weight="0.06830086451620723" tauRise="20ms" tauDecay="200ms" gbase="100nS" erev="0V"/>
+    <timedSynapticInput id="OdorSynTimes1" synapse="OdorSyn1" spikeTarget="./OdorSyn1">
+        <spike id="0" time="57.270142296964735 ms"/>
+    </timedSynapticInput>
+
+    <expTwoSynapse id="OdorSyn2" weight="0.0613942984838275" tauRise="20ms" tauDecay="200ms" gbase="100nS" erev="0V"/>
+    <timedSynapticInput id="OdorSynTimes2" synapse="OdorSyn2" spikeTarget="./OdorSyn2">
+        <spike id="0" time="57.270142296964735 ms"/>
+    </timedSynapticInput>
+
+    <expTwoSynapse id="OdorSyn3" weight="0.03804117803967222" tauRise="20ms" tauDecay="200ms" gbase="100nS" erev="0V"/>
+    <timedSynapticInput id="OdorSynTimes3" synapse="OdorSyn3" spikeTarget="./OdorSyn3">
+        <spike id="0" time="57.270142296964735 ms"/>
+    </timedSynapticInput>
+
+    <expTwoSynapse id="OdorSyn4" weight="0.05599496739469732" tauRise="20ms" tauDecay="200ms" gbase="100nS" erev="0V"/>
+    <timedSynapticInput id="OdorSynTimes4" synapse="OdorSyn4" spikeTarget="./OdorSyn4">
+        <spike id="0" time="57.270142296964735 ms"/>
+    </timedSynapticInput>
+
+    <expTwoSynapse id="OdorSyn5" weight="0.05172554678728075" tauRise="20ms" tauDecay="200ms" gbase="100nS" erev="0V"/>
+    <timedSynapticInput id="OdorSynTimes5" synapse="OdorSyn5" spikeTarget="./OdorSyn5">
+        <spike id="0" time="57.270142296964735 ms"/>
+    </timedSynapticInput>
+
+    <expTwoSynapse id="OdorSyn6" weight="0.06799962800357692" tauRise="20ms" tauDecay="200ms" gbase="100nS" erev="0V"/>
+    <timedSynapticInput id="OdorSynTimes6" synapse="OdorSyn6" spikeTarget="./OdorSyn6">
+        <spike id="0" time="57.270142296964735 ms"/>
+    </timedSynapticInput>
+
+    <expTwoSynapse id="OdorSyn7" weight="0.059325572374858936" tauRise="20ms" tauDecay="200ms" gbase="100nS" erev="0V"/>
+    <timedSynapticInput id="OdorSynTimes7" synapse="OdorSyn7" spikeTarget="./OdorSyn7">
+        <spike id="0" time="57.270142296964735 ms"/>
+    </timedSynapticInput>
+
+    <expTwoSynapse id="OdorSyn8" weight="0.06550150059057791" tauRise="20ms" tauDecay="200ms" gbase="100nS" erev="0V"/>
+    <timedSynapticInput id="OdorSynTimes8" synapse="OdorSyn8" spikeTarget="./OdorSyn8">
+        <spike id="0" time="57.270142296964735 ms"/>
+    </timedSynapticInput>
+
+    <expTwoSynapse id="OdorSyn9" weight="0.05373383260575168" tauRise="20ms" tauDecay="200ms" gbase="100nS" erev="0V"/>
+    <timedSynapticInput id="OdorSynTimes9" synapse="OdorSyn9" spikeTarget="./OdorSyn9">
+        <spike id="0" time="57.270142296964735 ms"/>
+    </timedSynapticInput>
+
+    <expTwoSynapse id="OdorSyn10" weight="0.04945169658045216" tauRise="20ms" tauDecay="200ms" gbase="100nS" erev="0V"/>
+    <timedSynapticInput id="OdorSynTimes10" synapse="OdorSyn10" spikeTarget="./OdorSyn10">
+        <spike id="0" time="57.270142296964735 ms"/>
+    </timedSynapticInput>
+
+    <expTwoSynapse id="OdorSyn11" weight="0.03933054975926287" tauRise="20ms" tauDecay="200ms" gbase="100nS" erev="0V"/>
+    <timedSynapticInput id="OdorSynTimes11" synapse="OdorSyn11" spikeTarget="./OdorSyn11">
+        <spike id="0" time="57.270142296964735 ms"/>
+    </timedSynapticInput>
+
+    <expTwoSynapse id="OdorSyn12" weight="0.05135622827722867" tauRise="20ms" tauDecay="200ms" gbase="100nS" erev="0V"/>
+    <timedSynapticInput id="OdorSynTimes12" synapse="OdorSyn12" spikeTarget="./OdorSyn12">
+        <spike id="0" time="57.270142296964735 ms"/>
+    </timedSynapticInput>
+
+    <expTwoSynapse id="OdorSyn13" weight="0.041494499172565" tauRise="20ms" tauDecay="200ms" gbase="100nS" erev="0V"/>
+    <timedSynapticInput id="OdorSynTimes13" synapse="OdorSyn13" spikeTarget="./OdorSyn13">
+        <spike id="0" time="57.270142296964735 ms"/>
+    </timedSynapticInput>
+
+    <expTwoSynapse id="OdorSyn14" weight="0.06556799819748076" tauRise="20ms" tauDecay="200ms" gbase="100nS" erev="0V"/>
+    <timedSynapticInput id="OdorSynTimes14" synapse="OdorSyn14" spikeTarget="./OdorSyn14">
+        <spike id="0" time="57.270142296964735 ms"/>
+    </timedSynapticInput>
+
+    <expTwoSynapse id="OdorSyn15" weight="0.0643788119784477" tauRise="20ms" tauDecay="200ms" gbase="100nS" erev="0V"/>
+    <timedSynapticInput id="OdorSynTimes15" synapse="OdorSyn15" spikeTarget="./OdorSyn15">
+        <spike id="0" time="57.270142296964735 ms"/>
+    </timedSynapticInput>
+
+    <expTwoSynapse id="OdorSyn16" weight="0.05630597177067359" tauRise="20ms" tauDecay="200ms" gbase="100nS" erev="0V"/>
+    <timedSynapticInput id="OdorSynTimes16" synapse="OdorSyn16" spikeTarget="./OdorSyn16">
+        <spike id="0" time="57.270142296964735 ms"/>
+    </timedSynapticInput>
+
+    <expTwoSynapse id="OdorSyn17" weight="0.05040994842698677" tauRise="20ms" tauDecay="200ms" gbase="100nS" erev="0V"/>
+    <timedSynapticInput id="OdorSynTimes17" synapse="OdorSyn17" spikeTarget="./OdorSyn17">
+        <spike id="0" time="57.270142296964735 ms"/>
+    </timedSynapticInput>
+
+    <expTwoSynapse id="OdorSyn18" weight="0.05545602491083864" tauRise="20ms" tauDecay="200ms" gbase="100nS" erev="0V"/>
+    <timedSynapticInput id="OdorSynTimes18" synapse="OdorSyn18" spikeTarget="./OdorSyn18">
+        <spike id="0" time="57.270142296964735 ms"/>
+    </timedSynapticInput>
+
+    <expTwoSynapse id="OdorSyn19" weight="0.04300517865380425" tauRise="20ms" tauDecay="200ms" gbase="100nS" erev="0V"/>
+    <timedSynapticInput id="OdorSynTimes19" synapse="OdorSyn19" spikeTarget="./OdorSyn19">
+        <spike id="0" time="57.270142296964735 ms"/>
+    </timedSynapticInput>
+
+    <expTwoSynapse id="OdorSyn20" weight="0.06887798416602421" tauRise="20ms" tauDecay="200ms" gbase="100nS" erev="0V"/>
+    <timedSynapticInput id="OdorSynTimes20" synapse="OdorSyn20" spikeTarget="./OdorSyn20">
+        <spike id="0" time="57.270142296964735 ms"/>
+    </timedSynapticInput>
+
+    <expTwoSynapse id="OdorSyn21" weight="0.06013271175340948" tauRise="20ms" tauDecay="200ms" gbase="100nS" erev="0V"/>
+    <timedSynapticInput id="OdorSynTimes21" synapse="OdorSyn21" spikeTarget="./OdorSyn21">
+        <spike id="0" time="57.270142296964735 ms"/>
+    </timedSynapticInput>
+
+    <expTwoSynapse id="OdorSyn22" weight="0.04454400471295061" tauRise="20ms" tauDecay="200ms" gbase="100nS" erev="0V"/>
+    <timedSynapticInput id="OdorSynTimes22" synapse="OdorSyn22" spikeTarget="./OdorSyn22">
+        <spike id="0" time="57.270142296964735 ms"/>
+    </timedSynapticInput>
+
+    <expTwoSynapse id="OdorSyn23" weight="0.09557356211743787" tauRise="20ms" tauDecay="200ms" gbase="100nS" erev="0V"/>
+    <timedSynapticInput id="OdorSynTimes23" synapse="OdorSyn23" spikeTarget="./OdorSyn23">
+        <spike id="0" time="57.270142296964735 ms"/>
+    </timedSynapticInput>
+
+    <expTwoSynapse id="OdorSyn24" weight="0.08893026233630508" tauRise="20ms" tauDecay="200ms" gbase="100nS" erev="0V"/>
+    <timedSynapticInput id="OdorSynTimes24" synapse="OdorSyn24" spikeTarget="./OdorSyn24">
+        <spike id="0" time="57.270142296964735 ms"/>
+    </timedSynapticInput>
+
+    <expTwoSynapse id="OdorSyn25" weight="0.06608867225886961" tauRise="20ms" tauDecay="200ms" gbase="100nS" erev="0V"/>
+    <timedSynapticInput id="OdorSynTimes25" synapse="OdorSyn25" spikeTarget="./OdorSyn25">
+        <spike id="0" time="57.270142296964735 ms"/>
+    </timedSynapticInput>
+
+    <expTwoSynapse id="OdorSyn26" weight="0.10286272957798247" tauRise="20ms" tauDecay="200ms" gbase="100nS" erev="0V"/>
+    <timedSynapticInput id="OdorSynTimes26" synapse="OdorSyn26" spikeTarget="./OdorSyn26">
+        <spike id="0" time="57.270142296964735 ms"/>
+    </timedSynapticInput>
+
+    <expTwoSynapse id="OdorSyn27" weight="0.08233973757630939" tauRise="20ms" tauDecay="200ms" gbase="100nS" erev="0V"/>
+    <timedSynapticInput id="OdorSynTimes27" synapse="OdorSyn27" spikeTarget="./OdorSyn27">
+        <spike id="0" time="57.270142296964735 ms"/>
+    </timedSynapticInput>
+
+    <expTwoSynapse id="OdorSyn28" weight="0.09809655398760192" tauRise="20ms" tauDecay="200ms" gbase="100nS" erev="0V"/>
+    <timedSynapticInput id="OdorSynTimes28" synapse="OdorSyn28" spikeTarget="./OdorSyn28">
+        <spike id="0" time="57.270142296964735 ms"/>
+    </timedSynapticInput>
+
+    <expTwoSynapse id="OdorSyn29" weight="0.07427279864670666" tauRise="20ms" tauDecay="200ms" gbase="100nS" erev="0V"/>
+    <timedSynapticInput id="OdorSynTimes29" synapse="OdorSyn29" spikeTarget="./OdorSyn29">
+        <spike id="0" time="57.270142296964735 ms"/>
+    </timedSynapticInput>
+
+    <expTwoSynapse id="OdorSyn30" weight="0.10180768981104286" tauRise="20ms" tauDecay="200ms" gbase="100nS" erev="0V"/>
+    <timedSynapticInput id="OdorSynTimes30" synapse="OdorSyn30" spikeTarget="./OdorSyn30">
+        <spike id="0" time="57.270142296964735 ms"/>
+    </timedSynapticInput>
+
+    <expTwoSynapse id="OdorSyn31" weight="0.07801842980078344" tauRise="20ms" tauDecay="200ms" gbase="100nS" erev="0V"/>
+    <timedSynapticInput id="OdorSynTimes31" synapse="OdorSyn31" spikeTarget="./OdorSyn31">
+        <spike id="0" time="57.270142296964735 ms"/>
+    </timedSynapticInput>
+
+    <expTwoSynapse id="OdorSyn32" weight="0.05654148768669558" tauRise="20ms" tauDecay="200ms" gbase="100nS" erev="0V"/>
+    <timedSynapticInput id="OdorSynTimes32" synapse="OdorSyn32" spikeTarget="./OdorSyn32">
+        <spike id="0" time="57.270142296964735 ms"/>
+    </timedSynapticInput>
+
+    <expTwoSynapse id="OdorSyn33" weight="0.08082953152756671" tauRise="20ms" tauDecay="200ms" gbase="100nS" erev="0V"/>
+    <timedSynapticInput id="OdorSynTimes33" synapse="OdorSyn33" spikeTarget="./OdorSyn33">
+        <spike id="0" time="57.270142296964735 ms"/>
+    </timedSynapticInput>
+
+    <expTwoSynapse id="OdorSyn34" weight="0.07342383013284165" tauRise="20ms" tauDecay="200ms" gbase="100nS" erev="0V"/>
+    <timedSynapticInput id="OdorSynTimes34" synapse="OdorSyn34" spikeTarget="./OdorSyn34">
+        <spike id="0" time="57.270142296964735 ms"/>
+    </timedSynapticInput>
+
+    <expTwoSynapse id="OdorSyn35" weight="0.07759477623325944" tauRise="20ms" tauDecay="200ms" gbase="100nS" erev="0V"/>
+    <timedSynapticInput id="OdorSynTimes35" synapse="OdorSyn35" spikeTarget="./OdorSyn35">
+        <spike id="0" time="57.270142296964735 ms"/>
+    </timedSynapticInput>
+
+    <expTwoSynapse id="OdorSyn36" weight="0.06070217744961245" tauRise="20ms" tauDecay="200ms" gbase="100nS" erev="0V"/>
+    <timedSynapticInput id="OdorSynTimes36" synapse="OdorSyn36" spikeTarget="./OdorSyn36">
+        <spike id="0" time="57.270142296964735 ms"/>
+    </timedSynapticInput>
+
+    <expTwoSynapse id="OdorSyn37" weight="0.060371770246492255" tauRise="20ms" tauDecay="200ms" gbase="100nS" erev="0V"/>
+    <timedSynapticInput id="OdorSynTimes37" synapse="OdorSyn37" spikeTarget="./OdorSyn37">
+        <spike id="0" time="57.270142296964735 ms"/>
+    </timedSynapticInput>
+
+    <expTwoSynapse id="OdorSyn38" weight="0.06760292479379362" tauRise="20ms" tauDecay="200ms" gbase="100nS" erev="0V"/>
+    <timedSynapticInput id="OdorSynTimes38" synapse="OdorSyn38" spikeTarget="./OdorSyn38">
+        <spike id="0" time="57.270142296964735 ms"/>
+    </timedSynapticInput>
+
+    <expTwoSynapse id="OdorSyn39" weight="0.09318155029476945" tauRise="20ms" tauDecay="200ms" gbase="100nS" erev="0V"/>
+    <timedSynapticInput id="OdorSynTimes39" synapse="OdorSyn39" spikeTarget="./OdorSyn39">
+        <spike id="0" time="57.270142296964735 ms"/>
+    </timedSynapticInput>
+
+    <expTwoSynapse id="OdorSyn40" weight="0.10426142118442419" tauRise="20ms" tauDecay="200ms" gbase="100nS" erev="0V"/>
+    <timedSynapticInput id="OdorSynTimes40" synapse="OdorSyn40" spikeTarget="./OdorSyn40">
+        <spike id="0" time="57.270142296964735 ms"/>
+    </timedSynapticInput>
+
+    <expTwoSynapse id="OdorSyn41" weight="0.07320899796886808" tauRise="20ms" tauDecay="200ms" gbase="100nS" erev="0V"/>
+    <timedSynapticInput id="OdorSynTimes41" synapse="OdorSyn41" spikeTarget="./OdorSyn41">
+        <spike id="0" time="57.270142296964735 ms"/>
+    </timedSynapticInput>
+
+    <expTwoSynapse id="OdorSyn42" weight="0.06849037119889037" tauRise="20ms" tauDecay="200ms" gbase="100nS" erev="0V"/>
+    <timedSynapticInput id="OdorSynTimes42" synapse="OdorSyn42" spikeTarget="./OdorSyn42">
+        <spike id="0" time="57.270142296964735 ms"/>
+    </timedSynapticInput>
+
+    <expTwoSynapse id="OdorSyn43" weight="0.07226338646014917" tauRise="20ms" tauDecay="200ms" gbase="100nS" erev="0V"/>
+    <timedSynapticInput id="OdorSynTimes43" synapse="OdorSyn43" spikeTarget="./OdorSyn43">
+        <spike id="0" time="57.270142296964735 ms"/>
+    </timedSynapticInput>
+
+    <expTwoSynapse id="OdorSyn44" weight="0.06397471333878155" tauRise="20ms" tauDecay="200ms" gbase="100nS" erev="0V"/>
+    <timedSynapticInput id="OdorSynTimes44" synapse="OdorSyn44" spikeTarget="./OdorSyn44">
+        <spike id="0" time="57.270142296964735 ms"/>
+    </timedSynapticInput>
+
+    <expTwoSynapse id="OdorSyn45" weight="0.08153756981509176" tauRise="20ms" tauDecay="200ms" gbase="100nS" erev="0V"/>
+    <timedSynapticInput id="OdorSynTimes45" synapse="OdorSyn45" spikeTarget="./OdorSyn45">
+        <spike id="0" time="57.270142296964735 ms"/>
+    </timedSynapticInput>
+
+    <expTwoSynapse id="OdorSyn46" weight="0.1041425603094831" tauRise="20ms" tauDecay="200ms" gbase="100nS" erev="0V"/>
+    <timedSynapticInput id="OdorSynTimes46" synapse="OdorSyn46" spikeTarget="./OdorSyn46">
+        <spike id="0" time="57.270142296964735 ms"/>
+    </timedSynapticInput>
+
+    <expTwoSynapse id="OdorSyn47" weight="0.07604213755829149" tauRise="20ms" tauDecay="200ms" gbase="100nS" erev="0V"/>
+    <timedSynapticInput id="OdorSynTimes47" synapse="OdorSyn47" spikeTarget="./OdorSyn47">
+        <spike id="0" time="57.270142296964735 ms"/>
+    </timedSynapticInput>
+
+    <expTwoSynapse id="OdorSyn48" weight="0.06068217009371894" tauRise="20ms" tauDecay="200ms" gbase="100nS" erev="0V"/>
+    <timedSynapticInput id="OdorSynTimes48" synapse="OdorSyn48" spikeTarget="./OdorSyn48">
+        <spike id="0" time="57.270142296964735 ms"/>
+    </timedSynapticInput>
+
+    <expTwoSynapse id="OdorSyn49" weight="0.07917438459641303" tauRise="20ms" tauDecay="200ms" gbase="100nS" erev="0V"/>
+    <timedSynapticInput id="OdorSynTimes49" synapse="OdorSyn49" spikeTarget="./OdorSyn49">
+        <spike id="0" time="57.270142296964735 ms"/>
+    </timedSynapticInput>
+
+    <expTwoSynapse id="OdorSyn50" weight="0.08655418645808559" tauRise="20ms" tauDecay="200ms" gbase="100nS" erev="0V"/>
+    <timedSynapticInput id="OdorSynTimes50" synapse="OdorSyn50" spikeTarget="./OdorSyn50">
+        <spike id="0" time="57.270142296964735 ms"/>
+    </timedSynapticInput>
+
+    <expTwoSynapse id="OdorSyn51" weight="0.09406828907418179" tauRise="20ms" tauDecay="200ms" gbase="100nS" erev="0V"/>
+    <timedSynapticInput id="OdorSynTimes51" synapse="OdorSyn51" spikeTarget="./OdorSyn51">
+        <spike id="0" time="57.270142296964735 ms"/>
+    </timedSynapticInput>
+
+    <expTwoSynapse id="OdorSyn52" weight="0.07613036487691789" tauRise="20ms" tauDecay="200ms" gbase="100nS" erev="0V"/>
+    <timedSynapticInput id="OdorSynTimes52" synapse="OdorSyn52" spikeTarget="./OdorSyn52">
+        <spike id="0" time="57.270142296964735 ms"/>
+    </timedSynapticInput>
+
+    <expTwoSynapse id="OdorSyn53" weight="0.07748732879317025" tauRise="20ms" tauDecay="200ms" gbase="100nS" erev="0V"/>
+    <timedSynapticInput id="OdorSynTimes53" synapse="OdorSyn53" spikeTarget="./OdorSyn53">
+        <spike id="0" time="57.270142296964735 ms"/>
+    </timedSynapticInput>
+
+    <expTwoSynapse id="OdorSyn54" weight="0.06419509998043224" tauRise="20ms" tauDecay="200ms" gbase="100nS" erev="0V"/>
+    <timedSynapticInput id="OdorSynTimes54" synapse="OdorSyn54" spikeTarget="./OdorSyn54">
+        <spike id="0" time="57.270142296964735 ms"/>
+    </timedSynapticInput>
+
+    <expTwoSynapse id="OdorSyn55" weight="0.08853497876007718" tauRise="20ms" tauDecay="200ms" gbase="100nS" erev="0V"/>
+    <timedSynapticInput id="OdorSynTimes55" synapse="OdorSyn55" spikeTarget="./OdorSyn55">
+        <spike id="0" time="57.270142296964735 ms"/>
+    </timedSynapticInput>
+
+    <expTwoSynapse id="OdorSyn56" weight="0.07543973351175785" tauRise="20ms" tauDecay="200ms" gbase="100nS" erev="0V"/>
+    <timedSynapticInput id="OdorSynTimes56" synapse="OdorSyn56" spikeTarget="./OdorSyn56">
+        <spike id="0" time="57.270142296964735 ms"/>
+    </timedSynapticInput>
+
+    <expTwoSynapse id="OdorSyn57" weight="0.06745283281119116" tauRise="20ms" tauDecay="200ms" gbase="100nS" erev="0V"/>
+    <timedSynapticInput id="OdorSynTimes57" synapse="OdorSyn57" spikeTarget="./OdorSyn57">
+        <spike id="0" time="57.270142296964735 ms"/>
+    </timedSynapticInput>
+
+    <expTwoSynapse id="OdorSyn58" weight="0.08882375053707267" tauRise="20ms" tauDecay="200ms" gbase="100nS" erev="0V"/>
+    <timedSynapticInput id="OdorSynTimes58" synapse="OdorSyn58" spikeTarget="./OdorSyn58">
+        <spike id="0" time="57.270142296964735 ms"/>
+    </timedSynapticInput>
+
+    <expTwoSynapse id="OdorSyn59" weight="0.08339235589981624" tauRise="20ms" tauDecay="200ms" gbase="100nS" erev="0V"/>
+    <timedSynapticInput id="OdorSynTimes59" synapse="OdorSyn59" spikeTarget="./OdorSyn59">
+        <spike id="0" time="57.270142296964735 ms"/>
+    </timedSynapticInput>
+
+    <expTwoSynapse id="OdorSyn60" weight="0.09844280269508936" tauRise="20ms" tauDecay="200ms" gbase="100nS" erev="0V"/>
+    <timedSynapticInput id="OdorSynTimes60" synapse="OdorSyn60" spikeTarget="./OdorSyn60">
+        <spike id="0" time="57.270142296964735 ms"/>
+    </timedSynapticInput>
+
+    <expTwoSynapse id="OdorSyn61" weight="0.09309725114751004" tauRise="20ms" tauDecay="200ms" gbase="100nS" erev="0V"/>
+    <timedSynapticInput id="OdorSynTimes61" synapse="OdorSyn61" spikeTarget="./OdorSyn61">
+        <spike id="0" time="57.270142296964735 ms"/>
+    </timedSynapticInput>
+
+    <expTwoSynapse id="OdorSyn62" weight="0.08071686095067782" tauRise="20ms" tauDecay="200ms" gbase="100nS" erev="0V"/>
+    <timedSynapticInput id="OdorSynTimes62" synapse="OdorSyn62" spikeTarget="./OdorSyn62">
+        <spike id="0" time="57.270142296964735 ms"/>
+    </timedSynapticInput>
+
+    <expTwoSynapse id="OdorSyn63" weight="0.06542356982064888" tauRise="20ms" tauDecay="200ms" gbase="100nS" erev="0V"/>
+    <timedSynapticInput id="OdorSynTimes63" synapse="OdorSyn63" spikeTarget="./OdorSyn63">
+        <spike id="0" time="57.270142296964735 ms"/>
+    </timedSynapticInput>
+
+    <expTwoSynapse id="OdorSyn64" weight="0.07519598512776586" tauRise="20ms" tauDecay="200ms" gbase="100nS" erev="0V"/>
+    <timedSynapticInput id="OdorSynTimes64" synapse="OdorSyn64" spikeTarget="./OdorSyn64">
+        <spike id="0" time="57.270142296964735 ms"/>
+    </timedSynapticInput>
+
+    <expTwoSynapse id="OdorSyn65" weight="0.09871647936165509" tauRise="20ms" tauDecay="200ms" gbase="100nS" erev="0V"/>
+    <timedSynapticInput id="OdorSynTimes65" synapse="OdorSyn65" spikeTarget="./OdorSyn65">
+        <spike id="0" time="57.270142296964735 ms"/>
+    </timedSynapticInput>
+
+    <expTwoSynapse id="OdorSyn66" weight="0.0998801678251663" tauRise="20ms" tauDecay="200ms" gbase="100nS" erev="0V"/>
+    <timedSynapticInput id="OdorSynTimes66" synapse="OdorSyn66" spikeTarget="./OdorSyn66">
+        <spike id="0" time="57.270142296964735 ms"/>
+    </timedSynapticInput>
+
+    <expTwoSynapse id="OdorSyn67" weight="0.05743899066701493" tauRise="20ms" tauDecay="200ms" gbase="100nS" erev="0V"/>
+    <timedSynapticInput id="OdorSynTimes67" synapse="OdorSyn67" spikeTarget="./OdorSyn67">
+        <spike id="0" time="57.270142296964735 ms"/>
+    </timedSynapticInput>
+
+    <expTwoSynapse id="OdorSyn68" weight="0.07645312508759869" tauRise="20ms" tauDecay="200ms" gbase="100nS" erev="0V"/>
+    <timedSynapticInput id="OdorSynTimes68" synapse="OdorSyn68" spikeTarget="./OdorSyn68">
+        <spike id="0" time="57.270142296964735 ms"/>
+    </timedSynapticInput>
+
+    <expTwoSynapse id="OdorSyn69" weight="0.10547024620390776" tauRise="20ms" tauDecay="200ms" gbase="100nS" erev="0V"/>
+    <timedSynapticInput id="OdorSynTimes69" synapse="OdorSyn69" spikeTarget="./OdorSyn69">
+        <spike id="0" time="57.270142296964735 ms"/>
+    </timedSynapticInput>
+
+    <expTwoSynapse id="OdorSyn70" weight="0.0577995158632061" tauRise="20ms" tauDecay="200ms" gbase="100nS" erev="0V"/>
+    <timedSynapticInput id="OdorSynTimes70" synapse="OdorSyn70" spikeTarget="./OdorSyn70">
+        <spike id="0" time="57.270142296964735 ms"/>
+    </timedSynapticInput>
+
+    <expTwoSynapse id="OdorSyn71" weight="0.08577593075108439" tauRise="20ms" tauDecay="200ms" gbase="100nS" erev="0V"/>
+    <timedSynapticInput id="OdorSynTimes71" synapse="OdorSyn71" spikeTarget="./OdorSyn71">
+        <spike id="0" time="57.270142296964735 ms"/>
+    </timedSynapticInput>
+
+    <expTwoSynapse id="OdorSyn72" weight="0.05674055418006357" tauRise="20ms" tauDecay="200ms" gbase="100nS" erev="0V"/>
+    <timedSynapticInput id="OdorSynTimes72" synapse="OdorSyn72" spikeTarget="./OdorSyn72">
+        <spike id="0" time="57.270142296964735 ms"/>
+    </timedSynapticInput>
+
+    <expTwoSynapse id="OdorSyn73" weight="0.05288093730247394" tauRise="20ms" tauDecay="200ms" gbase="100nS" erev="0V"/>
+    <timedSynapticInput id="OdorSynTimes73" synapse="OdorSyn73" spikeTarget="./OdorSyn73">
+        <spike id="0" time="57.270142296964735 ms"/>
+    </timedSynapticInput>
+
+    <expTwoSynapse id="OdorSyn74" weight="0.06653510886312684" tauRise="20ms" tauDecay="200ms" gbase="100nS" erev="0V"/>
+    <timedSynapticInput id="OdorSynTimes74" synapse="OdorSyn74" spikeTarget="./OdorSyn74">
+        <spike id="0" time="57.270142296964735 ms"/>
+    </timedSynapticInput>
+
+    <expTwoSynapse id="OdorSyn75" weight="0.07307730534870648" tauRise="20ms" tauDecay="200ms" gbase="100nS" erev="0V"/>
+    <timedSynapticInput id="OdorSynTimes75" synapse="OdorSyn75" spikeTarget="./OdorSyn75">
+        <spike id="0" time="57.270142296964735 ms"/>
+    </timedSynapticInput>
+
+    <expTwoSynapse id="OdorSyn76" weight="0.07369465820973134" tauRise="20ms" tauDecay="200ms" gbase="100nS" erev="0V"/>
+    <timedSynapticInput id="OdorSynTimes76" synapse="OdorSyn76" spikeTarget="./OdorSyn76">
+        <spike id="0" time="57.270142296964735 ms"/>
+    </timedSynapticInput>
+
+    <expTwoSynapse id="OdorSyn77" weight="0.05861713199783117" tauRise="20ms" tauDecay="200ms" gbase="100nS" erev="0V"/>
+    <timedSynapticInput id="OdorSynTimes77" synapse="OdorSyn77" spikeTarget="./OdorSyn77">
+        <spike id="0" time="57.270142296964735 ms"/>
+    </timedSynapticInput>
+
+    <expTwoSynapse id="OdorSyn78" weight="0.09123991394435102" tauRise="20ms" tauDecay="200ms" gbase="100nS" erev="0V"/>
+    <timedSynapticInput id="OdorSynTimes78" synapse="OdorSyn78" spikeTarget="./OdorSyn78">
+        <spike id="0" time="57.270142296964735 ms"/>
+    </timedSynapticInput>
+
+    <expTwoSynapse id="OdorSyn79" weight="0.08757632094524649" tauRise="20ms" tauDecay="200ms" gbase="100nS" erev="0V"/>
+    <timedSynapticInput id="OdorSynTimes79" synapse="OdorSyn79" spikeTarget="./OdorSyn79">
+        <spike id="0" time="57.270142296964735 ms"/>
+    </timedSynapticInput>
+
+    <expTwoSynapse id="OdorSyn80" weight="0.08472958059010557" tauRise="20ms" tauDecay="200ms" gbase="100nS" erev="0V"/>
+    <timedSynapticInput id="OdorSynTimes80" synapse="OdorSyn80" spikeTarget="./OdorSyn80">
+        <spike id="0" time="57.270142296964735 ms"/>
+    </timedSynapticInput>
+
+    <expTwoSynapse id="OdorSyn81" weight="0.08258937139552149" tauRise="20ms" tauDecay="200ms" gbase="100nS" erev="0V"/>
+    <timedSynapticInput id="OdorSynTimes81" synapse="OdorSyn81" spikeTarget="./OdorSyn81">
+        <spike id="0" time="57.270142296964735 ms"/>
+    </timedSynapticInput>
+
+    <expTwoSynapse id="OdorSyn82" weight="0.09028755713643237" tauRise="20ms" tauDecay="200ms" gbase="100nS" erev="0V"/>
+    <timedSynapticInput id="OdorSynTimes82" synapse="OdorSyn82" spikeTarget="./OdorSyn82">
+        <spike id="0" time="57.270142296964735 ms"/>
+    </timedSynapticInput>
+
+    <expTwoSynapse id="OdorSyn83" weight="0.07690773284713774" tauRise="20ms" tauDecay="200ms" gbase="100nS" erev="0V"/>
+    <timedSynapticInput id="OdorSynTimes83" synapse="OdorSyn83" spikeTarget="./OdorSyn83">
+        <spike id="0" time="57.270142296964735 ms"/>
+    </timedSynapticInput>
+
+    <expTwoSynapse id="OdorSyn84" weight="0.061261794332602884" tauRise="20ms" tauDecay="200ms" gbase="100nS" erev="0V"/>
+    <timedSynapticInput id="OdorSynTimes84" synapse="OdorSyn84" spikeTarget="./OdorSyn84">
+        <spike id="0" time="57.270142296964735 ms"/>
+    </timedSynapticInput>
+
+    <expTwoSynapse id="OdorSyn85" weight="0.07001569461412348" tauRise="20ms" tauDecay="200ms" gbase="100nS" erev="0V"/>
+    <timedSynapticInput id="OdorSynTimes85" synapse="OdorSyn85" spikeTarget="./OdorSyn85">
+        <spike id="0" time="57.270142296964735 ms"/>
+    </timedSynapticInput>
+
+    <expTwoSynapse id="OdorSyn86" weight="0.07022464554463079" tauRise="20ms" tauDecay="200ms" gbase="100nS" erev="0V"/>
+    <timedSynapticInput id="OdorSynTimes86" synapse="OdorSyn86" spikeTarget="./OdorSyn86">
+        <spike id="0" time="57.270142296964735 ms"/>
+    </timedSynapticInput>
+
+    <expTwoSynapse id="OdorSyn87" weight="0.06346408894001321" tauRise="20ms" tauDecay="200ms" gbase="100nS" erev="0V"/>
+    <timedSynapticInput id="OdorSynTimes87" synapse="OdorSyn87" spikeTarget="./OdorSyn87">
+        <spike id="0" time="57.270142296964735 ms"/>
+    </timedSynapticInput>
+
+    <expTwoSynapse id="OdorSyn88" weight="0.05063423965902329" tauRise="20ms" tauDecay="200ms" gbase="100nS" erev="0V"/>
+    <timedSynapticInput id="OdorSynTimes88" synapse="OdorSyn88" spikeTarget="./OdorSyn88">
+        <spike id="0" time="57.270142296964735 ms"/>
+    </timedSynapticInput>
+
+    <expTwoSynapse id="OdorSyn89" weight="0.06369441893223023" tauRise="20ms" tauDecay="200ms" gbase="100nS" erev="0V"/>
+    <timedSynapticInput id="OdorSynTimes89" synapse="OdorSyn89" spikeTarget="./OdorSyn89">
+        <spike id="0" time="57.270142296964735 ms"/>
+    </timedSynapticInput>
+
+    <expTwoSynapse id="OdorSyn90" weight="0.08956391913311802" tauRise="20ms" tauDecay="200ms" gbase="100nS" erev="0V"/>
+    <timedSynapticInput id="OdorSynTimes90" synapse="OdorSyn90" spikeTarget="./OdorSyn90">
+        <spike id="0" time="57.270142296964735 ms"/>
+    </timedSynapticInput>
+
+    <expTwoSynapse id="OdorSyn91" weight="0.06632850493679954" tauRise="20ms" tauDecay="200ms" gbase="100nS" erev="0V"/>
+    <timedSynapticInput id="OdorSynTimes91" synapse="OdorSyn91" spikeTarget="./OdorSyn91">
+        <spike id="0" time="57.270142296964735 ms"/>
+    </timedSynapticInput>
+
+    <expTwoSynapse id="OdorSyn92" weight="0.06853396824539455" tauRise="20ms" tauDecay="200ms" gbase="100nS" erev="0V"/>
+    <timedSynapticInput id="OdorSynTimes92" synapse="OdorSyn92" spikeTarget="./OdorSyn92">
+        <spike id="0" time="57.270142296964735 ms"/>
+    </timedSynapticInput>
+
+    <expTwoSynapse id="OdorSyn93" weight="0.06680877944515444" tauRise="20ms" tauDecay="200ms" gbase="100nS" erev="0V"/>
+    <timedSynapticInput id="OdorSynTimes93" synapse="OdorSyn93" spikeTarget="./OdorSyn93">
+        <spike id="0" time="57.270142296964735 ms"/>
+    </timedSynapticInput>
+
+    <expTwoSynapse id="OdorSyn94" weight="0.08831604497870983" tauRise="20ms" tauDecay="200ms" gbase="100nS" erev="0V"/>
+    <timedSynapticInput id="OdorSynTimes94" synapse="OdorSyn94" spikeTarget="./OdorSyn94">
+        <spike id="0" time="57.270142296964735 ms"/>
+    </timedSynapticInput>
+
+    <expTwoSynapse id="OdorSyn95" weight="0.060012285634352715" tauRise="20ms" tauDecay="200ms" gbase="100nS" erev="0V"/>
+    <timedSynapticInput id="OdorSynTimes95" synapse="OdorSyn95" spikeTarget="./OdorSyn95">
+        <spike id="0" time="57.270142296964735 ms"/>
+    </timedSynapticInput>
+
+    <expTwoSynapse id="OdorSyn96" weight="0.050387281037471136" tauRise="20ms" tauDecay="200ms" gbase="100nS" erev="0V"/>
+    <timedSynapticInput id="OdorSynTimes96" synapse="OdorSyn96" spikeTarget="./OdorSyn96">
+        <spike id="0" time="57.270142296964735 ms"/>
+    </timedSynapticInput>
+
+    <expTwoSynapse id="OdorSyn97" weight="0.06656255844395706" tauRise="20ms" tauDecay="200ms" gbase="100nS" erev="0V"/>
+    <timedSynapticInput id="OdorSynTimes97" synapse="OdorSyn97" spikeTarget="./OdorSyn97">
+        <spike id="0" time="57.270142296964735 ms"/>
+    </timedSynapticInput>
+
+    <expTwoSynapse id="OdorSyn98" weight="0.071982464562321" tauRise="20ms" tauDecay="200ms" gbase="100nS" erev="0V"/>
+    <timedSynapticInput id="OdorSynTimes98" synapse="OdorSyn98" spikeTarget="./OdorSyn98">
+        <spike id="0" time="57.270142296964735 ms"/>
+    </timedSynapticInput>
+
+    <expTwoSynapse id="OdorSyn99" weight="0.07366276369778053" tauRise="20ms" tauDecay="200ms" gbase="100nS" erev="0V"/>
+    <timedSynapticInput id="OdorSynTimes99" synapse="OdorSyn99" spikeTarget="./OdorSyn99">
+        <spike id="0" time="57.270142296964735 ms"/>
+    </timedSynapticInput>
+
+    <expTwoSynapse id="OdorSyn100" weight="0.06095816166529477" tauRise="20ms" tauDecay="200ms" gbase="100nS" erev="0V"/>
+    <timedSynapticInput id="OdorSynTimes100" synapse="OdorSyn100" spikeTarget="./OdorSyn100">
+        <spike id="0" time="57.270142296964735 ms"/>
+    </timedSynapticInput>
+
+    <expTwoSynapse id="OdorSyn101" weight="0.06923908146741704" tauRise="20ms" tauDecay="200ms" gbase="100nS" erev="0V"/>
+    <timedSynapticInput id="OdorSynTimes101" synapse="OdorSyn101" spikeTarget="./OdorSyn101">
+        <spike id="0" time="57.270142296964735 ms"/>
+    </timedSynapticInput>
+
+    <expTwoSynapse id="OdorSyn102" weight="0.06484994654945485" tauRise="20ms" tauDecay="200ms" gbase="100nS" erev="0V"/>
+    <timedSynapticInput id="OdorSynTimes102" synapse="OdorSyn102" spikeTarget="./OdorSyn102">
+        <spike id="0" time="57.270142296964735 ms"/>
+    </timedSynapticInput>
+
+    <expTwoSynapse id="OdorSyn103" weight="0.04918446506831775" tauRise="20ms" tauDecay="200ms" gbase="100nS" erev="0V"/>
+    <timedSynapticInput id="OdorSynTimes103" synapse="OdorSyn103" spikeTarget="./OdorSyn103">
+        <spike id="0" time="57.270142296964735 ms"/>
+    </timedSynapticInput>
+
+    <expTwoSynapse id="OdorSyn104" weight="0.06017819579437499" tauRise="20ms" tauDecay="200ms" gbase="100nS" erev="0V"/>
+    <timedSynapticInput id="OdorSynTimes104" synapse="OdorSyn104" spikeTarget="./OdorSyn104">
+        <spike id="0" time="57.270142296964735 ms"/>
+    </timedSynapticInput>
+
+    <expTwoSynapse id="OdorSyn105" weight="0.043474945895810066" tauRise="20ms" tauDecay="200ms" gbase="100nS" erev="0V"/>
+    <timedSynapticInput id="OdorSynTimes105" synapse="OdorSyn105" spikeTarget="./OdorSyn105">
+        <spike id="0" time="57.270142296964735 ms"/>
+    </timedSynapticInput>
+
+    <expTwoSynapse id="OdorSyn106" weight="0.045209167936955466" tauRise="20ms" tauDecay="200ms" gbase="100nS" erev="0V"/>
+    <timedSynapticInput id="OdorSynTimes106" synapse="OdorSyn106" spikeTarget="./OdorSyn106">
+        <spike id="0" time="57.270142296964735 ms"/>
+    </timedSynapticInput>
+
+    <expTwoSynapse id="OdorSyn107" weight="0.04708318566235701" tauRise="20ms" tauDecay="200ms" gbase="100nS" erev="0V"/>
+    <timedSynapticInput id="OdorSynTimes107" synapse="OdorSyn107" spikeTarget="./OdorSyn107">
+        <spike id="0" time="57.270142296964735 ms"/>
+    </timedSynapticInput>
+
+    <expTwoSynapse id="OdorSyn108" weight="0.05551235301875472" tauRise="20ms" tauDecay="200ms" gbase="100nS" erev="0V"/>
+    <timedSynapticInput id="OdorSynTimes108" synapse="OdorSyn108" spikeTarget="./OdorSyn108">
+        <spike id="0" time="57.270142296964735 ms"/>
+    </timedSynapticInput>
+
+    <expTwoSynapse id="OdorSyn109" weight="0.06166357631695965" tauRise="20ms" tauDecay="200ms" gbase="100nS" erev="0V"/>
+    <timedSynapticInput id="OdorSynTimes109" synapse="OdorSyn109" spikeTarget="./OdorSyn109">
+        <spike id="0" time="57.270142296964735 ms"/>
+    </timedSynapticInput>
+
+    <expTwoSynapse id="OdorSyn110" weight="0.06252628340844607" tauRise="20ms" tauDecay="200ms" gbase="100nS" erev="0V"/>
+    <timedSynapticInput id="OdorSynTimes110" synapse="OdorSyn110" spikeTarget="./OdorSyn110">
+        <spike id="0" time="57.270142296964735 ms"/>
+    </timedSynapticInput>
+
+    <expTwoSynapse id="OdorSyn111" weight="0.04400870198184159" tauRise="20ms" tauDecay="200ms" gbase="100nS" erev="0V"/>
+    <timedSynapticInput id="OdorSynTimes111" synapse="OdorSyn111" spikeTarget="./OdorSyn111">
+        <spike id="0" time="57.270142296964735 ms"/>
+    </timedSynapticInput>
+
+    <expTwoSynapse id="OdorSyn112" weight="0.07262119439444864" tauRise="20ms" tauDecay="200ms" gbase="100nS" erev="0V"/>
+    <timedSynapticInput id="OdorSynTimes112" synapse="OdorSyn112" spikeTarget="./OdorSyn112">
+        <spike id="0" time="57.270142296964735 ms"/>
+    </timedSynapticInput>
+
+    <expTwoSynapse id="OdorSyn113" weight="0.07213139019900194" tauRise="20ms" tauDecay="200ms" gbase="100nS" erev="0V"/>
+    <timedSynapticInput id="OdorSynTimes113" synapse="OdorSyn113" spikeTarget="./OdorSyn113">
+        <spike id="0" time="57.270142296964735 ms"/>
+    </timedSynapticInput>
+
+    <expTwoSynapse id="OdorSyn114" weight="0.06505395835945886" tauRise="20ms" tauDecay="200ms" gbase="100nS" erev="0V"/>
+    <timedSynapticInput id="OdorSynTimes114" synapse="OdorSyn114" spikeTarget="./OdorSyn114">
+        <spike id="0" time="57.270142296964735 ms"/>
+    </timedSynapticInput>
+
+    <expTwoSynapse id="OdorSyn115" weight="0.0473838651688567" tauRise="20ms" tauDecay="200ms" gbase="100nS" erev="0V"/>
+    <timedSynapticInput id="OdorSynTimes115" synapse="OdorSyn115" spikeTarget="./OdorSyn115">
+        <spike id="0" time="57.270142296964735 ms"/>
+    </timedSynapticInput>
+
+    <expTwoSynapse id="OdorSyn116" weight="0.07862060867285921" tauRise="20ms" tauDecay="200ms" gbase="100nS" erev="0V"/>
+    <timedSynapticInput id="OdorSynTimes116" synapse="OdorSyn116" spikeTarget="./OdorSyn116">
+        <spike id="0" time="57.270142296964735 ms"/>
+    </timedSynapticInput>
+
+    <expTwoSynapse id="OdorSyn117" weight="0.045449214081881066" tauRise="20ms" tauDecay="200ms" gbase="100nS" erev="0V"/>
+    <timedSynapticInput id="OdorSynTimes117" synapse="OdorSyn117" spikeTarget="./OdorSyn117">
+        <spike id="0" time="57.270142296964735 ms"/>
+    </timedSynapticInput>
+
+    <expTwoSynapse id="OdorSyn118" weight="0.0679469236278288" tauRise="20ms" tauDecay="200ms" gbase="100nS" erev="0V"/>
+    <timedSynapticInput id="OdorSynTimes118" synapse="OdorSyn118" spikeTarget="./OdorSyn118">
+        <spike id="0" time="57.270142296964735 ms"/>
+    </timedSynapticInput>
+
+    <expTwoSynapse id="OdorSyn119" weight="0.058131484760012946" tauRise="20ms" tauDecay="200ms" gbase="100nS" erev="0V"/>
+    <timedSynapticInput id="OdorSynTimes119" synapse="OdorSyn119" spikeTarget="./OdorSyn119">
+        <spike id="0" time="57.270142296964735 ms"/>
+    </timedSynapticInput>
+
+    <expTwoSynapse id="OdorSyn120" weight="0.0463277832039455" tauRise="20ms" tauDecay="200ms" gbase="100nS" erev="0V"/>
+    <timedSynapticInput id="OdorSynTimes120" synapse="OdorSyn120" spikeTarget="./OdorSyn120">
+        <spike id="0" time="57.270142296964735 ms"/>
+    </timedSynapticInput>
+
+    <expTwoSynapse id="OdorSyn121" weight="0.0493748882172835" tauRise="20ms" tauDecay="200ms" gbase="100nS" erev="0V"/>
+    <timedSynapticInput id="OdorSynTimes121" synapse="OdorSyn121" spikeTarget="./OdorSyn121">
+        <spike id="0" time="57.270142296964735 ms"/>
+    </timedSynapticInput>
+
+    <expTwoSynapse id="OdorSyn122" weight="0.0436048369561341" tauRise="20ms" tauDecay="200ms" gbase="100nS" erev="0V"/>
+    <timedSynapticInput id="OdorSynTimes122" synapse="OdorSyn122" spikeTarget="./OdorSyn122">
+        <spike id="0" time="57.270142296964735 ms"/>
+    </timedSynapticInput>
+
+    <expTwoSynapse id="OdorSyn123" weight="0.1127329251972898" tauRise="20ms" tauDecay="200ms" gbase="100nS" erev="0V"/>
+    <timedSynapticInput id="OdorSynTimes123" synapse="OdorSyn123" spikeTarget="./OdorSyn123">
+        <spike id="0" time="57.270142296964735 ms"/>
+    </timedSynapticInput>
+
+    <expTwoSynapse id="OdorSyn124" weight="0.07109725374519642" tauRise="20ms" tauDecay="200ms" gbase="100nS" erev="0V"/>
+    <timedSynapticInput id="OdorSynTimes124" synapse="OdorSyn124" spikeTarget="./OdorSyn124">
+        <spike id="0" time="57.270142296964735 ms"/>
+    </timedSynapticInput>
+
+    <expTwoSynapse id="OdorSyn125" weight="0.06384905437393251" tauRise="20ms" tauDecay="200ms" gbase="100nS" erev="0V"/>
+    <timedSynapticInput id="OdorSynTimes125" synapse="OdorSyn125" spikeTarget="./OdorSyn125">
+        <spike id="0" time="57.270142296964735 ms"/>
+    </timedSynapticInput>
+
+    <expTwoSynapse id="OdorSyn126" weight="0.06884104666287633" tauRise="20ms" tauDecay="200ms" gbase="100nS" erev="0V"/>
+    <timedSynapticInput id="OdorSynTimes126" synapse="OdorSyn126" spikeTarget="./OdorSyn126">
+        <spike id="0" time="57.270142296964735 ms"/>
+    </timedSynapticInput>
+
+    <expTwoSynapse id="OdorSyn127" weight="0.09983738351358243" tauRise="20ms" tauDecay="200ms" gbase="100nS" erev="0V"/>
+    <timedSynapticInput id="OdorSynTimes127" synapse="OdorSyn127" spikeTarget="./OdorSyn127">
+        <spike id="0" time="57.270142296964735 ms"/>
+    </timedSynapticInput>
+
+    <expTwoSynapse id="OdorSyn128" weight="0.07289121777133324" tauRise="20ms" tauDecay="200ms" gbase="100nS" erev="0V"/>
+    <timedSynapticInput id="OdorSynTimes128" synapse="OdorSyn128" spikeTarget="./OdorSyn128">
+        <spike id="0" time="57.270142296964735 ms"/>
+    </timedSynapticInput>
+
+    <expTwoSynapse id="OdorSyn129" weight="0.07997938189450327" tauRise="20ms" tauDecay="200ms" gbase="100nS" erev="0V"/>
+    <timedSynapticInput id="OdorSynTimes129" synapse="OdorSyn129" spikeTarget="./OdorSyn129">
+        <spike id="0" time="57.270142296964735 ms"/>
+    </timedSynapticInput>
+
+    <expTwoSynapse id="OdorSyn130" weight="0.0708363038135999" tauRise="20ms" tauDecay="200ms" gbase="100nS" erev="0V"/>
+    <timedSynapticInput id="OdorSynTimes130" synapse="OdorSyn130" spikeTarget="./OdorSyn130">
+        <spike id="0" time="57.270142296964735 ms"/>
+    </timedSynapticInput>
+
+    <expTwoSynapse id="OdorSyn131" weight="0.07046871596492794" tauRise="20ms" tauDecay="200ms" gbase="100nS" erev="0V"/>
+    <timedSynapticInput id="OdorSynTimes131" synapse="OdorSyn131" spikeTarget="./OdorSyn131">
+        <spike id="0" time="57.270142296964735 ms"/>
+    </timedSynapticInput>
+
+    <expTwoSynapse id="OdorSyn132" weight="0.07810300330981043" tauRise="20ms" tauDecay="200ms" gbase="100nS" erev="0V"/>
+    <timedSynapticInput id="OdorSynTimes132" synapse="OdorSyn132" spikeTarget="./OdorSyn132">
+        <spike id="0" time="57.270142296964735 ms"/>
+    </timedSynapticInput>
+
+    <expTwoSynapse id="OdorSyn133" weight="0.0835190204516856" tauRise="20ms" tauDecay="200ms" gbase="100nS" erev="0V"/>
+    <timedSynapticInput id="OdorSynTimes133" synapse="OdorSyn133" spikeTarget="./OdorSyn133">
+        <spike id="0" time="57.270142296964735 ms"/>
+    </timedSynapticInput>
+
+    <expTwoSynapse id="OdorSyn134" weight="0.10676983393139176" tauRise="20ms" tauDecay="200ms" gbase="100nS" erev="0V"/>
+    <timedSynapticInput id="OdorSynTimes134" synapse="OdorSyn134" spikeTarget="./OdorSyn134">
+        <spike id="0" time="57.270142296964735 ms"/>
+    </timedSynapticInput>
+
+    <expTwoSynapse id="OdorSyn135" weight="0.07466917290962498" tauRise="20ms" tauDecay="200ms" gbase="100nS" erev="0V"/>
+    <timedSynapticInput id="OdorSynTimes135" synapse="OdorSyn135" spikeTarget="./OdorSyn135">
+        <spike id="0" time="57.270142296964735 ms"/>
+    </timedSynapticInput>
+
+    <expTwoSynapse id="OdorSyn136" weight="0.10502116610482798" tauRise="20ms" tauDecay="200ms" gbase="100nS" erev="0V"/>
+    <timedSynapticInput id="OdorSynTimes136" synapse="OdorSyn136" spikeTarget="./OdorSyn136">
+        <spike id="0" time="57.270142296964735 ms"/>
+    </timedSynapticInput>
+
+    <expTwoSynapse id="OdorSyn137" weight="0.08520591630707973" tauRise="20ms" tauDecay="200ms" gbase="100nS" erev="0V"/>
+    <timedSynapticInput id="OdorSynTimes137" synapse="OdorSyn137" spikeTarget="./OdorSyn137">
+        <spike id="0" time="57.270142296964735 ms"/>
+    </timedSynapticInput>
+
+    <expTwoSynapse id="OdorSyn138" weight="0.07687159628997794" tauRise="20ms" tauDecay="200ms" gbase="100nS" erev="0V"/>
+    <timedSynapticInput id="OdorSynTimes138" synapse="OdorSyn138" spikeTarget="./OdorSyn138">
+        <spike id="0" time="57.270142296964735 ms"/>
+    </timedSynapticInput>
+
+    <expTwoSynapse id="OdorSyn139" weight="0.09606699642530149" tauRise="20ms" tauDecay="200ms" gbase="100nS" erev="0V"/>
+    <timedSynapticInput id="OdorSynTimes139" synapse="OdorSyn139" spikeTarget="./OdorSyn139">
+        <spike id="0" time="57.270142296964735 ms"/>
+    </timedSynapticInput>
+
+    <expTwoSynapse id="OdorSyn140" weight="0.11303345112802876" tauRise="20ms" tauDecay="200ms" gbase="100nS" erev="0V"/>
+    <timedSynapticInput id="OdorSynTimes140" synapse="OdorSyn140" spikeTarget="./OdorSyn140">
+        <spike id="0" time="57.270142296964735 ms"/>
+    </timedSynapticInput>
+
+    <expTwoSynapse id="OdorSyn141" weight="0.06189981747540875" tauRise="20ms" tauDecay="200ms" gbase="100nS" erev="0V"/>
+    <timedSynapticInput id="OdorSynTimes141" synapse="OdorSyn141" spikeTarget="./OdorSyn141">
+        <spike id="0" time="57.270142296964735 ms"/>
+    </timedSynapticInput>
+
+    <expTwoSynapse id="OdorSyn142" weight="0.0740841487341355" tauRise="20ms" tauDecay="200ms" gbase="100nS" erev="0V"/>
+    <timedSynapticInput id="OdorSynTimes142" synapse="OdorSyn142" spikeTarget="./OdorSyn142">
+        <spike id="0" time="57.270142296964735 ms"/>
+    </timedSynapticInput>
+
+    <expTwoSynapse id="OdorSyn143" weight="0.09531659299653336" tauRise="20ms" tauDecay="200ms" gbase="100nS" erev="0V"/>
+    <timedSynapticInput id="OdorSynTimes143" synapse="OdorSyn143" spikeTarget="./OdorSyn143">
+        <spike id="0" time="57.270142296964735 ms"/>
+    </timedSynapticInput>
+
+    <expTwoSynapse id="OdorSyn144" weight="0.07010569573488065" tauRise="20ms" tauDecay="200ms" gbase="100nS" erev="0V"/>
+    <timedSynapticInput id="OdorSynTimes144" synapse="OdorSyn144" spikeTarget="./OdorSyn144">
+        <spike id="0" time="57.270142296964735 ms"/>
+    </timedSynapticInput>
+
+    <expTwoSynapse id="OdorSyn145" weight="0.0899784500684085" tauRise="20ms" tauDecay="200ms" gbase="100nS" erev="0V"/>
+    <timedSynapticInput id="OdorSynTimes145" synapse="OdorSyn145" spikeTarget="./OdorSyn145">
+        <spike id="0" time="57.270142296964735 ms"/>
+    </timedSynapticInput>
+
+    <expTwoSynapse id="OdorSyn146" weight="0.08106343298338797" tauRise="20ms" tauDecay="200ms" gbase="100nS" erev="0V"/>
+    <timedSynapticInput id="OdorSynTimes146" synapse="OdorSyn146" spikeTarget="./OdorSyn146">
+        <spike id="0" time="57.270142296964735 ms"/>
+    </timedSynapticInput>
+
+
+
+</neuroml>

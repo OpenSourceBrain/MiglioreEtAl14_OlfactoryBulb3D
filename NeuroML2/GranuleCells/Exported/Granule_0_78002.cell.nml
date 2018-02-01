@@ -1,0 +1,94 @@
+<neuroml xmlns="http://www.neuroml.org/schema/neuroml2"  xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.neuroml.org/schema/neuroml2 https://raw.github.com/NeuroML/NeuroML2/development/Schemas/NeuroML2/NeuroML_v2beta5.xsd" id="Granule">
+    <include href="../../Channels/pas.channel.nml"></include>
+    <include href="../../Channels/nax__sh15.channel.nml"></include>
+    <include href="../../Channels/kamt.channel.nml"></include>
+    <include href="../../Channels/kdrmt.channel.nml"></include>
+    <cell id="Granule_0_78002">
+        <morphology id="morphology">
+            <segment id="0" name="soma_seg">
+                <proximal x="0.000000e+00" y="0.000000e+00" z="0.000000e+00" diameter="8.0"/>
+                <distal x="7.729088e+00" y="-1.145050e+00" z="1.717575e+00" diameter="8.0"/>
+            </segment>
+            <segment id="1" name="priden_seg">
+                <parent segment="0" fractionAlong="1"/>
+                <proximal x="7.729088e+00" y="-1.145050e+00" z="1.717575e+00" diameter="0.5"/>
+                <distal x="6.133587e+01" y="-9.086795e+00" z="1.363019e+01" diameter="0.5"/>
+            </segment>
+            <segment id="2" name="priden2_seg">
+                <parent segment="1" fractionAlong="0.8"/>
+                <proximal x="6.133587e+01" y="-9.086795e+00" z="1.363019e+01" diameter="0.4"/>
+                <distal x="3.028699e+02" y="-4.486961e+01" z="6.730441e+01" diameter="0.4"/>
+            </segment>
+            <segment id="3" name="neck_seg">
+                <parent segment="2" fractionAlong="0.765529751778"/>
+                <proximal x="3.028699e+02" y="-4.486961e+01" z="6.730441e+01" diameter="0.2"/>
+                <distal x="3.048021e+02" y="-4.515587e+01" z="6.773381e+01" diameter="0.2"/>
+            </segment>
+            <segment id="4" name="head_seg">
+                <parent segment="3" fractionAlong="1"/>
+                <proximal x="3.048021e+02" y="-4.515587e+01" z="6.773381e+01" diameter="1.0"/>
+                <distal x="3.057683e+02" y="-4.529900e+01" z="6.794850e+01" diameter="1.0"/>
+            </segment>
+            <segmentGroup neuroLexId="sao864921383" id="soma">
+                <member segment="0"/>
+            </segmentGroup>
+            <segmentGroup neuroLexId="sao864921383" id="priden">
+                <property tag="numberInternalDivisions" value="4"/>
+                <member segment="1"/>
+            </segmentGroup>
+            <segmentGroup neuroLexId="sao864921383" id="priden2_0">
+                <property tag="numberInternalDivisions" value="26"/>
+                <member segment="2"/>
+            </segmentGroup>
+            <segmentGroup neuroLexId="sao864921383" id="neck">
+                <member segment="3"/>
+            </segmentGroup>
+            <segmentGroup neuroLexId="sao864921383" id="head">
+                <member segment="4"/>
+            </segmentGroup>
+            <segmentGroup neuroLexId="GO:0043025" id="all">
+                <include segmentGroup="soma"/>
+                <include segmentGroup="priden"/>
+                <include segmentGroup="priden2_0"/>
+                <include segmentGroup="neck"/>
+                <include segmentGroup="head"/>
+            </segmentGroup>
+            <segmentGroup neuroLexId="GO:0043025" id="soma_group">
+                <include segmentGroup="soma"/>
+            </segmentGroup>
+            <segmentGroup neuroLexId="GO:0030425" id="dendrite_group">
+                <include segmentGroup="priden"/>
+                <include segmentGroup="priden2_0"/>
+                <include segmentGroup="neck"/>
+                <include segmentGroup="head"/>
+            </segmentGroup>
+            <segmentGroup neuroLexId="GO:0030424" id="axon_group"/>
+            <segmentGroup neuroLexId="GO:0030425" id="spine_group">
+                <include segmentGroup="neck"/>
+                <include segmentGroup="head"/>
+            </segmentGroup>
+        </morphology>
+        <biophysicalProperties id="biophys">
+            <membraneProperties>
+                <channelDensity id="passive_dendritic" ionChannel="pas" condDensity="0.00013333333333 S_per_cm2" erev="-65.0 mV" segmentGroup="dendrite_group" ion="non_specific"/>
+                <channelDensity id="nax_dendritic" ionChannel="nax__sh15" condDensity="0.02 S_per_cm2" erev="60.0 mV" segmentGroup="dendrite_group" ion="na"/>
+                <channelDensity id="kamt_dendritic" ionChannel="kamt" condDensity="0.008 S_per_cm2" erev="-90.0 mV" segmentGroup="dendrite_group" ion="k"/>
+                <channelDensity id="passive_somatic" ionChannel="pas" condDensity="0.00013333333333 S_per_cm2" erev="-65.0 mV" segmentGroup="soma_group" ion="non_specific"/>
+                <channelDensity id="nax_somatic" ionChannel="nax__sh15" condDensity="0.04 S_per_cm2" erev="60.0 mV" segmentGroup="soma_group" ion="na"/>
+                <channelDensity id="kdrmt_somatic" ionChannel="kdrmt" condDensity="0.006 S_per_cm2" erev="-90.0 mV" segmentGroup="soma_group" ion="k"/>
+                <channelDensity id="kamt_somatic" ionChannel="kamt" condDensity="0.004 S_per_cm2" erev="-90.0 mV" segmentGroup="soma_group" ion="k"/>
+                <channelDensity id="passive_spine" ionChannel="pas" condDensity="0.00003333333333 S_per_cm2" erev="-65.0 mV" segmentGroup="spine_group" ion="non_specific"/>
+                <channelDensity id="kamt_spine" ionChannel="kamt" condDensity="0.008 S_per_cm2" erev="-90.0 mV" segmentGroup="spine_group" ion="k"/>
+                <channelDensity id="nax_spine" ionChannel="nax__sh15" condDensity="0.02 S_per_cm2" erev="60.0 mV" segmentGroup="spine_group" ion="na"/>
+                <spikeThresh value="0 mV"/>
+                <specificCapacitance value="4.0 uF_per_cm2" segmentGroup="soma_group"/>
+                <specificCapacitance value="4.0 uF_per_cm2" segmentGroup="dendrite_group"/>
+                <specificCapacitance value="1.0 uF_per_cm2" segmentGroup="spine_group"/>
+                <initMembPotential value="-65.0 mV"/>
+            </membraneProperties>
+            <intracellularProperties>
+                <resistivity value="80 ohm_cm"/>
+            </intracellularProperties>
+        </biophysicalProperties>
+    </cell>
+</neuroml>

@@ -2,7 +2,7 @@
 #pydevd.settrace('192.168.177.1', port=4200, stdoutToServer=True, stderrToServer=True, suspend=False)
 
 def export(MCs = 2):
-    print("Exporting odor input for " + MCs + " MCs...")
+    print("Exporting odor input for " + `MCs` + " MCs...")
 
     # Build the network
     import os, sys
