@@ -1,0 +1,27 @@
+<Lems>
+
+    <!-- Specify which component to run -->
+    <Target component="Sim"/>
+
+    <!-- Include core NeuroML2 ComponentType definitions -->
+    <Include file="Cells.xml"/>
+    <Include file="Networks.xml"/>
+    <Include file="Simulation.xml"/>
+
+    <Include file="../Networks/Bulb_2MC_2GC_OdorIn.net.nml"/>
+
+    <Simulation id="Sim" length="300ms" step="0.0078125ms" target="network_Migliore2014">
+
+        <Display id="Mitral_3D" title="Mitral Cell (5 nA)" timeScale="1ms" xmin="-18.0" xmax="298.0" ymin="-90" ymax="50">
+            <Line id="soma_0"       quantity="Pop_Mitral_0_0/0/Mitral_0_0/0/v"  scale="1" color="#f3e4c5" timeScale="1ms"/>
+            <Line id="soma_1"       quantity="Pop_Mitral_0_1/0/Mitral_0_1/0/v"  scale="1" color="#f3e4c5" timeScale="1ms"/>
+        </Display>
+        
+        <OutputFile id="Mitral_3F" fileName="Net.dat">
+            <OutputColumn id="soma_MC0"       quantity="Pop_Mitral_0_0/0/Mitral_0_0/0/v"/>
+            <OutputColumn id="soma_MC1"       quantity="Pop_Mitral_0_1/0/Mitral_0_1/0/v"/>
+        </OutputFile>
+
+    </Simulation>
+
+</Lems>
