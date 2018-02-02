@@ -1,9 +1,7 @@
-TODO: Replace JustasB urls once merged to OSB
-
 [![Build Status](https://travis-ci.org/OpenSourceBrain/MiglioreEtAl14_OlfactoryBulb3D.svg)](https://travis-ci.org/OpenSourceBrain/MiglioreEtAl14_OlfactoryBulb3D)
 
 # Migliore et al. (2014) 3D Model of the Olfactory Bulb
-This repository hosts the [NeuroML conversion](NeuroML2) of the [Migliore et. al. (2014)](http://journal.frontiersin.org/article/10.3389/fncom.2014.00050/abstract) model of the olfactory bulb. The original NEURON model has 125 glomeruli, 625 Mitral cells (MCs), and ~125,000 Granule cells (GCs). This project converted the original model channels, cells, synapses, network connectivity, and odor input into NeuroML format. Each converted component has been individually validated by comparing their responses to the original versions. The conversion error of the channels and synapses is <1%, while cell and network conversion error is <5% (see Validation below). Scaled down network model (5 MCs) is hosted in this repository, while larger versions can be obtained via the export scripts (see Exporting below). [Click here to view an interactive visualization of a 5 Mitral and 10 Granule Cell Network](http://www.opensourcebrain.org/projects/miglioreetal14_olfactorybulb3d?explorer=https%3A%2F%2Fraw.githubusercontent.com%2FJustasB%2FMiglioreEtAl14_OlfactoryBulb3D%2Fmaster%2FNeuroML2%2FNetworks%2FBulb_5MC_10GC.net.nml)
+This repository hosts the [NeuroML conversion](NeuroML2) of the [Migliore et. al. (2014)](http://journal.frontiersin.org/article/10.3389/fncom.2014.00050/abstract) model of the olfactory bulb. The original NEURON model has 125 glomeruli, 625 Mitral cells (MCs), and ~125,000 Granule cells (GCs). This project converted the original model channels, cells, synapses, network connectivity, and odor input into NeuroML format. Each converted component has been individually validated by comparing their responses to the original versions. The conversion error of the channels and synapses is <1%, while cell and network conversion error is <5% (see Validation below). Scaled down network model (5 MCs) is hosted in this repository, while larger versions can be obtained via the export scripts (see Exporting below). [Click here to view an interactive visualization of a 5 Mitral and 10 Granule Cell Network](http://www.opensourcebrain.org/projects/miglioreetal14_olfactorybulb3d?explorer=https%3A%2F%2Fraw.githubusercontent.com%2FOpenSourceBrain%2FMiglioreEtAl14_OlfactoryBulb3D%2Fmaster%2FNeuroML2%2FNetworks%2FBulb_5MC_10GC.net.nml)
 
 Original Model: Migliore M, Cavarretta F, Hines ML, Shepherd GM (2014) Distributed organization of a brain microcircuit analysed by three-dimensional modeling: the olfactory bulb [Front. Comput. Neurosci.](http://journal.frontiersin.org/article/10.3389/fncom.2014.00050/abstract) 8:50, obtained from [ModelDB](http://senselab.med.yale.edu/ModelDB/ShowModel.cshtml?model=151681).
 
@@ -26,7 +24,7 @@ Each **Mitral** cell has realistic morphology generated from statistical morphol
 The converted MCs can be found in the [NeuroML2/MitralCells folder](NeuroML2/MitralCells/Exported) while converted GCs can be found in the [NeuroML2/GranuleCells folder](NeuroML2/GranuleCells/Exported). NeuroML versions of the channels can be found in the [NeuroML2/Channels folder](NeuroML2/Channels).
 
 ### Synapses
-Mitral and Granule cells are connected via dendro-dendritic synapses. Segments of the MC secondary dendrites connect to spines located on GC primary dendrites via the AMPA-NMDA excitatory synapses. A connection in the reverse direction from GC spines onto the MC secondary dendrites is formed by the Fast Inhibitory synapses. Both synapses implement spike-timing dependent plasticity, which strengthens the synaptic weights when incoming spikes have short inter-spike intervals, and weakens the weights when the intervals are long. The converted synapses can be found in the [NeuroML2/Synapses](NeuroML2/Synapses) folder. Networks that implement the above connectivity can be found under [NeuroML2/Networks](NeuroML2/Networks). The connectivity can be visualized via the [OSB Explorer](http://www.opensourcebrain.org/projects/miglioreetal14_olfactorybulb3d?explorer=https%3A%2F%2Fraw.githubusercontent.com%2FJustasB%2FMiglioreEtAl14_OlfactoryBulb3D%2Fmaster%2FNeuroML2%2FNetworks%2FBulb_5MC_10GC.net.nml).
+Mitral and Granule cells are connected via dendro-dendritic synapses. Segments of the MC secondary dendrites connect to spines located on GC primary dendrites via the AMPA-NMDA excitatory synapses. A connection in the reverse direction from GC spines onto the MC secondary dendrites is formed by the Fast Inhibitory synapses. Both synapses implement spike-timing dependent plasticity, which strengthens the synaptic weights when incoming spikes have short inter-spike intervals, and weakens the weights when the intervals are long. The converted synapses can be found in the [NeuroML2/Synapses](NeuroML2/Synapses) folder. Networks that implement the above connectivity can be found under [NeuroML2/Networks](NeuroML2/Networks). The connectivity can be visualized via the [OSB Explorer](http://www.opensourcebrain.org/projects/miglioreetal14_olfactorybulb3d?explorer=https%3A%2F%2Fraw.githubusercontent.com%2FOpenSourceBrain%2FMiglioreEtAl14_OlfactoryBulb3D%2Fmaster%2FNeuroML2%2FNetworks%2FBulb_5MC_10GC.net.nml).
 
 ### Input
 Network input is provided by stimulation of MC glomerular tufted dendrites via double exponential synapses with peak current values taken from optical imaging odor maps of a mammalian olfactory bulb. The synapses have relatively long rise and fall time constants (50 and 200 ms respectively). Networks that implement the "Mint" odor of the original model can be found in the [NeuroML2/Networks folder](NeuroML2/Networks). Files in the folder that end with "OdorIn.net.nml" implement odor stimulation, while other network files implement un-stimulated networks.
@@ -34,7 +32,7 @@ Network input is provided by stimulation of MC glomerular tufted dendrites via d
 ## Conversion Validation 
  
 ### Automated Comparison Suite
-The NeuroML model was validated by comparing the output of the converted model to the output of the original model in response to identical stimulation protocols. Original and NeuroML channels were subjected to a voltage clamp protocol, cells were subjected to a current clamp protocol, synapses were subjected to a series of synapse-triggering network events, and networks were subjected to current injections into MC tufts. Networks that included odor input did not include any additional inputs. The results of the comparison tests are in the [/tests/report.html file](https://rawgit.com/JustasB/MiglioreEtAl14_OlfactoryBulb3D/master/tests/report.html).
+The NeuroML model was validated by comparing the output of the converted model to the output of the original model in response to identical stimulation protocols. Original and NeuroML channels were subjected to a voltage clamp protocol, cells were subjected to a current clamp protocol, synapses were subjected to a series of synapse-triggering network events, and networks were subjected to current injections into MC tufts. Networks that included odor input did not include any additional inputs. The results of the comparison tests are in the [/tests/report.html file](https://rawgit.com/OpenSourceBrain/MiglioreEtAl14_OlfactoryBulb3D/master/tests/report.html).
 
 Code implementing these protocols can be found under the /test folder. Specifically, see protocols for: [Channels](tests/channels/NEURONChannelTest.py), [Cells](tests/cells/NEURONCellTest.py), [Synapses](tests/synapses/NEURONSynapseTest.py), [Networks](tests/networks/NEURONNetworkTest.py)
 
@@ -67,7 +65,7 @@ This model also implements automated tests that ensure no breaking changes have 
  - [jNeuroML](https://github.com/NeuroML/jNeuroML)
  
 #### Steps
- 1. Clone this repository in a path that does not contain spaces: `git clone https://github.com/JustasB/MiglioreEtAl14_OlfactoryBulb3D.git`
+ 1. Clone this repository in a path that does not contain spaces: `git clone https://github.com/OpenSourceBrain/MiglioreEtAl14_OlfactoryBulb3D.git`
  2. Change into the cloned folder: `cd MiglioreEtAl14_OlfactoryBulb3D/`
  2. Change into one of the sub-folders of [NeuroML2](NeuroML2) e.g. `cd NeuroML2/Networks`
  2. Tell jNeuroML to run one of the LEMS files that define the simulation to run: e.g. `jnml LEMS_1MC_1GC_Odor.test.xml -neuron -run`
@@ -84,12 +82,12 @@ The models can be visualized offline by converting the model to NEURON (see step
 #### Requirements
  - The steps below have only been tested on Ubuntu Linux. They may work on Mac OS. Unlikely to work on Windows due to path issues.
  - A simple model from above is able to run
- - [NEURON compiled with Python](https://www.neuron.yale.edu/neuron/download/getstd) (e.g. the following command works `python -c 'from neuron import h, gui'`)
+ - [NEURON compiled with Python 2.7](https://www.neuron.yale.edu/neuron/download/getstd) (e.g. the following command works `python -c 'from neuron import h, gui'`)
  
 #### Steps
   1. Change into tests directory `cd tests`
   2. Run the following python command `python runsuite.py`
-  3. The tests listed in runsuite.py should run and a [report showing the original and converted model output](https://rawgit.com/JustasB/MiglioreEtAl14_OlfactoryBulb3D/master/tests/report.html) should open.
+  3. The tests listed in runsuite.py should run and a [report showing the original and converted model output](https://rawgit.com/OpenSourceBrain/MiglioreEtAl14_OlfactoryBulb3D/master/tests/report.html) should open.
   
 ### Exporting models
 NeuroML versions of network models with arbitrary numbers of Mitral and Granule cells (up to the counts in the original model) can be created via the use of the export script.
