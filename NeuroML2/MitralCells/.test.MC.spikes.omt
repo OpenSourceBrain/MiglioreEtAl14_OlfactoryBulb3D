@@ -1,0 +1,40 @@
+# Script for running automated tests on OSB using Travis-CI, see https://github.com/OpenSourceBrain/osb-model-validation 
+# Still in development, subject to change without notice!!
+
+target: "LEMS_MitralCell.xml"
+engine: jNeuroML_NEURON
+mep: .test.MC.spikes.mep
+experiments:
+  spikes10:
+    observables:
+      spike times:
+        file: 
+          path: Mitral_5nA.dat
+          columns: [0,1]
+          scaling: [1000, 1000]
+        spike detection: 
+          method: threshold
+          threshold: 0
+        tolerance: 0
+  spikes11:
+    observables:
+      spike times:
+        file: 
+          path: Mitral_5nA.dat
+          columns: [0,2]
+          scaling: [1000, 1000]
+        spike detection: 
+          method: threshold
+          threshold: 0
+        tolerance: 0
+  spikes12:
+    observables:
+      spike times:
+        file: 
+          path: Mitral_5nA.dat
+          columns: [0,3]
+          scaling: [1000, 1000]
+        spike detection: 
+          method: threshold
+          threshold: 0
+        tolerance: 0

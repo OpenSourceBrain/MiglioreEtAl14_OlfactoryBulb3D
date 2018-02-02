@@ -29,8 +29,10 @@ def build_complete_model(connection_file):
 
   util.show_progress(200)
 
-  from odorstim import OdorSequence
-  odseq = OdorSequence(params.odor_sequence)
+  import custom_params
+  if custom_params.enableOdorInput:
+    from odorstim import OdorSequence
+    odseq = OdorSequence(params.odor_sequence)
 
   if rank == 0: print 'total setup time ', h.startsw()-startsw
 

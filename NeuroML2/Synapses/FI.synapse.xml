@@ -4,6 +4,9 @@
          xsi:schemaLocation="http://www.neuroml.org/schema/neuroml2 https://raw.github.com/NeuroML/NeuroML2/development/Schemas/NeuroML2/NeuroML_v2beta5.xsd" 
          id="TEST_syn">
 
+    <fastInhibitorySynapse id="FIsyn" tauRise="1 ms" tauDecay="100 ms" gbase="0.005 uS" erev="-80.0 mV"
+        LTPlimit="33.33 ms" LTDlimit="250 ms" sigHalf="50" sigSlope="10"/>
+
     <notes>FastInhibitory synapse with spike-timing dependent plasticity. Implemented from Migliore et. al. 2014</notes>
 
     <ComponentType name="fastInhibitorySynapse"
@@ -53,13 +56,11 @@
             <!-- NET_RECEIVE -->
             <OnEvent port="in">
                 <StateAssignment variable="isSpiking" value="1" />
+                <StateAssignment variable="timeSinceSpike" value="t - lastSpike" />
+                <StateAssignment variable="lastSpike" value="t" />
                 <!-- This is equivalent to just using weight in LEMS, but is required for mapping to NEURON... -->
                 <StateAssignment variable="weight_" value="weight" />
             </OnEvent>
-            
-            <OnCondition test="isSpiking .eq. 1">
-                <StateAssignment variable="timeSinceSpike" value="t - lastSpike" />
-            </OnCondition>
             
             <!-- Inc/decrement the step variable based on timing-->
             <OnCondition test="isSpiking .eq. 1 .and. timeSinceSpike .lt. LTPlimit">
@@ -82,21 +83,22 @@
                 <!-- This is equivalent to just using weight in LEMS, but is required for mapping to NEURON... -->
                 <StateAssignment variable="A" value="A + weight_*plasticity*waveformFactor" />
                 <StateAssignment variable="B" value="B + weight_*plasticity*waveformFactor" />
-                
-                <!--Record most recent spike time-->
-                <StateAssignment variable="lastSpike" value="t" />
+
                 <StateAssignment variable="isSpiking" value="0" />
             </OnCondition>
             
             <TimeDerivative variable="A" value="-A/tauRiseCapped" />
             <TimeDerivative variable="B" value="-B/tauDecay" />
 
+            <!--NEURON 7.5 shows error if no derivates are specified for state variables-->
+            <TimeDerivative variable="isSpiking" value="0" />
+            <TimeDerivative variable="weight_" value="0" />
+            <TimeDerivative variable="timeSinceSpike" value="0" />
+            <TimeDerivative variable="lastSpike" value="0" />
+
         </Dynamics>
         
     </ComponentType>
-    
-    <fastInhibitorySynapse id="FIsyn" tauRise="1 ms" tauDecay="100 ms" gbase="0.005 uS" erev="-80.0 mV"
-        LTPlimit="33.33 ms" LTDlimit="250 ms" sigHalf="50" sigSlope="10"/>
 
 </neuroml>
 

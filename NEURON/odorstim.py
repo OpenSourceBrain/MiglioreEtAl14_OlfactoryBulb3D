@@ -63,6 +63,8 @@ class OdorStim():
       self.nxt_invl = params.sniff_invl
     h.cvode.event(start, (self.ev, (start,)))
 
+    return start
+
   #def ev(self, time, interval, stop):
 
   def ev(self, time):
@@ -71,6 +73,8 @@ class OdorStim():
         at h.t + individual netcon delay
     '''
 
+    result = { 'time': h.t, 'weights': [] }
+
     # update weights
     for key in self.netcons:
       iglom = mgid2glom(key[0])
@@ -78,6 +82,8 @@ class OdorStim():
       nc, rw = self.netcons[key]
       nc.weight[0] = w * self.rel_conc * rw.repick()
       nc.delay = 0.
+
+      result['weights'].append({ 'label': nc.syn().get_segment().sec.name(), 'weight': nc.weight[0] })
 
       # call event queue
       nc.event(h.t)
@@ -88,7 +94,11 @@ class OdorStim():
 
     if time + self.nxt_invl < self.tstop:
       if rank == 0 and self.verbose: print 'activation of %s at %.3g (ms)\tinterval %.3g' % (self.odor.name, h.t, self.nxt_invl)
-      h.cvode.event(time + self.nxt_invl, (self.ev, (time + self.nxt_invl,)))
+      next_time = time + self.nxt_invl
+      h.cvode.event(next_time, (self.ev, (next_time,)))
+      result['next_time'] = next_time
+
+    return result
 
 # create odorseq
 def OdorSequence(seq):

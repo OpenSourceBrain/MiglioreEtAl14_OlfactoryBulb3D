@@ -1,0 +1,26 @@
+target: "LEMS_2MC_2GC_Odor.test.xml"
+engine: jNeuroML_NEURON
+mep: .test.2MC_2GC_Odor.spikes.mep
+experiments:
+  Exp1:
+    observables:
+      spike times:
+        file: 
+          path: Net.dat
+          columns: [0,1]
+          scaling: [1000, 1000]
+        spike detection: 
+          method: threshold
+          threshold: 0
+        tolerance: 0
+  Exp2:
+    observables:
+      spike times:
+        file:
+          path: Net.dat
+          columns: [0,2]
+          scaling: [1000, 1000]
+        spike detection:
+          method: threshold
+          threshold: 0
+        tolerance: 0

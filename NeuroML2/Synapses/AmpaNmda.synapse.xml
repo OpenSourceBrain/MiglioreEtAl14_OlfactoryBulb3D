@@ -4,6 +4,10 @@
          xsi:schemaLocation="http://www.neuroml.org/schema/neuroml2 https://raw.github.com/NeuroML/NeuroML2/development/Schemas/NeuroML2/NeuroML_v2beta5.xsd" 
          id="TEST_syn">
 
+    <AmpaNmdaSynapse id="AmpaNmdaSynapse" Cdur="1 ms" Alpha="0.35 per_ms" Beta="0.035 per_ms" E="0.0 mV" mg="1 mM"
+        gMax="0.1 uS" gAmpafactor="0.001" Nmdafactor="0.0035" LTPlimit="33.33 ms" LTDlimit="250 ms" sigHalf="50"
+        sigSlope="10" Ampatau="3 ms"/>
+
     <notes>Ampa/Nmda synapse with spike-timing plasticity. Implemented from Migliore et. al. 2014</notes>
 
     <ComponentType name="AmpaNmdaSynapse"
@@ -151,14 +155,16 @@
             <TimeDerivative variable="Ron" value="(synon*Rinf - Ron)/Rtau" />
             <TimeDerivative variable="Roff" value="-Beta*Roff" />
             <TimeDerivative variable="gAmpa" value="-gAmpa/Ampatau" />
+
+            <!--NEURON 7.5 shows error if no derivates are specified for state variables-->
+            <TimeDerivative variable="isSpiking" value="0" />
+            <TimeDerivative variable="weight_" value="0" />
+            <TimeDerivative variable="timeSinceSpike" value="0" />
+            <TimeDerivative variable="lastSpike" value="0" />
+
             
         </Dynamics>
         
     </ComponentType>
-    
-    
-    <AmpaNmdaSynapse id="AmpaNmdaSynapse" Cdur="1 ms" Alpha="0.35 per_ms" Beta="0.035 per_ms" E="0.0 mV" mg="1 mM"
-        gMax="0.1 uS" gAmpafactor="0.001" Nmdafactor="0.0035" LTPlimit="33.33 ms" LTDlimit="250 ms" sigHalf="50"
-        sigSlope="10" Ampatau="3 ms"/>
 
 </neuroml>

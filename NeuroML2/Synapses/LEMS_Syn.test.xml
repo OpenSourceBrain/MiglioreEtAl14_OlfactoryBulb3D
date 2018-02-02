@@ -1,0 +1,84 @@
+<Lems>
+
+    <Target component="Sim"/>
+
+    <Include file="Cells.xml"/>
+    <Include file="Networks.xml"/>
+    <Include file="Simulation.xml"/>
+
+    <Include file="../Channels/pas.channel.nml"/>
+    
+    <Include file="../Synapses/FI.synapse.xml"/>
+    <Include file="../Synapses/AmpaNmda.synapse.xml"/>
+    
+    <Include file="../GranuleCells/Exported/Granule_0_110821.cell.nml"/>
+    
+    <network id="network_Migliore2014" type="networkWithTemperature" temperature="35 degC">
+
+        <population id="Pop_Granule_0_110821" component="Granule_0_110821" type="populationList" size="1">
+            <instance id="0">
+                <location x="375" y="1050" z="450"/>
+            </instance>
+        </population>
+
+        <inputList id="il0" component="ExSpikes" population="Pop_Granule_0_110821">
+            <input id="0" target="../Pop_Granule_0_110821/0/Granule_0_110821" segmentId="0" fractionAlong="0.5" destination="synapses"/>
+        </inputList>
+        <inputList id="il1" component="InhSpikes" population="Pop_Granule_0_110821">
+            <input id="0" target="../Pop_Granule_0_110821/0/Granule_0_110821" segmentId="0" fractionAlong="0.5" destination="synapses"/>
+        </inputList>
+
+    </network>
+
+    <AmpaNmdaSynapse id="AmpaNmdaSynapseTest" Cdur="1 ms" Alpha="0.35 per_ms" Beta="0.035 per_ms" E="0.0 mV" mg="1 mM"
+        gMax="50 uS" gAmpafactor="0.001" Nmdafactor="0.0035" LTPlimit="33.33 ms" LTDlimit="250 ms" sigHalf="50"
+        sigSlope="10" Ampatau="3 ms"/>
+
+    <fastInhibitorySynapse id="FIsynTest" tauRise="1 ms" tauDecay="100 ms" gbase="1 uS" erev="-80.0 mV"
+        LTPlimit="33.33 ms" LTDlimit="250 ms" sigHalf="50" sigSlope="10"/>
+
+    <timedSynapticInput id="ExSpikes" synapse="AmpaNmdaSynapseTest" spikeTarget="./AmpaNmdaSynapseTest">
+        <spike id="0" time="50 ms"/>
+        <spike id="1" time="53 ms"/>
+        <spike id="2" time="56 ms"/>
+        <spike id="3" time="59 ms"/>
+        <spike id="4" time="62 ms"/>
+        <spike id="5" time="65 ms"/>
+        <spike id="6" time="68 ms"/>
+        <spike id="7" time="71 ms"/>
+        <spike id="8" time="74 ms"/>
+        <spike id="9" time="77 ms"/>
+        <spike id="10" time="80 ms"/>
+
+        <!--By itself, this generates two spikes. The second spike should be inhibited by the FI syn-->
+        <spike id="11" time="200 ms"/>
+        <spike id="12" time="203 ms"/>
+        <spike id="13" time="206 ms"/>
+        <spike id="14" time="209 ms"/>
+        <spike id="15" time="212 ms"/>
+        <spike id="16" time="215 ms"/>
+        <spike id="17" time="218 ms"/>
+        <spike id="18" time="221 ms"/>
+        <spike id="19" time="224 ms"/>
+        <spike id="20" time="227 ms"/>
+    </timedSynapticInput>
+
+    <timedSynapticInput id="InhSpikes" synapse="FIsynTest" spikeTarget="./FIsynTest">
+        <spike id="0" time="221 ms"/>
+    </timedSynapticInput>
+
+
+    <Simulation id="Sim" length="300ms" step="0.015625ms" target="network_Migliore2014">
+
+        <Display id="GranuleA" title="Granule Cell (0.1nA)" timeScale="1ms" xmin="-18.0" xmax="330.0" ymin="-90" ymax="50">
+            <Line id="soma"       quantity="Pop_Granule_0_110821/0/Granule_0_110821/0/v"  scale="1" color="#f3e4c5" timeScale="1ms"/>
+        </Display>
+
+        <OutputFile id="GranuleFA" fileName="GCA.dat">
+            <OutputColumn id="somaA"       quantity="Pop_Granule_0_110821/0/Granule_0_110821/0/v"/>
+        </OutputFile>
+
+    </Simulation>
+
+
+</Lems>
