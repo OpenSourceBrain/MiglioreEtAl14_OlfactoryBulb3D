@@ -55,10 +55,10 @@ class NEURONNetworkTest(NEURONTest):
         self.h.run()
 
         # Gather output variables - subsample to once per ms
-        t = self.subSampleVector(self.tVector, self.h.steps_per_ms)
+        t = self.subSampleVector(self.tVector, self.h.steps_per_ms / 4)
 
         for vector in vectors:
-            v = self.subSampleVector(vector["vector"], self.h.steps_per_ms)
+            v = self.subSampleVector(vector["vector"], self.h.steps_per_ms / 4)
 
             result.append({
                 "label": vector["label"],
