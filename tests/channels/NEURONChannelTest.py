@@ -64,7 +64,7 @@ class NEURONChannelTest(NEURONTest):
             self.h.run()
 
             # Gather output variables - subsample to once per ms
-            t, v, i = self.subSampleTVI(self.h.steps_per_ms)
+            t, v, i = self.subSampleTVI(self.h.steps_per_ms / 4)
 
             result["vclamp"].append({
                 "label": str(level) + " mV",
