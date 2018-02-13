@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<neuroml xmlns="http://www.neuroml.org/schema/neuroml2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.neuroml.org/schema/neuroml2  https://raw.githubusercontent.com/NeuroML/NeuroML2/development/Schemas/NeuroML2/NeuroML_v2beta5.xsd" id="network_OlfactoryTest">
+
+    <notes>
+
+Network structure (NeuroML 2beta5) for project: OlfactoryTest saved with neuroConstruct v1.7.1 on: 17:43:20, 13-Feb-18
+
+Cell Group: CG_GC_soma contains 1 cells
+Cell Group: CG_MT_soma contains 1 cells
+
+
+
+    </notes>
+
+
+    <include href="GC_soma.cell.nml"/>
+    <include href="MT_soma.cell.nml"/>
+    <pulseGenerator id="Input_13" delay="0.02s" duration="0.06s" amplitude="6.0E-11A"/>
+    
+    <pulseGenerator id="Input_12" delay="0.02s" duration="0.06s" amplitude="6.0E-11A"/>
+    
+    <network id="network_OlfactoryTest" type="networkWithTemperature" temperature="12.0 degC">
+
+        
+
+        <population id="CG_GC_soma" component="GC_soma" type="populationList" size="1">
+           <annotation>
+                <property tag="color" value="0.6171875 0.609375 0.265625"/>
+            </annotation>
+            <instance id="0">
+                <location x="50.862896" y="7.374626" z="64.39335"/>
+            </instance>
+        </population>
+
+        <population id="CG_MT_soma" component="MT_soma" type="populationList" size="1">
+           <annotation>
+                <property tag="color" value="0.58984375 0.80859375 0.84375"/>
+            </annotation>
+            <instance id="0">
+                <location x="15.712852" y="14.848956" z="17.79694"/>
+            </instance>
+        </population>
+
+
+
+            <!--There are no synaptic connections present in the network-->
+
+
+        <inputList id="Input_13" component="Input_13" population="CG_GC_soma">
+            <input id="0" target="../CG_GC_soma/0/GC_soma" destination="synapses"/>
+        </inputList>
+
+
+
+        <inputList id="Input_12" component="Input_12" population="CG_MT_soma">
+            <input id="0" target="../CG_MT_soma/0/MT_soma" destination="synapses"/>
+        </inputList>
+
+
+
+
+
+    </network>
+
+</neuroml>
