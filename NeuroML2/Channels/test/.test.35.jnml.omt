@@ -1,0 +1,29 @@
+# Script for running automated tests on OSB using Travis-CI, see https://github.com/OpenSourceBrain/osb-model-validation 
+# Still in development, subject to change without notice!!
+
+target: "LEMS_OlfactoryTest_35.xml"
+engine: jNeuroML
+mep: .test.35.mep
+experiments:
+  mt:
+    observables:
+      spike times:
+        file: 
+          path: CG_MT_soma_0.0.dat
+          columns: [0,1]
+          scaling: [1000, 1000]
+        spike detection: 
+          method: threshold
+          threshold: 0
+        tolerance: 0.00349766822119
+  gc:
+    observables:
+      spike times:
+        file: 
+          path: CG_GC_soma_0.0.dat
+          columns: [0,1]
+          scaling: [1000, 1000]
+        spike detection: 
+          method: threshold
+          threshold: 0
+        tolerance: 0.0401196790426
