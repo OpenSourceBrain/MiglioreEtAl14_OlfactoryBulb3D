@@ -103,7 +103,7 @@ NeuroML versions of network models with arbitrary numbers of Mitral and Granule 
  4. You can use the other parameters in the table below to customize the export.
  5. To use the network in a simulation, copy and modify one of the LEMS*.xml files in the NeuroML2/Network folder to utilize the newly exported network. Then use the steps to run a simple model above to run the simulation.
  
- | Parameter        | Default | Description                                                                                                              |
+| Parameter        | Default | Description                                                                                                              |
 |------------------|---------|--------------------------------------------------------------------------------------------------------------------------|
 | MCs              | 30      | The number of Mitral cells to include in the network                                                                     |
 | GCsPerMC         | 3       | The number of Granule cells to include for each Mitral cell                                                              |
@@ -114,3 +114,8 @@ NeuroML versions of network models with arbitrary numbers of Mitral and Granule 
   
 ## Issues
 The conversion error of the model can be further reduced by resolving [identified issues](https://github.com/OpenSourceBrain/MiglioreEtAl14_OlfactoryBulb3D/issues). If you find additional problems or issues, please create a Github issue at the [issues page](https://github.com/OpenSourceBrain/MiglioreEtAl14_OlfactoryBulb3D/issues).
+
+
+### Reusing this model
+
+The code in this repository is provided under the terms of the [software license](LICENSE) included with it. If you use this model in your research, we respectfully ask you to cite the references outlined in the [CITATION](CITATION.md) file.
