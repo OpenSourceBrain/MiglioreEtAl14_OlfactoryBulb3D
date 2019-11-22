@@ -5,15 +5,15 @@ This repository hosts the [NeuroML conversion](NeuroML2) of the [Migliore et. al
 
 Original Model: Migliore M, Cavarretta F, Hines ML, Shepherd GM (2014) Distributed organization of a brain microcircuit analysed by three-dimensional modeling: the olfactory bulb [Front. Comput. Neurosci.](http://journal.frontiersin.org/article/10.3389/fncom.2014.00050/abstract) 8:50, obtained from [ModelDB](http://senselab.med.yale.edu/ModelDB/ShowModel.cshtml?model=151681).
 
-![30 cells](images/30cells.jpg)<br/>
+![30 cells](https://raw.githubusercontent.com/OpenSourceBrain/MiglioreEtAl14_OlfactoryBulb3D/master/images/30cells.jpg)<br/>
 3D rendering of the converted network consisting of 30 Mitral cells
 
 ## Overview
-![Mitral Spikes with GC response](images/1MC1000GCs.gif)<br/>
+![Mitral Spikes with GC response](https://raw.githubusercontent.com/OpenSourceBrain/MiglioreEtAl14_OlfactoryBulb3D/master/images/1MC1000GCs.gif)<br/>
 Stimulation of a single Mitral cell and the response of its Granule cells
 
 ## Model Structure
-![Model Diagram](images/modelDiagram.jpg)
+![Model Diagram](https://raw.githubusercontent.com/OpenSourceBrain/MiglioreEtAl14_OlfactoryBulb3D/master/images/modelDiagram.jpg)
 
 ### Network
 The original model depicts a small patch of the mammalian olfactory bulb, consisting of 125 glomeruli with 5 MCs each. Each MC is connected to several hundred GCs via dendro-dendritic synapses. Each GC connects to one MC. MCs are not connected to each other. Scaled down, NeuroML versions of the original model can be found in the [NeuroML2/Networks](NeuroML2/Networks) folder.
