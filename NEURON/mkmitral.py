@@ -4,26 +4,26 @@ from getmitral import getmitral
 
 def mkmitral(gid):
   nrn = getmitral(gid)
-  
+
   m = h.Mitral()
   m.createsec(len(nrn.dend), len(nrn.tuft))
   m.subsets()
   m.topol(0) # need to connect secondary dendrites explicitly
 
   for i, d in enumerate(nrn.dend):
-    
+
     # <<< check my changed if
     if(d.parent == nrn.soma): # <<< changed name
       m.secden[i].connect(m.soma(.5))
     else:
       m.secden[i].connect(m.secden[d.parent.index](1)) # <<< changed name
-  
+
   m.geometry()
   m.segments() # depends on geometry
   m.geometry() # again to get the hillock stylized shape
 
   fillall(nrn, m)
-  
+
   m.segments() # again to get the proper number of segments for tuft and secden
   m.soma.push()
   m.x = h.x3d(0)
@@ -40,7 +40,7 @@ def fillall(n, m):
     fillshape(s, m.secden[i])
   for i,s in enumerate(n.tuft):
     fillshape(s, m.tuftden[i])
-  
+
 def fillshape(s1, s2):
     s2.push()
     h.pt3dclear()
@@ -50,6 +50,5 @@ def fillshape(s1, s2):
 
 if __name__ == "__main__":
   for mgid in range(635):
-    print mgid
+    print(mgid)
     mkmitral(mgid)
-  

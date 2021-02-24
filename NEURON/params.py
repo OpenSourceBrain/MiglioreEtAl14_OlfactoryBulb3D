@@ -2,10 +2,10 @@
 from custom_params import *
 
 try:
-    
+
     from neuron import h
     h.celsius = 35
-    
+
 except:
     pass
 
@@ -14,7 +14,7 @@ try:
   module = __import__(filename)
   globals().update(vars(module))
 except:
-  print 'error during params import'
+  print('error during params import')
 
 from copy import copy
 from math import pi,exp
@@ -94,7 +94,7 @@ granule_field_radius = 50. #microns
 gid_mitral_begin = 0
 gid_granule_begin = gid_mitral_begin + Nmitral
 
-granule_diam = 10. 
+granule_diam = 10.
 
 granule_priden2_len = 250.
 
