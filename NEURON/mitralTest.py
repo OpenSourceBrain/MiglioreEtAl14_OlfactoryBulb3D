@@ -31,7 +31,7 @@ def main(gui=True):
 
     
     # For each current value, create a cell
-    for c in xrange(0,len(amps)):
+    for c in range(0,len(amps)):
         print("Trying amplitude:  %snA"%amps[c])
         cells.append(mkmitral(0))
         
@@ -75,12 +75,12 @@ def integrate():
     
     print("Running a NEURON simulation of duration %s ms and dt = %s ms"%(tstop,h.dt))
     if gui:
-        for c in xrange(0,len(amps)):
+        for c in range(0,len(amps)):
             graphs[c].begin()
     
     while h.t< tstop:
         
-        for c in xrange(0,len(amps)):
+        for c in range(0,len(amps)):
             
             if gui:
                 graphs[c].plot(h.t)
@@ -95,11 +95,11 @@ def integrate():
         h.fadvance()
 
     if gui:
-        for c in xrange(0,len(amps)):
+        for c in range(0,len(amps)):
             graphs[c].flush()
 
 
-    for c in xrange(0,len(amps)):
+    for c in range(0,len(amps)):
         with open('Mitral_%snA.dat'%amps[c], 'w') as outfile:
             writer = csv.writer(outfile, delimiter='\t')
             for row in data[c]:
