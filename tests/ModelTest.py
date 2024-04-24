@@ -61,7 +61,7 @@ class ModelTest(object):
         startDir = os.getcwd()
 
         try:
-            from Queue import Queue, Empty
+            from queue import Queue, Empty
         except ImportError:
             from queue import Queue, Empty  # python 3.x
 

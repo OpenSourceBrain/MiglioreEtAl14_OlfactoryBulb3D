@@ -21,7 +21,7 @@ def initgranules():
     #gsyn_cnt.clear()
 
     # Cache slow lookup table building
-    import cPickle as pickle
+    import pickle as pickle
     with open('gid2pos.p', 'rb') as fp1:
         gid2pos.update(pickle.load(fp1))
         ngranule = len(gid2pos)
@@ -123,7 +123,7 @@ def granule_voxels(p1, p2):
   # return ggids
   ggids = set()
   for q in nnpts:
-    if pos2gid.has_key(q):
+    if q in pos2gid:
       ggids.add(pos2gid[q]) 
 
   return list(ggids)

@@ -24,7 +24,7 @@ data = []
 def main():
     
     # For each current value, create a cell
-    for c in xrange(0,len(amps)):
+    for c in range(0,len(amps)):
         
         cells.append(mkmitral(0))
 
@@ -64,12 +64,12 @@ def initialize():
 
 def integrate():
     
-    for c in xrange(0,len(amps)):
+    for c in range(0,len(amps)):
         graphs[c].begin()
     
     while h.t< tstop:
         
-        for c in xrange(0,len(amps)):
+        for c in range(0,len(amps)):
             graphs[c].plot(h.t)
             graphs[c].fastflush()
         
@@ -80,7 +80,7 @@ def integrate():
 
         h.fadvance()
 
-    for c in xrange(0,len(amps)):
+    for c in range(0,len(amps)):
         graphs[c].flush()
 
 
@@ -91,5 +91,5 @@ def integrate():
 
 main()
 
-if raw_input("Press ENTER to quit(), or SPACE + ENTER to continue") != " ":
+if input("Press ENTER to quit(), or SPACE + ENTER to continue") != " ":
     quit()

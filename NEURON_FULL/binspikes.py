@@ -85,7 +85,7 @@ class SpikesReader:
           for j in range(hlen):
             gid, n = unpack('>LL', self.fi.read(8)) # read
 
-            if not self.header.has_key(gid):
+            if gid not in self.header:
               self.header.update({ gid:[(offset, n)] })
             else:
               self.header[gid].append((offset, n)) 

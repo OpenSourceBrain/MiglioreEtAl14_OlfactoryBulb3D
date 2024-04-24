@@ -17,7 +17,7 @@ class OdorHandler(Handler):
         for i in range(len(self.__bulb.real_h)):
             x = code % (i, i)
             compcode = {}
-            exec x.strip() in compcode
+            exec(x.strip(), compcode)
             name = '_show%g' % i
             setattr(self.__class__, name, compcode[name])
             

@@ -42,7 +42,7 @@ def load(fname = None):
                 ggid = int(tk[1])
                 arc = float(tk[3])
                 entry = (ggid, arc)
-                if gid_dict.has_key(gid + 1):
+                if gid + 1 in gid_dict:
                     entry = gid_dict[gid + 1] + entry
                     gid_dict[gid + 1] = entry
                     add(mgid_dict, entry[0], True, gid, entry[3])

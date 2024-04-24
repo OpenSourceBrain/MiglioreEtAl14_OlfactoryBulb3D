@@ -4,7 +4,7 @@ def export(MCs = 1, GCsPerMC = 10):
     import sys
     import re
     import copy
-    import exportHelper
+    from . import exportHelper
 
     numGranulesTotal = MCs * GCsPerMC
 
@@ -40,8 +40,8 @@ def exportToNML(cells):
 
     exported = []
 
-    for gid in cells.keys():
-        print("Exporting GC:" + `gid` + "...")
+    for gid in list(cells.keys()):
+        print("Exporting GC:" + repr(gid) + "...")
 
         # Obtain the varying values from the network model
         pridenLength = cells[gid].priden.L
