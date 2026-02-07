@@ -61,7 +61,7 @@ class ModelTest(object):
         startDir = os.getcwd()
 
         try:
-            from Queue import Queue, Empty
+            from queue import Queue, Empty
         except ImportError:
             from queue import Queue, Empty  # python 3.x
 
@@ -110,7 +110,7 @@ class ModelTest(object):
                 line = ""
 
                 while True:
-                    line = line + q.get_nowait()
+                    line = line + str(q.get_nowait())
 
             # No more lines
             except Empty:
@@ -142,7 +142,7 @@ class ModelTest(object):
                 assert not errorsFound  # See error.log file in script start folder
 
             # If the thread is dead and there are no more output lines, stop checking
-            if not t.isAlive() and q.empty():
+            if not t.is_alive() and q.empty():
                 keepChecking = False
 
         print('OK')
